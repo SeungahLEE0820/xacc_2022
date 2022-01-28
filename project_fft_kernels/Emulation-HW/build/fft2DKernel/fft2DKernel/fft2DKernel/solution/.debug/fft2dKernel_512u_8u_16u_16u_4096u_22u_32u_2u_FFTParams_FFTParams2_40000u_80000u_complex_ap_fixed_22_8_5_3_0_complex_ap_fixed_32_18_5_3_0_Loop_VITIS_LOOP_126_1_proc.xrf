@@ -1,0 +1,13 @@
+Begin Function 'fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc'
+
+RTL state condition: (1'b1 == ap_CS_fsm_state1)
+# ST_1
+local n_images_read <> <integer> <FifoRead> 'read' <>
+reg: n_images_read_reg_535[31:0] lv
+
+
+RTL state condition: (1'b1 == ap_CS_fsm_state3)
+# ST_3
+
+End Function 'fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc'
+

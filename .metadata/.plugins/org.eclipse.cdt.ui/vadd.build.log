@@ -1,0 +1,6 @@
+13:20:30 **** Incremental Build of configuration Hardware for project vadd ****
+make -j8 all 
+make: Nothing to be done for `all'.
+
+13:20:30 Build Finished (took 73ms)
+

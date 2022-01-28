@@ -1,0 +1,303 @@
+
+
+================================================================
+== Vitis HLS Report for 'wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182'
+================================================================
+* Date:           Thu Jan 27 12:46:06 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.760 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                 Pipeline                 |
+    |   min   |   max   |    min   |    max   | min | max |                   Type                   |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------+
+    |       32|       33|  0.128 us|  0.132 us|   32|   32|  loop rewind stp(delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                              |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |           Loop Name          |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- wideToNarrowConverter_LOOP  |       32|       32|         2|          1|          1|    32|       yes|
+        +------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|      770|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     -|        0|       86|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|      240|    -|
+|Register             |        -|     -|      377|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|      377|     1096|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------+---------------+---------+----+---+----+-----+
+    |      Instance     |     Module    | BRAM_18K| DSP| FF| LUT| URAM|
+    +-------------------+---------------+---------+----+---+----+-----+
+    |mux_83_22_1_1_U47  |mux_83_22_1_1  |        0|   0|  0|  43|    0|
+    |mux_83_22_1_1_U48  |mux_83_22_1_1  |        0|   0|  0|  43|    0|
+    +-------------------+---------------+---------+----+---+----+-----+
+    |Total              |               |        0|   0|  0|  86|    0|
+    +-------------------+---------------+---------+----+---+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |i_fu_257_p2                       |         +|   0|  0|  12|           5|           1|
+    |ap_block_state2_pp0_stage0_iter0  |       and|   0|  0|   2|           1|           1|
+    |ap_condition_163                  |       and|   0|  0|   2|           1|           1|
+    |ap_ext_blocking_n                 |       and|   0|  0|   2|           2|           2|
+    |ap_int_blocking_cur_n             |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_n                 |       and|   0|  0|   2|           1|           2|
+    |ap_str_blocking_n                 |       and|   0|  0|   2|           2|           2|
+    |io_acc_block_signal_op52          |       and|   0|  0|   2|           1|           1|
+    |icmp_ln69_fu_431_p2               |      icmp|   0|  0|   9|           5|           2|
+    |icmp_ln78_11_fu_407_p2            |      icmp|   0|  0|   8|           3|           1|
+    |icmp_ln78_12_fu_413_p2            |      icmp|   0|  0|   8|           3|           2|
+    |icmp_ln78_13_fu_419_p2            |      icmp|   0|  0|   8|           3|           2|
+    |icmp_ln78_14_fu_535_p2            |      icmp|   0|  0|   9|           3|           4|
+    |icmp_ln78_15_fu_541_p2            |      icmp|   0|  0|   8|           3|           3|
+    |icmp_ln78_fu_529_p2               |      icmp|   0|  0|   8|           3|           1|
+    |ap_block_pp0_stage0_01001         |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1                   |        or|   0|  0|   2|           1|           1|
+    |or_ln78_15_fu_568_p2              |        or|   0|  0|   2|           1|           1|
+    |or_ln78_16_fu_579_p2              |        or|   0|  0|   2|           1|           1|
+    |or_ln78_17_fu_592_p2              |        or|   0|  0|   2|           1|           1|
+    |or_ln78_18_fu_668_p2              |        or|   0|  0|   2|           1|           1|
+    |or_ln78_19_fu_680_p2              |        or|   0|  0|   2|           1|           1|
+    |or_ln78_20_fu_700_p2              |        or|   0|  0|   2|           1|           1|
+    |or_ln78_21_fu_775_p2              |        or|   0|  0|   2|           1|           1|
+    |or_ln78_fu_555_p2                 |        or|   0|  0|   2|           1|           1|
+    |select_ln78_59_fu_561_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_60_fu_572_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_61_fu_584_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_62_fu_598_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_63_fu_606_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_64_fu_614_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_65_fu_622_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_66_fu_629_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_67_fu_636_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_68_fu_644_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_69_fu_652_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_70_fu_660_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_71_fu_673_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_72_fu_684_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_73_fu_692_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_74_fu_706_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_75_fu_714_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_76_fu_722_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_77_fu_729_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_78_fu_737_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_79_fu_745_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_80_fu_753_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_81_fu_760_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_82_fu_767_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_83_fu_781_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_84_fu_789_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_85_fu_796_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_86_fu_803_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_87_fu_811_p3          |    select|   0|  0|  22|           1|          22|
+    |select_ln78_fu_547_p3             |    select|   0|  0|  22|           1|          22|
+    |ap_enable_pp0                     |       xor|   0|  0|   2|           1|           2|
+    |wideReadIndex_fu_425_p2           |       xor|   0|  0|   4|           3|           4|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0| 770|          81|         702|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------------+----+-----------+-----+-----------+
+    |                   Name                   | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                 |  14|          3|    1|          3|
+    |ap_done                                   |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1                   |   9|          2|    1|          2|
+    |ap_phi_mux_i17_phi_fu_243_p6              |  14|          3|    5|         15|
+    |ap_phi_mux_wideReadIndex18_phi_fu_228_p6  |  14|          3|    3|          9|
+    |i17_reg_239                               |   9|          2|    5|         10|
+    |p_wideStreamIn_0_0_0_0_0_0110_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_0_0_0_0111_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_0_0_0_0112_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_0_0_0_0113_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_0_0_0_0114_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_0_0_0_0115_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_0_0_0_018_blk_n        |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_0_0_0_019_blk_n        |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_1_0_0_0223_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_1_0_0_0224_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_1_0_0_0225_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_1_0_0_0226_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_1_0_0_0227_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_1_0_0_0228_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_1_0_0_0229_blk_n       |   9|          2|    1|          2|
+    |p_wideStreamIn_0_0_1_0_0_02_blk_n         |   9|          2|    1|          2|
+    |real_start                                |   9|          2|    1|          2|
+    |ssrWideStream4kernelIn_blk_n              |   9|          2|    1|          2|
+    |wideReadIndex18_reg_224                   |   9|          2|    3|          6|
+    +------------------------------------------+----+-----------+-----+-----------+
+    |Total                                     | 240|         53|   37|         83|
+    +------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------+----+----+-----+-----------+
+    |                   Name                   | FF | LUT| Bits| Const Bits|
+    +------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                 |   2|   0|    2|          0|
+    |ap_done_reg                               |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                   |   1|   0|    1|          0|
+    |i17_reg_239                               |   5|   0|    5|          0|
+    |i_reg_959                                 |   5|   0|    5|          0|
+    |icmp_ln69_reg_997                         |   1|   0|    1|          0|
+    |icmp_ln78_11_reg_964                      |   1|   0|    1|          0|
+    |icmp_ln78_12_reg_974                      |   1|   0|    1|          0|
+    |icmp_ln78_13_reg_982                      |   1|   0|    1|          0|
+    |start_once_reg                            |   1|   0|    1|          0|
+    |wideReadIndex18_reg_224                   |   3|   0|    3|          0|
+    |wideReadIndex_reg_992                     |   3|   0|    3|          0|
+    |wideSample_superSample_M_imag_V_0_fu_130  |  22|   0|   22|          0|
+    |wideSample_superSample_M_imag_V_1_fu_126  |  22|   0|   22|          0|
+    |wideSample_superSample_M_imag_V_2_fu_122  |  22|   0|   22|          0|
+    |wideSample_superSample_M_imag_V_3_fu_118  |  22|   0|   22|          0|
+    |wideSample_superSample_M_imag_V_4_fu_114  |  22|   0|   22|          0|
+    |wideSample_superSample_M_imag_V_5_fu_110  |  22|   0|   22|          0|
+    |wideSample_superSample_M_imag_V_6_fu_106  |  22|   0|   22|          0|
+    |wideSample_superSample_M_imag_V_7_fu_102  |  22|   0|   22|          0|
+    |wideSample_superSample_M_real_V_0_fu_162  |  22|   0|   22|          0|
+    |wideSample_superSample_M_real_V_1_fu_158  |  22|   0|   22|          0|
+    |wideSample_superSample_M_real_V_2_fu_154  |  22|   0|   22|          0|
+    |wideSample_superSample_M_real_V_3_fu_150  |  22|   0|   22|          0|
+    |wideSample_superSample_M_real_V_4_fu_146  |  22|   0|   22|          0|
+    |wideSample_superSample_M_real_V_5_fu_142  |  22|   0|   22|          0|
+    |wideSample_superSample_M_real_V_6_fu_138  |  22|   0|   22|          0|
+    |wideSample_superSample_M_real_V_7_fu_134  |  22|   0|   22|          0|
+    +------------------------------------------+----+----+-----+-----------+
+    |Total                                     | 377|   0|  377|          0|
+    +------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------------------+-----+-----+------------+-----------------------------------------------------------------------------+--------------+
+|               RTL Ports               | Dir | Bits|  Protocol  |                                Source Object                                |    C Type    |
++---------------------------------------+-----+-----+------------+-----------------------------------------------------------------------------+--------------+
+|ap_clk                                 |   in|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|ap_rst                                 |   in|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|ap_start                               |   in|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|start_full_n                           |   in|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|ap_done                                |  out|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|ap_continue                            |   in|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|ap_idle                                |  out|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|ap_ready                               |  out|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|start_out                              |  out|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|start_write                            |  out|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|ap_ext_blocking_n                      |  out|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|ap_str_blocking_n                      |  out|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|ap_int_blocking_n                      |  out|    1|  ap_ctrl_hs|  wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182|  return value|
+|p_wideStreamIn_0_0_0_0_0_018_dout      |   in|   22|     ap_fifo|                                                 p_wideStreamIn_0_0_0_0_0_018|       pointer|
+|p_wideStreamIn_0_0_0_0_0_018_empty_n   |   in|    1|     ap_fifo|                                                 p_wideStreamIn_0_0_0_0_0_018|       pointer|
+|p_wideStreamIn_0_0_0_0_0_018_read      |  out|    1|     ap_fifo|                                                 p_wideStreamIn_0_0_0_0_0_018|       pointer|
+|p_wideStreamIn_0_0_0_0_0_019_dout      |   in|   22|     ap_fifo|                                                 p_wideStreamIn_0_0_0_0_0_019|       pointer|
+|p_wideStreamIn_0_0_0_0_0_019_empty_n   |   in|    1|     ap_fifo|                                                 p_wideStreamIn_0_0_0_0_0_019|       pointer|
+|p_wideStreamIn_0_0_0_0_0_019_read      |  out|    1|     ap_fifo|                                                 p_wideStreamIn_0_0_0_0_0_019|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0110_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0110|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0110_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0110|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0110_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0110|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0111_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0111|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0111_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0111|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0111_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0111|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0112_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0112|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0112_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0112|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0112_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0112|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0113_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0113|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0113_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0113|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0113_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0113|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0114_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0114|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0114_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0114|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0114_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0114|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0115_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0115|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0115_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0115|       pointer|
+|p_wideStreamIn_0_0_0_0_0_0115_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_0_0_0_0115|       pointer|
+|p_wideStreamIn_0_0_1_0_0_02_dout       |   in|   22|     ap_fifo|                                                  p_wideStreamIn_0_0_1_0_0_02|       pointer|
+|p_wideStreamIn_0_0_1_0_0_02_empty_n    |   in|    1|     ap_fifo|                                                  p_wideStreamIn_0_0_1_0_0_02|       pointer|
+|p_wideStreamIn_0_0_1_0_0_02_read       |  out|    1|     ap_fifo|                                                  p_wideStreamIn_0_0_1_0_0_02|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0223_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0223|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0223_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0223|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0223_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0223|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0224_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0224|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0224_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0224|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0224_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0224|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0225_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0225|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0225_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0225|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0225_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0225|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0226_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0226|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0226_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0226|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0226_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0226|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0227_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0227|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0227_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0227|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0227_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0227|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0228_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0228|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0228_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0228|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0228_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0228|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0229_dout     |   in|   22|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0229|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0229_empty_n  |   in|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0229|       pointer|
+|p_wideStreamIn_0_0_1_0_0_0229_read     |  out|    1|     ap_fifo|                                                p_wideStreamIn_0_0_1_0_0_0229|       pointer|
+|ssrWideStream4kernelIn_din             |  out|  256|     ap_fifo|                                                       ssrWideStream4kernelIn|       pointer|
+|ssrWideStream4kernelIn_full_n          |   in|    1|     ap_fifo|                                                       ssrWideStream4kernelIn|       pointer|
+|ssrWideStream4kernelIn_write           |  out|    1|     ap_fifo|                                                       ssrWideStream4kernelIn|       pointer|
++---------------------------------------+-----+-----+------------+-----------------------------------------------------------------------------+--------------+
+

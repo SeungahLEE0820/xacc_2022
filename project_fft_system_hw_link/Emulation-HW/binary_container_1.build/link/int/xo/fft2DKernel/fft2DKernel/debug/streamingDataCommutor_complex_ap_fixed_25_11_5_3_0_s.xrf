@@ -1,0 +1,64 @@
+Begin Function 'streamingDataCommutor<complex<ap_fixed<25, 11, 5, 3, 0> > >'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_2
+local t59 <> <integer> <Phi> 'phi' <>
+t /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_data_commutor.hpp:231
+reg: t59_reg_192[3:0] lv
+
+local fifo_has_next_sample <nbreadreq_136> <integer> <> 'nbreadreq' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:136>
+fifo_has_next_sample /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:136
+reg: fifo_has_next_sample_reg_976[0:0] lv
+
+local t <add_231> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_data_commutor.hpp:231>
+t /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_data_commutor.hpp:231
+reg: t_reg_980[3:0] lv
+
+local delay_line_stall_6_load <load_281> <integer> <> 'load' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_data_commutor.hpp:281>
+delay_line_stall_6_load /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_data_commutor.hpp:281
+reg: delay_line_stall_6_load_reg_985[0:0] lv
+
+local icmp_ln231 <icmp_231> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_data_commutor.hpp:231>
+icmp_ln231 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_data_commutor.hpp:231
+reg: icmp_ln231_reg_1029[0:0] lv
+
+# ST_3
+local temp_tagged_output_triangle_input_sample_M_real_V_3 <mux_79> <integer> <> 'mux' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux_chain.hpp:79>
+temp_tagged_output_triangle_input_sample_M_real_V_3 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux_chain.hpp:79
+reg: temp_tagged_output_triangle_input_sample_M_real_V_3_reg_1033[24:0] lv
+
+local temp_tagged_output_triangle_input_sample_M_imag_V_3 <mux_79> <integer> <> 'mux' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux_chain.hpp:79>
+temp_tagged_output_triangle_input_sample_M_imag_V_3 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux_chain.hpp:79
+reg: temp_tagged_output_triangle_input_sample_M_imag_V_3_reg_1038[24:0] lv
+
+local commuted_output_sample_M_real_V_0 <> <integer> <> 'trunc' <>
+commuted_output_sample_M_real_V_0 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_shift_reg.h:130
+reg: commuted_output_sample_M_real_V_0_reg_1043[24:0] lv
+
+local commuted_output_sample_M_imag_V_0 <> <integer> <> 'partselect' <>
+commuted_output_sample_M_imag_V_0 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_shift_reg.h:130
+reg: commuted_output_sample_M_imag_V_0_reg_1048[24:0] lv
+
+local commuted_output_sample_M_real_V_1 <> <integer> <> 'trunc' <>
+commuted_output_sample_M_real_V_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_shift_reg.h:130
+reg: commuted_output_sample_M_real_V_1_reg_1053[24:0] lv
+
+local commuted_output_sample_M_imag_V_1 <> <integer> <> 'partselect' <>
+commuted_output_sample_M_imag_V_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_shift_reg.h:130
+reg: commuted_output_sample_M_imag_V_1_reg_1058[24:0] lv
+
+local commuted_output_sample_M_real_V_2 <> <integer> <> 'trunc' <>
+commuted_output_sample_M_real_V_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_shift_reg.h:130
+reg: commuted_output_sample_M_real_V_2_reg_1063[24:0] lv
+
+local commuted_output_sample_M_imag_V_2 <> <integer> <> 'partselect' <>
+commuted_output_sample_M_imag_V_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_shift_reg.h:130
+reg: commuted_output_sample_M_imag_V_2_reg_1068[24:0] lv
+
+local and_ln297_8 <and_297> <integer> <Logic> 'and' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_data_commutor.hpp:297>
+and_ln297_8 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_data_commutor.hpp:297
+reg: and_ln297_8_reg_1073[0:0] lv
+
+
+End Function 'streamingDataCommutor<complex<ap_fixed<25, 11, 5, 3, 0> > >'
+

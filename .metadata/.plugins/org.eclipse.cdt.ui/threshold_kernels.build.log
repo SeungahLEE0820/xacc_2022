@@ -1,0 +1,8 @@
+17:20:58 **** Clean-only build of configuration Hardware for project threshold_kernels ****
+make -j8 clean 
+rm -f build/threshold_accel.xo .mdb,build/threshold_accel.o 
+rm -rf build
+rm -rf .Xil
+
+17:20:58 Build Finished (took 127ms)
+

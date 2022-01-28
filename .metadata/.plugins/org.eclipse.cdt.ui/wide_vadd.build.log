@@ -1,0 +1,6 @@
+15:59:42 **** Incremental Build of configuration Emulation-HW for project wide_vadd ****
+make -j8 all 
+make: Nothing to be done for `all'.
+
+15:59:42 Build Finished (took 82ms)
+

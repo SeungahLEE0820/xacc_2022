@@ -1,0 +1,191 @@
+
+
+================================================================
+== Vitis HLS Report for 'genMemWideFFTKernel1DArray_2'
+================================================================
+* Date:           Thu Jan 27 12:44:55 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.983 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 6, States = { 1 2 3 4 5 6 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ssrWideStream4kernelIn = alloca i64 1" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:270]   --->   Operation 7 'alloca' 'ssrWideStream4kernelIn' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.43> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 2> <FIFO>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%ssrWideStream4kernelOut = alloca i64 1" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:275]   --->   Operation 8 'alloca' 'ssrWideStream4kernelOut' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.43> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 2> <FIFO>
+ST_1 : Operation 9 [2/2] (0.00ns)   --->   "%call_ln280 = call void @wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<27, 13, 5, 3, 0> > >, i27 %p_inMemWideStreamArray_0_0_0_0_0_0, i27 %p_inMemWideStreamArray_0_0_0_0_0_01, i27 %p_inMemWideStreamArray_0_0_0_0_0_02, i27 %p_inMemWideStreamArray_0_0_0_0_0_03, i27 %p_inMemWideStreamArray_0_0_0_0_0_04, i27 %p_inMemWideStreamArray_0_0_0_0_0_05, i27 %p_inMemWideStreamArray_0_0_0_0_0_06, i27 %p_inMemWideStreamArray_0_0_0_0_0_07, i27 %p_inMemWideStreamArray_0_0_1_0_0_0, i27 %p_inMemWideStreamArray_0_0_1_0_0_016, i27 %p_inMemWideStreamArray_0_0_1_0_0_017, i27 %p_inMemWideStreamArray_0_0_1_0_0_018, i27 %p_inMemWideStreamArray_0_0_1_0_0_019, i27 %p_inMemWideStreamArray_0_0_1_0_0_020, i27 %p_inMemWideStreamArray_0_0_1_0_0_021, i27 %p_inMemWideStreamArray_0_0_1_0_0_022, i256 %ssrWideStream4kernelIn" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:280]   --->   Operation 9 'call' 'call_ln280' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 10 [1/2] (0.00ns)   --->   "%call_ln280 = call void @wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<27, 13, 5, 3, 0> > >, i27 %p_inMemWideStreamArray_0_0_0_0_0_0, i27 %p_inMemWideStreamArray_0_0_0_0_0_01, i27 %p_inMemWideStreamArray_0_0_0_0_0_02, i27 %p_inMemWideStreamArray_0_0_0_0_0_03, i27 %p_inMemWideStreamArray_0_0_0_0_0_04, i27 %p_inMemWideStreamArray_0_0_0_0_0_05, i27 %p_inMemWideStreamArray_0_0_0_0_0_06, i27 %p_inMemWideStreamArray_0_0_0_0_0_07, i27 %p_inMemWideStreamArray_0_0_1_0_0_0, i27 %p_inMemWideStreamArray_0_0_1_0_0_016, i27 %p_inMemWideStreamArray_0_0_1_0_0_017, i27 %p_inMemWideStreamArray_0_0_1_0_0_018, i27 %p_inMemWideStreamArray_0_0_1_0_0_019, i27 %p_inMemWideStreamArray_0_0_1_0_0_020, i27 %p_inMemWideStreamArray_0_0_1_0_0_021, i27 %p_inMemWideStreamArray_0_0_1_0_0_022, i256 %ssrWideStream4kernelIn" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:280]   --->   Operation 10 'call' 'call_ln280' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 11 [2/2] (0.00ns)   --->   "%call_ln288 = call void @fftStreamingKernel.1, i256 %ssrWideStream4kernelIn, i256 %ssrWideStream4kernelOut, i2 %control_count_V_5, i2 %control_bits_V_5, i2 %sample_in_read_count_V_5, i1 %delay_line_stall_5, i55 %delayline_Array_35, i55 %delayline_Array_47, i55 %delayline_Array_2, i32 %control_delayline_Array_13, i32 %control_delayline_Array_11, i32 %control_delayline_Array_12, i55 %delayline_Array_24, i55 %delayline_Array_46, i55 %delayline_Array_5, i18 %twiddleObj_twiddleTable_M_imag_V_1, i2 %control_count_V_4, i2 %control_bits_V_4, i2 %sample_in_read_count_V_4, i1 %delay_line_stall_4, i61 %delayline_Array_41, i61 %delayline_Array_43, i61 %delayline_Array_13, i32 %control_delayline_Array_8, i32 %control_delayline_Array_9, i32 %control_delayline_Array_10, i61 %delayline_Array_30, i61 %delayline_Array_42, i61 %delayline_Array_44" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:288]   --->   Operation 11 'call' 'call_ln288' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 12 [1/2] (0.00ns)   --->   "%call_ln288 = call void @fftStreamingKernel.1, i256 %ssrWideStream4kernelIn, i256 %ssrWideStream4kernelOut, i2 %control_count_V_5, i2 %control_bits_V_5, i2 %sample_in_read_count_V_5, i1 %delay_line_stall_5, i55 %delayline_Array_35, i55 %delayline_Array_47, i55 %delayline_Array_2, i32 %control_delayline_Array_13, i32 %control_delayline_Array_11, i32 %control_delayline_Array_12, i55 %delayline_Array_24, i55 %delayline_Array_46, i55 %delayline_Array_5, i18 %twiddleObj_twiddleTable_M_imag_V_1, i2 %control_count_V_4, i2 %control_bits_V_4, i2 %sample_in_read_count_V_4, i1 %delay_line_stall_4, i61 %delayline_Array_41, i61 %delayline_Array_43, i61 %delayline_Array_13, i32 %control_delayline_Array_8, i32 %control_delayline_Array_9, i32 %control_delayline_Array_10, i61 %delayline_Array_30, i61 %delayline_Array_42, i61 %delayline_Array_44" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:288]   --->   Operation 12 'call' 'call_ln288' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 13 [2/2] (0.00ns)   --->   "%call_ln293 = call void @narrowToWideConverter<4u, 8u, 16u, complex<ap_fixed<32, 18, 5, 3, 0> > >, i256 %ssrWideStream4kernelOut, i32 %p_outMemWideStreamArray_0_0_0_0_0_0, i32 %p_outMemWideStreamArray_0_0_0_0_0_030, i32 %p_outMemWideStreamArray_0_0_0_0_0_031, i32 %p_outMemWideStreamArray_0_0_0_0_0_032, i32 %p_outMemWideStreamArray_0_0_0_0_0_033, i32 %p_outMemWideStreamArray_0_0_0_0_0_034, i32 %p_outMemWideStreamArray_0_0_0_0_0_035, i32 %p_outMemWideStreamArray_0_0_0_0_0_036, i32 %p_outMemWideStreamArray_0_0_1_0_0_0, i32 %p_outMemWideStreamArray_0_0_1_0_0_044, i32 %p_outMemWideStreamArray_0_0_1_0_0_045, i32 %p_outMemWideStreamArray_0_0_1_0_0_046, i32 %p_outMemWideStreamArray_0_0_1_0_0_047, i32 %p_outMemWideStreamArray_0_0_1_0_0_048, i32 %p_outMemWideStreamArray_0_0_1_0_0_049, i32 %p_outMemWideStreamArray_0_0_1_0_0_050" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:293]   --->   Operation 13 'call' 'call_ln293' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_0_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_0_0_0_01, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_0_0_0_02, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_0_0_0_03, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_0_0_0_04, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_0_0_0_05, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_0_0_0_06, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_0_0_0_07, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_1_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_1_0_0_016, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_1_0_0_017, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_1_0_0_018, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_1_0_0_019, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_1_0_0_020, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_1_0_0_021, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_inMemWideStreamArray_0_0_1_0_0_022, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_0_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_0_0_0_030, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_0_0_0_031, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_0_0_0_032, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_0_0_0_033, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_0_0_0_034, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_0_0_0_035, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_0_0_0_036, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_1_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_1_0_0_044, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_1_0_0_045, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_1_0_0_046, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_1_0_0_047, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_1_0_0_048, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_1_0_0_049, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_outMemWideStreamArray_0_0_1_0_0_050, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_13"   --->   Operation 46 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i27 %p_inMemWideStreamArray_0_0_0_0_0_0, i27 %p_inMemWideStreamArray_0_0_0_0_0_01, i27 %p_inMemWideStreamArray_0_0_0_0_0_02, i27 %p_inMemWideStreamArray_0_0_0_0_0_03, i27 %p_inMemWideStreamArray_0_0_0_0_0_04, i27 %p_inMemWideStreamArray_0_0_0_0_0_05, i27 %p_inMemWideStreamArray_0_0_0_0_0_06, i27 %p_inMemWideStreamArray_0_0_0_0_0_07, i64 666, i64 9, i64 18446744073709551615"   --->   Operation 47 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 48 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i27 %p_inMemWideStreamArray_0_0_1_0_0_0, i27 %p_inMemWideStreamArray_0_0_1_0_0_016, i27 %p_inMemWideStreamArray_0_0_1_0_0_017, i27 %p_inMemWideStreamArray_0_0_1_0_0_018, i27 %p_inMemWideStreamArray_0_0_1_0_0_019, i27 %p_inMemWideStreamArray_0_0_1_0_0_020, i27 %p_inMemWideStreamArray_0_0_1_0_0_021, i27 %p_inMemWideStreamArray_0_0_1_0_0_022, i64 666, i64 9, i64 18446744073709551615"   --->   Operation 48 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 49 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %p_outMemWideStreamArray_0_0_0_0_0_0, i32 %p_outMemWideStreamArray_0_0_0_0_0_030, i32 %p_outMemWideStreamArray_0_0_0_0_0_031, i32 %p_outMemWideStreamArray_0_0_0_0_0_032, i32 %p_outMemWideStreamArray_0_0_0_0_0_033, i32 %p_outMemWideStreamArray_0_0_0_0_0_034, i32 %p_outMemWideStreamArray_0_0_0_0_0_035, i32 %p_outMemWideStreamArray_0_0_0_0_0_036, i64 666, i64 9, i64 18446744073709551615"   --->   Operation 49 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 50 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %p_outMemWideStreamArray_0_0_1_0_0_0, i32 %p_outMemWideStreamArray_0_0_1_0_0_044, i32 %p_outMemWideStreamArray_0_0_1_0_0_045, i32 %p_outMemWideStreamArray_0_0_1_0_0_046, i32 %p_outMemWideStreamArray_0_0_1_0_0_047, i32 %p_outMemWideStreamArray_0_0_1_0_0_048, i32 %p_outMemWideStreamArray_0_0_1_0_0_049, i32 %p_outMemWideStreamArray_0_0_1_0_0_050, i64 666, i64 9, i64 18446744073709551615"   --->   Operation 50 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 51 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @ssrWideStream4kernelIn_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i256 %ssrWideStream4kernelIn, i256 %ssrWideStream4kernelIn"   --->   Operation 51 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 52 [1/1] (0.00ns)   --->   "%specmemcore_ln272 = specmemcore void @_ssdm_op_SpecMemCore, i256 %ssrWideStream4kernelIn, i64 666, i64 9, i64 18446744073709551615" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:272]   --->   Operation 52 'specmemcore' 'specmemcore_ln272' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %ssrWideStream4kernelIn, void @empty_8, i32 0, i32 0, void @empty_13, i32 0, i32 0, void @empty_13, void @empty_13, void @empty_13, i32 0, i32 0, i32 0, i32 0, void @empty_13, void @empty_13"   --->   Operation 53 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 54 [1/1] (0.00ns)   --->   "%empty_250 = specchannel i32 @_ssdm_op_SpecChannel, void @ssrWideStream4kernelOut_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i256 %ssrWideStream4kernelOut, i256 %ssrWideStream4kernelOut"   --->   Operation 54 'specchannel' 'empty_250' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%specmemcore_ln277 = specmemcore void @_ssdm_op_SpecMemCore, i256 %ssrWideStream4kernelOut, i64 666, i64 9, i64 18446744073709551615" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:277]   --->   Operation 55 'specmemcore' 'specmemcore_ln277' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %ssrWideStream4kernelOut, void @empty_8, i32 0, i32 0, void @empty_13, i32 0, i32 0, void @empty_13, void @empty_13, void @empty_13, i32 0, i32 0, i32 0, i32 0, void @empty_13, void @empty_13"   --->   Operation 56 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 57 [1/2] (0.00ns)   --->   "%call_ln293 = call void @narrowToWideConverter<4u, 8u, 16u, complex<ap_fixed<32, 18, 5, 3, 0> > >, i256 %ssrWideStream4kernelOut, i32 %p_outMemWideStreamArray_0_0_0_0_0_0, i32 %p_outMemWideStreamArray_0_0_0_0_0_030, i32 %p_outMemWideStreamArray_0_0_0_0_0_031, i32 %p_outMemWideStreamArray_0_0_0_0_0_032, i32 %p_outMemWideStreamArray_0_0_0_0_0_033, i32 %p_outMemWideStreamArray_0_0_0_0_0_034, i32 %p_outMemWideStreamArray_0_0_0_0_0_035, i32 %p_outMemWideStreamArray_0_0_0_0_0_036, i32 %p_outMemWideStreamArray_0_0_1_0_0_0, i32 %p_outMemWideStreamArray_0_0_1_0_0_044, i32 %p_outMemWideStreamArray_0_0_1_0_0_045, i32 %p_outMemWideStreamArray_0_0_1_0_0_046, i32 %p_outMemWideStreamArray_0_0_1_0_0_047, i32 %p_outMemWideStreamArray_0_0_1_0_0_048, i32 %p_outMemWideStreamArray_0_0_1_0_0_049, i32 %p_outMemWideStreamArray_0_0_1_0_0_050" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:293]   --->   Operation 57 'call' 'call_ln293' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%ret_ln295 = ret" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:295]   --->   Operation 58 'ret' 'ret_ln295' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 1.08ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

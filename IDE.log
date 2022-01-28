@@ -1,0 +1,278 @@
+10:45:42 INFO  : Logs will be stored at '/home/centos/workspace/IDE.log'.
+10:45:47 INFO  : Registering command handlers for Vitis TCF services
+10:45:47 INFO  : Launching XSCT server: xsct -n  -interactive /home/centos/workspace/temp_xsdb_launch_script.tcl
+10:45:47 INFO  : Platform repository initialization has completed.
+10:45:59 INFO  : XSCT server has started successfully.
+10:45:59 INFO  : plnx-install-location is set to ''
+10:45:59 INFO  : Successfully done setting XSCT server connection channel  
+10:46:18 INFO  : Successfully done setting workspace for the tool. 
+10:46:18 INFO  : Successfully done query RDI_DATADIR 
+10:56:03 INFO  : Added binary container 'binary_container_1' in project 'vadd_system_hw_link'
+10:56:03 INFO  : Added kernel '[krnl_vadd - vadd_kernels/src/krnl_vadd.cpp]' in binary container 'binary_container_1' of project 'vadd_system_hw_link'
+11:05:00 INFO  : Launching executable: Emulation-SW/vadd  ${project_loc:vadd_system}/Emulation-SW/binary_container_1.xclbin
+11:11:51 INFO  : Launching executable: Emulation-SW/vadd  ${project_loc:vadd_system}/Emulation-SW/binary_container_1.xclbin
+12:28:58 INFO  : Build configuration of 'vadd_system_hw_link' is updated to 'Emulation-HW'
+12:28:58 INFO  : Build configuration of 'vadd_kernels' is updated to 'Emulation-HW'
+12:28:58 INFO  : Build configuration of 'vadd' is updated to 'Emulation-HW'
+12:29:04 ERROR : Failed to run the application using 'SystemDebugger_vadd_system_1_vadd'.
+12:37:56 INFO  : Launching executable: Emulation-HW/vadd  ${project_loc:vadd_system}/Emulation-HW/binary_container_1.xclbin
+12:58:22 INFO  : Build configuration of 'vadd_system_hw_link' is updated to 'Hardware'
+12:58:23 INFO  : Build configuration of 'vadd_kernels' is updated to 'Hardware'
+12:58:23 INFO  : Build configuration of 'vadd' is updated to 'Hardware'
+15:06:17 INFO  : Logs will be stored at '/home/centos/workspace/IDE.log'.
+15:06:18 INFO  : Launching XSCT server: xsct -n  -interactive /home/centos/workspace/temp_xsdb_launch_script.tcl
+15:06:19 INFO  : Platform repository initialization has completed.
+15:06:21 INFO  : Registering command handlers for Vitis TCF services
+15:06:23 INFO  : XSCT server has started successfully.
+15:06:23 INFO  : Successfully done setting XSCT server connection channel  
+15:06:23 INFO  : plnx-install-location is set to ''
+15:06:23 INFO  : Successfully done setting workspace for the tool. 
+15:06:23 INFO  : Successfully done query RDI_DATADIR 
+15:11:25 INFO  : Build configuration of 'vadd_system' is updated to 'Emulation-SW'
+15:11:25 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+15:11:25 INFO  : Build configuration of 'vadd_system_hw_link' is updated to 'Emulation-SW'
+15:11:25 INFO  : Build configuration of 'vadd' is updated to 'Emulation-SW'
+15:12:44 INFO  : Added binary container 'binary_container_1' in project 'wide_vadd_system_hw_link'
+15:12:44 INFO  : Added kernel '[krnl_vadd - wide_vadd_kernels/src/krnl_vadd.cpp]' in binary container 'binary_container_1' of project 'wide_vadd_system_hw_link'
+15:19:31 INFO  : Build configuration of 'wide_vadd_system' is updated to 'Emulation-HW'
+15:19:31 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+15:19:31 INFO  : Build configuration of 'wide_vadd_system_hw_link' is updated to 'Emulation-HW'
+15:19:31 INFO  : Build configuration of 'wide_vadd' is updated to 'Emulation-HW'
+15:27:25 INFO  : Launching executable: Emulation-HW/wide_vadd  ${project_loc:wide_vadd_system}/Emulation-HW/binary_container_1.xclbin
+15:31:55 INFO  : Logs will be stored at '/home/centos/workspace/IDE.log'.
+15:31:56 INFO  : Launching XSCT server: xsct -n  -interactive /home/centos/workspace/temp_xsdb_launch_script.tcl
+15:31:59 INFO  : Platform repository initialization has completed.
+15:32:01 INFO  : Registering command handlers for Vitis TCF services
+15:32:01 INFO  : XSCT server has started successfully.
+15:32:03 INFO  : plnx-install-location is set to ''
+15:32:03 INFO  : Successfully done setting XSCT server connection channel  
+15:32:03 INFO  : Successfully done setting workspace for the tool. 
+15:32:03 INFO  : Successfully done query RDI_DATADIR 
+16:15:15 INFO  : Launching executable: Emulation-SW/threshold ../../data/128x128.png 
+16:25:29 INFO  : Launching executable: Emulation-SW/threshold  ${project_loc:threshold_system}/Emulation-SW/krnl_threshold.xclbin
+16:27:23 INFO  : Launching executable: Emulation-SW/threshold  ${project_loc:threshold_system}/Emulation-SW/krnl_threshold.xclbin
+16:27:49 INFO  : Launching executable: Emulation-SW/threshold ../../data/128x128.png 
+16:56:18 INFO  : Build configuration of 'threshold_system' is updated to 'Emulation-HW'
+16:56:18 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+16:56:18 INFO  : Build configuration of 'threshold_system_hw_link' is updated to 'Emulation-HW'
+16:56:18 INFO  : Build configuration of 'threshold_kernels' is updated to 'Emulation-HW'
+16:59:42 INFO  : Build configuration of 'threshold_system' is updated to 'Emulation-SW'
+16:59:42 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+16:59:42 INFO  : Build configuration of 'threshold_system_hw_link' is updated to 'Emulation-SW'
+16:59:42 INFO  : Build configuration of 'threshold_kernels' is updated to 'Emulation-SW'
+16:59:42 INFO  : Launching executable: Emulation-SW/threshold ../../data/128x128.png 
+16:59:57 INFO  : Build configuration of 'threshold_system' is updated to 'Emulation-HW'
+16:59:57 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+16:59:57 INFO  : Build configuration of 'threshold_system_hw_link' is updated to 'Emulation-HW'
+16:59:57 INFO  : Build configuration of 'threshold_kernels' is updated to 'Emulation-HW'
+17:01:09 INFO  : Build configuration of 'threshold_system' is updated to 'Emulation-SW'
+17:01:09 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+17:01:09 INFO  : Build configuration of 'threshold_system_hw_link' is updated to 'Emulation-SW'
+17:01:09 INFO  : Build configuration of 'threshold_kernels' is updated to 'Emulation-SW'
+17:01:09 INFO  : Launching executable: Emulation-SW/threshold ../../data/128x128.png 
+17:01:19 INFO  : Build configuration of 'threshold_system' is updated to 'Emulation-HW'
+17:01:19 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+17:01:19 INFO  : Build configuration of 'threshold_system_hw_link' is updated to 'Emulation-HW'
+17:01:19 INFO  : Build configuration of 'threshold_kernels' is updated to 'Emulation-HW'
+17:01:22 INFO  : Build configuration of 'threshold_system' is updated to 'Emulation-SW'
+17:01:22 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+17:01:22 INFO  : Build configuration of 'threshold_system_hw_link' is updated to 'Emulation-SW'
+17:01:22 INFO  : Build configuration of 'threshold_kernels' is updated to 'Emulation-SW'
+17:01:22 INFO  : Launching executable: Emulation-SW/threshold ../../data/128x128.png 
+17:02:15 INFO  : Build configuration of 'threshold_system' is updated to 'Emulation-HW'
+17:02:15 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+17:02:15 INFO  : Build configuration of 'threshold_system_hw_link' is updated to 'Emulation-HW'
+17:02:15 INFO  : Build configuration of 'threshold_kernels' is updated to 'Emulation-HW'
+17:03:52 INFO  : Build configuration of 'threshold_system' is updated to 'Hardware'
+17:03:52 INFO  : Build configuration of system project is automatically updated to 'Hardware'.
+17:03:52 INFO  : Build configuration of 'threshold_system_hw_link' is updated to 'Hardware'
+17:03:52 INFO  : Build configuration of 'threshold_kernels' is updated to 'Hardware'
+10:12:46 INFO  : Logs will be stored at '/home/centos/workspace/IDE.log'.
+10:12:50 INFO  : Launching XSCT server: xsct -n  -interactive /home/centos/workspace/temp_xsdb_launch_script.tcl
+10:12:53 INFO  : Platform repository initialization has completed.
+10:12:54 INFO  : Registering command handlers for Vitis TCF services
+10:12:55 INFO  : XSCT server has started successfully.
+10:12:56 INFO  : plnx-install-location is set to ''
+10:12:56 INFO  : Successfully done query RDI_DATADIR 
+10:12:56 INFO  : Successfully done setting XSCT server connection channel  
+10:12:56 INFO  : Successfully done setting workspace for the tool. 
+16:15:00 INFO  : Added binary container 'binary_container_1' in project 'project_fft_system_hw_link'
+16:15:00 INFO  : Added kernel '[fft2DKernel - project_fft_kernels/src/top_module.cpp]' in binary container 'binary_container_1' of project 'project_fft_system_hw_link'
+17:18:08 INFO  : Launching executable: Emulation-SW/project_fft  ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+17:19:40 INFO  : Launching executable: Emulation-SW/project_fft  ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+17:24:28 INFO  : Launching executable: Emulation-SW/project_fft  ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+17:36:41 INFO  : Launching executable: Emulation-SW/project_fft  ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+17:43:37 INFO  : Launching executable: Emulation-SW/project_fft ../binary_container_1.xclbin
+17:44:16 INFO  : Launching executable: Emulation-SW/project_fft ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+09:22:20 INFO  : Logs will be stored at '/home/centos/workspace/IDE.log'.
+09:22:25 INFO  : Launching XSCT server: xsct -n  -interactive /home/centos/workspace/temp_xsdb_launch_script.tcl
+09:22:27 INFO  : Registering command handlers for Vitis TCF services
+09:22:27 INFO  : Platform repository initialization has completed.
+09:22:30 INFO  : XSCT server has started successfully.
+09:22:30 INFO  : Successfully done setting XSCT server connection channel  
+09:22:31 INFO  : plnx-install-location is set to ''
+09:22:31 INFO  : Successfully done setting workspace for the tool. 
+09:22:31 INFO  : Successfully done query RDI_DATADIR 
+09:48:43 INFO  : Launching executable: Emulation-SW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+11:19:41 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-HW'
+11:19:41 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+11:19:41 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-HW'
+11:19:41 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-HW'
+12:24:06 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-SW'
+12:24:06 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+12:24:06 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-SW'
+12:24:06 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-SW'
+12:26:08 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-HW'
+12:26:08 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+12:26:08 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-HW'
+12:26:08 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-HW'
+12:27:13 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-SW'
+12:27:13 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+12:27:13 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-SW'
+12:27:13 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-SW'
+12:27:28 INFO  : Launching executable: Emulation-SW/project_fft  ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+12:27:48 INFO  : Launching executable: Emulation-SW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+12:28:07 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-HW'
+12:28:07 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+12:28:07 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-HW'
+12:28:07 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-HW'
+12:30:15 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-SW'
+12:30:15 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+12:30:15 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-SW'
+12:30:15 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-SW'
+12:30:52 INFO  : Launching executable: Emulation-SW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+12:30:59 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-HW'
+12:30:59 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+12:30:59 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-HW'
+12:30:59 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-HW'
+13:05:45 INFO  : Launching executable: Emulation-HW/project_fft  ${project_loc:project_fft_system}/Emulation-HW/binary_container_1.xclbin
+13:10:18 INFO  : Launching executable: Emulation-HW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:11:15 INFO  : Launching executable: Emulation-HW/project_fft  ${project_loc:project_fft_system}/Emulation-HW/binary_container_1.xclbin
+13:11:44 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-SW'
+13:11:44 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+13:11:44 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-SW'
+13:11:44 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-SW'
+13:12:56 INFO  : Launching executable: Emulation-SW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:13:02 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-HW'
+13:13:02 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+13:13:02 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-HW'
+13:13:02 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-HW'
+13:14:00 INFO  : Launching executable: Emulation-HW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:14:26 INFO  : Launching executable: Emulation-HW/project_fft  ${project_loc:project_fft_system}/Emulation-HW/binary_container_1.xclbin
+13:14:36 INFO  : Launching executable: Emulation-HW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:14:44 INFO  : Launching executable: Emulation-HW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:16:23 INFO  : Launching executable: Emulation-HW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:16:34 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-SW'
+13:16:34 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+13:16:34 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-SW'
+13:16:34 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-SW'
+13:16:44 INFO  : Launching executable: Emulation-SW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:16:57 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-HW'
+13:16:57 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+13:16:57 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-HW'
+13:16:57 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-HW'
+13:17:23 INFO  : Launching executable: Emulation-HW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:19:53 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-SW'
+13:19:53 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+13:19:53 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-SW'
+13:19:53 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-SW'
+13:20:01 INFO  : Launching executable: Emulation-SW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:24:27 INFO  : Launching executable: Emulation-SW/project_fft  ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:25:35 INFO  : Launching executable: Emulation-SW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:27:40 INFO  : Launching executable: Emulation-SW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:28:38 INFO  : Launching executable: Emulation-SW/project_fft  ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:31:27 INFO  : Launching executable: Emulation-SW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+13:31:36 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-HW'
+13:31:36 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+13:31:36 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-HW'
+13:31:36 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-HW'
+13:34:21 INFO  : Launching executable: Emulation-HW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-HW/binary_container_1.xclbin
+13:35:18 INFO  : Launching executable: Emulation-HW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-HW/binary_container_1.xclbin
+14:13:26 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-SW'
+14:13:26 INFO  : Build configuration of system project is automatically updated to 'Emulation-SW'.
+14:13:26 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-SW'
+14:13:26 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-SW'
+14:15:33 INFO  : Launching executable: Emulation-SW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-SW/binary_container_1.xclbin
+14:17:14 INFO  : Build configuration of 'project_fft_system' is updated to 'Emulation-HW'
+14:17:14 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+14:17:14 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Emulation-HW'
+14:17:14 INFO  : Build configuration of 'project_fft' is updated to 'Emulation-HW'
+14:20:21 INFO  : Launching executable: Emulation-HW/project_fft -xclbin ${project_loc:project_fft_system}/Emulation-HW/binary_container_1.xclbin
+15:43:24 ERROR : Error while launch xterm: {}
+java.io.IOException: Cannot run program "xterm" (in directory "/home/centos/workspace"): error=2, No such file or directory
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1128) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1071) ~[?:?]
+	at com.xilinx.ide.tools.console.OpenXBashHandler$1.run(OpenXBashHandler.java:99) ~[?:?]
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40) ~[org.eclipse.swt.gtk.linux.x86_64_3.114.0.v20200304-0601.jar:?]
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185) ~[org.eclipse.swt.gtk.linux.x86_64_3.114.0.v20200304-0601.jar:?]
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4930) ~[org.eclipse.swt.gtk.linux.x86_64_3.114.0.v20200304-0601.jar:?]
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4451) ~[org.eclipse.swt.gtk.linux.x86_64_3.114.0.v20200304-0601.jar:?]
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160) ~[?:?]
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338) ~[?:?]
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049) ~[?:?]
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155) ~[org.eclipse.e4.ui.workbench_1.11.200.v20200205-1503.jar:?]
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:658) ~[org.eclipse.ui.workbench_3.118.0.v20200222-0719.jar:?]
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338) [org.eclipse.core.databinding.observable_1.9.0.v20200205-2119.jar:?]
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557) [org.eclipse.ui.workbench_3.118.0.v20200222-0719.jar:?]
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154) [org.eclipse.ui.workbench_3.118.0.v20200222-0719.jar:?]
+	at com.xilinx.ide.application.ui.Application.start(Application.java:80) [com.xilinx.ide.application.ui_1.0.0.202106100226.jar:?]
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203) [org.eclipse.equinox.app_1.4.400.v20191212-0743.jar:?]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137) [org.eclipse.osgi_3.15.200.v20200214-1600.jar:?]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107) [org.eclipse.osgi_3.15.200.v20200214-1600.jar:?]
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401) [org.eclipse.osgi_3.15.200.v20200214-1600.jar:?]
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255) [org.eclipse.osgi_3.15.200.v20200214-1600.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657) [org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar:?]
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594) [org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar:?]
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447) [org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar:?]
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1420) [org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar:?]
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.lang.ProcessImpl.forkAndExec(Native Method) ~[?:?]
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:340) ~[?:?]
+	at java.lang.ProcessImpl.start(ProcessImpl.java:271) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1107) ~[?:?]
+	... 28 more
+15:43:24 ERROR : Error while launch konsole: {}
+java.io.IOException: Cannot run program "konsole" (in directory "/home/centos/workspace"): error=2, No such file or directory
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1128) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1071) ~[?:?]
+	at com.xilinx.ide.tools.console.OpenXBashHandler$1.run(OpenXBashHandler.java:109) ~[?:?]
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40) ~[org.eclipse.swt.gtk.linux.x86_64_3.114.0.v20200304-0601.jar:?]
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185) ~[org.eclipse.swt.gtk.linux.x86_64_3.114.0.v20200304-0601.jar:?]
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4930) ~[org.eclipse.swt.gtk.linux.x86_64_3.114.0.v20200304-0601.jar:?]
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4451) ~[org.eclipse.swt.gtk.linux.x86_64_3.114.0.v20200304-0601.jar:?]
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160) ~[?:?]
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338) ~[?:?]
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049) ~[?:?]
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155) ~[org.eclipse.e4.ui.workbench_1.11.200.v20200205-1503.jar:?]
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:658) ~[org.eclipse.ui.workbench_3.118.0.v20200222-0719.jar:?]
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338) [org.eclipse.core.databinding.observable_1.9.0.v20200205-2119.jar:?]
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557) [org.eclipse.ui.workbench_3.118.0.v20200222-0719.jar:?]
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154) [org.eclipse.ui.workbench_3.118.0.v20200222-0719.jar:?]
+	at com.xilinx.ide.application.ui.Application.start(Application.java:80) [com.xilinx.ide.application.ui_1.0.0.202106100226.jar:?]
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203) [org.eclipse.equinox.app_1.4.400.v20191212-0743.jar:?]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137) [org.eclipse.osgi_3.15.200.v20200214-1600.jar:?]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107) [org.eclipse.osgi_3.15.200.v20200214-1600.jar:?]
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401) [org.eclipse.osgi_3.15.200.v20200214-1600.jar:?]
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255) [org.eclipse.osgi_3.15.200.v20200214-1600.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657) [org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar:?]
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594) [org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar:?]
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447) [org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar:?]
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1420) [org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar:?]
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.lang.ProcessImpl.forkAndExec(Native Method) ~[?:?]
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:340) ~[?:?]
+	at java.lang.ProcessImpl.start(ProcessImpl.java:271) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1107) ~[?:?]
+	... 28 more
+17:34:26 INFO  : Build configuration of 'project_fft_system' is updated to 'Hardware'
+17:34:26 INFO  : Build configuration of system project is automatically updated to 'Hardware'.
+17:34:26 INFO  : Build configuration of 'project_fft_system_hw_link' is updated to 'Hardware'
+17:34:26 INFO  : Build configuration of 'project_fft_kernels' is updated to 'Hardware'

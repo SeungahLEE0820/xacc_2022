@@ -1,0 +1,2745 @@
+
+
+================================================================
+== Vitis HLS Report for 'genMemWideFFTKernel1DArray_1'
+================================================================
+* Date:           Thu Jan 27 12:46:50 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  3.086 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------------------------------------+------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+        |                                                                     |                                                                  |  Latency (cycles) |  Latency (absolute) |  Interval |                 Pipeline                 |
+        |                               Instance                              |                              Module                              |   min   |   max   |    min   |    max   | min | max |                   Type                   |
+        +---------------------------------------------------------------------+------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+        |wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0   |wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182   |       32|       33|  0.128 us|  0.132 us|   32|   32|  loop rewind stp(delay=0 clock cycles(s))|
+        |genMemWideFFTKernel1DArray_3_U0                                      |genMemWideFFTKernel1DArray_3                                      |        ?|        ?|         ?|         ?|    ?|    ?|                                  dataflow|
+        |fftStreamingKernel_2_U0                                              |fftStreamingKernel_2                                              |        ?|        ?|         ?|         ?|    ?|    ?|                                        no|
+        |narrowToWideConverter_4u_8u_16u_complex_ap_fixed_27_13_5_3_0_183_U0  |narrowToWideConverter_4u_8u_16u_complex_ap_fixed_27_13_5_3_0_183  |       33|       34|  0.132 us|  0.136 us|   32|   32|  loop rewind stp(delay=0 clock cycles(s))|
+        +---------------------------------------------------------------------+------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       28|    -|
+|FIFO                 |        -|     -|     1550|      840|    -|
+|Instance             |        0|    28|    25630|    34560|    0|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|       27|    -|
+|Register             |        -|     -|        3|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|    28|    27183|    35455|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     1|        3|        8|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|    ~0|        1|        2|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------------------------------------+------------------------------------------------------------------+---------+----+-------+-------+-----+
+    |                               Instance                              |                              Module                              | BRAM_18K| DSP|   FF  |  LUT  | URAM|
+    +---------------------------------------------------------------------+------------------------------------------------------------------+---------+----+-------+-------+-----+
+    |fftStreamingKernel_2_U0                                              |fftStreamingKernel_2                                              |        0|  14|  10554|  12548|    0|
+    |genMemWideFFTKernel1DArray_3_U0                                      |genMemWideFFTKernel1DArray_3                                      |        0|  14|  13590|  17707|    0|
+    |narrowToWideConverter_4u_8u_16u_complex_ap_fixed_27_13_5_3_0_183_U0  |narrowToWideConverter_4u_8u_16u_complex_ap_fixed_27_13_5_3_0_183  |        0|   0|   1109|   3209|    0|
+    |wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0   |wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182   |        0|   0|    377|   1096|    0|
+    +---------------------------------------------------------------------+------------------------------------------------------------------+---------+----+-------+-------+-----+
+    |Total                                                                |                                                                  |        0|  28|  25630|  34560|    0|
+    +---------------------------------------------------------------------+------------------------------------------------------------------+---------+----+-------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +---------------------------+---------+-----+----+-----+------+-----+---------+
+    |            Name           | BRAM_18K|  FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +---------------------------+---------+-----+----+-----+------+-----+---------+
+    |ssrWideStream4kernelIn_U   |        0|  775|   0|    -|     2|  256|      512|
+    |ssrWideStream4kernelOut_U  |        0|  775|   0|    -|     2|  256|      512|
+    +---------------------------+---------+-----+----+-----+------+-----+---------+
+    |Total                      |        0| 1550|   0|    0|     4|  512|     1024|
+    +---------------------------+---------+-----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +-------------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                                    Variable Name                                    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |ap_ext_blocking_n                                                                    |       and|   0|  0|   2|           1|           1|
+    |ap_ext_blocking_sub_n                                                                |       and|   0|  0|   2|           1|           1|
+    |ap_idle                                                                              |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_n                                                                    |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_sub_n                                                                |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_n                                                                    |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_sub_n                                                                |       and|   0|  0|   2|           1|           1|
+    |ap_sync_continue                                                                     |       and|   0|  0|   2|           1|           1|
+    |ap_sync_done                                                                         |       and|   0|  0|   2|           1|           1|
+    |ap_sync_ready                                                                        |       and|   0|  0|   2|           1|           1|
+    |genMemWideFFTKernel1DArray_3_U0_ap_start                                             |       and|   0|  0|   2|           1|           1|
+    |wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0_ap_start          |       and|   0|  0|   2|           1|           1|
+    |ap_sync_genMemWideFFTKernel1DArray_3_U0_ap_ready                                     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0_ap_ready  |        or|   0|  0|   2|           1|           1|
+    +-------------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                                                |          |   0|  0|  28|          14|          14|
+    +-------------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |                                           Name                                          | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_genMemWideFFTKernel1DArray_3_U0_ap_ready                                     |   9|          2|    1|          2|
+    |ap_sync_reg_wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0_ap_ready  |   9|          2|    1|          2|
+    |real_start                                                                               |   9|          2|    1|          2|
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                                                    |  27|          6|    3|          6|
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |                                           Name                                          | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_genMemWideFFTKernel1DArray_3_U0_ap_ready                                     |  1|   0|    1|          0|
+    |ap_sync_reg_wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0_ap_ready  |  1|   0|    1|          0|
+    |start_once_reg                                                                           |  1|   0|    1|          0|
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                                                    |  3|   0|    3|          0|
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------------------+-----+-----+------------+----------------------------------------+--------------+
+|                   RTL Ports                   | Dir | Bits|  Protocol  |              Source Object             |    C Type    |
++-----------------------------------------------+-----+-----+------------+----------------------------------------+--------------+
+|ap_start                                       |   in|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|start_full_n                                   |   in|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|start_out                                      |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|start_write                                    |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_clk                                         |   in|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_rst                                         |   in|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_done                                        |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_ready                                       |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_idle                                        |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_continue                                    |   in|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_ext_blocking_n                              |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_str_blocking_n                              |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_int_blocking_n                              |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|p_inMemWideStreamArray_0_0_0_0_0_0_dout        |   in|   22|     ap_fifo|      p_inMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0_empty_n     |   in|    1|     ap_fifo|      p_inMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0_read        |  out|    1|     ap_fifo|      p_inMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_01_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_01|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_01_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_01|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_01_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_01|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_02_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_02_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_02_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_03_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_03_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_03_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_04_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_04|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_04_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_04|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_04_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_04|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_05_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_05|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_05_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_05|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_05_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_05|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_06_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_06|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_06_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_06|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_06_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_06|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_07_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_07|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_07_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_07|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_07_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_07|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_018_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_018_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_018_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_019_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_019_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_019_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0110_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0110|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0110_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0110|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0110_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0110|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0111_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0111|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0111_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0111|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0111_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0111|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0112_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0112|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0112_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0112|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0112_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0112|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0113_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0113|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0113_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0113|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0113_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0113|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0114_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0114|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0114_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0114|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0114_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0114|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0115_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0115|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0115_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0115|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0115_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0115|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0_dout        |   in|   22|     ap_fifo|      p_inMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0_empty_n     |   in|    1|     ap_fifo|      p_inMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0_read        |  out|    1|     ap_fifo|      p_inMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_016_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_016|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_016_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_016|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_016_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_016|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_017_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_017|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_017_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_017|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_017_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_017|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_018_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_018_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_018_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_019_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_019_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_019_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_020_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_020|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_020_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_020|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_020_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_020|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_021_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_021|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_021_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_021|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_021_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_021|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_022_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_022|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_022_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_022|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_022_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_022|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_02_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_1_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_02_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_1_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_02_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_1_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0223_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0223|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0223_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0223|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0223_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0223|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0224_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0224|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0224_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0224|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0224_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0224|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0225_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0225|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0225_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0225|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0225_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0225|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0226_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0226|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0226_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0226|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0226_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0226|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0227_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0227|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0227_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0227|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0227_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0227|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0228_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0228|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0228_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0228|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0228_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0228|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0229_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0229|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0229_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0229|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0229_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0229|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0_din        |  out|   27|     ap_fifo|     p_outMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0_full_n     |   in|    1|     ap_fifo|     p_outMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0_write      |  out|    1|     ap_fifo|     p_outMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_030_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_030|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_030_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_030|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_030_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_030|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_031_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_031|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_031_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_031|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_031_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_031|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_032_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_032|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_032_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_032|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_032_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_032|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_033_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_033|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_033_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_033|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_033_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_033|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_034_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_034|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_034_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_034|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_034_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_034|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_035_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_035|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_035_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_035|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_035_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_035|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_036_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_036|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_036_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_036|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_036_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_036|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_03_din       |  out|   27|     ap_fifo|    p_outMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_03_full_n    |   in|    1|     ap_fifo|    p_outMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_03_write     |  out|    1|     ap_fifo|    p_outMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0337_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0337|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0337_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0337|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0337_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0337|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0338_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0338|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0338_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0338|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0338_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0338|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0339_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0339|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0339_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0339|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0339_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0339|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0340_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0340|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0340_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0340|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0340_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0340|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0341_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0341|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0341_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0341|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0341_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0341|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0342_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0342|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0342_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0342|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0342_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0342|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0343_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0343|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0343_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0343|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0343_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0343|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0_din        |  out|   27|     ap_fifo|     p_outMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0_full_n     |   in|    1|     ap_fifo|     p_outMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0_write      |  out|    1|     ap_fifo|     p_outMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_044_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_044|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_044_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_044|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_044_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_044|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_045_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_045|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_045_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_045|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_045_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_045|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_046_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_046|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_046_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_046|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_046_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_046|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_047_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_047|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_047_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_047|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_047_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_047|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_048_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_048|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_048_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_048|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_048_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_048|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_049_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_049|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_049_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_049|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_049_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_049|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_050_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_050|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_050_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_050|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_050_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_050|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_04_din       |  out|   27|     ap_fifo|    p_outMemWideStreamArray_0_0_1_0_0_04|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_04_full_n    |   in|    1|     ap_fifo|    p_outMemWideStreamArray_0_0_1_0_0_04|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_04_write     |  out|    1|     ap_fifo|    p_outMemWideStreamArray_0_0_1_0_0_04|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0451_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0451|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0451_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0451|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0451_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0451|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0452_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0452|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0452_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0452|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0452_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0452|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0453_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0453|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0453_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0453|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0453_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0453|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0454_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0454|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0454_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0454|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0454_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0454|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0455_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0455|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0455_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0455|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0455_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0455|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0456_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0456|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0456_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0456|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0456_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0456|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0457_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0457|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0457_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0457|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0457_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0457|       pointer|
++-----------------------------------------------+-----+-----+------------+----------------------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 6, States = { 1 2 3 4 5 6 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ssrWideStream4kernelIn = alloca i64 1" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:200]   --->   Operation 7 'alloca' 'ssrWideStream4kernelIn' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.43> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 2> <FIFO>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%ssrWideStream4kernelOut = alloca i64 1" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:205]   --->   Operation 8 'alloca' 'ssrWideStream4kernelOut' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.43> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 2> <FIFO>
+ST_1 : Operation 9 [2/2] (0.00ns)   --->   "%call_ln211 = call void @wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182, i22 %p_inMemWideStreamArray_0_0_0_0_0_018, i22 %p_inMemWideStreamArray_0_0_0_0_0_019, i22 %p_inMemWideStreamArray_0_0_0_0_0_0110, i22 %p_inMemWideStreamArray_0_0_0_0_0_0111, i22 %p_inMemWideStreamArray_0_0_0_0_0_0112, i22 %p_inMemWideStreamArray_0_0_0_0_0_0113, i22 %p_inMemWideStreamArray_0_0_0_0_0_0114, i22 %p_inMemWideStreamArray_0_0_0_0_0_0115, i22 %p_inMemWideStreamArray_0_0_1_0_0_02, i22 %p_inMemWideStreamArray_0_0_1_0_0_0223, i22 %p_inMemWideStreamArray_0_0_1_0_0_0224, i22 %p_inMemWideStreamArray_0_0_1_0_0_0225, i22 %p_inMemWideStreamArray_0_0_1_0_0_0226, i22 %p_inMemWideStreamArray_0_0_1_0_0_0227, i22 %p_inMemWideStreamArray_0_0_1_0_0_0228, i22 %p_inMemWideStreamArray_0_0_1_0_0_0229, i256 %ssrWideStream4kernelIn" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:211]   --->   Operation 9 'call' 'call_ln211' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 10 [2/2] (0.00ns)   --->   "%call_ln227 = call void @genMemWideFFTKernel1DArray.3, i22 %p_inMemWideStreamArray_0_0_0_0_0_0, i22 %p_inMemWideStreamArray_0_0_0_0_0_01, i22 %p_inMemWideStreamArray_0_0_0_0_0_02, i22 %p_inMemWideStreamArray_0_0_0_0_0_03, i22 %p_inMemWideStreamArray_0_0_0_0_0_04, i22 %p_inMemWideStreamArray_0_0_0_0_0_05, i22 %p_inMemWideStreamArray_0_0_0_0_0_06, i22 %p_inMemWideStreamArray_0_0_0_0_0_07, i22 %p_inMemWideStreamArray_0_0_1_0_0_0, i22 %p_inMemWideStreamArray_0_0_1_0_0_016, i22 %p_inMemWideStreamArray_0_0_1_0_0_017, i22 %p_inMemWideStreamArray_0_0_1_0_0_018, i22 %p_inMemWideStreamArray_0_0_1_0_0_019, i22 %p_inMemWideStreamArray_0_0_1_0_0_020, i22 %p_inMemWideStreamArray_0_0_1_0_0_021, i22 %p_inMemWideStreamArray_0_0_1_0_0_022, i27 %p_outMemWideStreamArray_0_0_0_0_0_0, i27 %p_outMemWideStreamArray_0_0_0_0_0_030, i27 %p_outMemWideStreamArray_0_0_0_0_0_031, i27 %p_outMemWideStreamArray_0_0_0_0_0_032, i27 %p_outMemWideStreamArray_0_0_0_0_0_033, i27 %p_outMemWideStreamArray_0_0_0_0_0_034, i27 %p_outMemWideStreamArray_0_0_0_0_0_035, i27 %p_outMemWideStreamArray_0_0_0_0_0_036, i27 %p_outMemWideStreamArray_0_0_1_0_0_0, i27 %p_outMemWideStreamArray_0_0_1_0_0_044, i27 %p_outMemWideStreamArray_0_0_1_0_0_045, i27 %p_outMemWideStreamArray_0_0_1_0_0_046, i27 %p_outMemWideStreamArray_0_0_1_0_0_047, i27 %p_outMemWideStreamArray_0_0_1_0_0_048, i27 %p_outMemWideStreamArray_0_0_1_0_0_049, i27 %p_outMemWideStreamArray_0_0_1_0_0_050, i2 %control_count_V_2, i2 %control_bits_V_2, i2 %sample_in_read_count_V_2, i1 %delay_line_stall_2, i45 %delayline_Array_29, i45 %delayline_Array_32, i45 %delayline_Array_34, i32 %control_delayline_Array_23, i32 %control_delayline_Array_1, i32 %control_delayline_Array_3, i45 %delayline_Array_28, i45 %delayline_Array_31, i45 %delayline_Array_33, i18 %twiddleObj_twiddleTable_M_imag_V_3, i2 %control_count_V_1, i2 %control_bits_V_1, i2 %sample_in_read_count_V_1, i1 %delay_line_stall_1, i51 %delayline_Array_21, i51 %delayline_Array_23, i51 %delayline_Array_27, i32 %control_delayline_Array_19, i32 %control_delayline_Array_20, i32 %control_delayline_Array_22, i51 %delayline_Array_20, i51 %delayline_Array_22, i51 %delayline_Array_26" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:227]   --->   Operation 10 'call' 'call_ln227' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 11 [1/2] (0.00ns)   --->   "%call_ln211 = call void @wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182, i22 %p_inMemWideStreamArray_0_0_0_0_0_018, i22 %p_inMemWideStreamArray_0_0_0_0_0_019, i22 %p_inMemWideStreamArray_0_0_0_0_0_0110, i22 %p_inMemWideStreamArray_0_0_0_0_0_0111, i22 %p_inMemWideStreamArray_0_0_0_0_0_0112, i22 %p_inMemWideStreamArray_0_0_0_0_0_0113, i22 %p_inMemWideStreamArray_0_0_0_0_0_0114, i22 %p_inMemWideStreamArray_0_0_0_0_0_0115, i22 %p_inMemWideStreamArray_0_0_1_0_0_02, i22 %p_inMemWideStreamArray_0_0_1_0_0_0223, i22 %p_inMemWideStreamArray_0_0_1_0_0_0224, i22 %p_inMemWideStreamArray_0_0_1_0_0_0225, i22 %p_inMemWideStreamArray_0_0_1_0_0_0226, i22 %p_inMemWideStreamArray_0_0_1_0_0_0227, i22 %p_inMemWideStreamArray_0_0_1_0_0_0228, i22 %p_inMemWideStreamArray_0_0_1_0_0_0229, i256 %ssrWideStream4kernelIn" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:211]   --->   Operation 11 'call' 'call_ln211' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 12 [1/2] (0.00ns)   --->   "%call_ln227 = call void @genMemWideFFTKernel1DArray.3, i22 %p_inMemWideStreamArray_0_0_0_0_0_0, i22 %p_inMemWideStreamArray_0_0_0_0_0_01, i22 %p_inMemWideStreamArray_0_0_0_0_0_02, i22 %p_inMemWideStreamArray_0_0_0_0_0_03, i22 %p_inMemWideStreamArray_0_0_0_0_0_04, i22 %p_inMemWideStreamArray_0_0_0_0_0_05, i22 %p_inMemWideStreamArray_0_0_0_0_0_06, i22 %p_inMemWideStreamArray_0_0_0_0_0_07, i22 %p_inMemWideStreamArray_0_0_1_0_0_0, i22 %p_inMemWideStreamArray_0_0_1_0_0_016, i22 %p_inMemWideStreamArray_0_0_1_0_0_017, i22 %p_inMemWideStreamArray_0_0_1_0_0_018, i22 %p_inMemWideStreamArray_0_0_1_0_0_019, i22 %p_inMemWideStreamArray_0_0_1_0_0_020, i22 %p_inMemWideStreamArray_0_0_1_0_0_021, i22 %p_inMemWideStreamArray_0_0_1_0_0_022, i27 %p_outMemWideStreamArray_0_0_0_0_0_0, i27 %p_outMemWideStreamArray_0_0_0_0_0_030, i27 %p_outMemWideStreamArray_0_0_0_0_0_031, i27 %p_outMemWideStreamArray_0_0_0_0_0_032, i27 %p_outMemWideStreamArray_0_0_0_0_0_033, i27 %p_outMemWideStreamArray_0_0_0_0_0_034, i27 %p_outMemWideStreamArray_0_0_0_0_0_035, i27 %p_outMemWideStreamArray_0_0_0_0_0_036, i27 %p_outMemWideStreamArray_0_0_1_0_0_0, i27 %p_outMemWideStreamArray_0_0_1_0_0_044, i27 %p_outMemWideStreamArray_0_0_1_0_0_045, i27 %p_outMemWideStreamArray_0_0_1_0_0_046, i27 %p_outMemWideStreamArray_0_0_1_0_0_047, i27 %p_outMemWideStreamArray_0_0_1_0_0_048, i27 %p_outMemWideStreamArray_0_0_1_0_0_049, i27 %p_outMemWideStreamArray_0_0_1_0_0_050, i2 %control_count_V_2, i2 %control_bits_V_2, i2 %sample_in_read_count_V_2, i1 %delay_line_stall_2, i45 %delayline_Array_29, i45 %delayline_Array_32, i45 %delayline_Array_34, i32 %control_delayline_Array_23, i32 %control_delayline_Array_1, i32 %control_delayline_Array_3, i45 %delayline_Array_28, i45 %delayline_Array_31, i45 %delayline_Array_33, i18 %twiddleObj_twiddleTable_M_imag_V_3, i2 %control_count_V_1, i2 %control_bits_V_1, i2 %sample_in_read_count_V_1, i1 %delay_line_stall_1, i51 %delayline_Array_21, i51 %delayline_Array_23, i51 %delayline_Array_27, i32 %control_delayline_Array_19, i32 %control_delayline_Array_20, i32 %control_delayline_Array_22, i51 %delayline_Array_20, i51 %delayline_Array_22, i51 %delayline_Array_26" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:227]   --->   Operation 12 'call' 'call_ln227' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 13 [2/2] (0.00ns)   --->   "%call_ln219 = call void @fftStreamingKernel.2, i256 %ssrWideStream4kernelIn, i256 %ssrWideStream4kernelOut, i2 %control_count_V_7, i2 %control_bits_V_7, i2 %sample_in_read_count_V_7, i1 %delay_line_stall_7, i45 %delayline_Array_14, i45 %delayline_Array_16, i45 %delayline_Array_19, i32 %control_delayline_Array_17, i32 %control_delayline_Array_2, i32 %control_delayline_Array_18, i45 %delayline_Array_12, i45 %delayline_Array_15, i45 %delayline_Array_17, i18 %twiddleObj_twiddleTable_M_imag_V_2, i2 %control_count_V_6, i2 %control_bits_V_6, i2 %sample_in_read_count_V_6, i1 %delay_line_stall_6, i51 %delayline_Array_4, i51 %delayline_Array_8, i51 %delayline_Array_10, i32 %control_delayline_Array_14, i32 %control_delayline_Array_15, i32 %control_delayline_Array_16, i51 %delayline_Array_3, i51 %delayline_Array_7, i51 %delayline_Array_9" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:219]   --->   Operation 13 'call' 'call_ln219' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 14 [1/2] (0.00ns)   --->   "%call_ln219 = call void @fftStreamingKernel.2, i256 %ssrWideStream4kernelIn, i256 %ssrWideStream4kernelOut, i2 %control_count_V_7, i2 %control_bits_V_7, i2 %sample_in_read_count_V_7, i1 %delay_line_stall_7, i45 %delayline_Array_14, i45 %delayline_Array_16, i45 %delayline_Array_19, i32 %control_delayline_Array_17, i32 %control_delayline_Array_2, i32 %control_delayline_Array_18, i45 %delayline_Array_12, i45 %delayline_Array_15, i45 %delayline_Array_17, i18 %twiddleObj_twiddleTable_M_imag_V_2, i2 %control_count_V_6, i2 %control_bits_V_6, i2 %sample_in_read_count_V_6, i1 %delay_line_stall_6, i51 %delayline_Array_4, i51 %delayline_Array_8, i51 %delayline_Array_10, i32 %control_delayline_Array_14, i32 %control_delayline_Array_15, i32 %control_delayline_Array_16, i51 %delayline_Array_3, i51 %delayline_Array_7, i51 %delayline_Array_9" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:219]   --->   Operation 14 'call' 'call_ln219' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 15 [2/2] (0.00ns)   --->   "%call_ln224 = call void @narrowToWideConverter<4u, 8u, 16u, complex<ap_fixed<27, 13, 5, 3, 0> > >.183, i256 %ssrWideStream4kernelOut, i27 %p_outMemWideStreamArray_0_0_0_0_0_03, i27 %p_outMemWideStreamArray_0_0_0_0_0_0337, i27 %p_outMemWideStreamArray_0_0_0_0_0_0338, i27 %p_outMemWideStreamArray_0_0_0_0_0_0339, i27 %p_outMemWideStreamArray_0_0_0_0_0_0340, i27 %p_outMemWideStreamArray_0_0_0_0_0_0341, i27 %p_outMemWideStreamArray_0_0_0_0_0_0342, i27 %p_outMemWideStreamArray_0_0_0_0_0_0343, i27 %p_outMemWideStreamArray_0_0_1_0_0_04, i27 %p_outMemWideStreamArray_0_0_1_0_0_0451, i27 %p_outMemWideStreamArray_0_0_1_0_0_0452, i27 %p_outMemWideStreamArray_0_0_1_0_0_0453, i27 %p_outMemWideStreamArray_0_0_1_0_0_0454, i27 %p_outMemWideStreamArray_0_0_1_0_0_0455, i27 %p_outMemWideStreamArray_0_0_1_0_0_0456, i27 %p_outMemWideStreamArray_0_0_1_0_0_0457" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:224]   --->   Operation 15 'call' 'call_ln224' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_0457, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_0456, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_0455, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_0454, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_0453, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_0452, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_0451, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_04, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_050, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_049, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_048, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_047, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_046, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_045, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_044, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_1_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_0343, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_0342, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_0341, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_0340, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_0339, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_0338, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_0337, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_03, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_036, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_035, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_034, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_033, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_032, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_031, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_030, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outMemWideStreamArray_0_0_0_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 47 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_0229, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 49 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_0228, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 49 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 50 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_0227, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 50 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 51 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_0226, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 51 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 52 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_0225, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 52 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_0224, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 53 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 54 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_0223, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 54 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_02, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 55 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_022, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 56 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_021, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 57 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_020, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_019, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_018, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 60 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_017, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 61 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_016, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 62 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_1_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 63 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_0115, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 64 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_0114, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 65 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_0113, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 66 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_0112, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 67 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_0111, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 68 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 69 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_0110, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 69 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_019, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 70 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_018, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 71 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_07, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 72 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_06, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 73 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_05, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 74 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_04, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 75 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 76 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_03, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 76 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 77 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_02, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 77 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 78 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_01, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 78 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 79 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i22 %p_inMemWideStreamArray_0_0_0_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 79 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 80 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_13"   --->   Operation 80 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i27 %p_outMemWideStreamArray_0_0_1_0_0_0, i27 %p_outMemWideStreamArray_0_0_1_0_0_044, i27 %p_outMemWideStreamArray_0_0_1_0_0_045, i27 %p_outMemWideStreamArray_0_0_1_0_0_046, i27 %p_outMemWideStreamArray_0_0_1_0_0_047, i27 %p_outMemWideStreamArray_0_0_1_0_0_048, i27 %p_outMemWideStreamArray_0_0_1_0_0_049, i27 %p_outMemWideStreamArray_0_0_1_0_0_050, i27 %p_outMemWideStreamArray_0_0_1_0_0_04, i27 %p_outMemWideStreamArray_0_0_1_0_0_0451, i27 %p_outMemWideStreamArray_0_0_1_0_0_0452, i27 %p_outMemWideStreamArray_0_0_1_0_0_0453, i27 %p_outMemWideStreamArray_0_0_1_0_0_0454, i27 %p_outMemWideStreamArray_0_0_1_0_0_0455, i27 %p_outMemWideStreamArray_0_0_1_0_0_0456, i27 %p_outMemWideStreamArray_0_0_1_0_0_0457, i64 666, i64 9, i64 18446744073709551615"   --->   Operation 81 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i27 %p_outMemWideStreamArray_0_0_0_0_0_0, i27 %p_outMemWideStreamArray_0_0_0_0_0_030, i27 %p_outMemWideStreamArray_0_0_0_0_0_031, i27 %p_outMemWideStreamArray_0_0_0_0_0_032, i27 %p_outMemWideStreamArray_0_0_0_0_0_033, i27 %p_outMemWideStreamArray_0_0_0_0_0_034, i27 %p_outMemWideStreamArray_0_0_0_0_0_035, i27 %p_outMemWideStreamArray_0_0_0_0_0_036, i27 %p_outMemWideStreamArray_0_0_0_0_0_03, i27 %p_outMemWideStreamArray_0_0_0_0_0_0337, i27 %p_outMemWideStreamArray_0_0_0_0_0_0338, i27 %p_outMemWideStreamArray_0_0_0_0_0_0339, i27 %p_outMemWideStreamArray_0_0_0_0_0_0340, i27 %p_outMemWideStreamArray_0_0_0_0_0_0341, i27 %p_outMemWideStreamArray_0_0_0_0_0_0342, i27 %p_outMemWideStreamArray_0_0_0_0_0_0343, i64 666, i64 9, i64 18446744073709551615"   --->   Operation 82 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i22 %p_inMemWideStreamArray_0_0_1_0_0_0, i22 %p_inMemWideStreamArray_0_0_1_0_0_016, i22 %p_inMemWideStreamArray_0_0_1_0_0_017, i22 %p_inMemWideStreamArray_0_0_1_0_0_018, i22 %p_inMemWideStreamArray_0_0_1_0_0_019, i22 %p_inMemWideStreamArray_0_0_1_0_0_020, i22 %p_inMemWideStreamArray_0_0_1_0_0_021, i22 %p_inMemWideStreamArray_0_0_1_0_0_022, i22 %p_inMemWideStreamArray_0_0_1_0_0_02, i22 %p_inMemWideStreamArray_0_0_1_0_0_0223, i22 %p_inMemWideStreamArray_0_0_1_0_0_0224, i22 %p_inMemWideStreamArray_0_0_1_0_0_0225, i22 %p_inMemWideStreamArray_0_0_1_0_0_0226, i22 %p_inMemWideStreamArray_0_0_1_0_0_0227, i22 %p_inMemWideStreamArray_0_0_1_0_0_0228, i22 %p_inMemWideStreamArray_0_0_1_0_0_0229, i64 666, i64 9, i64 18446744073709551615"   --->   Operation 83 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i22 %p_inMemWideStreamArray_0_0_0_0_0_0, i22 %p_inMemWideStreamArray_0_0_0_0_0_01, i22 %p_inMemWideStreamArray_0_0_0_0_0_02, i22 %p_inMemWideStreamArray_0_0_0_0_0_03, i22 %p_inMemWideStreamArray_0_0_0_0_0_04, i22 %p_inMemWideStreamArray_0_0_0_0_0_05, i22 %p_inMemWideStreamArray_0_0_0_0_0_06, i22 %p_inMemWideStreamArray_0_0_0_0_0_07, i22 %p_inMemWideStreamArray_0_0_0_0_0_018, i22 %p_inMemWideStreamArray_0_0_0_0_0_019, i22 %p_inMemWideStreamArray_0_0_0_0_0_0110, i22 %p_inMemWideStreamArray_0_0_0_0_0_0111, i22 %p_inMemWideStreamArray_0_0_0_0_0_0112, i22 %p_inMemWideStreamArray_0_0_0_0_0_0113, i22 %p_inMemWideStreamArray_0_0_0_0_0_0114, i22 %p_inMemWideStreamArray_0_0_0_0_0_0115, i64 666, i64 9, i64 18446744073709551615"   --->   Operation 84 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @ssrWideStream4kernelIn_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i256 %ssrWideStream4kernelIn, i256 %ssrWideStream4kernelIn"   --->   Operation 85 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%specmemcore_ln202 = specmemcore void @_ssdm_op_SpecMemCore, i256 %ssrWideStream4kernelIn, i64 666, i64 9, i64 18446744073709551615" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:202]   --->   Operation 86 'specmemcore' 'specmemcore_ln202' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %ssrWideStream4kernelIn, void @empty_8, i32 0, i32 0, void @empty_13, i32 0, i32 0, void @empty_13, void @empty_13, void @empty_13, i32 0, i32 0, i32 0, i32 0, void @empty_13, void @empty_13"   --->   Operation 87 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%empty_251 = specchannel i32 @_ssdm_op_SpecChannel, void @ssrWideStream4kernelOut_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i256 %ssrWideStream4kernelOut, i256 %ssrWideStream4kernelOut"   --->   Operation 88 'specchannel' 'empty_251' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%specmemcore_ln207 = specmemcore void @_ssdm_op_SpecMemCore, i256 %ssrWideStream4kernelOut, i64 666, i64 9, i64 18446744073709551615" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:207]   --->   Operation 89 'specmemcore' 'specmemcore_ln207' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %ssrWideStream4kernelOut, void @empty_8, i32 0, i32 0, void @empty_13, i32 0, i32 0, void @empty_13, void @empty_13, void @empty_13, i32 0, i32 0, i32 0, i32 0, void @empty_13, void @empty_13"   --->   Operation 90 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 91 [1/2] (0.00ns)   --->   "%call_ln224 = call void @narrowToWideConverter<4u, 8u, 16u, complex<ap_fixed<27, 13, 5, 3, 0> > >.183, i256 %ssrWideStream4kernelOut, i27 %p_outMemWideStreamArray_0_0_0_0_0_03, i27 %p_outMemWideStreamArray_0_0_0_0_0_0337, i27 %p_outMemWideStreamArray_0_0_0_0_0_0338, i27 %p_outMemWideStreamArray_0_0_0_0_0_0339, i27 %p_outMemWideStreamArray_0_0_0_0_0_0340, i27 %p_outMemWideStreamArray_0_0_0_0_0_0341, i27 %p_outMemWideStreamArray_0_0_0_0_0_0342, i27 %p_outMemWideStreamArray_0_0_0_0_0_0343, i27 %p_outMemWideStreamArray_0_0_1_0_0_04, i27 %p_outMemWideStreamArray_0_0_1_0_0_0451, i27 %p_outMemWideStreamArray_0_0_1_0_0_0452, i27 %p_outMemWideStreamArray_0_0_1_0_0_0453, i27 %p_outMemWideStreamArray_0_0_1_0_0_0454, i27 %p_outMemWideStreamArray_0_0_1_0_0_0455, i27 %p_outMemWideStreamArray_0_0_1_0_0_0456, i27 %p_outMemWideStreamArray_0_0_1_0_0_0457" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:224]   --->   Operation 91 'call' 'call_ln224' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 92 [1/1] (0.00ns)   --->   "%ret_ln230 = ret" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_streaming_kernel.hpp:230]   --->   Operation 92 'ret' 'ret_ln230' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_01]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_02]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_03]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_04]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_05]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_06]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_07]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_018]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_019]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_0110]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_0111]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_0112]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_0113]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_0114]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_0_0_0_0115]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_016]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_017]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_018]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_019]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_020]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_021]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_022]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_02]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_0223]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_0224]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_0225]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_0226]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_0227]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_0228]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_inMemWideStreamArray_0_0_1_0_0_0229]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_030]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_031]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_032]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_033]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_034]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_035]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_036]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_03]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_0337]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_0338]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_0339]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_0340]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_0341]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_0342]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_0_0_0_0343]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_044]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_045]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_046]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_047]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_048]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_049]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_050]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_04]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_0451]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_0452]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_0453]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_0454]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_0455]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_0456]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_outMemWideStreamArray_0_0_1_0_0_0457]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ control_count_V_7]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ control_bits_V_7]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ sample_in_read_count_V_7]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ delay_line_stall_7]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ delayline_Array_14]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_16]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_19]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_17]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_18]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_12]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_15]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_17]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ twiddleObj_twiddleTable_M_imag_V_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1111111]; IO mode=ap_memory:ce=0
+Port [ control_count_V_6]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ control_bits_V_6]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ sample_in_read_count_V_6]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ delay_line_stall_6]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ delayline_Array_4]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_8]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_10]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_14]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_15]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_16]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_7]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_9]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_count_V_2]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ control_bits_V_2]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ sample_in_read_count_V_2]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ delay_line_stall_2]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ delayline_Array_29]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_32]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_34]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_23]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_28]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_31]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_33]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ twiddleObj_twiddleTable_M_imag_V_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1111111]; IO mode=ap_memory:ce=0
+Port [ control_count_V_1]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ control_bits_V_1]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ sample_in_read_count_V_1]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ delay_line_stall_1]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
+Port [ delayline_Array_21]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_23]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_27]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_19]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_20]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ control_delayline_Array_22]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_20]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_22]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+Port [ delayline_Array_26]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=3; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+ssrWideStream4kernelIn   (alloca              ) [ 0111111]
+ssrWideStream4kernelOut  (alloca              ) [ 0011111]
+call_ln211               (call                ) [ 0000000]
+call_ln227               (call                ) [ 0000000]
+call_ln219               (call                ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specdataflowpipeline_ln0 (specdataflowpipeline) [ 0000000]
+specmemcore_ln0          (specmemcore         ) [ 0000000]
+specmemcore_ln0          (specmemcore         ) [ 0000000]
+specmemcore_ln0          (specmemcore         ) [ 0000000]
+specmemcore_ln0          (specmemcore         ) [ 0000000]
+empty                    (specchannel         ) [ 0000000]
+specmemcore_ln202        (specmemcore         ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+empty_251                (specchannel         ) [ 0000000]
+specmemcore_ln207        (specmemcore         ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+call_ln224               (call                ) [ 0000000]
+ret_ln230                (ret                 ) [ 0000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_0">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_01">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_01"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_02">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_02"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_03">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_03"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_04">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_04"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_05">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_05"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_06">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_06"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_07">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_07"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_018">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_018"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_019">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_019"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_0110">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_0110"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_0111">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_0111"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_0112">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_0112"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_0113">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_0113"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_0114">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_0114"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1000" name="p_inMemWideStreamArray_0_0_0_0_0_0115">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_0_0_0_0115"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_0">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_016">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_016"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_017">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_017"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_018">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_018"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_019">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_019"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_020">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_020"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_021">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_021"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_022">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_022"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_02">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_02"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_0223">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_0223"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_0224">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_0224"/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_0225">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_0225"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_0226">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_0226"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_0227">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_0227"/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_0228">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_0228"/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1000" name="p_inMemWideStreamArray_0_0_1_0_0_0229">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_inMemWideStreamArray_0_0_1_0_0_0229"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_0">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_030">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_030"/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_031">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_031"/></StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_032">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_032"/></StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_033">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_033"/></StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_034">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_034"/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_035">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_035"/></StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_036">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_036"/></StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_03">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_03"/></StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_0337">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_0337"/></StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_0338">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_0338"/></StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_0339">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_0339"/></StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_0340">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_0340"/></StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_0341">
+<pin_list>
+<pin id="91" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_0341"/></StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_0342">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_0342"/></StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1000" name="p_outMemWideStreamArray_0_0_0_0_0_0343">
+<pin_list>
+<pin id="95" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_0_0_0_0343"/></StgValue>
+</bind>
+</comp>
+
+<comp id="96" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_0">
+<pin_list>
+<pin id="97" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="98" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_044">
+<pin_list>
+<pin id="99" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_044"/></StgValue>
+</bind>
+</comp>
+
+<comp id="100" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_045">
+<pin_list>
+<pin id="101" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_045"/></StgValue>
+</bind>
+</comp>
+
+<comp id="102" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_046">
+<pin_list>
+<pin id="103" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_046"/></StgValue>
+</bind>
+</comp>
+
+<comp id="104" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_047">
+<pin_list>
+<pin id="105" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_047"/></StgValue>
+</bind>
+</comp>
+
+<comp id="106" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_048">
+<pin_list>
+<pin id="107" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_048"/></StgValue>
+</bind>
+</comp>
+
+<comp id="108" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_049">
+<pin_list>
+<pin id="109" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_049"/></StgValue>
+</bind>
+</comp>
+
+<comp id="110" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_050">
+<pin_list>
+<pin id="111" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_050"/></StgValue>
+</bind>
+</comp>
+
+<comp id="112" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_04">
+<pin_list>
+<pin id="113" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_04"/></StgValue>
+</bind>
+</comp>
+
+<comp id="114" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_0451">
+<pin_list>
+<pin id="115" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_0451"/></StgValue>
+</bind>
+</comp>
+
+<comp id="116" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_0452">
+<pin_list>
+<pin id="117" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_0452"/></StgValue>
+</bind>
+</comp>
+
+<comp id="118" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_0453">
+<pin_list>
+<pin id="119" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_0453"/></StgValue>
+</bind>
+</comp>
+
+<comp id="120" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_0454">
+<pin_list>
+<pin id="121" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_0454"/></StgValue>
+</bind>
+</comp>
+
+<comp id="122" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_0455">
+<pin_list>
+<pin id="123" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_0455"/></StgValue>
+</bind>
+</comp>
+
+<comp id="124" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_0456">
+<pin_list>
+<pin id="125" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_0456"/></StgValue>
+</bind>
+</comp>
+
+<comp id="126" class="1000" name="p_outMemWideStreamArray_0_0_1_0_0_0457">
+<pin_list>
+<pin id="127" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_outMemWideStreamArray_0_0_1_0_0_0457"/></StgValue>
+</bind>
+</comp>
+
+<comp id="128" class="1000" name="control_count_V_7">
+<pin_list>
+<pin id="129" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_count_V_7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="130" class="1000" name="control_bits_V_7">
+<pin_list>
+<pin id="131" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_bits_V_7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="132" class="1000" name="sample_in_read_count_V_7">
+<pin_list>
+<pin id="133" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sample_in_read_count_V_7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="134" class="1000" name="delay_line_stall_7">
+<pin_list>
+<pin id="135" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delay_line_stall_7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="136" class="1000" name="delayline_Array_14">
+<pin_list>
+<pin id="137" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_14"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="138" class="1000" name="delayline_Array_16">
+<pin_list>
+<pin id="139" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_16"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="140" class="1000" name="delayline_Array_19">
+<pin_list>
+<pin id="141" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_19"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="142" class="1000" name="control_delayline_Array_17">
+<pin_list>
+<pin id="143" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_17"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="144" class="1000" name="control_delayline_Array_2">
+<pin_list>
+<pin id="145" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_2"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="146" class="1000" name="control_delayline_Array_18">
+<pin_list>
+<pin id="147" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_18"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="148" class="1000" name="delayline_Array_12">
+<pin_list>
+<pin id="149" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_12"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="150" class="1000" name="delayline_Array_15">
+<pin_list>
+<pin id="151" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_15"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="152" class="1000" name="delayline_Array_17">
+<pin_list>
+<pin id="153" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_17"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="154" class="1000" name="twiddleObj_twiddleTable_M_imag_V_2">
+<pin_list>
+<pin id="155" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="twiddleObj_twiddleTable_M_imag_V_2"/><MemPortTyVec>1 1 1 1 1 1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="156" class="1000" name="control_count_V_6">
+<pin_list>
+<pin id="157" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_count_V_6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="158" class="1000" name="control_bits_V_6">
+<pin_list>
+<pin id="159" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_bits_V_6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="160" class="1000" name="sample_in_read_count_V_6">
+<pin_list>
+<pin id="161" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sample_in_read_count_V_6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="162" class="1000" name="delay_line_stall_6">
+<pin_list>
+<pin id="163" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delay_line_stall_6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="164" class="1000" name="delayline_Array_4">
+<pin_list>
+<pin id="165" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_4"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="166" class="1000" name="delayline_Array_8">
+<pin_list>
+<pin id="167" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_8"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="168" class="1000" name="delayline_Array_10">
+<pin_list>
+<pin id="169" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_10"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="170" class="1000" name="control_delayline_Array_14">
+<pin_list>
+<pin id="171" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_14"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="172" class="1000" name="control_delayline_Array_15">
+<pin_list>
+<pin id="173" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_15"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="174" class="1000" name="control_delayline_Array_16">
+<pin_list>
+<pin id="175" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_16"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="176" class="1000" name="delayline_Array_3">
+<pin_list>
+<pin id="177" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_3"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="178" class="1000" name="delayline_Array_7">
+<pin_list>
+<pin id="179" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_7"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="180" class="1000" name="delayline_Array_9">
+<pin_list>
+<pin id="181" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_9"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="182" class="1000" name="control_count_V_2">
+<pin_list>
+<pin id="183" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_count_V_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="184" class="1000" name="control_bits_V_2">
+<pin_list>
+<pin id="185" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_bits_V_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="186" class="1000" name="sample_in_read_count_V_2">
+<pin_list>
+<pin id="187" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sample_in_read_count_V_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="188" class="1000" name="delay_line_stall_2">
+<pin_list>
+<pin id="189" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delay_line_stall_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="190" class="1000" name="delayline_Array_29">
+<pin_list>
+<pin id="191" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_29"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="192" class="1000" name="delayline_Array_32">
+<pin_list>
+<pin id="193" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_32"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="194" class="1000" name="delayline_Array_34">
+<pin_list>
+<pin id="195" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_34"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="196" class="1000" name="control_delayline_Array_23">
+<pin_list>
+<pin id="197" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_23"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="198" class="1000" name="control_delayline_Array_1">
+<pin_list>
+<pin id="199" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_1"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="200" class="1000" name="control_delayline_Array_3">
+<pin_list>
+<pin id="201" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_3"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="202" class="1000" name="delayline_Array_28">
+<pin_list>
+<pin id="203" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_28"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="204" class="1000" name="delayline_Array_31">
+<pin_list>
+<pin id="205" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_31"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="206" class="1000" name="delayline_Array_33">
+<pin_list>
+<pin id="207" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_33"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="208" class="1000" name="twiddleObj_twiddleTable_M_imag_V_3">
+<pin_list>
+<pin id="209" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="twiddleObj_twiddleTable_M_imag_V_3"/><MemPortTyVec>1 1 1 1 1 1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="210" class="1000" name="control_count_V_1">
+<pin_list>
+<pin id="211" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_count_V_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="212" class="1000" name="control_bits_V_1">
+<pin_list>
+<pin id="213" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_bits_V_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="214" class="1000" name="sample_in_read_count_V_1">
+<pin_list>
+<pin id="215" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sample_in_read_count_V_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="216" class="1000" name="delay_line_stall_1">
+<pin_list>
+<pin id="217" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delay_line_stall_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="218" class="1000" name="delayline_Array_21">
+<pin_list>
+<pin id="219" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_21"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="220" class="1000" name="delayline_Array_23">
+<pin_list>
+<pin id="221" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_23"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="222" class="1000" name="delayline_Array_27">
+<pin_list>
+<pin id="223" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_27"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="224" class="1000" name="control_delayline_Array_19">
+<pin_list>
+<pin id="225" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_19"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="226" class="1000" name="control_delayline_Array_20">
+<pin_list>
+<pin id="227" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_20"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="228" class="1000" name="control_delayline_Array_22">
+<pin_list>
+<pin id="229" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="control_delayline_Array_22"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="230" class="1000" name="delayline_Array_20">
+<pin_list>
+<pin id="231" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_20"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="232" class="1000" name="delayline_Array_22">
+<pin_list>
+<pin id="233" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_22"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="234" class="1000" name="delayline_Array_26">
+<pin_list>
+<pin id="235" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="delayline_Array_26"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="236" class="1001" name="const_236">
+<pin_list>
+<pin id="237" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="238" class="1001" name="const_238">
+<pin_list>
+<pin id="239" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<22, 8, 5, 3, 0> > >.182"/></StgValue>
+</bind>
+</comp>
+
+<comp id="240" class="1001" name="const_240">
+<pin_list>
+<pin id="241" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="genMemWideFFTKernel1DArray.3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="242" class="1001" name="const_242">
+<pin_list>
+<pin id="243" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="fftStreamingKernel.2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="244" class="1001" name="const_244">
+<pin_list>
+<pin id="245" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="narrowToWideConverter<4u, 8u, 16u, complex<ap_fixed<27, 13, 5, 3, 0> > >.183"/></StgValue>
+</bind>
+</comp>
+
+<comp id="246" class="1001" name="const_246">
+<pin_list>
+<pin id="247" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="248" class="1001" name="const_248">
+<pin_list>
+<pin id="249" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="250" class="1001" name="const_250">
+<pin_list>
+<pin id="251" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="252" class="1001" name="const_252">
+<pin_list>
+<pin id="253" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="254" class="1001" name="const_254">
+<pin_list>
+<pin id="255" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="256" class="1001" name="const_256">
+<pin_list>
+<pin id="257" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="258" class="1001" name="const_258">
+<pin_list>
+<pin id="259" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="260" class="1001" name="const_260">
+<pin_list>
+<pin id="261" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="262" class="1001" name="const_262">
+<pin_list>
+<pin id="263" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_13"/></StgValue>
+</bind>
+</comp>
+
+<comp id="264" class="1001" name="const_264">
+<pin_list>
+<pin id="265" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecMemCore"/></StgValue>
+</bind>
+</comp>
+
+<comp id="266" class="1001" name="const_266">
+<pin_list>
+<pin id="267" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="268" class="1001" name="const_268">
+<pin_list>
+<pin id="269" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="270" class="1001" name="const_270">
+<pin_list>
+<pin id="271" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="272" class="1001" name="const_272">
+<pin_list>
+<pin id="273" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecChannel"/></StgValue>
+</bind>
+</comp>
+
+<comp id="274" class="1001" name="const_274">
+<pin_list>
+<pin id="275" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ssrWideStream4kernelIn_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="276" class="1001" name="const_276">
+<pin_list>
+<pin id="277" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="278" class="1001" name="const_278">
+<pin_list>
+<pin id="279" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_8"/></StgValue>
+</bind>
+</comp>
+
+<comp id="280" class="1001" name="const_280">
+<pin_list>
+<pin id="281" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ssrWideStream4kernelOut_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="282" class="1004" name="ssrWideStream4kernelIn_fu_282">
+<pin_list>
+<pin id="283" dir="0" index="0" bw="1" slack="0"/>
+<pin id="284" dir="1" index="1" bw="256" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="ssrWideStream4kernelIn/1 "/>
+</bind>
+</comp>
+
+<comp id="286" class="1004" name="ssrWideStream4kernelOut_fu_286">
+<pin_list>
+<pin id="287" dir="0" index="0" bw="1" slack="0"/>
+<pin id="288" dir="1" index="1" bw="256" slack="2"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="ssrWideStream4kernelOut/1 "/>
+</bind>
+</comp>
+
+<comp id="290" class="1004" name="grp_wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_fu_290">
+<pin_list>
+<pin id="291" dir="0" index="0" bw="0" slack="0"/>
+<pin id="292" dir="0" index="1" bw="22" slack="0"/>
+<pin id="293" dir="0" index="2" bw="22" slack="0"/>
+<pin id="294" dir="0" index="3" bw="22" slack="0"/>
+<pin id="295" dir="0" index="4" bw="22" slack="0"/>
+<pin id="296" dir="0" index="5" bw="22" slack="0"/>
+<pin id="297" dir="0" index="6" bw="22" slack="0"/>
+<pin id="298" dir="0" index="7" bw="22" slack="0"/>
+<pin id="299" dir="0" index="8" bw="22" slack="0"/>
+<pin id="300" dir="0" index="9" bw="22" slack="0"/>
+<pin id="301" dir="0" index="10" bw="22" slack="0"/>
+<pin id="302" dir="0" index="11" bw="22" slack="0"/>
+<pin id="303" dir="0" index="12" bw="22" slack="0"/>
+<pin id="304" dir="0" index="13" bw="22" slack="0"/>
+<pin id="305" dir="0" index="14" bw="22" slack="0"/>
+<pin id="306" dir="0" index="15" bw="22" slack="0"/>
+<pin id="307" dir="0" index="16" bw="22" slack="0"/>
+<pin id="308" dir="0" index="17" bw="256" slack="0"/>
+<pin id="309" dir="1" index="18" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln211/1 "/>
+</bind>
+</comp>
+
+<comp id="327" class="1004" name="grp_genMemWideFFTKernel1DArray_3_fu_327">
+<pin_list>
+<pin id="328" dir="0" index="0" bw="0" slack="0"/>
+<pin id="329" dir="0" index="1" bw="22" slack="0"/>
+<pin id="330" dir="0" index="2" bw="22" slack="0"/>
+<pin id="331" dir="0" index="3" bw="22" slack="0"/>
+<pin id="332" dir="0" index="4" bw="22" slack="0"/>
+<pin id="333" dir="0" index="5" bw="22" slack="0"/>
+<pin id="334" dir="0" index="6" bw="22" slack="0"/>
+<pin id="335" dir="0" index="7" bw="22" slack="0"/>
+<pin id="336" dir="0" index="8" bw="22" slack="0"/>
+<pin id="337" dir="0" index="9" bw="22" slack="0"/>
+<pin id="338" dir="0" index="10" bw="22" slack="0"/>
+<pin id="339" dir="0" index="11" bw="22" slack="0"/>
+<pin id="340" dir="0" index="12" bw="22" slack="0"/>
+<pin id="341" dir="0" index="13" bw="22" slack="0"/>
+<pin id="342" dir="0" index="14" bw="22" slack="0"/>
+<pin id="343" dir="0" index="15" bw="22" slack="0"/>
+<pin id="344" dir="0" index="16" bw="22" slack="0"/>
+<pin id="345" dir="0" index="17" bw="27" slack="0"/>
+<pin id="346" dir="0" index="18" bw="27" slack="0"/>
+<pin id="347" dir="0" index="19" bw="27" slack="0"/>
+<pin id="348" dir="0" index="20" bw="27" slack="0"/>
+<pin id="349" dir="0" index="21" bw="27" slack="0"/>
+<pin id="350" dir="0" index="22" bw="27" slack="0"/>
+<pin id="351" dir="0" index="23" bw="27" slack="0"/>
+<pin id="352" dir="0" index="24" bw="27" slack="0"/>
+<pin id="353" dir="0" index="25" bw="27" slack="0"/>
+<pin id="354" dir="0" index="26" bw="27" slack="0"/>
+<pin id="355" dir="0" index="27" bw="27" slack="0"/>
+<pin id="356" dir="0" index="28" bw="27" slack="0"/>
+<pin id="357" dir="0" index="29" bw="27" slack="0"/>
+<pin id="358" dir="0" index="30" bw="27" slack="0"/>
+<pin id="359" dir="0" index="31" bw="27" slack="0"/>
+<pin id="360" dir="0" index="32" bw="27" slack="0"/>
+<pin id="361" dir="0" index="33" bw="2" slack="0"/>
+<pin id="362" dir="0" index="34" bw="2" slack="0"/>
+<pin id="363" dir="0" index="35" bw="2" slack="0"/>
+<pin id="364" dir="0" index="36" bw="1" slack="0"/>
+<pin id="365" dir="0" index="37" bw="45" slack="0"/>
+<pin id="366" dir="0" index="38" bw="45" slack="0"/>
+<pin id="367" dir="0" index="39" bw="45" slack="0"/>
+<pin id="368" dir="0" index="40" bw="32" slack="0"/>
+<pin id="369" dir="0" index="41" bw="32" slack="0"/>
+<pin id="370" dir="0" index="42" bw="32" slack="0"/>
+<pin id="371" dir="0" index="43" bw="45" slack="0"/>
+<pin id="372" dir="0" index="44" bw="45" slack="0"/>
+<pin id="373" dir="0" index="45" bw="45" slack="0"/>
+<pin id="374" dir="0" index="46" bw="18" slack="0"/>
+<pin id="375" dir="0" index="47" bw="2" slack="0"/>
+<pin id="376" dir="0" index="48" bw="2" slack="0"/>
+<pin id="377" dir="0" index="49" bw="2" slack="0"/>
+<pin id="378" dir="0" index="50" bw="1" slack="0"/>
+<pin id="379" dir="0" index="51" bw="51" slack="0"/>
+<pin id="380" dir="0" index="52" bw="51" slack="0"/>
+<pin id="381" dir="0" index="53" bw="51" slack="0"/>
+<pin id="382" dir="0" index="54" bw="32" slack="0"/>
+<pin id="383" dir="0" index="55" bw="32" slack="0"/>
+<pin id="384" dir="0" index="56" bw="32" slack="0"/>
+<pin id="385" dir="0" index="57" bw="51" slack="0"/>
+<pin id="386" dir="0" index="58" bw="51" slack="0"/>
+<pin id="387" dir="0" index="59" bw="51" slack="0"/>
+<pin id="388" dir="1" index="60" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln227/1 "/>
+</bind>
+</comp>
+
+<comp id="449" class="1004" name="grp_fftStreamingKernel_2_fu_449">
+<pin_list>
+<pin id="450" dir="0" index="0" bw="0" slack="0"/>
+<pin id="451" dir="0" index="1" bw="256" slack="2"/>
+<pin id="452" dir="0" index="2" bw="256" slack="2"/>
+<pin id="453" dir="0" index="3" bw="2" slack="0"/>
+<pin id="454" dir="0" index="4" bw="2" slack="0"/>
+<pin id="455" dir="0" index="5" bw="2" slack="0"/>
+<pin id="456" dir="0" index="6" bw="1" slack="0"/>
+<pin id="457" dir="0" index="7" bw="45" slack="0"/>
+<pin id="458" dir="0" index="8" bw="45" slack="0"/>
+<pin id="459" dir="0" index="9" bw="45" slack="0"/>
+<pin id="460" dir="0" index="10" bw="32" slack="0"/>
+<pin id="461" dir="0" index="11" bw="32" slack="0"/>
+<pin id="462" dir="0" index="12" bw="32" slack="0"/>
+<pin id="463" dir="0" index="13" bw="45" slack="0"/>
+<pin id="464" dir="0" index="14" bw="45" slack="0"/>
+<pin id="465" dir="0" index="15" bw="45" slack="0"/>
+<pin id="466" dir="0" index="16" bw="18" slack="0"/>
+<pin id="467" dir="0" index="17" bw="2" slack="0"/>
+<pin id="468" dir="0" index="18" bw="2" slack="0"/>
+<pin id="469" dir="0" index="19" bw="2" slack="0"/>
+<pin id="470" dir="0" index="20" bw="1" slack="0"/>
+<pin id="471" dir="0" index="21" bw="51" slack="0"/>
+<pin id="472" dir="0" index="22" bw="51" slack="0"/>
+<pin id="473" dir="0" index="23" bw="51" slack="0"/>
+<pin id="474" dir="0" index="24" bw="32" slack="0"/>
+<pin id="475" dir="0" index="25" bw="32" slack="0"/>
+<pin id="476" dir="0" index="26" bw="32" slack="0"/>
+<pin id="477" dir="0" index="27" bw="51" slack="0"/>
+<pin id="478" dir="0" index="28" bw="51" slack="0"/>
+<pin id="479" dir="0" index="29" bw="51" slack="0"/>
+<pin id="480" dir="1" index="30" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln219/3 "/>
+</bind>
+</comp>
+
+<comp id="509" class="1004" name="grp_narrowToWideConverter_4u_8u_16u_complex_ap_fixed_27_13_5_3_0_183_fu_509">
+<pin_list>
+<pin id="510" dir="0" index="0" bw="0" slack="0"/>
+<pin id="511" dir="0" index="1" bw="256" slack="4"/>
+<pin id="512" dir="0" index="2" bw="27" slack="0"/>
+<pin id="513" dir="0" index="3" bw="27" slack="0"/>
+<pin id="514" dir="0" index="4" bw="27" slack="0"/>
+<pin id="515" dir="0" index="5" bw="27" slack="0"/>
+<pin id="516" dir="0" index="6" bw="27" slack="0"/>
+<pin id="517" dir="0" index="7" bw="27" slack="0"/>
+<pin id="518" dir="0" index="8" bw="27" slack="0"/>
+<pin id="519" dir="0" index="9" bw="27" slack="0"/>
+<pin id="520" dir="0" index="10" bw="27" slack="0"/>
+<pin id="521" dir="0" index="11" bw="27" slack="0"/>
+<pin id="522" dir="0" index="12" bw="27" slack="0"/>
+<pin id="523" dir="0" index="13" bw="27" slack="0"/>
+<pin id="524" dir="0" index="14" bw="27" slack="0"/>
+<pin id="525" dir="0" index="15" bw="27" slack="0"/>
+<pin id="526" dir="0" index="16" bw="27" slack="0"/>
+<pin id="527" dir="0" index="17" bw="27" slack="0"/>
+<pin id="528" dir="1" index="18" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln224/5 "/>
+</bind>
+</comp>
+
+<comp id="546" class="1005" name="ssrWideStream4kernelIn_reg_546">
+<pin_list>
+<pin id="547" dir="0" index="0" bw="256" slack="0"/>
+<pin id="548" dir="1" index="1" bw="256" slack="0"/>
+</pin_list>
+<bind>
+<opset="ssrWideStream4kernelIn "/>
+</bind>
+</comp>
+
+<comp id="552" class="1005" name="ssrWideStream4kernelOut_reg_552">
+<pin_list>
+<pin id="553" dir="0" index="0" bw="256" slack="2"/>
+<pin id="554" dir="1" index="1" bw="256" slack="2"/>
+</pin_list>
+<bind>
+<opset="ssrWideStream4kernelOut "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="285"><net_src comp="236" pin="0"/><net_sink comp="282" pin=0"/></net>
+
+<net id="289"><net_src comp="236" pin="0"/><net_sink comp="286" pin=0"/></net>
+
+<net id="310"><net_src comp="238" pin="0"/><net_sink comp="290" pin=0"/></net>
+
+<net id="311"><net_src comp="16" pin="0"/><net_sink comp="290" pin=1"/></net>
+
+<net id="312"><net_src comp="18" pin="0"/><net_sink comp="290" pin=2"/></net>
+
+<net id="313"><net_src comp="20" pin="0"/><net_sink comp="290" pin=3"/></net>
+
+<net id="314"><net_src comp="22" pin="0"/><net_sink comp="290" pin=4"/></net>
+
+<net id="315"><net_src comp="24" pin="0"/><net_sink comp="290" pin=5"/></net>
+
+<net id="316"><net_src comp="26" pin="0"/><net_sink comp="290" pin=6"/></net>
+
+<net id="317"><net_src comp="28" pin="0"/><net_sink comp="290" pin=7"/></net>
+
+<net id="318"><net_src comp="30" pin="0"/><net_sink comp="290" pin=8"/></net>
+
+<net id="319"><net_src comp="48" pin="0"/><net_sink comp="290" pin=9"/></net>
+
+<net id="320"><net_src comp="50" pin="0"/><net_sink comp="290" pin=10"/></net>
+
+<net id="321"><net_src comp="52" pin="0"/><net_sink comp="290" pin=11"/></net>
+
+<net id="322"><net_src comp="54" pin="0"/><net_sink comp="290" pin=12"/></net>
+
+<net id="323"><net_src comp="56" pin="0"/><net_sink comp="290" pin=13"/></net>
+
+<net id="324"><net_src comp="58" pin="0"/><net_sink comp="290" pin=14"/></net>
+
+<net id="325"><net_src comp="60" pin="0"/><net_sink comp="290" pin=15"/></net>
+
+<net id="326"><net_src comp="62" pin="0"/><net_sink comp="290" pin=16"/></net>
+
+<net id="389"><net_src comp="240" pin="0"/><net_sink comp="327" pin=0"/></net>
+
+<net id="390"><net_src comp="0" pin="0"/><net_sink comp="327" pin=1"/></net>
+
+<net id="391"><net_src comp="2" pin="0"/><net_sink comp="327" pin=2"/></net>
+
+<net id="392"><net_src comp="4" pin="0"/><net_sink comp="327" pin=3"/></net>
+
+<net id="393"><net_src comp="6" pin="0"/><net_sink comp="327" pin=4"/></net>
+
+<net id="394"><net_src comp="8" pin="0"/><net_sink comp="327" pin=5"/></net>
+
+<net id="395"><net_src comp="10" pin="0"/><net_sink comp="327" pin=6"/></net>
+
+<net id="396"><net_src comp="12" pin="0"/><net_sink comp="327" pin=7"/></net>
+
+<net id="397"><net_src comp="14" pin="0"/><net_sink comp="327" pin=8"/></net>
+
+<net id="398"><net_src comp="32" pin="0"/><net_sink comp="327" pin=9"/></net>
+
+<net id="399"><net_src comp="34" pin="0"/><net_sink comp="327" pin=10"/></net>
+
+<net id="400"><net_src comp="36" pin="0"/><net_sink comp="327" pin=11"/></net>
+
+<net id="401"><net_src comp="38" pin="0"/><net_sink comp="327" pin=12"/></net>
+
+<net id="402"><net_src comp="40" pin="0"/><net_sink comp="327" pin=13"/></net>
+
+<net id="403"><net_src comp="42" pin="0"/><net_sink comp="327" pin=14"/></net>
+
+<net id="404"><net_src comp="44" pin="0"/><net_sink comp="327" pin=15"/></net>
+
+<net id="405"><net_src comp="46" pin="0"/><net_sink comp="327" pin=16"/></net>
+
+<net id="406"><net_src comp="64" pin="0"/><net_sink comp="327" pin=17"/></net>
+
+<net id="407"><net_src comp="66" pin="0"/><net_sink comp="327" pin=18"/></net>
+
+<net id="408"><net_src comp="68" pin="0"/><net_sink comp="327" pin=19"/></net>
+
+<net id="409"><net_src comp="70" pin="0"/><net_sink comp="327" pin=20"/></net>
+
+<net id="410"><net_src comp="72" pin="0"/><net_sink comp="327" pin=21"/></net>
+
+<net id="411"><net_src comp="74" pin="0"/><net_sink comp="327" pin=22"/></net>
+
+<net id="412"><net_src comp="76" pin="0"/><net_sink comp="327" pin=23"/></net>
+
+<net id="413"><net_src comp="78" pin="0"/><net_sink comp="327" pin=24"/></net>
+
+<net id="414"><net_src comp="96" pin="0"/><net_sink comp="327" pin=25"/></net>
+
+<net id="415"><net_src comp="98" pin="0"/><net_sink comp="327" pin=26"/></net>
+
+<net id="416"><net_src comp="100" pin="0"/><net_sink comp="327" pin=27"/></net>
+
+<net id="417"><net_src comp="102" pin="0"/><net_sink comp="327" pin=28"/></net>
+
+<net id="418"><net_src comp="104" pin="0"/><net_sink comp="327" pin=29"/></net>
+
+<net id="419"><net_src comp="106" pin="0"/><net_sink comp="327" pin=30"/></net>
+
+<net id="420"><net_src comp="108" pin="0"/><net_sink comp="327" pin=31"/></net>
+
+<net id="421"><net_src comp="110" pin="0"/><net_sink comp="327" pin=32"/></net>
+
+<net id="422"><net_src comp="182" pin="0"/><net_sink comp="327" pin=33"/></net>
+
+<net id="423"><net_src comp="184" pin="0"/><net_sink comp="327" pin=34"/></net>
+
+<net id="424"><net_src comp="186" pin="0"/><net_sink comp="327" pin=35"/></net>
+
+<net id="425"><net_src comp="188" pin="0"/><net_sink comp="327" pin=36"/></net>
+
+<net id="426"><net_src comp="190" pin="0"/><net_sink comp="327" pin=37"/></net>
+
+<net id="427"><net_src comp="192" pin="0"/><net_sink comp="327" pin=38"/></net>
+
+<net id="428"><net_src comp="194" pin="0"/><net_sink comp="327" pin=39"/></net>
+
+<net id="429"><net_src comp="196" pin="0"/><net_sink comp="327" pin=40"/></net>
+
+<net id="430"><net_src comp="198" pin="0"/><net_sink comp="327" pin=41"/></net>
+
+<net id="431"><net_src comp="200" pin="0"/><net_sink comp="327" pin=42"/></net>
+
+<net id="432"><net_src comp="202" pin="0"/><net_sink comp="327" pin=43"/></net>
+
+<net id="433"><net_src comp="204" pin="0"/><net_sink comp="327" pin=44"/></net>
+
+<net id="434"><net_src comp="206" pin="0"/><net_sink comp="327" pin=45"/></net>
+
+<net id="435"><net_src comp="208" pin="0"/><net_sink comp="327" pin=46"/></net>
+
+<net id="436"><net_src comp="210" pin="0"/><net_sink comp="327" pin=47"/></net>
+
+<net id="437"><net_src comp="212" pin="0"/><net_sink comp="327" pin=48"/></net>
+
+<net id="438"><net_src comp="214" pin="0"/><net_sink comp="327" pin=49"/></net>
+
+<net id="439"><net_src comp="216" pin="0"/><net_sink comp="327" pin=50"/></net>
+
+<net id="440"><net_src comp="218" pin="0"/><net_sink comp="327" pin=51"/></net>
+
+<net id="441"><net_src comp="220" pin="0"/><net_sink comp="327" pin=52"/></net>
+
+<net id="442"><net_src comp="222" pin="0"/><net_sink comp="327" pin=53"/></net>
+
+<net id="443"><net_src comp="224" pin="0"/><net_sink comp="327" pin=54"/></net>
+
+<net id="444"><net_src comp="226" pin="0"/><net_sink comp="327" pin=55"/></net>
+
+<net id="445"><net_src comp="228" pin="0"/><net_sink comp="327" pin=56"/></net>
+
+<net id="446"><net_src comp="230" pin="0"/><net_sink comp="327" pin=57"/></net>
+
+<net id="447"><net_src comp="232" pin="0"/><net_sink comp="327" pin=58"/></net>
+
+<net id="448"><net_src comp="234" pin="0"/><net_sink comp="327" pin=59"/></net>
+
+<net id="481"><net_src comp="242" pin="0"/><net_sink comp="449" pin=0"/></net>
+
+<net id="482"><net_src comp="128" pin="0"/><net_sink comp="449" pin=3"/></net>
+
+<net id="483"><net_src comp="130" pin="0"/><net_sink comp="449" pin=4"/></net>
+
+<net id="484"><net_src comp="132" pin="0"/><net_sink comp="449" pin=5"/></net>
+
+<net id="485"><net_src comp="134" pin="0"/><net_sink comp="449" pin=6"/></net>
+
+<net id="486"><net_src comp="136" pin="0"/><net_sink comp="449" pin=7"/></net>
+
+<net id="487"><net_src comp="138" pin="0"/><net_sink comp="449" pin=8"/></net>
+
+<net id="488"><net_src comp="140" pin="0"/><net_sink comp="449" pin=9"/></net>
+
+<net id="489"><net_src comp="142" pin="0"/><net_sink comp="449" pin=10"/></net>
+
+<net id="490"><net_src comp="144" pin="0"/><net_sink comp="449" pin=11"/></net>
+
+<net id="491"><net_src comp="146" pin="0"/><net_sink comp="449" pin=12"/></net>
+
+<net id="492"><net_src comp="148" pin="0"/><net_sink comp="449" pin=13"/></net>
+
+<net id="493"><net_src comp="150" pin="0"/><net_sink comp="449" pin=14"/></net>
+
+<net id="494"><net_src comp="152" pin="0"/><net_sink comp="449" pin=15"/></net>
+
+<net id="495"><net_src comp="154" pin="0"/><net_sink comp="449" pin=16"/></net>
+
+<net id="496"><net_src comp="156" pin="0"/><net_sink comp="449" pin=17"/></net>
+
+<net id="497"><net_src comp="158" pin="0"/><net_sink comp="449" pin=18"/></net>
+
+<net id="498"><net_src comp="160" pin="0"/><net_sink comp="449" pin=19"/></net>
+
+<net id="499"><net_src comp="162" pin="0"/><net_sink comp="449" pin=20"/></net>
+
+<net id="500"><net_src comp="164" pin="0"/><net_sink comp="449" pin=21"/></net>
+
+<net id="501"><net_src comp="166" pin="0"/><net_sink comp="449" pin=22"/></net>
+
+<net id="502"><net_src comp="168" pin="0"/><net_sink comp="449" pin=23"/></net>
+
+<net id="503"><net_src comp="170" pin="0"/><net_sink comp="449" pin=24"/></net>
+
+<net id="504"><net_src comp="172" pin="0"/><net_sink comp="449" pin=25"/></net>
+
+<net id="505"><net_src comp="174" pin="0"/><net_sink comp="449" pin=26"/></net>
+
+<net id="506"><net_src comp="176" pin="0"/><net_sink comp="449" pin=27"/></net>
+
+<net id="507"><net_src comp="178" pin="0"/><net_sink comp="449" pin=28"/></net>
+
+<net id="508"><net_src comp="180" pin="0"/><net_sink comp="449" pin=29"/></net>
+
+<net id="529"><net_src comp="244" pin="0"/><net_sink comp="509" pin=0"/></net>
+
+<net id="530"><net_src comp="80" pin="0"/><net_sink comp="509" pin=2"/></net>
+
+<net id="531"><net_src comp="82" pin="0"/><net_sink comp="509" pin=3"/></net>
+
+<net id="532"><net_src comp="84" pin="0"/><net_sink comp="509" pin=4"/></net>
+
+<net id="533"><net_src comp="86" pin="0"/><net_sink comp="509" pin=5"/></net>
+
+<net id="534"><net_src comp="88" pin="0"/><net_sink comp="509" pin=6"/></net>
+
+<net id="535"><net_src comp="90" pin="0"/><net_sink comp="509" pin=7"/></net>
+
+<net id="536"><net_src comp="92" pin="0"/><net_sink comp="509" pin=8"/></net>
+
+<net id="537"><net_src comp="94" pin="0"/><net_sink comp="509" pin=9"/></net>
+
+<net id="538"><net_src comp="112" pin="0"/><net_sink comp="509" pin=10"/></net>
+
+<net id="539"><net_src comp="114" pin="0"/><net_sink comp="509" pin=11"/></net>
+
+<net id="540"><net_src comp="116" pin="0"/><net_sink comp="509" pin=12"/></net>
+
+<net id="541"><net_src comp="118" pin="0"/><net_sink comp="509" pin=13"/></net>
+
+<net id="542"><net_src comp="120" pin="0"/><net_sink comp="509" pin=14"/></net>
+
+<net id="543"><net_src comp="122" pin="0"/><net_sink comp="509" pin=15"/></net>
+
+<net id="544"><net_src comp="124" pin="0"/><net_sink comp="509" pin=16"/></net>
+
+<net id="545"><net_src comp="126" pin="0"/><net_sink comp="509" pin=17"/></net>
+
+<net id="549"><net_src comp="282" pin="1"/><net_sink comp="546" pin=0"/></net>
+
+<net id="550"><net_src comp="546" pin="1"/><net_sink comp="290" pin=17"/></net>
+
+<net id="551"><net_src comp="546" pin="1"/><net_sink comp="449" pin=1"/></net>
+
+<net id="555"><net_src comp="286" pin="1"/><net_sink comp="552" pin=0"/></net>
+
+<net id="556"><net_src comp="552" pin="1"/><net_sink comp="449" pin=2"/></net>
+
+<net id="557"><net_src comp="552" pin="1"/><net_sink comp="509" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: p_outMemWideStreamArray_0_0_0_0_0_0 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_030 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_031 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_032 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_033 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_034 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_035 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_036 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_03 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_0337 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_0338 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_0339 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_0340 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_0341 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_0342 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_0_0_0_0343 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_0 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_044 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_045 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_046 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_047 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_048 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_049 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_050 | {1 2 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_04 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_0451 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_0452 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_0453 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_0454 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_0455 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_0456 | {5 6 }
+	Port: p_outMemWideStreamArray_0_0_1_0_0_0457 | {5 6 }
+	Port: control_count_V_7 | {3 4 }
+	Port: control_bits_V_7 | {3 4 }
+	Port: sample_in_read_count_V_7 | {3 4 }
+	Port: delay_line_stall_7 | {3 4 }
+	Port: delayline_Array_14 | {3 4 }
+	Port: delayline_Array_16 | {3 4 }
+	Port: delayline_Array_19 | {3 4 }
+	Port: control_delayline_Array_17 | {3 4 }
+	Port: control_delayline_Array_2 | {3 4 }
+	Port: control_delayline_Array_18 | {3 4 }
+	Port: delayline_Array_12 | {3 4 }
+	Port: delayline_Array_15 | {3 4 }
+	Port: delayline_Array_17 | {3 4 }
+	Port: twiddleObj_twiddleTable_M_imag_V_2 | {}
+	Port: control_count_V_6 | {3 4 }
+	Port: control_bits_V_6 | {3 4 }
+	Port: sample_in_read_count_V_6 | {3 4 }
+	Port: delay_line_stall_6 | {3 4 }
+	Port: delayline_Array_4 | {3 4 }
+	Port: delayline_Array_8 | {3 4 }
+	Port: delayline_Array_10 | {3 4 }
+	Port: control_delayline_Array_14 | {3 4 }
+	Port: control_delayline_Array_15 | {3 4 }
+	Port: control_delayline_Array_16 | {3 4 }
+	Port: delayline_Array_3 | {3 4 }
+	Port: delayline_Array_7 | {3 4 }
+	Port: delayline_Array_9 | {3 4 }
+	Port: control_count_V_2 | {1 2 }
+	Port: control_bits_V_2 | {1 2 }
+	Port: sample_in_read_count_V_2 | {1 2 }
+	Port: delay_line_stall_2 | {1 2 }
+	Port: delayline_Array_29 | {1 2 }
+	Port: delayline_Array_32 | {1 2 }
+	Port: delayline_Array_34 | {1 2 }
+	Port: control_delayline_Array_23 | {1 2 }
+	Port: control_delayline_Array_1 | {1 2 }
+	Port: control_delayline_Array_3 | {1 2 }
+	Port: delayline_Array_28 | {1 2 }
+	Port: delayline_Array_31 | {1 2 }
+	Port: delayline_Array_33 | {1 2 }
+	Port: twiddleObj_twiddleTable_M_imag_V_3 | {}
+	Port: control_count_V_1 | {1 2 }
+	Port: control_bits_V_1 | {1 2 }
+	Port: sample_in_read_count_V_1 | {1 2 }
+	Port: delay_line_stall_1 | {1 2 }
+	Port: delayline_Array_21 | {1 2 }
+	Port: delayline_Array_23 | {1 2 }
+	Port: delayline_Array_27 | {1 2 }
+	Port: control_delayline_Array_19 | {1 2 }
+	Port: control_delayline_Array_20 | {1 2 }
+	Port: control_delayline_Array_22 | {1 2 }
+	Port: delayline_Array_20 | {1 2 }
+	Port: delayline_Array_22 | {1 2 }
+	Port: delayline_Array_26 | {1 2 }
+ - Input state : 
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_0 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_01 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_02 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_03 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_04 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_05 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_06 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_07 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_018 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_019 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_0110 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_0111 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_0112 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_0113 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_0114 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_0_0_0_0115 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_0 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_016 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_017 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_018 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_019 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_020 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_021 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_022 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_02 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_0223 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_0224 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_0225 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_0226 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_0227 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_0228 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : p_inMemWideStreamArray_0_0_1_0_0_0229 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : control_count_V_7 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : control_bits_V_7 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : sample_in_read_count_V_7 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delay_line_stall_7 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_14 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_16 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_19 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_17 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_2 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_18 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_12 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_15 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_17 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : twiddleObj_twiddleTable_M_imag_V_2 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : control_count_V_6 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : control_bits_V_6 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : sample_in_read_count_V_6 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delay_line_stall_6 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_4 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_8 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_10 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_14 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_15 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_16 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_3 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_7 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_9 | {3 4 }
+	Port: genMemWideFFTKernel1DArray.1 : control_count_V_2 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : control_bits_V_2 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : sample_in_read_count_V_2 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delay_line_stall_2 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_29 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_32 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_34 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_23 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_1 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_3 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_28 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_31 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_33 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : twiddleObj_twiddleTable_M_imag_V_3 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : control_count_V_1 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : control_bits_V_1 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : sample_in_read_count_V_1 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delay_line_stall_1 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_21 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_23 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_27 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_19 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_20 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : control_delayline_Array_22 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_20 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_22 | {1 2 }
+	Port: genMemWideFFTKernel1DArray.1 : delayline_Array_26 | {1 2 }
+  - Chain level:
+	State 1
+		call_ln211 : 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-----------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+| Operation|                               Functional Unit                               |   BRAM  |   DSP   |  Delay  |    FF   |   LUT   |   URAM  |
+|----------|-----------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+|          |  grp_wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_fu_290 |    0    |    0    |  0.387  |   373   |   843   |    0    |
+|   call   |                   grp_genMemWideFFTKernel1DArray_3_fu_327                   |    0    |    14   | 25.2207 |  10467  |   9150  |    0    |
+|          |                       grp_fftStreamingKernel_2_fu_449                       |    0    |    14   | 24.4467 |   8479  |   5351  |    0    |
+|          | grp_narrowToWideConverter_4u_8u_16u_complex_ap_fixed_27_13_5_3_0_183_fu_509 |    0    |    0    |  0.387  |   1103  |   2956  |    0    |
+|----------|-----------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+|   Total  |                                                                             |    0    |    28   | 50.4414 |  20422  |  18300  |    0    |
+|----------|-----------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-------------------------------+--------+
+|                               |   FF   |
++-------------------------------+--------+
+| ssrWideStream4kernelIn_reg_546|   256  |
+|ssrWideStream4kernelOut_reg_552|   256  |
++-------------------------------+--------+
+|             Total             |   512  |
++-------------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+--------+
+|           |  BRAM  |   DSP  |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+--------+
+|  Function |    0   |   28   |   50   |  20422 |  18300 |    0   |
+|   Memory  |    -   |    -   |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    -   |    -   |    -   |    -   |    -   |
+|  Register |    -   |    -   |    -   |   512  |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+--------+
+|   Total   |    0   |   28   |   50   |  20934 |  18300 |    0   |
++-----------+--------+--------+--------+--------+--------+--------+

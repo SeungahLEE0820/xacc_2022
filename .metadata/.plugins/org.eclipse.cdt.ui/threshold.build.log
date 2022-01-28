@@ -1,0 +1,6 @@
+17:20:58 **** Clean-only build of configuration Hardware for project threshold ****
+make -j8 clean 
+rm -f threshold libs/xf_opencv/ext/xcl2/xcl2.o src/xf_threshold_tb.o
+
+17:20:58 Build Finished (took 77ms)
+

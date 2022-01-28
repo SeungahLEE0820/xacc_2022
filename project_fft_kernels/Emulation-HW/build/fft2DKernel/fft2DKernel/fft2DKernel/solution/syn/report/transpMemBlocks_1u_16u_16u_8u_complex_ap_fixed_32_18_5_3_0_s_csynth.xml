@@ -1,0 +1,248 @@
+<profile>
+
+<ReportVersion>
+<Version>2021.1</Version>
+</ReportVersion>
+
+<UserAssignments>
+<unit>ns</unit>
+<ProductFamily>virtexuplus</ProductFamily>
+<Part>xcvu9p-flgb2104-2-i</Part>
+<TopModelName>transpMemBlocks_1u_16u_16u_8u_complex_ap_fixed_32_18_5_3_0_s</TopModelName>
+<TargetClockPeriod>4.00</TargetClockPeriod>
+<ClockUncertainty>1.08</ClockUncertainty>
+<FlowTarget>vitis</FlowTarget>
+</UserAssignments>
+
+<PerformanceEstimates>
+<PipelineType>no</PipelineType>
+<SummaryOfTimingAnalysis>
+<unit>ns</unit>
+<EstimatedClockPeriod>2.495</EstimatedClockPeriod>
+</SummaryOfTimingAnalysis>
+<SummaryOfOverallLatency>
+<unit>clock cycles</unit>
+<Best-caseLatency>70</Best-caseLatency>
+<Average-caseLatency>70</Average-caseLatency>
+<Worst-caseLatency>70</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.280 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.280 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.280 us</Worst-caseRealTimeLatency>
+<Interval-min>70</Interval-min>
+<Interval-max>70</Interval-max>
+</SummaryOfOverallLatency>
+<SummaryOfLoopLatency>
+<transpMemBlocks_writePIPO_VITIS_LOOP_269_2>
+<TripCount>32</TripCount>
+<Latency>32</Latency>
+<AbsoluteTimeLatency>128</AbsoluteTimeLatency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>2</PipelineDepth>
+</transpMemBlocks_writePIPO_VITIS_LOOP_269_2>
+<transpMemBlocks_readPIPO_VITIS_LOOP_280_4>
+<TripCount>32</TripCount>
+<Latency>34</Latency>
+<AbsoluteTimeLatency>136</AbsoluteTimeLatency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>4</PipelineDepth>
+</transpMemBlocks_readPIPO_VITIS_LOOP_280_4>
+</SummaryOfLoopLatency>
+</PerformanceEstimates>
+
+<AreaEstimates>
+<Resources>
+<FF>1121</FF>
+<LUT>2214</LUT>
+<URAM>16</URAM>
+<BRAM_18K>0</BRAM_18K>
+<DSP>0</DSP>
+</Resources>
+<AvailableResources>
+<BRAM_18K>4320</BRAM_18K>
+<DSP>6840</DSP>
+<FF>2364480</FF>
+<LUT>1182240</LUT>
+<URAM>960</URAM>
+</AvailableResources>
+</AreaEstimates>
+
+<InterfaceSummary>
+<RtlPorts>
+<name>ap_clk</name>
+<Object>transpMemBlocks&lt;1u, 16u, 16u, 8u, complex&lt;ap_fixed&lt;32, 18, 5, 3, 0&gt; &gt; &gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_rst</name>
+<Object>transpMemBlocks&lt;1u, 16u, 16u, 8u, complex&lt;ap_fixed&lt;32, 18, 5, 3, 0&gt; &gt; &gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_start</name>
+<Object>transpMemBlocks&lt;1u, 16u, 16u, 8u, complex&lt;ap_fixed&lt;32, 18, 5, 3, 0&gt; &gt; &gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_done</name>
+<Object>transpMemBlocks&lt;1u, 16u, 16u, 8u, complex&lt;ap_fixed&lt;32, 18, 5, 3, 0&gt; &gt; &gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_continue</name>
+<Object>transpMemBlocks&lt;1u, 16u, 16u, 8u, complex&lt;ap_fixed&lt;32, 18, 5, 3, 0&gt; &gt; &gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_idle</name>
+<Object>transpMemBlocks&lt;1u, 16u, 16u, 8u, complex&lt;ap_fixed&lt;32, 18, 5, 3, 0&gt; &gt; &gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_ready</name>
+<Object>transpMemBlocks&lt;1u, 16u, 16u, 8u, complex&lt;ap_fixed&lt;32, 18, 5, 3, 0&gt; &gt; &gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_ext_blocking_n</name>
+<Object>transpMemBlocks&lt;1u, 16u, 16u, 8u, complex&lt;ap_fixed&lt;32, 18, 5, 3, 0&gt; &gt; &gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_str_blocking_n</name>
+<Object>transpMemBlocks&lt;1u, 16u, 16u, 8u, complex&lt;ap_fixed&lt;32, 18, 5, 3, 0&gt; &gt; &gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_int_blocking_n</name>
+<Object>transpMemBlocks&lt;1u, 16u, 16u, 8u, complex&lt;ap_fixed&lt;32, 18, 5, 3, 0&gt; &gt; &gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>l_invTranspBlkMatrixStream2_dout</name>
+<Object>l_invTranspBlkMatrixStream2</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>512</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>l_invTranspBlkMatrixStream2_empty_n</name>
+<Object>l_invTranspBlkMatrixStream2</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>l_invTranspBlkMatrixStream2_read</name>
+<Object>l_invTranspBlkMatrixStream2</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>fftOutStrm_din</name>
+<Object>fftOutStrm</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>512</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>fftOutStrm_full_n</name>
+<Object>fftOutStrm</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>fftOutStrm_write</name>
+<Object>fftOutStrm</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+</InterfaceSummary>
+
+</profile>

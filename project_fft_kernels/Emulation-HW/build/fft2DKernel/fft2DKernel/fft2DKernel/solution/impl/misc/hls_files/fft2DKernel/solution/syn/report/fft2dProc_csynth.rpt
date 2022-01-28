@@ -1,0 +1,167 @@
+
+
+================================================================
+== Vitis HLS Report for 'fft2dProc'
+================================================================
+* Date:           Thu Jan 27 12:48:07 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  3.086 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------------------------------------------------------+------------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+----------+
+        |                                                                         |                                                                        |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+        |                                 Instance                                |                                 Module                                 |   min   |   max   |    min   |    max   | min | max |   Type   |
+        +-------------------------------------------------------------------------+------------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+----------+
+        |transpWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_22_8_5_3_0_U0      |transpWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_22_8_5_3_0_s      |      104|      104|  0.416 us|  0.416 us|  104|  104|        no|
+        |sliceProcessor_1_U0                                                      |sliceProcessor_1                                                        |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+        |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_U0  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s  |      104|      104|  0.416 us|  0.416 us|  104|  104|        no|
+        |transpMemBlocks_1u_16u_16u_8u_complex_ap_fixed_27_13_5_3_0_U0            |transpMemBlocks_1u_16u_16u_8u_complex_ap_fixed_27_13_5_3_0_s            |       70|       70|  0.280 us|  0.280 us|   70|   70|        no|
+        |transpWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_U0     |transpWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s     |      104|      104|  0.416 us|  0.416 us|  104|  104|        no|
+        |sliceProcessor_U0                                                        |sliceProcessor                                                          |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+        |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_32_18_5_3_0_U0  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_32_18_5_3_0_s  |      104|      104|  0.416 us|  0.416 us|  104|  104|        no|
+        |transpMemBlocks_1u_16u_16u_8u_complex_ap_fixed_32_18_5_3_0_U0            |transpMemBlocks_1u_16u_16u_8u_complex_ap_fixed_32_18_5_3_0_s            |       70|       70|  0.280 us|  0.280 us|   70|   70|        no|
+        +-------------------------------------------------------------------------+------------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+----------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       14|    -|
+|FIFO                 |        -|     -|    10801|     5712|    -|
+|Instance             |        0|    84|    77877|    91537|   96|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|        -|    -|
+|Register             |        -|     -|        -|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|    84|    88678|    97263|   96|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     3|       11|       24|   30|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     1|        3|        8|   10|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------------------------------------------------+------------------------------------------------------------------------+---------+----+-------+-------+-----+
+    |                                 Instance                                |                                 Module                                 | BRAM_18K| DSP|   FF  |  LUT  | URAM|
+    +-------------------------------------------------------------------------+------------------------------------------------------------------------+---------+----+-------+-------+-----+
+    |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_U0  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s  |        0|   0|     45|    594|   16|
+    |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_32_18_5_3_0_U0  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_32_18_5_3_0_s  |        0|   0|     45|    594|   16|
+    |sliceProcessor_U0                                                        |sliceProcessor                                                          |        0|  56|  41451|  44013|    0|
+    |sliceProcessor_1_U0                                                      |sliceProcessor_1                                                        |        0|  28|  34163|  40711|    0|
+    |transpMemBlocks_1u_16u_16u_8u_complex_ap_fixed_27_13_5_3_0_U0            |transpMemBlocks_1u_16u_16u_8u_complex_ap_fixed_27_13_5_3_0_s            |        0|   0|    962|   2223|   16|
+    |transpMemBlocks_1u_16u_16u_8u_complex_ap_fixed_32_18_5_3_0_U0            |transpMemBlocks_1u_16u_16u_8u_complex_ap_fixed_32_18_5_3_0_s            |        0|   0|   1121|   2214|   16|
+    |transpWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_22_8_5_3_0_U0      |transpWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_22_8_5_3_0_s      |        0|   0|     45|    594|   16|
+    |transpWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_U0     |transpWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s     |        0|   0|     45|    594|   16|
+    +-------------------------------------------------------------------------+------------------------------------------------------------------------+---------+----+-------+-------+-----+
+    |Total                                                                    |                                                                        |        0|  84|  77877|  91537|   96|
+    +-------------------------------------------------------------------------+------------------------------------------------------------------------+---------+----+-------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +-------------------------------+---------+------+----+-----+------+-----+---------+
+    |              Name             | BRAM_18K|  FF  | LUT| URAM| Depth| Bits| Size:D*B|
+    +-------------------------------+---------+------+----+-----+------+-----+---------+
+    |l_colProcOutStream_U           |        0|  1543|   0|    -|     2|  512|     1024|
+    |l_invTranspBlkMatrixStream2_U  |        0|  1543|   0|    -|     2|  512|     1024|
+    |l_invTranspBlkMatrixStream_U   |        0|  1543|   0|    -|     2|  512|     1024|
+    |l_rowProcOutStream_U           |        0|  1543|   0|    -|     2|  512|     1024|
+    |l_transBlkMatrixStream_U       |        0|  1543|   0|    -|     2|  512|     1024|
+    |l_transpBlkMatrixStream2_U     |        0|  1543|   0|    -|     2|  512|     1024|
+    |l_transpMatrixStream_U         |        0|  1543|   0|    -|     2|  512|     1024|
+    +-------------------------------+---------+------+----+-----+------+-----+---------+
+    |Total                          |        0| 10801|   0|    0|    14| 3584|     7168|
+    +-------------------------------+---------+------+----+-----+------+-----+---------+
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |ap_ext_blocking_n      |       and|   0|  0|   2|           1|           1|
+    |ap_ext_blocking_sub_n  |       and|   0|  0|   2|           1|           1|
+    |ap_idle                |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_n      |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_sub_n  |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_n      |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_sub_n  |       and|   0|  0|   2|           1|           1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0|  14|           7|           7|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+--------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-------------------+-----+-----+------------+--------------+--------------+
+|fftInStrm_dout     |   in|  512|     ap_fifo|     fftInStrm|       pointer|
+|fftInStrm_empty_n  |   in|    1|     ap_fifo|     fftInStrm|       pointer|
+|fftInStrm_read     |  out|    1|     ap_fifo|     fftInStrm|       pointer|
+|fftOutStrm_din     |  out|  512|     ap_fifo|    fftOutStrm|       pointer|
+|fftOutStrm_full_n  |   in|    1|     ap_fifo|    fftOutStrm|       pointer|
+|fftOutStrm_write   |  out|    1|     ap_fifo|    fftOutStrm|       pointer|
+|ap_clk             |   in|    1|  ap_ctrl_hs|     fft2dProc|  return value|
+|ap_rst             |   in|    1|  ap_ctrl_hs|     fft2dProc|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|     fft2dProc|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|     fft2dProc|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|     fft2dProc|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|     fft2dProc|  return value|
+|ap_continue        |   in|    1|  ap_ctrl_hs|     fft2dProc|  return value|
+|ap_ext_blocking_n  |  out|    1|  ap_ctrl_hs|     fft2dProc|  return value|
+|ap_str_blocking_n  |  out|    1|  ap_ctrl_hs|     fft2dProc|  return value|
+|ap_int_blocking_n  |  out|    1|  ap_ctrl_hs|     fft2dProc|  return value|
++-------------------+-----+-----+------------+--------------+--------------+
+

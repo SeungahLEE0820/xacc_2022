@@ -1,0 +1,186 @@
+
+
+================================================================
+== Vitis HLS Report for 'fftStage_3'
+================================================================
+* Date:           Thu Jan 27 12:44:42 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.983 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 6, States = { 1 2 3 4 5 6 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%fftOutData_local = alloca i64 1" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:1105]   --->   Operation 7 'alloca' 'fftOutData_local' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 8> <FIFO>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%fftOutData_local2_V_M_real_V_0 = alloca i64 1"   --->   Operation 8 'alloca' 'fftOutData_local2_V_M_real_V_0' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.38> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%fftOutData_local2_V_M_real_V_1 = alloca i64 1"   --->   Operation 9 'alloca' 'fftOutData_local2_V_M_real_V_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.38> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%fftOutData_local2_V_M_real_V_2 = alloca i64 1"   --->   Operation 10 'alloca' 'fftOutData_local2_V_M_real_V_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.38> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%fftOutData_local2_V_M_real_V_3 = alloca i64 1"   --->   Operation 11 'alloca' 'fftOutData_local2_V_M_real_V_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.38> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%fftOutData_local2_V_M_imag_V_0 = alloca i64 1"   --->   Operation 12 'alloca' 'fftOutData_local2_V_M_imag_V_0' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.38> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%fftOutData_local2_V_M_imag_V_1 = alloca i64 1"   --->   Operation 13 'alloca' 'fftOutData_local2_V_M_imag_V_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.38> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%fftOutData_local2_V_M_imag_V_2 = alloca i64 1"   --->   Operation 14 'alloca' 'fftOutData_local2_V_M_imag_V_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.38> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%fftOutData_local2_V_M_imag_V_3 = alloca i64 1"   --->   Operation 15 'alloca' 'fftOutData_local2_V_M_imag_V_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_LUTRAM">   --->   Core 80 'FIFO_LUTRAM' <Latency = 0> <II = 1> <Delay = 1.38> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 16 [2/2] (0.00ns)   --->   "%call_ln1117 = call void @fftStageKernelLastStageS2S<16, 4, 0, 0, 0, 1, complex<ap_fixed<32, 18, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<30, 16, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >, i256 %fftOutData_local2, i256 %fftOutData_local" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:1117]   --->   Operation 16 'call' 'call_ln1117' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 17 [1/2] (0.00ns)   --->   "%call_ln1117 = call void @fftStageKernelLastStageS2S<16, 4, 0, 0, 0, 1, complex<ap_fixed<32, 18, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<30, 16, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >, i256 %fftOutData_local2, i256 %fftOutData_local" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:1117]   --->   Operation 17 'call' 'call_ln1117' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 18 [2/2] (0.00ns)   --->   "%call_ln1120 = call void @convertSuperStreamToArrayNScale<1, 0, 50000, 16, 4, complex<ap_fixed<32, 18, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >, i256 %fftOutData_local, i32 %fftOutData_local2_V_M_real_V_0, i32 %fftOutData_local2_V_M_real_V_1, i32 %fftOutData_local2_V_M_real_V_2, i32 %fftOutData_local2_V_M_real_V_3, i32 %fftOutData_local2_V_M_imag_V_0, i32 %fftOutData_local2_V_M_imag_V_1, i32 %fftOutData_local2_V_M_imag_V_2, i32 %fftOutData_local2_V_M_imag_V_3" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:1120]   --->   Operation 18 'call' 'call_ln1120' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 19 [1/2] (0.00ns)   --->   "%call_ln1120 = call void @convertSuperStreamToArrayNScale<1, 0, 50000, 16, 4, complex<ap_fixed<32, 18, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >, i256 %fftOutData_local, i32 %fftOutData_local2_V_M_real_V_0, i32 %fftOutData_local2_V_M_real_V_1, i32 %fftOutData_local2_V_M_real_V_2, i32 %fftOutData_local2_V_M_real_V_3, i32 %fftOutData_local2_V_M_imag_V_0, i32 %fftOutData_local2_V_M_imag_V_1, i32 %fftOutData_local2_V_M_imag_V_2, i32 %fftOutData_local2_V_M_imag_V_3" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:1120]   --->   Operation 19 'call' 'call_ln1120' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 20 [2/2] (0.00ns)   --->   "%call_ln1123 = call void @digitReversedDataReOrder<16, 4, ap_fixed<32, 18, 5, 3, 0>, ap_fixed<32, 18, 5, 3, 0> >, i32 %fftOutData_local2_V_M_real_V_0, i32 %fftOutData_local2_V_M_real_V_1, i32 %fftOutData_local2_V_M_real_V_2, i32 %fftOutData_local2_V_M_real_V_3, i32 %fftOutData_local2_V_M_imag_V_0, i32 %fftOutData_local2_V_M_imag_V_1, i32 %fftOutData_local2_V_M_imag_V_2, i32 %fftOutData_local2_V_M_imag_V_3, i32 %p_fftOutData_0_0_0_0_0, i32 %p_fftOutData_0_0_0_0_01, i32 %p_fftOutData_0_0_0_0_02, i32 %p_fftOutData_0_0_0_0_03, i32 %p_fftOutData_0_1_0_0_0, i32 %p_fftOutData_0_1_0_0_04, i32 %p_fftOutData_0_1_0_0_05, i32 %p_fftOutData_0_1_0_0_06" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:1123]   --->   Operation 20 'call' 'call_ln1123' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_fftOutData_0_1_0_0_06, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_fftOutData_0_1_0_0_05, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_fftOutData_0_1_0_0_04, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_fftOutData_0_1_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_fftOutData_0_0_0_0_03, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_fftOutData_0_0_0_0_02, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_fftOutData_0_0_0_0_01, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_fftOutData_0_0_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 29 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_13"   --->   Operation 29 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 30 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i256 %fftOutData_local2, i64 666, i64 9, i64 18446744073709551615"   --->   Operation 30 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %fftOutData_local2, void @empty_8, i32 0, i32 0, void @empty_13, i32 0, i32 0, void @empty_13, void @empty_13, void @empty_13, i32 0, i32 0, i32 0, i32 0, void @empty_13, void @empty_13"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 32 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @fftOutData_local_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i256 %fftOutData_local, i256 %fftOutData_local"   --->   Operation 32 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 33 [1/1] (0.00ns)   --->   "%specmemcore_ln1105 = specmemcore void @_ssdm_op_SpecMemCore, i256 %fftOutData_local, i64 666, i64 9, i64 18446744073709551615" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:1105]   --->   Operation 33 'specmemcore' 'specmemcore_ln1105' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %fftOutData_local, void @empty_8, i32 0, i32 0, void @empty_13, i32 0, i32 0, void @empty_13, void @empty_13, void @empty_13, i32 0, i32 0, i32 0, i32 0, void @empty_13, void @empty_13"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 35 [1/1] (0.00ns)   --->   "%empty_347 = specchannel i32 @_ssdm_op_SpecChannel, void @fftOutData_local2_OC_V_OC_M_real_OC_V_OC_0_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i32 %fftOutData_local2_V_M_real_V_0, i32 %fftOutData_local2_V_M_real_V_0"   --->   Operation 35 'specchannel' 'empty_347' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %fftOutData_local2_V_M_real_V_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 37 [1/1] (0.00ns)   --->   "%empty_348 = specchannel i32 @_ssdm_op_SpecChannel, void @fftOutData_local2_OC_V_OC_M_real_OC_V_OC_1_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i32 %fftOutData_local2_V_M_real_V_1, i32 %fftOutData_local2_V_M_real_V_1"   --->   Operation 37 'specchannel' 'empty_348' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %fftOutData_local2_V_M_real_V_1, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 39 [1/1] (0.00ns)   --->   "%empty_349 = specchannel i32 @_ssdm_op_SpecChannel, void @fftOutData_local2_OC_V_OC_M_real_OC_V_OC_2_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i32 %fftOutData_local2_V_M_real_V_2, i32 %fftOutData_local2_V_M_real_V_2"   --->   Operation 39 'specchannel' 'empty_349' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %fftOutData_local2_V_M_real_V_2, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 41 [1/1] (0.00ns)   --->   "%empty_350 = specchannel i32 @_ssdm_op_SpecChannel, void @fftOutData_local2_OC_V_OC_M_real_OC_V_OC_3_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i32 %fftOutData_local2_V_M_real_V_3, i32 %fftOutData_local2_V_M_real_V_3"   --->   Operation 41 'specchannel' 'empty_350' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %fftOutData_local2_V_M_real_V_3, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 43 [1/1] (0.00ns)   --->   "%empty_351 = specchannel i32 @_ssdm_op_SpecChannel, void @fftOutData_local2_OC_V_OC_M_imag_OC_V_OC_0_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i32 %fftOutData_local2_V_M_imag_V_0, i32 %fftOutData_local2_V_M_imag_V_0"   --->   Operation 43 'specchannel' 'empty_351' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %fftOutData_local2_V_M_imag_V_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "%empty_352 = specchannel i32 @_ssdm_op_SpecChannel, void @fftOutData_local2_OC_V_OC_M_imag_OC_V_OC_1_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i32 %fftOutData_local2_V_M_imag_V_1, i32 %fftOutData_local2_V_M_imag_V_1"   --->   Operation 45 'specchannel' 'empty_352' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %fftOutData_local2_V_M_imag_V_1, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%empty_353 = specchannel i32 @_ssdm_op_SpecChannel, void @fftOutData_local2_OC_V_OC_M_imag_OC_V_OC_2_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i32 %fftOutData_local2_V_M_imag_V_2, i32 %fftOutData_local2_V_M_imag_V_2"   --->   Operation 47 'specchannel' 'empty_353' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %fftOutData_local2_V_M_imag_V_2, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 49 [1/1] (0.00ns)   --->   "%empty_354 = specchannel i32 @_ssdm_op_SpecChannel, void @fftOutData_local2_OC_V_OC_M_imag_OC_V_OC_3_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i32 %fftOutData_local2_V_M_imag_V_3, i32 %fftOutData_local2_V_M_imag_V_3"   --->   Operation 49 'specchannel' 'empty_354' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 50 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %fftOutData_local2_V_M_imag_V_3, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 50 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 51 [1/1] (0.00ns)   --->   "%specmemcore_ln1111 = specmemcore void @_ssdm_op_SpecMemCore, i32 %fftOutData_local2_V_M_real_V_0, i32 %fftOutData_local2_V_M_real_V_1, i32 %fftOutData_local2_V_M_real_V_2, i32 %fftOutData_local2_V_M_real_V_3, i32 %fftOutData_local2_V_M_imag_V_0, i32 %fftOutData_local2_V_M_imag_V_1, i32 %fftOutData_local2_V_M_imag_V_2, i32 %fftOutData_local2_V_M_imag_V_3, i64 666, i64 9, i64 18446744073709551615" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:1111]   --->   Operation 51 'specmemcore' 'specmemcore_ln1111' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 52 [1/2] (0.00ns)   --->   "%call_ln1123 = call void @digitReversedDataReOrder<16, 4, ap_fixed<32, 18, 5, 3, 0>, ap_fixed<32, 18, 5, 3, 0> >, i32 %fftOutData_local2_V_M_real_V_0, i32 %fftOutData_local2_V_M_real_V_1, i32 %fftOutData_local2_V_M_real_V_2, i32 %fftOutData_local2_V_M_real_V_3, i32 %fftOutData_local2_V_M_imag_V_0, i32 %fftOutData_local2_V_M_imag_V_1, i32 %fftOutData_local2_V_M_imag_V_2, i32 %fftOutData_local2_V_M_imag_V_3, i32 %p_fftOutData_0_0_0_0_0, i32 %p_fftOutData_0_0_0_0_01, i32 %p_fftOutData_0_0_0_0_02, i32 %p_fftOutData_0_0_0_0_03, i32 %p_fftOutData_0_1_0_0_0, i32 %p_fftOutData_0_1_0_0_04, i32 %p_fftOutData_0_1_0_0_05, i32 %p_fftOutData_0_1_0_0_06" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:1123]   --->   Operation 52 'call' 'call_ln1123' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%ret_ln1125 = ret" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:1125]   --->   Operation 53 'ret' 'ret_ln1125' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 1.08ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

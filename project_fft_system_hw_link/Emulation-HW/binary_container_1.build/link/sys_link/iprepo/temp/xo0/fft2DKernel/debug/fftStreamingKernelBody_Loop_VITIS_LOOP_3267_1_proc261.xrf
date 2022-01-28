@@ -1,0 +1,11 @@
+Begin Function 'fftStreamingKernelBody_Loop_VITIS_LOOP_3267_1_proc261'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_1
+local trunc_ln3270 <trunc_3270> <integer> <> 'trunc' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:3270>
+trunc_ln3270 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:3270
+reg: trunc_ln3270_reg_399[1:0] lv
+
+
+End Function 'fftStreamingKernelBody_Loop_VITIS_LOOP_3267_1_proc261'
+

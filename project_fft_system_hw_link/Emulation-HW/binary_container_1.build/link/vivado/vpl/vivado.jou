@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Jan 27 12:54:07 2022
+# Process ID: 14119
+# Current directory: /home/centos/workspace/project_fft_system_hw_link/Emulation-HW/binary_container_1.build/link/vivado/vpl
+# Command line: vivado -log vivado.log -applog -messageDb vivado.pb -mode batch -source vpl.tcl -notrace
+# Log file: /home/centos/workspace/project_fft_system_hw_link/Emulation-HW/binary_container_1.build/link/vivado/vpl/vivado.log
+# Journal file: /home/centos/workspace/project_fft_system_hw_link/Emulation-HW/binary_container_1.build/link/vivado/vpl/vivado.jou
+#-----------------------------------------------------------
+source vpl.tcl -notrace

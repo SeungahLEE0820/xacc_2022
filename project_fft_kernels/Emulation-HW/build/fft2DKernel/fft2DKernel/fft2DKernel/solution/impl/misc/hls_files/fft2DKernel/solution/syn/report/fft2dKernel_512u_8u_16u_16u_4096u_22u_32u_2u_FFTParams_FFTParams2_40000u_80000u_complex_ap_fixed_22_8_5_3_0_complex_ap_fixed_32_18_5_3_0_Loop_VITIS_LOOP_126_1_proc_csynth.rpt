@@ -1,0 +1,178 @@
+
+
+================================================================
+== Vitis HLS Report for 'fft2dKernel_512u_8u_16u_16u_4096u_22u_32u_2u_FFTParams_FFTParams2_40000u_80000u_complex_ap_fixed_22_8_5_3_0_complex_ap_fixed_32_18_5_3_0_Loop_VITIS_LOOP_126_1_proc'
+================================================================
+* Date:           Thu Jan 27 12:48:16 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  3.086 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------+-----------+---------+---------+----------+----------+-----+-----+----------+
+        |                      |           |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+        |       Instance       |   Module  |   min   |   max   |    min   |    max   | min | max |   Type   |
+        +----------------------+-----------+---------+---------+----------+----------+-----+-----+----------+
+        |grp_fft2dProc_fu_276  |fft2dProc  |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+        +----------------------+-----------+---------+---------+----------+----------+-----+-----+----------+
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_126_1  |        ?|        ?|         ?|          -|          -|     ?|        no|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       72|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        0|    84|    88678|    97263|   96|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|       74|    -|
+|Register             |        -|     -|       70|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|    84|    88748|    97409|   96|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     3|       11|       24|   30|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     1|        3|        8|   10|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------+-----------+---------+----+-------+-------+-----+
+    |       Instance       |   Module  | BRAM_18K| DSP|   FF  |  LUT  | URAM|
+    +----------------------+-----------+---------+----+-------+-------+-----+
+    |grp_fft2dProc_fu_276  |fft2dProc  |        0|  84|  88678|  97263|   96|
+    +----------------------+-----------+---------+----+-------+-------+-----+
+    |Total                 |           |        0|  84|  88678|  97263|   96|
+    +----------------------+-----------+---------+----+-------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------------+----------+----+---+----+------------+------------+
+    |             Variable Name             | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------------+----------+----+---+----+------------+------------+
+    |n_5_fu_517_p2                          |         +|   0|  0|  38|          31|           1|
+    |ap_ext_blocking_n                      |       and|   0|  0|   2|           1|           2|
+    |ap_int_blocking_cur_n                  |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_n                      |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_n                      |       and|   0|  0|   2|           1|           2|
+    |icmp_ln126_fu_512_p2                   |      icmp|   0|  0|  20|          32|          32|
+    |ap_block_state1                        |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_fft2dProc_fu_276_ap_done   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_fft2dProc_fu_276_ap_ready  |        or|   0|  0|   2|           1|           1|
+    +---------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                  |          |   0|  0|  72|          70|          42|
+    +---------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------+----+-----------+-----+-----------+
+    |       Name       | LUT| Input Size| Bits| Total Bits|
+    +------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm         |  20|          4|    1|          4|
+    |ap_done           |   9|          2|    1|          2|
+    |fftInStrm_read    |   9|          2|    1|          2|
+    |fftOutStrm_write  |   9|          2|    1|          2|
+    |n_fu_258          |   9|          2|   31|         62|
+    |n_images_blk_n    |   9|          2|    1|          2|
+    |n_images_c_blk_n  |   9|          2|    1|          2|
+    +------------------+----+-----------+-----+-----------+
+    |Total             |  74|         16|   37|         76|
+    +------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------+----+----+-----+-----------+
+    |                    Name                   | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                  |   3|   0|    3|          0|
+    |ap_done_reg                                |   1|   0|    1|          0|
+    |ap_sync_reg_grp_fft2dProc_fu_276_ap_done   |   1|   0|    1|          0|
+    |ap_sync_reg_grp_fft2dProc_fu_276_ap_ready  |   1|   0|    1|          0|
+    |grp_fft2dProc_fu_276_ap_start_reg          |   1|   0|    1|          0|
+    |n_fu_258                                   |  31|   0|   31|          0|
+    |n_images_read_reg_535                      |  32|   0|   32|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+    |Total                                      |  70|   0|   70|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |                                                                                           Source Object                                                                                          |    C Type    |
++-------------------+-----+-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+|ap_clk             |   in|    1|  ap_ctrl_hs|  fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc|  return value|
+|ap_rst             |   in|    1|  ap_ctrl_hs|  fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|  fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|  fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc|  return value|
+|ap_continue        |   in|    1|  ap_ctrl_hs|  fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|  fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|  fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc|  return value|
+|ap_ext_blocking_n  |  out|    1|  ap_ctrl_hs|  fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc|  return value|
+|ap_str_blocking_n  |  out|    1|  ap_ctrl_hs|  fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc|  return value|
+|ap_int_blocking_n  |  out|    1|  ap_ctrl_hs|  fft2dKernel<512u, 8u, 16u, 16u, 4096u, 22u, 32u, 2u, FFTParams, FFTParams2, 40000u, 80000u, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<32, 18, 5, 3, 0> > >_Loop_VITIS_LOOP_126_1_proc|  return value|
+|n_images_dout      |   in|   32|     ap_fifo|                                                                                                                                                                                          n_images|       pointer|
+|n_images_empty_n   |   in|    1|     ap_fifo|                                                                                                                                                                                          n_images|       pointer|
+|n_images_read      |  out|    1|     ap_fifo|                                                                                                                                                                                          n_images|       pointer|
+|fftInStrm_dout     |   in|  512|     ap_fifo|                                                                                                                                                                                         fftInStrm|       pointer|
+|fftInStrm_empty_n  |   in|    1|     ap_fifo|                                                                                                                                                                                         fftInStrm|       pointer|
+|fftInStrm_read     |  out|    1|     ap_fifo|                                                                                                                                                                                         fftInStrm|       pointer|
+|fftOutStrm_din     |  out|  512|     ap_fifo|                                                                                                                                                                                        fftOutStrm|       pointer|
+|fftOutStrm_full_n  |   in|    1|     ap_fifo|                                                                                                                                                                                        fftOutStrm|       pointer|
+|fftOutStrm_write   |  out|    1|     ap_fifo|                                                                                                                                                                                        fftOutStrm|       pointer|
+|n_images_c_din     |  out|   32|     ap_fifo|                                                                                                                                                                                        n_images_c|       pointer|
+|n_images_c_full_n  |   in|    1|     ap_fifo|                                                                                                                                                                                        n_images_c|       pointer|
+|n_images_c_write   |  out|    1|     ap_fifo|                                                                                                                                                                                        n_images_c|       pointer|
++-------------------+-----+-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+

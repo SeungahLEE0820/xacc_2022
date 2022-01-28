@@ -1,0 +1,251 @@
+
+
+================================================================
+== Vitis HLS Report for 'transpWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s'
+================================================================
+* Date:           Thu Jan 27 12:47:02 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.793 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      104|      104|  0.416 us|  0.416 us|  104|  104|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |                      Loop Name                      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_71_1                                    |      103|      103|        13|          -|          -|     8|        no|
+        | + transpWideBlksInMatrix_writePIPO_VITIS_LOOP_77_2  |        3|        3|         1|          1|          1|     4|       yes|
+        | + transpWideBlksInMatrix_readPIPO_VITIS_LOOP_90_3   |        5|        5|         3|          1|          1|     4|       yes|
+        +-----------------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|      144|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     -|        -|        -|    -|
+|Memory               |        -|     -|        -|        -|   16|
+|Multiplexer          |        -|     -|        -|      450|    -|
+|Register             |        -|     -|       45|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|       45|      594|   16|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|       ~0|    5|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|       ~0|       ~0|    1|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +--------------------------------------------+----------------------------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |                   Memory                   |                                      Module                                      | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +--------------------------------------------+----------------------------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |l_memWidePipoBuff_superSample_M_real_V_0_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_real_V_1_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_real_V_2_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_real_V_3_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_real_V_4_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_real_V_5_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_real_V_6_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_real_V_7_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_imag_V_0_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_imag_V_1_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_imag_V_2_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_imag_V_3_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_imag_V_4_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_imag_V_5_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_imag_V_6_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    |l_memWidePipoBuff_superSample_M_imag_V_7_U  |invTranspWideBlksInMatrix_16u_16u_2u_8u_complex_ap_fixed_27_13_5_3_0_s_l_memWPgM  |        0|  0|   0|    1|     4|   27|     1|          108|
+    +--------------------------------------------+----------------------------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total                                       |                                                                                  |        0|  0|   0|   16|    64|  432|    16|         1728|
+    +--------------------------------------------+----------------------------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln76_1_fu_867_p2       |         +|   0|  0|   9|           2|           1|
+    |add_ln76_fu_879_p2         |         +|   0|  0|   9|           2|           1|
+    |add_ln81_fu_835_p2         |         +|   0|  0|   9|           2|           2|
+    |add_ln89_1_fu_945_p2       |         +|   0|  0|   9|           2|           1|
+    |add_ln89_fu_957_p2         |         +|   0|  0|   9|           2|           1|
+    |add_ln92_fu_913_p2         |         +|   0|  0|   9|           2|           2|
+    |blk_fu_637_p2              |         +|   0|  0|  10|           3|           1|
+    |c_fu_861_p2                |         +|   0|  0|   9|           2|           1|
+    |r_16_fu_939_p2             |         +|   0|  0|   9|           2|           1|
+    |ap_block_pp1_stage0_01001  |       and|   0|  0|   2|           1|           1|
+    |ap_ext_blocking_n          |       and|   0|  0|   2|           2|           2|
+    |ap_int_blocking_cur_n      |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_n          |       and|   0|  0|   2|           1|           2|
+    |ap_str_blocking_n          |       and|   0|  0|   2|           2|           2|
+    |icmp_ln71_fu_1040_p2       |      icmp|   0|  0|   8|           3|           2|
+    |icmp_ln76_fu_885_p2        |      icmp|   0|  0|   8|           2|           2|
+    |icmp_ln77_fu_873_p2        |      icmp|   0|  0|   8|           2|           3|
+    |icmp_ln89_fu_963_p2        |      icmp|   0|  0|   8|           2|           2|
+    |icmp_ln90_fu_951_p2        |      icmp|   0|  0|   8|           2|           3|
+    |ap_block_state1            |        or|   0|  0|   2|           1|           1|
+    |c_1_fu_899_p3              |    select|   0|  0|   2|           1|           2|
+    |r_fu_651_p3                |    select|   0|  0|   2|           1|           2|
+    |select_ln76_fu_643_p3      |    select|   0|  0|   2|           1|           1|
+    |select_ln89_fu_891_p3      |    select|   0|  0|   2|           1|           1|
+    |ap_enable_pp1              |       xor|   0|  0|   2|           1|           2|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0| 144|          43|          40|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------------------+----+-----------+-----+-----------+
+    |                        Name                       | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------------------+----+-----------+-----+-----------+
+    |add_ln76207_reg_527                                |   9|          2|    2|          4|
+    |add_ln89202_reg_582                                |   9|          2|    2|          4|
+    |ap_NS_fsm                                          |  37|          7|    1|          7|
+    |ap_done                                            |   9|          2|    1|          2|
+    |ap_enable_reg_pp1_iter2                            |   9|          2|    1|          2|
+    |ap_phi_mux_add_ln89202_phi_fu_586_p4               |   9|          2|    2|          4|
+    |ap_phi_mux_c199_phi_fu_619_p4                      |   9|          2|    2|          4|
+    |ap_phi_mux_icmp_ln90201_phi_fu_597_p4              |   9|          2|    1|          2|
+    |ap_phi_mux_indvar_flatten7198_phi_fu_630_p4        |   9|          2|    2|          4|
+    |ap_phi_mux_r_15200_phi_fu_608_p4                   |   9|          2|    2|          4|
+    |blk208_reg_515                                     |   9|          2|    3|          6|
+    |c199_reg_615                                       |   9|          2|    2|          4|
+    |c_1205_reg_549                                     |   9|          2|    2|          4|
+    |icmp_ln77206_reg_538                               |   9|          2|    1|          2|
+    |icmp_ln90201_reg_593                               |   9|          2|    1|          2|
+    |indvar_flatten203_reg_571                          |   9|          2|    2|          4|
+    |indvar_flatten7198_reg_626                         |   9|          2|    2|          4|
+    |l_memWidePipoBuff_superSample_M_imag_V_0_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_imag_V_1_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_imag_V_2_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_imag_V_3_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_imag_V_4_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_imag_V_5_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_imag_V_6_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_imag_V_7_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_real_V_0_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_real_V_1_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_real_V_2_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_real_V_3_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_real_V_4_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_real_V_5_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_real_V_6_address0  |  14|          3|    2|          6|
+    |l_memWidePipoBuff_superSample_M_real_V_7_address0  |  14|          3|    2|          6|
+    |l_transpBlkMatrixStream2_blk_n                     |   9|          2|    1|          2|
+    |l_transpMatrixStream_blk_n                         |   9|          2|    1|          2|
+    |r204_reg_560                                       |   9|          2|    2|          4|
+    |r_15200_reg_604                                    |   9|          2|    2|          4|
+    |real_start                                         |   9|          2|    1|          2|
+    +---------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                              | 450|         97|   68|        173|
+    +---------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------+---+----+-----+-----------+
+    |            Name            | FF| LUT| Bits| Const Bits|
+    +----------------------------+---+----+-----+-----------+
+    |add_ln76207_reg_527         |  2|   0|    2|          0|
+    |add_ln89202_reg_582         |  2|   0|    2|          0|
+    |add_ln89_1_reg_1169         |  2|   0|    2|          0|
+    |add_ln89_reg_1179           |  2|   0|    2|          0|
+    |ap_CS_fsm                   |  6|   0|    6|          0|
+    |ap_done_reg                 |  1|   0|    1|          0|
+    |ap_enable_reg_pp1_iter0     |  1|   0|    1|          0|
+    |ap_enable_reg_pp1_iter1     |  1|   0|    1|          0|
+    |ap_enable_reg_pp1_iter2     |  1|   0|    1|          0|
+    |blk208_reg_515              |  3|   0|    3|          0|
+    |blk_reg_1046                |  3|   0|    3|          0|
+    |c199_reg_615                |  2|   0|    2|          0|
+    |c_1205_reg_549              |  2|   0|    2|          0|
+    |c_1_reg_1079                |  2|   0|    2|          0|
+    |icmp_ln77206_reg_538        |  1|   0|    1|          0|
+    |icmp_ln89_reg_1184          |  1|   0|    1|          0|
+    |icmp_ln90201_reg_593        |  1|   0|    1|          0|
+    |icmp_ln90_reg_1174          |  1|   0|    1|          0|
+    |indvar_flatten203_reg_571   |  2|   0|    2|          0|
+    |indvar_flatten7198_reg_626  |  2|   0|    2|          0|
+    |r204_reg_560                |  2|   0|    2|          0|
+    |r_15200_reg_604             |  2|   0|    2|          0|
+    |r_16_reg_1164               |  2|   0|    2|          0|
+    |start_once_reg              |  1|   0|    1|          0|
+    +----------------------------+---+----+-----+-----------+
+    |Total                       | 45|   0|   45|          0|
+    +----------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------------+-----+-----+------------+--------------------------------------------------------------------------------+--------------+
+|            RTL Ports            | Dir | Bits|  Protocol  |                                  Source Object                                 |    C Type    |
++---------------------------------+-----+-----+------------+--------------------------------------------------------------------------------+--------------+
+|ap_clk                           |   in|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_rst                           |   in|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_start                         |   in|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|start_full_n                     |   in|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_done                          |  out|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_continue                      |   in|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_idle                          |  out|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_ready                         |  out|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|start_out                        |  out|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|start_write                      |  out|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_ext_blocking_n                |  out|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_str_blocking_n                |  out|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_int_blocking_n                |  out|    1|  ap_ctrl_hs|  transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|l_transpMatrixStream_dout        |   in|  512|     ap_fifo|                                                            l_transpMatrixStream|       pointer|
+|l_transpMatrixStream_empty_n     |   in|    1|     ap_fifo|                                                            l_transpMatrixStream|       pointer|
+|l_transpMatrixStream_read        |  out|    1|     ap_fifo|                                                            l_transpMatrixStream|       pointer|
+|l_transpBlkMatrixStream2_din     |  out|  512|     ap_fifo|                                                        l_transpBlkMatrixStream2|       pointer|
+|l_transpBlkMatrixStream2_full_n  |   in|    1|     ap_fifo|                                                        l_transpBlkMatrixStream2|       pointer|
+|l_transpBlkMatrixStream2_write   |  out|    1|     ap_fifo|                                                        l_transpBlkMatrixStream2|       pointer|
++---------------------------------+-----+-----+------------+--------------------------------------------------------------------------------+--------------+
+

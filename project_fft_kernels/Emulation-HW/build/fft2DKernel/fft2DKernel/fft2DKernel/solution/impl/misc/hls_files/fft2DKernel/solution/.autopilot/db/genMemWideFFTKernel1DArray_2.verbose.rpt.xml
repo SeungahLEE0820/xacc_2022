@@ -1,0 +1,223 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'genMemWideFFTKernel1DArray_2'" level="0">
+<item name = "Date">Thu Jan 27 12:47:53 2022
+</item>
+<item name = "Version">2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)</item>
+<item name = "Project">fft2DKernel</item>
+<item name = "Solution">solution (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu9p-flgb2104-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">4.00 ns, 2.983 ns, 1.08 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_27_13_5_3_0_U0">wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_27_13_5_3_0_s, 32, 33, 0.128 us, 0.132 us, 32, 32, loop rewind stp(delay=0 clock cycles(s))</column>
+<column name="fftStreamingKernel_1_U0">fftStreamingKernel_1, ?, ?, ?, ?, ?, ?, no</column>
+<column name="narrowToWideConverter_4u_8u_16u_complex_ap_fixed_32_18_5_3_0_U0">narrowToWideConverter_4u_8u_16u_complex_ap_fixed_32_18_5_3_0_s, 33, 34, 0.132 us, 0.136 us, 32, 32, loop rewind stp(delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 14, -</column>
+<column name="FIFO">-, -, 1550, 840, -</column>
+<column name="Instance">0, 28, 15644, 18504, 0</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, -, -</column>
+<column name="Register">-, -, -, -, -</column>
+<specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, 1, 2, 4, 0</specialColumn>
+<specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
+<specialColumn name="Utilization (%)">0, ~0, ~0, 1, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="fftStreamingKernel_1_U0">fftStreamingKernel_1, 0, 28, 13878, 13874, 0</column>
+<column name="narrowToWideConverter_4u_8u_16u_complex_ap_fixed_32_18_5_3_0_U0">narrowToWideConverter_4u_8u_16u_complex_ap_fixed_32_18_5_3_0_s, 0, 0, 1309, 3384, 0</column>
+<column name="wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_27_13_5_3_0_U0">wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_27_13_5_3_0_s, 0, 0, 457, 1246, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+<column name="ssrWideStream4kernelIn_U">0, 775, 0, -, 2, 256, 512</column>
+<column name="ssrWideStream4kernelOut_U">0, 775, 0, -, 2, 256, 512</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_ext_blocking_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_ext_blocking_sub_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_idle">and, 0, 0, 2, 1, 1</column>
+<column name="ap_int_blocking_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_int_blocking_sub_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_str_blocking_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_str_blocking_sub_n">and, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_0_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_0, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_0_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_0, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_0_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_0, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_01_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_01, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_01_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_01, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_01_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_01, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_02_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_02, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_02_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_02, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_02_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_02, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_03_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_03, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_03_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_03, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_03_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_03, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_04_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_04, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_04_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_04, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_04_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_04, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_05_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_05, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_05_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_05, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_05_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_05, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_06_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_06, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_06_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_06, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_06_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_06, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_07_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_07, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_07_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_07, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_0_0_0_07_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_0_0_0_07, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_0_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_0, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_0_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_0, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_0_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_0, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_016_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_016, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_016_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_016, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_016_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_016, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_017_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_017, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_017_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_017, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_017_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_017, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_018_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_018, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_018_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_018, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_018_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_018, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_019_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_019, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_019_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_019, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_019_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_019, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_020_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_020, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_020_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_020, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_020_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_020, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_021_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_021, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_021_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_021, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_021_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_021, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_022_dout">in, 27, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_022, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_022_empty_n">in, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_022, pointer</column>
+<column name="p_inMemWideStreamArray_0_0_1_0_0_022_read">out, 1, ap_fifo, p_inMemWideStreamArray_0_0_1_0_0_022, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_0_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_0, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_0_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_0, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_0_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_0, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_030_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_030, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_030_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_030, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_030_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_030, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_031_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_031, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_031_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_031, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_031_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_031, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_032_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_032, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_032_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_032, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_032_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_032, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_033_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_033, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_033_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_033, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_033_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_033, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_034_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_034, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_034_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_034, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_034_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_034, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_035_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_035, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_035_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_035, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_035_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_035, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_036_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_036, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_036_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_036, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_0_0_0_036_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_0_0_0_036, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_0_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_0, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_0_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_0, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_0_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_0, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_044_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_044, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_044_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_044, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_044_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_044, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_045_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_045, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_045_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_045, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_045_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_045, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_046_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_046, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_046_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_046, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_046_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_046, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_047_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_047, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_047_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_047, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_047_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_047, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_048_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_048, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_048_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_048, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_048_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_048, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_049_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_049, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_049_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_049, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_049_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_049, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_050_din">out, 32, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_050, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_050_full_n">in, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_050, pointer</column>
+<column name="p_outMemWideStreamArray_0_0_1_0_0_050_write">out, 1, ap_fifo, p_outMemWideStreamArray_0_0_1_0_0_050, pointer</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, genMemWideFFTKernel1DArray.2, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, genMemWideFFTKernel1DArray.2, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, genMemWideFFTKernel1DArray.2, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, genMemWideFFTKernel1DArray.2, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, genMemWideFFTKernel1DArray.2, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, genMemWideFFTKernel1DArray.2, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, genMemWideFFTKernel1DArray.2, return value</column>
+<column name="ap_ext_blocking_n">out, 1, ap_ctrl_hs, genMemWideFFTKernel1DArray.2, return value</column>
+<column name="ap_str_blocking_n">out, 1, ap_ctrl_hs, genMemWideFFTKernel1DArray.2, return value</column>
+<column name="ap_int_blocking_n">out, 1, ap_ctrl_hs, genMemWideFFTKernel1DArray.2, return value</column>
+</table>
+</item>
+</section>
+</profile>

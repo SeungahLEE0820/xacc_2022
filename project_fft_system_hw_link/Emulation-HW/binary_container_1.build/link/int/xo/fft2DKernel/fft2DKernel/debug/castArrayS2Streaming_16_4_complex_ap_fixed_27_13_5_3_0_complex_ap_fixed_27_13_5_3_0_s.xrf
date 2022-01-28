@@ -1,0 +1,11 @@
+Begin Function 'castArrayS2Streaming<16, 4, complex<ap_fixed<27, 13, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >'
+
+RTL state condition: (1'b1 == ap_CS_fsm_state2)
+# ST_2
+local t1 <> <integer> <Phi> 'phi' <>
+t /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:73
+reg: t1_reg_126[1:0] lv
+
+
+End Function 'castArrayS2Streaming<16, 4, complex<ap_fixed<27, 13, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >'
+

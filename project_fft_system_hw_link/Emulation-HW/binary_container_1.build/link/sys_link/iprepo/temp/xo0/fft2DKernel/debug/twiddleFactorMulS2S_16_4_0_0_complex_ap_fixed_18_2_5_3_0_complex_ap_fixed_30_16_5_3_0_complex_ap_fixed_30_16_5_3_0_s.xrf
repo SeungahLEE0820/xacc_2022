@@ -1,0 +1,158 @@
+Begin Function 'twiddleFactorMulS2S<16, 4, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<30, 16, 5, 3, 0> >, complex<ap_fixed<30, 16, 5, 3, 0> > >'
+
+RTL state condition: (1'b1 == 1'b1)
+# ST_4
+local mul_ln1246 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln1246 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1246
+reg: mul_ln1246_reg_1629[45:0] lv
+
+local mul_ln712 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln712 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:712
+reg: mul_ln712_reg_1634[45:0] lv
+
+local mul_ln712_1 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln712_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:712
+reg: mul_ln712_1_reg_1639[45:0] lv
+
+local mul_ln1246_1 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln1246_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1246
+reg: mul_ln1246_1_reg_1644[45:0] lv
+
+local mul_ln712_2 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln712_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:712
+reg: mul_ln712_2_reg_1649[45:0] lv
+
+local mul_ln1245 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln1245 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1245
+reg: mul_ln1245_reg_1654[45:0] lv
+
+local mul_ln712_3 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln712_3 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:712
+reg: mul_ln712_3_reg_1659[45:0] lv
+
+local mul_ln1246_2 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln1246_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1246
+reg: mul_ln1246_2_reg_1664[45:0] lv
+
+local mul_ln712_4 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln712_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:712
+reg: mul_ln712_4_reg_1669[45:0] lv
+
+local mul_ln1245_1 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln1245_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1245
+reg: mul_ln1245_1_reg_1674[45:0] lv
+
+local mul_ln712_5 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln712_5 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:712
+reg: mul_ln712_5_reg_1679[45:0] lv
+
+local mul_ln1246_3 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln1246_3 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1246
+reg: mul_ln1246_3_reg_1684[45:0] lv
+
+local mul_ln712_6 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln712_6 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:712
+reg: mul_ln712_6_reg_1689[45:0] lv
+
+local mul_ln1245_2 <> <integer> <Arithmetic><MultiCycle> 'mul' <>
+mul_ln1245_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1245
+reg: mul_ln1245_2_reg_1694[45:0] lv
+
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_1
+local p_k_read <> <integer> <> 'read' <>
+reg: p_k_read_reg_1371[3:0] lv
+
+local p_read_3 <> <integer> <> 'read' <>
+reg: p_read_3_reg_1379[28:0] lv
+
+local p_read_4 <> <integer> <> 'read' <>
+reg: p_read_4_reg_1384[28:0] lv
+
+local p_read_5 <> <integer> <> 'read' <>
+reg: p_read_5_reg_1389[28:0] lv
+
+local p_read_6 <> <integer> <> 'read' <>
+reg: p_read_6_reg_1394[28:0] lv
+
+local p_read_7 <> <integer> <> 'read' <>
+reg: p_read_7_reg_1400[28:0] lv
+
+local p_read_8 <> <integer> <> 'read' <>
+reg: p_read_8_reg_1405[28:0] lv
+
+local p_read_9 <> <integer> <> 'read' <>
+reg: p_read_9_reg_1410[28:0] lv
+
+local p_read39 <> <integer> <> 'read' <>
+reg: p_read39_reg_1415[28:0] lv
+
+local index_cos_V <> <integer> <Arithmetic> 'add' <>
+index_cos_V /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int.h:223
+reg: index_cos_V_reg_1426[3:0] lv
+
+local index_invert_control_imag_2 <> <integer> <> 'bitselect' <>
+index_invert_control_imag_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: index_invert_control_imag_2_reg_1432[0:0] lv
+
+local index_cos_V_1 <> <integer> <Arithmetic> 'add' <>
+index_cos_V_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int.h:223
+reg: index_cos_V_1_reg_1447[3:0] lv
+
+local icmp_ln1049_4 <> <integer> <Comparator> 'icmp' <>
+icmp_ln1049_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_base.h:1049
+reg: icmp_ln1049_4_reg_1453[0:0] lv
+
+local icmp_ln1049_5 <> <integer> <Comparator> 'icmp' <>
+icmp_ln1049_5 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_base.h:1049
+reg: icmp_ln1049_5_reg_1458[0:0] lv
+
+local icmp_ln1049_7 <> <integer> <Comparator> 'icmp' <>
+icmp_ln1049_7 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_base.h:1049
+reg: icmp_ln1049_7_reg_1468[0:0] lv
+
+local index_V_1 <> <integer> <Arithmetic> 'sub' <>
+index_V_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int.h:315
+reg: index_V_1_reg_1478[3:0] lv
+
+local index_cos_V_2 <> <integer> <Arithmetic> 'add' <>
+index_cos_V_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int.h:223
+reg: index_cos_V_2_reg_1485[3:0] lv
+
+local icmp_ln1049_11 <> <integer> <Comparator> 'icmp' <>
+icmp_ln1049_11 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_base.h:1049
+reg: icmp_ln1049_11_reg_1496[0:0] lv
+
+# ST_2
+local lut_out_imag_V_4 <> <integer> <ArrayAccess><ArrayLoad><MultiCycle> 'load' <>
+lut_out_imag_V_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:712
+reg: lut_out_imag_V_4_reg_1506[17:0] lv
+
+local imagSinVal <> <integer> <> 'select' <>
+imagSinVal /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: imagSinVal_reg_1511[17:0] lv
+
+local realCosVal <> <integer> <> 'select' <>
+realCosVal /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: realCosVal_reg_1516[17:0] lv
+
+local imagSinVal_1 <> <integer> <> 'select' <>
+imagSinVal_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: imagSinVal_1_reg_1521[17:0] lv
+
+local realCosVal_1 <> <integer> <> 'select' <>
+realCosVal_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: realCosVal_1_reg_1526[17:0] lv
+
+local imagSinVal_2 <> <integer> <> 'select' <>
+imagSinVal_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: imagSinVal_2_reg_1531[17:0] lv
+
+local realCosVal_2 <> <integer> <> 'select' <>
+realCosVal_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: realCosVal_2_reg_1536[17:0] lv
+
+
+End Function 'twiddleFactorMulS2S<16, 4, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<30, 16, 5, 3, 0> >, complex<ap_fixed<30, 16, 5, 3, 0> > >'
+

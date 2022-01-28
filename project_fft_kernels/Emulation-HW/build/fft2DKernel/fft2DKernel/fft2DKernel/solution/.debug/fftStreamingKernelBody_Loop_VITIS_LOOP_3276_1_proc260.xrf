@@ -1,0 +1,19 @@
+Begin Function 'fftStreamingKernelBody_Loop_VITIS_LOOP_3276_1_proc260'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_1
+local icmp_ln3276 <icmp_3276> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:3276>
+icmp_ln3276 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:3276
+reg: icmp_ln3276_reg_425[0:0] lv
+
+local icmp_ln3277 <icmp_3277> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:3277>
+icmp_ln3277 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:3277
+reg: icmp_ln3277_reg_429[0:0] lv
+
+local trunc_ln145 <trunc_145> <integer> <> 'trunc' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+trunc_ln145 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: trunc_ln145_reg_434[1:0] lv
+
+
+End Function 'fftStreamingKernelBody_Loop_VITIS_LOOP_3276_1_proc260'
+

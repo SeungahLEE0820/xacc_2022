@@ -1,0 +1,229 @@
+
+
+================================================================
+== Vitis HLS Report for 'sliceProcessor'
+================================================================
+* Date:           Thu Jan 27 12:47:59 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.983 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------------------------------+-----------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+        |                                                                  |                                                                 |  Latency (cycles) |  Latency (absolute) |  Interval |                 Pipeline                 |
+        |                             Instance                             |                              Module                             |   min   |   max   |    min   |    max   | min | max |                   Type                   |
+        +------------------------------------------------------------------+-----------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+        |demuxWideStreaming_2u_16u_16u_8u_complex_ap_fixed_27_13_5_3_0_U0  |demuxWideStreaming_2u_16u_16u_8u_complex_ap_fixed_27_13_5_3_0_s  |       32|       33|  0.128 us|  0.132 us|   32|   32|  loop rewind stp(delay=0 clock cycles(s))|
+        |genMemWideFFTKernel1DArray_U0                                     |genMemWideFFTKernel1DArray                                       |        ?|        ?|         ?|         ?|    ?|    ?|                                  dataflow|
+        |muxWideStreaming_2u_16u_16u_8u_complex_ap_fixed_32_18_5_3_0_U0    |muxWideStreaming_2u_16u_16u_8u_complex_ap_fixed_32_18_5_3_0_s    |       32|       33|  0.128 us|  0.132 us|   32|   32|  loop rewind stp(delay=0 clock cycles(s))|
+        +------------------------------------------------------------------+-----------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       14|    -|
+|FIFO                 |        -|     -|     6592|     4160|    -|
+|Instance             |        0|    56|    34858|    39830|    0|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|        9|    -|
+|Register             |        -|     -|        1|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|    56|    41451|    44013|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     2|        5|       11|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|    ~0|        1|        3|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------------------------------+-----------------------------------------------------------------+---------+----+-------+-------+-----+
+    |                             Instance                             |                              Module                             | BRAM_18K| DSP|   FF  |  LUT  | URAM|
+    +------------------------------------------------------------------+-----------------------------------------------------------------+---------+----+-------+-------+-----+
+    |demuxWideStreaming_2u_16u_16u_8u_complex_ap_fixed_27_13_5_3_0_U0  |demuxWideStreaming_2u_16u_16u_8u_complex_ap_fixed_27_13_5_3_0_s  |        0|   0|    450|    429|    0|
+    |genMemWideFFTKernel1DArray_U0                                     |genMemWideFFTKernel1DArray                                       |        0|  56|  34391|  38757|    0|
+    |muxWideStreaming_2u_16u_16u_8u_complex_ap_fixed_32_18_5_3_0_U0    |muxWideStreaming_2u_16u_16u_8u_complex_ap_fixed_32_18_5_3_0_s    |        0|   0|     17|    644|    0|
+    +------------------------------------------------------------------+-----------------------------------------------------------------+---------+----+-------+-------+-----+
+    |Total                                                             |                                                                 |        0|  56|  34858|  39830|    0|
+    +------------------------------------------------------------------+-----------------------------------------------------------------+---------+----+-------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +----------------------------------------------------------+---------+-----+----+-----+------+-----+---------+
+    |                           Name                           | BRAM_18K|  FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +----------------------------------------------------------+---------+-----+----+-----+------+-----+---------+
+    |demuxStreamArrayOut_V_superSample_M_imag_V_0_0_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_0_1_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_0_2_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_0_3_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_0_4_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_0_5_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_0_6_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_0_7_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_1_0_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_1_1_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_1_2_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_1_3_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_1_4_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_1_5_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_1_6_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_imag_V_1_7_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_0_0_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_0_1_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_0_2_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_0_3_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_0_4_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_0_5_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_0_6_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_0_7_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_1_0_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_1_1_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_1_2_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_1_3_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_1_4_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_1_5_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_1_6_U          |        0|  103|   0|    -|     2|   27|       54|
+    |demuxStreamArrayOut_V_superSample_M_real_V_1_7_U          |        0|  103|   0|    -|     2|   27|       54|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_0_0_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_0_1_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_0_2_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_0_3_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_0_4_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_0_5_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_0_6_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_0_7_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_1_0_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_1_1_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_1_2_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_1_3_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_1_4_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_1_5_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_1_6_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_imag_V_1_7_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_0_0_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_0_1_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_0_2_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_0_3_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_0_4_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_0_5_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_0_6_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_0_7_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_1_0_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_1_1_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_1_2_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_1_3_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_1_4_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_1_5_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_1_6_U  |        0|  103|   0|    -|     2|   32|       64|
+    |sliceProcesorStreamArrayOut_V_superSample_M_real_V_1_7_U  |        0|  103|   0|    -|     2|   32|       64|
+    +----------------------------------------------------------+---------+-----+----+-----+------+-----+---------+
+    |Total                                                     |        0| 6592|   0|    0|   128| 1888|     3776|
+    +----------------------------------------------------------+---------+-----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |ap_ext_blocking_n      |       and|   0|  0|   2|           1|           1|
+    |ap_ext_blocking_sub_n  |       and|   0|  0|   2|           1|           1|
+    |ap_idle                |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_n      |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_sub_n  |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_n      |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_sub_n  |       and|   0|  0|   2|           1|           1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0|  14|           7|           7|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------+----+-----------+-----+-----------+
+    |    Name    | LUT| Input Size| Bits| Total Bits|
+    +------------+----+-----------+-----+-----------+
+    |real_start  |   9|          2|    1|          2|
+    +------------+----+-----------+-----+-----------+
+    |Total       |   9|          2|    1|          2|
+    +------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------+---+----+-----+-----------+
+    |      Name      | FF| LUT| Bits| Const Bits|
+    +----------------+---+----+-----+-----------+
+    |start_once_reg  |  1|   0|    1|          0|
+    +----------------+---+----+-----+-----------+
+    |Total           |  1|   0|    1|          0|
+    +----------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------------+-----+-----+------------+--------------------------+--------------+
+|             RTL Ports            | Dir | Bits|  Protocol  |       Source Object      |    C Type    |
++----------------------------------+-----+-----+------------+--------------------------+--------------+
+|ap_start                          |   in|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|start_full_n                      |   in|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|start_out                         |  out|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|start_write                       |  out|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|ap_clk                            |   in|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|ap_rst                            |   in|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|ap_done                           |  out|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|ap_ready                          |  out|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|ap_idle                           |  out|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|ap_continue                       |   in|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|ap_ext_blocking_n                 |  out|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|ap_str_blocking_n                 |  out|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|ap_int_blocking_n                 |  out|    1|  ap_ctrl_hs|            sliceProcessor|  return value|
+|l_transpBlkMatrixStream2_dout     |   in|  512|     ap_fifo|  l_transpBlkMatrixStream2|       pointer|
+|l_transpBlkMatrixStream2_empty_n  |   in|    1|     ap_fifo|  l_transpBlkMatrixStream2|       pointer|
+|l_transpBlkMatrixStream2_read     |  out|    1|     ap_fifo|  l_transpBlkMatrixStream2|       pointer|
+|l_colProcOutStream_din            |  out|  512|     ap_fifo|        l_colProcOutStream|       pointer|
+|l_colProcOutStream_full_n         |   in|    1|     ap_fifo|        l_colProcOutStream|       pointer|
+|l_colProcOutStream_write          |  out|    1|     ap_fifo|        l_colProcOutStream|       pointer|
++----------------------------------+-----+-----+------------+--------------------------+--------------+
+

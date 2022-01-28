@@ -1,0 +1,6 @@
+14:19:30 **** Incremental Build of configuration Emulation-HW for project project_fft ****
+make -j8 all 
+make: Nothing to be done for `all'.
+
+14:19:30 Build Finished (took 82ms)
+

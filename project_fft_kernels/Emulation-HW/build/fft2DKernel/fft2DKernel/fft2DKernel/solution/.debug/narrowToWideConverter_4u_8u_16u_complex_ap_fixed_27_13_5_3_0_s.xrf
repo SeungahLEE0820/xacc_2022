@@ -1,0 +1,166 @@
+Begin Function 'narrowToWideConverter<4u, 8u, 16u, complex<ap_fixed<27, 13, 5, 3, 0> > >'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_2
+local wideWriteIndex18 <> <integer> <Phi> 'phi' <>
+wideWriteIndex /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121
+reg: wideWriteIndex18_reg_267[2:0] lv
+
+local i17 <> <integer> <Phi> 'phi' <>
+i /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:113
+reg: i17_reg_282[4:0] lv
+
+local trunc_ln113 <trunc_113> <integer> <> 'trunc' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:113>
+trunc_ln113 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:113
+reg: trunc_ln113_reg_1848[0:0] lv
+
+local trunc_ln145 <trunc_145> <integer> <> 'trunc' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+trunc_ln145 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: trunc_ln145_reg_1852[26:0] lv
+
+local trunc_ln145_s <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+trunc_ln145_s /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: trunc_ln145_s_reg_1864[26:0] lv
+
+local trunc_ln145_75 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+trunc_ln145_75 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: trunc_ln145_75_reg_1876[26:0] lv
+
+local trunc_ln145_76 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+trunc_ln145_76 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: trunc_ln145_76_reg_1888[26:0] lv
+
+local trunc_ln145_77 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+trunc_ln145_77 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: trunc_ln145_77_reg_1900[26:0] lv
+
+local trunc_ln145_78 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+trunc_ln145_78 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: trunc_ln145_78_reg_1912[26:0] lv
+
+local trunc_ln145_79 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+trunc_ln145_79 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: trunc_ln145_79_reg_1924[26:0] lv
+
+local trunc_ln145_80 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+trunc_ln145_80 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: trunc_ln145_80_reg_1936[26:0] lv
+
+local icmp_ln117 <icmp_117> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+icmp_ln117 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: icmp_ln117_reg_1948[0:0] lv
+
+local icmp_ln117_19 <icmp_117> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+icmp_ln117_19 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: icmp_ln117_19_reg_1954[0:0] lv
+
+local icmp_ln117_20 <icmp_117> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+icmp_ln117_20 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: icmp_ln117_20_reg_1961[0:0] lv
+
+local icmp_ln117_21 <icmp_117> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+icmp_ln117_21 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: icmp_ln117_21_reg_1969[0:0] lv
+
+local i <add_113> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:113>
+i /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:113
+reg: i_reg_1978[4:0] lv
+
+local wideWriteIndex <xor_121> <integer> <Logic> 'xor' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121>
+wideWriteIndex /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121
+reg: wideWriteIndex_reg_1983[2:0] lv
+
+local icmp_ln113 <icmp_113> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:113>
+icmp_ln113 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:113
+reg: icmp_ln113_reg_1988[0:0] lv
+
+# ST_3
+local select_ln117_136 <select_117> <integer> <> 'select' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+select_ln117_136 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: select_ln117_136_reg_1992[26:0] lv
+
+local wideSample_superSample_M_imag_V_0_1 <mux_145> <integer> <> 'mux' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+wideSample_superSample_M_imag_V_0_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+wideSample_superSample_M_imag_V_0_1 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121
+reg: wideSample_superSample_M_imag_V_0_1_reg_1997[26:0] lv
+
+local wideSample_superSample_M_real_V_1_2 <mux_117> <integer> <> 'mux' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+wideSample_superSample_M_real_V_1_2 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+wideSample_superSample_M_real_V_1_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: wideSample_superSample_M_real_V_1_2_reg_2002[26:0] lv
+
+local wideSample_superSample_M_imag_V_1_2 <mux_145> <integer> <> 'mux' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+wideSample_superSample_M_imag_V_1_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+wideSample_superSample_M_imag_V_1_2 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121
+wideSample_superSample_M_imag_V_1_2 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: wideSample_superSample_M_imag_V_1_2_reg_2007[26:0] lv
+
+local wideSample_superSample_M_real_V_2_3 <mux_117> <integer> <> 'mux' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+wideSample_superSample_M_real_V_2_3 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+wideSample_superSample_M_real_V_2_3 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: wideSample_superSample_M_real_V_2_3_reg_2012[26:0] lv
+
+local wideSample_superSample_M_imag_V_2_3 <mux_145> <integer> <> 'mux' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+wideSample_superSample_M_imag_V_2_3 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+wideSample_superSample_M_imag_V_2_3 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121
+wideSample_superSample_M_imag_V_2_3 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: wideSample_superSample_M_imag_V_2_3_reg_2017[26:0] lv
+
+local wideSample_superSample_M_real_V_3_4 <mux_117> <integer> <> 'mux' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+wideSample_superSample_M_real_V_3_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+wideSample_superSample_M_real_V_3_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: wideSample_superSample_M_real_V_3_4_reg_2022[26:0] lv
+
+local wideSample_superSample_M_real_V_4_4 <mux_117> <integer> <> 'mux' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+wideSample_superSample_M_real_V_4_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+wideSample_superSample_M_real_V_4_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: wideSample_superSample_M_real_V_4_4_reg_2027[26:0] lv
+
+local wideSample_superSample_M_real_V_5_4 <mux_117> <integer> <> 'mux' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+wideSample_superSample_M_real_V_5_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+wideSample_superSample_M_real_V_5_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: wideSample_superSample_M_real_V_5_4_reg_2032[26:0] lv
+
+local wideSample_superSample_M_real_V_6_4 <mux_117> <integer> <> 'mux' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117>
+wideSample_superSample_M_real_V_6_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+wideSample_superSample_M_real_V_6_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: wideSample_superSample_M_real_V_6_4_reg_2037[26:0] lv
+
+local wideSample_superSample_M_real_V_7_4 <mux_145> <integer> <> 'mux' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+wideSample_superSample_M_real_V_7_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+wideSample_superSample_M_real_V_7_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: wideSample_superSample_M_real_V_7_4_reg_2042[26:0] lv
+
+local wideSample_superSample_M_imag_V_3_4 <mux_145> <integer> <> 'mux' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+wideSample_superSample_M_imag_V_3_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+wideSample_superSample_M_imag_V_3_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121
+wideSample_superSample_M_imag_V_3_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: wideSample_superSample_M_imag_V_3_4_reg_2047[26:0] lv
+
+local wideSample_superSample_M_imag_V_4_4 <mux_145> <integer> <> 'mux' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+wideSample_superSample_M_imag_V_4_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+wideSample_superSample_M_imag_V_4_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121
+wideSample_superSample_M_imag_V_4_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: wideSample_superSample_M_imag_V_4_4_reg_2052[26:0] lv
+
+local wideSample_superSample_M_imag_V_5_4 <mux_145> <integer> <> 'mux' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+wideSample_superSample_M_imag_V_5_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+wideSample_superSample_M_imag_V_5_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121
+wideSample_superSample_M_imag_V_5_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: wideSample_superSample_M_imag_V_5_4_reg_2057[26:0] lv
+
+local wideSample_superSample_M_imag_V_6_4 <mux_145> <integer> <> 'mux' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+wideSample_superSample_M_imag_V_6_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+wideSample_superSample_M_imag_V_6_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121
+wideSample_superSample_M_imag_V_6_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: wideSample_superSample_M_imag_V_6_4_reg_2062[26:0] lv
+
+local wideSample_superSample_M_imag_V_7_4 <mux_145> <integer> <> 'mux' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+wideSample_superSample_M_imag_V_7_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+wideSample_superSample_M_imag_V_7_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:121
+wideSample_superSample_M_imag_V_7_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:117
+reg: wideSample_superSample_M_imag_V_7_4_reg_2067[26:0] lv
+
+
+End Function 'narrowToWideConverter<4u, 8u, 16u, complex<ap_fixed<27, 13, 5, 3, 0> > >'
+

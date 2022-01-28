@@ -1,0 +1,213 @@
+
+
+================================================================
+== Vitis HLS Report for 'innerFFT_16_4_40001_0_0_0_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_22_8_5_3_0_complex_ap_fixed_27_13_5_3_0_s'
+================================================================
+* Date:           Thu Jan 27 12:46:39 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.983 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+------------------------------------------+
+        |                                                                                      |                                                                                     |  Latency (cycles) |   Latency (absolute)  |  Interval |                 Pipeline                 |
+        |                                       Instance                                       |                                        Module                                       |   min   |   max   |    min    |    max    | min | max |                   Type                   |
+        +--------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+------------------------------------------+
+        |castArrayS2Streaming_16_4_complex_ap_fixed_22_8_5_3_0_complex_ap_fixed_22_8_5_3_0_U0  |castArrayS2Streaming_16_4_complex_ap_fixed_22_8_5_3_0_complex_ap_fixed_22_8_5_3_0_s  |        3|        4|  12.000 ns|  16.000 ns|    3|    4|                                        no|
+        |streamingDataCommutor_complex_ap_fixed_22_8_5_3_0_1_U0                                |streamingDataCommutor_complex_ap_fixed_22_8_5_3_0_1                                  |       11|       12|  44.000 ns|  48.000 ns|   10|   10|  loop rewind stp(delay=0 clock cycles(s))|
+        |fftStage_6_U0                                                                         |fftStage_6                                                                           |        ?|        ?|          ?|          ?|    ?|    ?|                                  dataflow|
+        +--------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       18|    -|
+|FIFO                 |        -|     -|     1562|      850|    -|
+|Instance             |        0|    14|     8319|     9671|    0|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|        9|    -|
+|Register             |        -|     -|        3|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|    14|     9884|    10548|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|    ~0|        1|        2|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|    ~0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+------+------+-----+
+    |                                       Instance                                       |                                        Module                                       | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +--------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+------+------+-----+
+    |castArrayS2Streaming_16_4_complex_ap_fixed_22_8_5_3_0_complex_ap_fixed_22_8_5_3_0_U0  |castArrayS2Streaming_16_4_complex_ap_fixed_22_8_5_3_0_complex_ap_fixed_22_8_5_3_0_s  |        0|   0|     5|   150|    0|
+    |fftStage_6_U0                                                                         |fftStage_6                                                                           |        0|  14|  7358|  8706|    0|
+    |streamingDataCommutor_complex_ap_fixed_22_8_5_3_0_1_U0                                |streamingDataCommutor_complex_ap_fixed_22_8_5_3_0_1                                  |        0|   0|   956|   815|    0|
+    +--------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+------+------+-----+
+    |Total                                                                                 |                                                                                     |        0|  14|  8319|  9671|    0|
+    +--------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +-------------------------+---------+-----+----+-----+------+-----+---------+
+    |           Name          | BRAM_18K|  FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +-------------------------+---------+-----+----+-----+------+-----+---------+
+    |casted_output_U          |        0|  781|   0|    -|     8|  256|     2048|
+    |p_fftInData_reOrdered_U  |        0|  781|   0|    -|     8|  256|     2048|
+    +-------------------------+---------+-----+----+-----+------+-----+---------+
+    |Total                    |        0| 1562|   0|    0|    16|  512|     4096|
+    +-------------------------+---------+-----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +-----------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                          Variable Name                          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |ap_ext_blocking_n                                                |       and|   0|  0|   2|           1|           1|
+    |ap_ext_blocking_sub_n                                            |       and|   0|  0|   2|           1|           1|
+    |ap_idle                                                          |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_n                                                |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_sub_n                                            |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_n                                                |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_sub_n                                            |       and|   0|  0|   2|           1|           1|
+    |fftStage_6_U0_ap_start                                           |        or|   0|  0|   2|           1|           1|
+    |streamingDataCommutor_complex_ap_fixed_22_8_5_3_0_1_U0_ap_start  |        or|   0|  0|   2|           1|           1|
+    +-----------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                            |          |   0|  0|  18|           9|           9|
+    +-----------------------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------+----+-----------+-----+-----------+
+    |    Name    | LUT| Input Size| Bits| Total Bits|
+    +------------+----+-----------+-----+-----------+
+    |real_start  |   9|          2|    1|          2|
+    +------------+----+-----------+-----+-----------+
+    |Total       |   9|          2|    1|          2|
+    +------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------------------------------------------+---+----+-----+-----------+
+    |                                     Name                                    | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_fftStage_6_U0_ap_start                                           |  1|   0|    1|          0|
+    |ap_sync_reg_streamingDataCommutor_complex_ap_fixed_22_8_5_3_0_1_U0_ap_start  |  1|   0|    1|          0|
+    |start_once_reg                                                               |  1|   0|    1|          0|
+    +-----------------------------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                                        |  3|   0|    3|          0|
+    +-----------------------------------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------------+-----+-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+|            RTL Ports            | Dir | Bits|  Protocol  |                                                                                     Source Object                                                                                    |    C Type    |
++---------------------------------+-----+-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+|ap_start                         |   in|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|start_full_n                     |   in|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|start_out                        |  out|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|start_write                      |  out|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_clk                           |   in|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_rst                           |   in|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_done                          |  out|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_ready                         |  out|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_idle                          |  out|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_continue                      |   in|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_ext_blocking_n                |  out|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_str_blocking_n                |  out|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|ap_int_blocking_n                |  out|    1|  ap_ctrl_hs|  innerFFT<16, 4, 40001, 0, 0, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >|  return value|
+|p_fftInData_0_0_0_0_0_dout       |   in|   22|     ap_fifo|                                                                                                                                                                 p_fftInData_0_0_0_0_0|       pointer|
+|p_fftInData_0_0_0_0_0_empty_n    |   in|    1|     ap_fifo|                                                                                                                                                                 p_fftInData_0_0_0_0_0|       pointer|
+|p_fftInData_0_0_0_0_0_read       |  out|    1|     ap_fifo|                                                                                                                                                                 p_fftInData_0_0_0_0_0|       pointer|
+|p_fftInData_0_0_0_0_01_dout      |   in|   22|     ap_fifo|                                                                                                                                                                p_fftInData_0_0_0_0_01|       pointer|
+|p_fftInData_0_0_0_0_01_empty_n   |   in|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_0_0_0_01|       pointer|
+|p_fftInData_0_0_0_0_01_read      |  out|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_0_0_0_01|       pointer|
+|p_fftInData_0_0_0_0_02_dout      |   in|   22|     ap_fifo|                                                                                                                                                                p_fftInData_0_0_0_0_02|       pointer|
+|p_fftInData_0_0_0_0_02_empty_n   |   in|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_0_0_0_02|       pointer|
+|p_fftInData_0_0_0_0_02_read      |  out|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_0_0_0_02|       pointer|
+|p_fftInData_0_0_0_0_03_dout      |   in|   22|     ap_fifo|                                                                                                                                                                p_fftInData_0_0_0_0_03|       pointer|
+|p_fftInData_0_0_0_0_03_empty_n   |   in|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_0_0_0_03|       pointer|
+|p_fftInData_0_0_0_0_03_read      |  out|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_0_0_0_03|       pointer|
+|p_fftInData_0_1_0_0_0_dout       |   in|   22|     ap_fifo|                                                                                                                                                                 p_fftInData_0_1_0_0_0|       pointer|
+|p_fftInData_0_1_0_0_0_empty_n    |   in|    1|     ap_fifo|                                                                                                                                                                 p_fftInData_0_1_0_0_0|       pointer|
+|p_fftInData_0_1_0_0_0_read       |  out|    1|     ap_fifo|                                                                                                                                                                 p_fftInData_0_1_0_0_0|       pointer|
+|p_fftInData_0_1_0_0_04_dout      |   in|   22|     ap_fifo|                                                                                                                                                                p_fftInData_0_1_0_0_04|       pointer|
+|p_fftInData_0_1_0_0_04_empty_n   |   in|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_1_0_0_04|       pointer|
+|p_fftInData_0_1_0_0_04_read      |  out|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_1_0_0_04|       pointer|
+|p_fftInData_0_1_0_0_05_dout      |   in|   22|     ap_fifo|                                                                                                                                                                p_fftInData_0_1_0_0_05|       pointer|
+|p_fftInData_0_1_0_0_05_empty_n   |   in|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_1_0_0_05|       pointer|
+|p_fftInData_0_1_0_0_05_read      |  out|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_1_0_0_05|       pointer|
+|p_fftInData_0_1_0_0_06_dout      |   in|   22|     ap_fifo|                                                                                                                                                                p_fftInData_0_1_0_0_06|       pointer|
+|p_fftInData_0_1_0_0_06_empty_n   |   in|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_1_0_0_06|       pointer|
+|p_fftInData_0_1_0_0_06_read      |  out|    1|     ap_fifo|                                                                                                                                                                p_fftInData_0_1_0_0_06|       pointer|
+|p_fftOutData_0_0_0_0_0_din       |  out|   27|     ap_fifo|                                                                                                                                                                p_fftOutData_0_0_0_0_0|       pointer|
+|p_fftOutData_0_0_0_0_0_full_n    |   in|    1|     ap_fifo|                                                                                                                                                                p_fftOutData_0_0_0_0_0|       pointer|
+|p_fftOutData_0_0_0_0_0_write     |  out|    1|     ap_fifo|                                                                                                                                                                p_fftOutData_0_0_0_0_0|       pointer|
+|p_fftOutData_0_0_0_0_07_din      |  out|   27|     ap_fifo|                                                                                                                                                               p_fftOutData_0_0_0_0_07|       pointer|
+|p_fftOutData_0_0_0_0_07_full_n   |   in|    1|     ap_fifo|                                                                                                                                                               p_fftOutData_0_0_0_0_07|       pointer|
+|p_fftOutData_0_0_0_0_07_write    |  out|    1|     ap_fifo|                                                                                                                                                               p_fftOutData_0_0_0_0_07|       pointer|
+|p_fftOutData_0_0_0_0_08_din      |  out|   27|     ap_fifo|                                                                                                                                                               p_fftOutData_0_0_0_0_08|       pointer|
+|p_fftOutData_0_0_0_0_08_full_n   |   in|    1|     ap_fifo|                                                                                                                                                               p_fftOutData_0_0_0_0_08|       pointer|
+|p_fftOutData_0_0_0_0_08_write    |  out|    1|     ap_fifo|                                                                                                                                                               p_fftOutData_0_0_0_0_08|       pointer|
+|p_fftOutData_0_0_0_0_09_din      |  out|   27|     ap_fifo|                                                                                                                                                               p_fftOutData_0_0_0_0_09|       pointer|
+|p_fftOutData_0_0_0_0_09_full_n   |   in|    1|     ap_fifo|                                                                                                                                                               p_fftOutData_0_0_0_0_09|       pointer|
+|p_fftOutData_0_0_0_0_09_write    |  out|    1|     ap_fifo|                                                                                                                                                               p_fftOutData_0_0_0_0_09|       pointer|
+|p_fftOutData_0_1_0_0_0_din       |  out|   27|     ap_fifo|                                                                                                                                                                p_fftOutData_0_1_0_0_0|       pointer|
+|p_fftOutData_0_1_0_0_0_full_n    |   in|    1|     ap_fifo|                                                                                                                                                                p_fftOutData_0_1_0_0_0|       pointer|
+|p_fftOutData_0_1_0_0_0_write     |  out|    1|     ap_fifo|                                                                                                                                                                p_fftOutData_0_1_0_0_0|       pointer|
+|p_fftOutData_0_1_0_0_010_din     |  out|   27|     ap_fifo|                                                                                                                                                              p_fftOutData_0_1_0_0_010|       pointer|
+|p_fftOutData_0_1_0_0_010_full_n  |   in|    1|     ap_fifo|                                                                                                                                                              p_fftOutData_0_1_0_0_010|       pointer|
+|p_fftOutData_0_1_0_0_010_write   |  out|    1|     ap_fifo|                                                                                                                                                              p_fftOutData_0_1_0_0_010|       pointer|
+|p_fftOutData_0_1_0_0_011_din     |  out|   27|     ap_fifo|                                                                                                                                                              p_fftOutData_0_1_0_0_011|       pointer|
+|p_fftOutData_0_1_0_0_011_full_n  |   in|    1|     ap_fifo|                                                                                                                                                              p_fftOutData_0_1_0_0_011|       pointer|
+|p_fftOutData_0_1_0_0_011_write   |  out|    1|     ap_fifo|                                                                                                                                                              p_fftOutData_0_1_0_0_011|       pointer|
+|p_fftOutData_0_1_0_0_012_din     |  out|   27|     ap_fifo|                                                                                                                                                              p_fftOutData_0_1_0_0_012|       pointer|
+|p_fftOutData_0_1_0_0_012_full_n  |   in|    1|     ap_fifo|                                                                                                                                                              p_fftOutData_0_1_0_0_012|       pointer|
+|p_fftOutData_0_1_0_0_012_write   |  out|    1|     ap_fifo|                                                                                                                                                              p_fftOutData_0_1_0_0_012|       pointer|
++---------------------------------+-----+-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+

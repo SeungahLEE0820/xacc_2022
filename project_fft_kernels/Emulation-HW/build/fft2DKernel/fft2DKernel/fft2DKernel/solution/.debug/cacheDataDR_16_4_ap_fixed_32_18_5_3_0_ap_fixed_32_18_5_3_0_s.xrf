@@ -1,0 +1,60 @@
+Begin Function 'cacheDataDR<16, 4, ap_fixed<32, 18, 5, 3, 0>, ap_fixed<32, 18, 5, 3, 0> >'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_2
+local r53 <> <integer> <Phi> 'phi' <>
+r /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:171
+reg: r53_reg_265[1:0] lv
+
+local temp_M_real_V_0 <extractvalue_145> <integer> <> 'extractvalue' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+temp_M_real_V_0 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: temp_M_real_V_0_reg_1000[31:0] lv
+
+local temp_M_imag_V_0 <extractvalue_145> <integer> <> 'extractvalue' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+temp_M_imag_V_0 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: temp_M_imag_V_0_reg_1008[31:0] lv
+
+local r <add_171> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:171>
+r /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:171
+reg: r_reg_1016[1:0] lv
+
+local temp_M_real_V_0_7 <extractvalue_145> <integer> <> 'extractvalue' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+temp_M_real_V_0_7 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: temp_M_real_V_0_7_reg_1021[31:0] lv
+
+local temp_M_imag_V_0_7 <extractvalue_145> <integer> <> 'extractvalue' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+temp_M_imag_V_0_7 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: temp_M_imag_V_0_7_reg_1029[31:0] lv
+
+local icmp_ln171 <icmp_171> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:171>
+icmp_ln171 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:171
+reg: icmp_ln171_reg_1037[0:0] lv
+
+# ST_3
+local temp_M_real_V_3_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_real_V_3_4_reg_640[31:0] lv
+
+local temp_M_real_V_2_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_real_V_2_4_reg_658[31:0] lv
+
+local temp_M_real_V_1_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_real_V_1_4_reg_676[31:0] lv
+
+local temp_M_real_V_0_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_real_V_0_4_reg_694[31:0] lv
+
+local temp_M_imag_V_3_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_imag_V_3_4_reg_712[31:0] lv
+
+local temp_M_imag_V_2_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_imag_V_2_4_reg_730[31:0] lv
+
+local temp_M_imag_V_1_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_imag_V_1_4_reg_748[31:0] lv
+
+local temp_M_imag_V_0_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_imag_V_0_4_reg_766[31:0] lv
+
+
+End Function 'cacheDataDR<16, 4, ap_fixed<32, 18, 5, 3, 0>, ap_fixed<32, 18, 5, 3, 0> >'
+

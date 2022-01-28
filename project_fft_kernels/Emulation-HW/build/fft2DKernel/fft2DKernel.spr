@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="fft2DKernel" dir="">
+  <FileSets>
+    <FileSet Name="kernel_fft2DKernel" Type="DesignSrcs">
+      <File Path="/home/centos/workspace/project_fft_kernels/src/top_module.cpp"/>
+      <Config/>
+    </FileSet>
+  </FileSets>
+  <Runs/>
+</project>

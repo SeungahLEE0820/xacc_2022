@@ -1,0 +1,304 @@
+
+
+================================================================
+== Vitis HLS Report for 'writeBackCacheDataDR_16_4_ap_fixed_27_13_5_3_0_ap_fixed_27_13_5_3_0_s'
+================================================================
+* Date:           Thu Jan 27 12:43:15 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.624 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval |                 Pipeline                 |
+    |   min   |   max   |    min    |    max    | min | max |                   Type                   |
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------+
+    |        6|        7|  24.000 ns|  28.000 ns|    4|    4|  loop rewind stp(delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name             |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- writeBackCacheDataDR_LOverRLoop  |        6|        6|         4|          1|          1|     4|       yes|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 4, States = { 2 3 4 5 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.38>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3 = alloca i32 1"   --->   Operation 6 'alloca' 'temp_M_imag_V_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_8 = alloca i32 1"   --->   Operation 7 'alloca' 'temp_M_imag_V_3_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_9 = alloca i32 1"   --->   Operation 8 'alloca' 'temp_M_imag_V_3_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_10 = alloca i32 1"   --->   Operation 9 'alloca' 'temp_M_imag_V_3_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%temp_M_real_V_3 = alloca i32 1"   --->   Operation 10 'alloca' 'temp_M_real_V_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_8 = alloca i32 1"   --->   Operation 11 'alloca' 'temp_M_real_V_3_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_9 = alloca i32 1"   --->   Operation 12 'alloca' 'temp_M_real_V_3_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_10 = alloca i32 1"   --->   Operation 13 'alloca' 'temp_M_real_V_3_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outData_0_1_0_0_012, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outData_0_1_0_0_011, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outData_0_1_0_0_010, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outData_0_1_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outData_0_0_0_0_09, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outData_0_0_0_0_08, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outData_0_0_0_0_07, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i27 %p_outData_0_0_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.38ns)   --->   "%br_ln319 = br void %rewind_header" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 22 'br' 'br_ln319' <Predicate = true> <Delay = 0.38>
+
+State 2 <SV = 1> <Delay = 1.13>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%do_init = phi i1 1, void, i1 0, void %.split43879..split4_crit_edge, i1 1, void"   --->   Operation 23 'phi' 'do_init' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%r53 = phi i2 0, void, i2 %r, void %.split43879..split4_crit_edge, i2 0, void"   --->   Operation 24 'phi' 'r53' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %do_init, void %.split4, void %rewind_init"   --->   Operation 25 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln319 = br void %.split4" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 26 'br' 'br_ln319' <Predicate = (do_init)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.43ns)   --->   "%sub_ln344 = sub i2 0, i2 %r53" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 27 'sub' 'sub_ln344' <Predicate = true> <Delay = 0.43> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%zext_ln344 = zext i2 %sub_ln344" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 28 'zext' 'zext_ln344' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%p_digitReseversedOutputBuff_M_real_addr = getelementptr i27 %p_digitReseversedOutputBuff_M_real, i64 0, i64 %zext_ln344" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 29 'getelementptr' 'p_digitReseversedOutputBuff_M_real_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%p_digitReseversedOutputBuff_M_imag_addr = getelementptr i27 %p_digitReseversedOutputBuff_M_imag, i64 0, i64 %zext_ln344" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 30 'getelementptr' 'p_digitReseversedOutputBuff_M_imag_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [2/2] (0.69ns)   --->   "%temp_M_real_V_0 = load i2 %p_digitReseversedOutputBuff_M_real_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 31 'load' 'temp_M_real_V_0' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_2 : Operation 32 [2/2] (0.69ns)   --->   "%temp_M_imag_V_0 = load i2 %p_digitReseversedOutputBuff_M_imag_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 32 'load' 'temp_M_imag_V_0' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_2 : Operation 33 [1/1] (0.43ns)   --->   "%r = add i2 %r53, i2 1" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 33 'add' 'r' <Predicate = true> <Delay = 0.43> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.34ns)   --->   "%icmp_ln319 = icmp_eq  i2 %r53, i2 3" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 34 'icmp' 'icmp_ln319' <Predicate = true> <Delay = 0.34> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%br_ln319 = br i1 %icmp_ln319, void %.split43879..split4_crit_edge, void" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 35 'br' 'br_ln319' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%br_ln319 = br void %rewind_header" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 36 'br' 'br_ln319' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%br_ln351 = br void %rewind_header" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:351]   --->   Operation 37 'br' 'br_ln351' <Predicate = (icmp_ln319)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.13>
+ST_3 : Operation 38 [1/2] (0.69ns)   --->   "%temp_M_real_V_0 = load i2 %p_digitReseversedOutputBuff_M_real_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 38 'load' 'temp_M_real_V_0' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_3 : Operation 39 [1/2] (0.69ns)   --->   "%temp_M_imag_V_0 = load i2 %p_digitReseversedOutputBuff_M_imag_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 39 'load' 'temp_M_imag_V_0' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_3 : Operation 40 [1/1] (0.43ns)   --->   "%sub_ln344_3 = sub i2 1, i2 %r53" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 40 'sub' 'sub_ln344_3' <Predicate = true> <Delay = 0.43> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%zext_ln344_4 = zext i2 %sub_ln344_3" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 41 'zext' 'zext_ln344_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%p_digitReseversedOutputBuff_M_real1_addr = getelementptr i27 %p_digitReseversedOutputBuff_M_real1, i64 0, i64 %zext_ln344_4" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 42 'getelementptr' 'p_digitReseversedOutputBuff_M_real1_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%p_digitReseversedOutputBuff_M_imag4_addr = getelementptr i27 %p_digitReseversedOutputBuff_M_imag4, i64 0, i64 %zext_ln344_4" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 43 'getelementptr' 'p_digitReseversedOutputBuff_M_imag4_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [2/2] (0.69ns)   --->   "%temp_M_real_V_0_4 = load i2 %p_digitReseversedOutputBuff_M_real1_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 44 'load' 'temp_M_real_V_0_4' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_3 : Operation 45 [2/2] (0.69ns)   --->   "%temp_M_imag_V_0_4 = load i2 %p_digitReseversedOutputBuff_M_imag4_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 45 'load' 'temp_M_imag_V_0_4' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_3 : Operation 46 [1/1] (0.43ns)   --->   "%sub_ln344_4 = sub i2 2, i2 %r53" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 46 'sub' 'sub_ln344_4' <Predicate = true> <Delay = 0.43> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%zext_ln344_5 = zext i2 %sub_ln344_4" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 47 'zext' 'zext_ln344_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%p_digitReseversedOutputBuff_M_real2_addr = getelementptr i27 %p_digitReseversedOutputBuff_M_real2, i64 0, i64 %zext_ln344_5" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 48 'getelementptr' 'p_digitReseversedOutputBuff_M_real2_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%p_digitReseversedOutputBuff_M_imag5_addr = getelementptr i27 %p_digitReseversedOutputBuff_M_imag5, i64 0, i64 %zext_ln344_5" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 49 'getelementptr' 'p_digitReseversedOutputBuff_M_imag5_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [2/2] (0.69ns)   --->   "%temp_M_real_V_0_5 = load i2 %p_digitReseversedOutputBuff_M_real2_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 50 'load' 'temp_M_real_V_0_5' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_3 : Operation 51 [2/2] (0.69ns)   --->   "%temp_M_imag_V_0_5 = load i2 %p_digitReseversedOutputBuff_M_imag5_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 51 'load' 'temp_M_imag_V_0_5' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_3 : Operation 52 [1/1] (0.12ns)   --->   "%xor_ln150 = xor i2 %r53, i2 3" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_utilities.hpp:150]   --->   Operation 52 'xor' 'xor_ln150' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%zext_ln344_6 = zext i2 %xor_ln150" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 53 'zext' 'zext_ln344_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%p_digitReseversedOutputBuff_M_real3_addr = getelementptr i27 %p_digitReseversedOutputBuff_M_real3, i64 0, i64 %zext_ln344_6" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 54 'getelementptr' 'p_digitReseversedOutputBuff_M_real3_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%p_digitReseversedOutputBuff_M_imag6_addr = getelementptr i27 %p_digitReseversedOutputBuff_M_imag6, i64 0, i64 %zext_ln344_6" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 55 'getelementptr' 'p_digitReseversedOutputBuff_M_imag6_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [2/2] (0.69ns)   --->   "%temp_M_real_V_0_6 = load i2 %p_digitReseversedOutputBuff_M_real3_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 56 'load' 'temp_M_real_V_0_6' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_3 : Operation 57 [2/2] (0.69ns)   --->   "%temp_M_imag_V_0_6 = load i2 %p_digitReseversedOutputBuff_M_imag6_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 57 'load' 'temp_M_imag_V_0_6' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+
+State 4 <SV = 3> <Delay = 2.62>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_load = load i27 %temp_M_imag_V_3"   --->   Operation 58 'load' 'temp_M_imag_V_3_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 59 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_8_load = load i27 %temp_M_imag_V_3_8"   --->   Operation 59 'load' 'temp_M_imag_V_3_8_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_9_load = load i27 %temp_M_imag_V_3_9"   --->   Operation 60 'load' 'temp_M_imag_V_3_9_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_10_load = load i27 %temp_M_imag_V_3_10"   --->   Operation 61 'load' 'temp_M_imag_V_3_10_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_load = load i27 %temp_M_real_V_3"   --->   Operation 62 'load' 'temp_M_real_V_3_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_8_load = load i27 %temp_M_real_V_3_8"   --->   Operation 63 'load' 'temp_M_real_V_3_8_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_9_load = load i27 %temp_M_real_V_3_9"   --->   Operation 64 'load' 'temp_M_real_V_3_9_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_10_load = load i27 %temp_M_real_V_3_10"   --->   Operation 65 'load' 'temp_M_real_V_3_10_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 66 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 67 [1/1] (0.00ns)   --->   "%specpipeline_ln322 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_13" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:322]   --->   Operation 67 'specpipeline' 'specpipeline_ln322' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 68 [1/1] (0.00ns)   --->   "%specloopname_ln322 = specloopname void @_ssdm_op_SpecLoopName, void @empty_32" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:322]   --->   Operation 68 'specloopname' 'specloopname_ln322' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 69 [1/1] (0.65ns)   --->   "%switch_ln344 = switch i2 %sub_ln344, void %branch15, i2 0, void %.split453, i2 1, void %branch13, i2 2, void %branch14" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 69 'switch' 'switch_ln344' <Predicate = true> <Delay = 0.65>
+ST_4 : Operation 70 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split453" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 70 'br' 'br_ln344' <Predicate = (sub_ln344 == 2)> <Delay = 0.38>
+ST_4 : Operation 71 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split453" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 71 'br' 'br_ln344' <Predicate = (sub_ln344 == 1)> <Delay = 0.38>
+ST_4 : Operation 72 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split453" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 72 'br' 'br_ln344' <Predicate = (sub_ln344 == 3)> <Delay = 0.38>
+ST_4 : Operation 73 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_1 = phi i27 %temp_M_real_V_0, void %branch15, i27 %temp_M_real_V_3_load, void %branch14, i27 %temp_M_real_V_3_load, void %branch13, i27 %temp_M_real_V_3_load, void %.split4"   --->   Operation 73 'phi' 'temp_M_real_V_3_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 74 [1/1] (0.00ns)   --->   "%temp_M_real_V_2_1 = phi i27 %temp_M_real_V_3_8_load, void %branch15, i27 %temp_M_real_V_0, void %branch14, i27 %temp_M_real_V_3_8_load, void %branch13, i27 %temp_M_real_V_3_8_load, void %.split4"   --->   Operation 74 'phi' 'temp_M_real_V_2_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 75 [1/1] (0.00ns)   --->   "%temp_M_real_V_1_1 = phi i27 %temp_M_real_V_3_9_load, void %branch15, i27 %temp_M_real_V_3_9_load, void %branch14, i27 %temp_M_real_V_0, void %branch13, i27 %temp_M_real_V_3_9_load, void %.split4"   --->   Operation 75 'phi' 'temp_M_real_V_1_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 76 [1/1] (0.00ns)   --->   "%temp_M_real_V_0_1 = phi i27 %temp_M_real_V_3_10_load, void %branch15, i27 %temp_M_real_V_3_10_load, void %branch14, i27 %temp_M_real_V_3_10_load, void %branch13, i27 %temp_M_real_V_0, void %.split4"   --->   Operation 76 'phi' 'temp_M_real_V_0_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 77 [1/1] (0.65ns)   --->   "%switch_ln344 = switch i2 %sub_ln344, void %branch31, i2 0, void %.split45397, i2 1, void %branch29, i2 2, void %branch30" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 77 'switch' 'switch_ln344' <Predicate = true> <Delay = 0.65>
+ST_4 : Operation 78 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split45397" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 78 'br' 'br_ln344' <Predicate = (sub_ln344 == 2)> <Delay = 0.38>
+ST_4 : Operation 79 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split45397" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 79 'br' 'br_ln344' <Predicate = (sub_ln344 == 1)> <Delay = 0.38>
+ST_4 : Operation 80 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split45397" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 80 'br' 'br_ln344' <Predicate = (sub_ln344 == 3)> <Delay = 0.38>
+ST_4 : Operation 81 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_1 = phi i27 %temp_M_imag_V_0, void %branch31, i27 %temp_M_imag_V_3_load, void %branch30, i27 %temp_M_imag_V_3_load, void %branch29, i27 %temp_M_imag_V_3_load, void %.split453"   --->   Operation 81 'phi' 'temp_M_imag_V_3_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 82 [1/1] (0.00ns)   --->   "%temp_M_imag_V_2_1 = phi i27 %temp_M_imag_V_3_8_load, void %branch31, i27 %temp_M_imag_V_0, void %branch30, i27 %temp_M_imag_V_3_8_load, void %branch29, i27 %temp_M_imag_V_3_8_load, void %.split453"   --->   Operation 82 'phi' 'temp_M_imag_V_2_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 83 [1/1] (0.00ns)   --->   "%temp_M_imag_V_1_1 = phi i27 %temp_M_imag_V_3_9_load, void %branch31, i27 %temp_M_imag_V_3_9_load, void %branch30, i27 %temp_M_imag_V_0, void %branch29, i27 %temp_M_imag_V_3_9_load, void %.split453"   --->   Operation 83 'phi' 'temp_M_imag_V_1_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 84 [1/1] (0.00ns)   --->   "%temp_M_imag_V_0_1 = phi i27 %temp_M_imag_V_3_10_load, void %branch31, i27 %temp_M_imag_V_3_10_load, void %branch30, i27 %temp_M_imag_V_3_10_load, void %branch29, i27 %temp_M_imag_V_0, void %.split453"   --->   Operation 84 'phi' 'temp_M_imag_V_0_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 85 [1/2] (0.69ns)   --->   "%temp_M_real_V_0_4 = load i2 %p_digitReseversedOutputBuff_M_real1_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 85 'load' 'temp_M_real_V_0_4' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_4 : Operation 86 [1/2] (0.69ns)   --->   "%temp_M_imag_V_0_4 = load i2 %p_digitReseversedOutputBuff_M_imag4_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 86 'load' 'temp_M_imag_V_0_4' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_4 : Operation 87 [1/1] (0.65ns)   --->   "%switch_ln344 = switch i2 %sub_ln344_3, void %branch11, i2 0, void %.split448, i2 1, void %branch9, i2 2, void %branch10" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 87 'switch' 'switch_ln344' <Predicate = true> <Delay = 0.65>
+ST_4 : Operation 88 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split448" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 88 'br' 'br_ln344' <Predicate = (sub_ln344_3 == 2)> <Delay = 0.38>
+ST_4 : Operation 89 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split448" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 89 'br' 'br_ln344' <Predicate = (sub_ln344_3 == 1)> <Delay = 0.38>
+ST_4 : Operation 90 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split448" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 90 'br' 'br_ln344' <Predicate = (sub_ln344_3 == 3)> <Delay = 0.38>
+ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_2 = phi i27 %temp_M_real_V_0_4, void %branch11, i27 %temp_M_real_V_3_1, void %branch10, i27 %temp_M_real_V_3_1, void %branch9, i27 %temp_M_real_V_3_1, void %.split45397"   --->   Operation 91 'phi' 'temp_M_real_V_3_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 92 [1/1] (0.00ns)   --->   "%temp_M_real_V_2_2 = phi i27 %temp_M_real_V_2_1, void %branch11, i27 %temp_M_real_V_0_4, void %branch10, i27 %temp_M_real_V_2_1, void %branch9, i27 %temp_M_real_V_2_1, void %.split45397"   --->   Operation 92 'phi' 'temp_M_real_V_2_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 93 [1/1] (0.00ns)   --->   "%temp_M_real_V_1_2 = phi i27 %temp_M_real_V_1_1, void %branch11, i27 %temp_M_real_V_1_1, void %branch10, i27 %temp_M_real_V_0_4, void %branch9, i27 %temp_M_real_V_1_1, void %.split45397"   --->   Operation 93 'phi' 'temp_M_real_V_1_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 94 [1/1] (0.00ns)   --->   "%temp_M_real_V_0_2 = phi i27 %temp_M_real_V_0_1, void %branch11, i27 %temp_M_real_V_0_1, void %branch10, i27 %temp_M_real_V_0_1, void %branch9, i27 %temp_M_real_V_0_4, void %.split45397"   --->   Operation 94 'phi' 'temp_M_real_V_0_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 95 [1/1] (0.65ns)   --->   "%switch_ln344 = switch i2 %sub_ln344_3, void %branch27, i2 0, void %.split44891, i2 1, void %branch25, i2 2, void %branch26" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 95 'switch' 'switch_ln344' <Predicate = true> <Delay = 0.65>
+ST_4 : Operation 96 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split44891" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 96 'br' 'br_ln344' <Predicate = (sub_ln344_3 == 2)> <Delay = 0.38>
+ST_4 : Operation 97 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split44891" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 97 'br' 'br_ln344' <Predicate = (sub_ln344_3 == 1)> <Delay = 0.38>
+ST_4 : Operation 98 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split44891" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 98 'br' 'br_ln344' <Predicate = (sub_ln344_3 == 3)> <Delay = 0.38>
+ST_4 : Operation 99 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_2 = phi i27 %temp_M_imag_V_0_4, void %branch27, i27 %temp_M_imag_V_3_1, void %branch26, i27 %temp_M_imag_V_3_1, void %branch25, i27 %temp_M_imag_V_3_1, void %.split448"   --->   Operation 99 'phi' 'temp_M_imag_V_3_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 100 [1/1] (0.00ns)   --->   "%temp_M_imag_V_2_2 = phi i27 %temp_M_imag_V_2_1, void %branch27, i27 %temp_M_imag_V_0_4, void %branch26, i27 %temp_M_imag_V_2_1, void %branch25, i27 %temp_M_imag_V_2_1, void %.split448"   --->   Operation 100 'phi' 'temp_M_imag_V_2_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 101 [1/1] (0.00ns)   --->   "%temp_M_imag_V_1_2 = phi i27 %temp_M_imag_V_1_1, void %branch27, i27 %temp_M_imag_V_1_1, void %branch26, i27 %temp_M_imag_V_0_4, void %branch25, i27 %temp_M_imag_V_1_1, void %.split448"   --->   Operation 101 'phi' 'temp_M_imag_V_1_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 102 [1/1] (0.00ns)   --->   "%temp_M_imag_V_0_2 = phi i27 %temp_M_imag_V_0_1, void %branch27, i27 %temp_M_imag_V_0_1, void %branch26, i27 %temp_M_imag_V_0_1, void %branch25, i27 %temp_M_imag_V_0_4, void %.split448"   --->   Operation 102 'phi' 'temp_M_imag_V_0_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 103 [1/2] (0.69ns)   --->   "%temp_M_real_V_0_5 = load i2 %p_digitReseversedOutputBuff_M_real2_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 103 'load' 'temp_M_real_V_0_5' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_4 : Operation 104 [1/2] (0.69ns)   --->   "%temp_M_imag_V_0_5 = load i2 %p_digitReseversedOutputBuff_M_imag5_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 104 'load' 'temp_M_imag_V_0_5' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_4 : Operation 105 [1/1] (0.65ns)   --->   "%switch_ln344 = switch i2 %sub_ln344_4, void %branch7, i2 0, void %.split443, i2 1, void %branch5, i2 2, void %branch6" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 105 'switch' 'switch_ln344' <Predicate = true> <Delay = 0.65>
+ST_4 : Operation 106 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split443" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 106 'br' 'br_ln344' <Predicate = (sub_ln344_4 == 2)> <Delay = 0.38>
+ST_4 : Operation 107 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split443" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 107 'br' 'br_ln344' <Predicate = (sub_ln344_4 == 1)> <Delay = 0.38>
+ST_4 : Operation 108 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split443" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 108 'br' 'br_ln344' <Predicate = (sub_ln344_4 == 3)> <Delay = 0.38>
+ST_4 : Operation 109 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_3 = phi i27 %temp_M_real_V_0_5, void %branch7, i27 %temp_M_real_V_3_2, void %branch6, i27 %temp_M_real_V_3_2, void %branch5, i27 %temp_M_real_V_3_2, void %.split44891"   --->   Operation 109 'phi' 'temp_M_real_V_3_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 110 [1/1] (0.00ns)   --->   "%temp_M_real_V_2_3 = phi i27 %temp_M_real_V_2_2, void %branch7, i27 %temp_M_real_V_0_5, void %branch6, i27 %temp_M_real_V_2_2, void %branch5, i27 %temp_M_real_V_2_2, void %.split44891"   --->   Operation 110 'phi' 'temp_M_real_V_2_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 111 [1/1] (0.00ns)   --->   "%temp_M_real_V_1_3 = phi i27 %temp_M_real_V_1_2, void %branch7, i27 %temp_M_real_V_1_2, void %branch6, i27 %temp_M_real_V_0_5, void %branch5, i27 %temp_M_real_V_1_2, void %.split44891"   --->   Operation 111 'phi' 'temp_M_real_V_1_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 112 [1/1] (0.00ns)   --->   "%temp_M_real_V_0_3 = phi i27 %temp_M_real_V_0_2, void %branch7, i27 %temp_M_real_V_0_2, void %branch6, i27 %temp_M_real_V_0_2, void %branch5, i27 %temp_M_real_V_0_5, void %.split44891"   --->   Operation 112 'phi' 'temp_M_real_V_0_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 113 [1/1] (0.65ns)   --->   "%switch_ln344 = switch i2 %sub_ln344_4, void %branch23, i2 0, void %.split44385, i2 1, void %branch21, i2 2, void %branch22" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 113 'switch' 'switch_ln344' <Predicate = true> <Delay = 0.65>
+ST_4 : Operation 114 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split44385" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 114 'br' 'br_ln344' <Predicate = (sub_ln344_4 == 2)> <Delay = 0.38>
+ST_4 : Operation 115 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split44385" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 115 'br' 'br_ln344' <Predicate = (sub_ln344_4 == 1)> <Delay = 0.38>
+ST_4 : Operation 116 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split44385" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 116 'br' 'br_ln344' <Predicate = (sub_ln344_4 == 3)> <Delay = 0.38>
+ST_4 : Operation 117 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_3 = phi i27 %temp_M_imag_V_0_5, void %branch23, i27 %temp_M_imag_V_3_2, void %branch22, i27 %temp_M_imag_V_3_2, void %branch21, i27 %temp_M_imag_V_3_2, void %.split443"   --->   Operation 117 'phi' 'temp_M_imag_V_3_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 118 [1/1] (0.00ns)   --->   "%temp_M_imag_V_2_3 = phi i27 %temp_M_imag_V_2_2, void %branch23, i27 %temp_M_imag_V_0_5, void %branch22, i27 %temp_M_imag_V_2_2, void %branch21, i27 %temp_M_imag_V_2_2, void %.split443"   --->   Operation 118 'phi' 'temp_M_imag_V_2_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 119 [1/1] (0.00ns)   --->   "%temp_M_imag_V_1_3 = phi i27 %temp_M_imag_V_1_2, void %branch23, i27 %temp_M_imag_V_1_2, void %branch22, i27 %temp_M_imag_V_0_5, void %branch21, i27 %temp_M_imag_V_1_2, void %.split443"   --->   Operation 119 'phi' 'temp_M_imag_V_1_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 120 [1/1] (0.00ns)   --->   "%temp_M_imag_V_0_3 = phi i27 %temp_M_imag_V_0_2, void %branch23, i27 %temp_M_imag_V_0_2, void %branch22, i27 %temp_M_imag_V_0_2, void %branch21, i27 %temp_M_imag_V_0_5, void %.split443"   --->   Operation 120 'phi' 'temp_M_imag_V_0_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 121 [1/2] (0.69ns)   --->   "%temp_M_real_V_0_6 = load i2 %p_digitReseversedOutputBuff_M_real3_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 121 'load' 'temp_M_real_V_0_6' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_4 : Operation 122 [1/2] (0.69ns)   --->   "%temp_M_imag_V_0_6 = load i2 %p_digitReseversedOutputBuff_M_imag6_addr" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 122 'load' 'temp_M_imag_V_0_6' <Predicate = true> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 27> <Depth = 4> <RAM>
+ST_4 : Operation 123 [1/1] (0.65ns)   --->   "%switch_ln344 = switch i2 %xor_ln150, void %branch3, i2 0, void %.split438, i2 1, void %branch1, i2 2, void %branch2" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 123 'switch' 'switch_ln344' <Predicate = true> <Delay = 0.65>
+ST_4 : Operation 124 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split438" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 124 'br' 'br_ln344' <Predicate = (xor_ln150 == 2)> <Delay = 0.38>
+ST_4 : Operation 125 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split438" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 125 'br' 'br_ln344' <Predicate = (xor_ln150 == 1)> <Delay = 0.38>
+ST_4 : Operation 126 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split438" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 126 'br' 'br_ln344' <Predicate = (xor_ln150 == 3)> <Delay = 0.38>
+ST_4 : Operation 127 [1/1] (0.00ns)   --->   "%temp_M_real_V_3_4 = phi i27 %temp_M_real_V_0_6, void %branch3, i27 %temp_M_real_V_3_3, void %branch2, i27 %temp_M_real_V_3_3, void %branch1, i27 %temp_M_real_V_3_3, void %.split44385"   --->   Operation 127 'phi' 'temp_M_real_V_3_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 128 [1/1] (0.00ns)   --->   "%temp_M_real_V_2_4 = phi i27 %temp_M_real_V_2_3, void %branch3, i27 %temp_M_real_V_0_6, void %branch2, i27 %temp_M_real_V_2_3, void %branch1, i27 %temp_M_real_V_2_3, void %.split44385"   --->   Operation 128 'phi' 'temp_M_real_V_2_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 129 [1/1] (0.00ns)   --->   "%temp_M_real_V_1_4 = phi i27 %temp_M_real_V_1_3, void %branch3, i27 %temp_M_real_V_1_3, void %branch2, i27 %temp_M_real_V_0_6, void %branch1, i27 %temp_M_real_V_1_3, void %.split44385"   --->   Operation 129 'phi' 'temp_M_real_V_1_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 130 [1/1] (0.00ns)   --->   "%temp_M_real_V_0_4_92 = phi i27 %temp_M_real_V_0_3, void %branch3, i27 %temp_M_real_V_0_3, void %branch2, i27 %temp_M_real_V_0_3, void %branch1, i27 %temp_M_real_V_0_6, void %.split44385"   --->   Operation 130 'phi' 'temp_M_real_V_0_4_92' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 131 [1/1] (0.65ns)   --->   "%switch_ln344 = switch i2 %xor_ln150, void %branch19, i2 0, void %.split43879, i2 1, void %branch17, i2 2, void %branch18" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 131 'switch' 'switch_ln344' <Predicate = true> <Delay = 0.65>
+ST_4 : Operation 132 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split43879" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 132 'br' 'br_ln344' <Predicate = (xor_ln150 == 2)> <Delay = 0.38>
+ST_4 : Operation 133 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split43879" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 133 'br' 'br_ln344' <Predicate = (xor_ln150 == 1)> <Delay = 0.38>
+ST_4 : Operation 134 [1/1] (0.38ns)   --->   "%br_ln344 = br void %.split43879" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344]   --->   Operation 134 'br' 'br_ln344' <Predicate = (xor_ln150 == 3)> <Delay = 0.38>
+ST_4 : Operation 135 [1/1] (0.00ns)   --->   "%temp_M_imag_V_3_4 = phi i27 %temp_M_imag_V_0_6, void %branch19, i27 %temp_M_imag_V_3_3, void %branch18, i27 %temp_M_imag_V_3_3, void %branch17, i27 %temp_M_imag_V_3_3, void %.split438"   --->   Operation 135 'phi' 'temp_M_imag_V_3_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 136 [1/1] (0.00ns)   --->   "%temp_M_imag_V_2_4 = phi i27 %temp_M_imag_V_2_3, void %branch19, i27 %temp_M_imag_V_0_6, void %branch18, i27 %temp_M_imag_V_2_3, void %branch17, i27 %temp_M_imag_V_2_3, void %.split438"   --->   Operation 136 'phi' 'temp_M_imag_V_2_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 137 [1/1] (0.00ns)   --->   "%temp_M_imag_V_1_4 = phi i27 %temp_M_imag_V_1_3, void %branch19, i27 %temp_M_imag_V_1_3, void %branch18, i27 %temp_M_imag_V_0_6, void %branch17, i27 %temp_M_imag_V_1_3, void %.split438"   --->   Operation 137 'phi' 'temp_M_imag_V_1_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 138 [1/1] (0.00ns)   --->   "%temp_M_imag_V_0_4_93 = phi i27 %temp_M_imag_V_0_3, void %branch19, i27 %temp_M_imag_V_0_3, void %branch18, i27 %temp_M_imag_V_0_3, void %branch17, i27 %temp_M_imag_V_0_6, void %.split438"   --->   Operation 138 'phi' 'temp_M_imag_V_0_4_93' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 139 [1/1] (0.00ns)   --->   "%store_ln319 = store i27 %temp_M_real_V_0_4_92, i27 %temp_M_real_V_3_10" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 139 'store' 'store_ln319' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_4 : Operation 140 [1/1] (0.00ns)   --->   "%store_ln319 = store i27 %temp_M_real_V_1_4, i27 %temp_M_real_V_3_9" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 140 'store' 'store_ln319' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_4 : Operation 141 [1/1] (0.00ns)   --->   "%store_ln319 = store i27 %temp_M_real_V_2_4, i27 %temp_M_real_V_3_8" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 141 'store' 'store_ln319' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_4 : Operation 142 [1/1] (0.00ns)   --->   "%store_ln319 = store i27 %temp_M_real_V_3_4, i27 %temp_M_real_V_3" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 142 'store' 'store_ln319' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_4 : Operation 143 [1/1] (0.00ns)   --->   "%store_ln319 = store i27 %temp_M_imag_V_0_4_93, i27 %temp_M_imag_V_3_10" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 143 'store' 'store_ln319' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_4 : Operation 144 [1/1] (0.00ns)   --->   "%store_ln319 = store i27 %temp_M_imag_V_1_4, i27 %temp_M_imag_V_3_9" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 144 'store' 'store_ln319' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_4 : Operation 145 [1/1] (0.00ns)   --->   "%store_ln319 = store i27 %temp_M_imag_V_2_4, i27 %temp_M_imag_V_3_8" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 145 'store' 'store_ln319' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_4 : Operation 146 [1/1] (0.00ns)   --->   "%store_ln319 = store i27 %temp_M_imag_V_3_4, i27 %temp_M_imag_V_3" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319]   --->   Operation 146 'store' 'store_ln319' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 1.46>
+ST_5 : Operation 147 [1/1] (1.46ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i27P0A.i27P0A, i27 %p_outData_0_0_0_0_0, i27 %p_outData_0_1_0_0_0, i27 %temp_M_real_V_0_4_92, i27 %temp_M_imag_V_0_4_93" [/opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 147 'write' 'write_ln174' <Predicate = true> <Delay = 1.46> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 27> <Depth = 4> <FIFO>
+ST_5 : Operation 148 [1/1] (1.46ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i27P0A.i27P0A, i27 %p_outData_0_0_0_0_07, i27 %p_outData_0_1_0_0_010, i27 %temp_M_real_V_1_4, i27 %temp_M_imag_V_1_4" [/opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 148 'write' 'write_ln174' <Predicate = true> <Delay = 1.46> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 27> <Depth = 4> <FIFO>
+ST_5 : Operation 149 [1/1] (1.46ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i27P0A.i27P0A, i27 %p_outData_0_0_0_0_08, i27 %p_outData_0_1_0_0_011, i27 %temp_M_real_V_2_4, i27 %temp_M_imag_V_2_4" [/opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 149 'write' 'write_ln174' <Predicate = true> <Delay = 1.46> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 27> <Depth = 4> <FIFO>
+ST_5 : Operation 150 [1/1] (1.46ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i27P0A.i27P0A, i27 %p_outData_0_0_0_0_09, i27 %p_outData_0_1_0_0_012, i27 %temp_M_real_V_3_4, i27 %temp_M_imag_V_3_4" [/opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 150 'write' 'write_ln174' <Predicate = true> <Delay = 1.46> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 27> <Depth = 4> <FIFO>
+ST_5 : Operation 151 [1/1] (0.00ns)   --->   "%return_ln351 = return void @_ssdm_op_Return" [/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:351]   --->   Operation 151 'return' 'return_ln351' <Predicate = (icmp_ln319)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 1.08ns.
+
+ <State 1>: 0.387ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('do_init') [35]  (0.387 ns)
+
+ <State 2>: 1.14ns
+The critical path consists of the following:
+	'phi' operation ('r') with incoming values : ('r', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319) [36]  (0 ns)
+	'sub' operation ('sub_ln344', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [52]  (0.436 ns)
+	'getelementptr' operation ('p_digitReseversedOutputBuff_M_real_addr', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [54]  (0 ns)
+	'load' operation ('temp._M_real.V[0]', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) on array 'p_digitReseversedOutputBuff_M_real' [56]  (0.699 ns)
+
+ <State 3>: 1.14ns
+The critical path consists of the following:
+	'sub' operation ('sub_ln344_4', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [113]  (0.436 ns)
+	'getelementptr' operation ('p_digitReseversedOutputBuff_M_real2_addr', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [115]  (0 ns)
+	'load' operation ('temp._M_real.V[0]', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) on array 'p_digitReseversedOutputBuff_M_real2' [117]  (0.699 ns)
+
+ <State 4>: 2.62ns
+The critical path consists of the following:
+	'load' operation ('temp_M_imag_V_3_load') on local variable 'temp._M_imag.V[3]' [41]  (0 ns)
+	multiplexor before 'phi' operation ('temp._M_imag.V[3]') with incoming values : ('temp_M_imag_V_3_load') ('temp._M_imag.V[0]', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [79]  (0.656 ns)
+	'phi' operation ('temp._M_imag.V[3]') with incoming values : ('temp_M_imag_V_3_load') ('temp._M_imag.V[0]', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [79]  (0 ns)
+	multiplexor before 'phi' operation ('temp._M_imag.V[3]') with incoming values : ('temp_M_imag_V_3_load') ('temp._M_imag.V[0]', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [109]  (0.656 ns)
+	'phi' operation ('temp._M_imag.V[3]') with incoming values : ('temp_M_imag_V_3_load') ('temp._M_imag.V[0]', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [109]  (0 ns)
+	multiplexor before 'phi' operation ('temp._M_imag.V[3]') with incoming values : ('temp_M_imag_V_3_load') ('temp._M_imag.V[0]', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [139]  (0.656 ns)
+	'phi' operation ('temp._M_imag.V[3]') with incoming values : ('temp_M_imag_V_3_load') ('temp._M_imag.V[0]', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [139]  (0 ns)
+	multiplexor before 'phi' operation ('temp._M_imag.V[3]') with incoming values : ('temp_M_imag_V_3_load') ('temp._M_imag.V[0]', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [169]  (0.656 ns)
+	'phi' operation ('temp._M_imag.V[3]') with incoming values : ('temp_M_imag_V_3_load') ('temp._M_imag.V[0]', /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344) [169]  (0 ns)
+
+ <State 5>: 1.46ns
+The critical path consists of the following:
+	fifo write operation ('write_ln174', /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174) on port 'p_outData_0_0_0_0_0' (/opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174) [173]  (1.46 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

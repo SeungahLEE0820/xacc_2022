@@ -1,0 +1,95 @@
+Begin Function 'fftStageKernelS2S<16, 4, 0, 0, 0, 2, complex<ap_fixed<25, 11, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<25, 11, 5, 3, 0> > >'
+
+RTL state condition: (1'b1 == 1'b1)
+# ST_9
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_2
+local k1 <> <integer> <Phi> 'phi' <>
+k /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:151
+reg: k1_reg_134[31:0] lv
+
+local tmp <nbreadreq_136> <integer> <> 'nbreadreq' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:136>
+tmp /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:136
+reg: tmp_reg_747[0:0] lv
+
+local X_of_ns_M_real_V_0 <trunc_145> <integer> <> 'trunc' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+X_of_ns_M_real_V_0 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: X_of_ns_M_real_V_0_reg_751[21:0] lv
+
+local X_of_ns_M_imag_V_0 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+X_of_ns_M_imag_V_0 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: X_of_ns_M_imag_V_0_reg_756[21:0] lv
+
+local X_of_ns_M_real_V_1 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+X_of_ns_M_real_V_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: X_of_ns_M_real_V_1_reg_761[21:0] lv
+
+local X_of_ns_M_imag_V_1 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+X_of_ns_M_imag_V_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: X_of_ns_M_imag_V_1_reg_767[21:0] lv
+
+local X_of_ns_M_real_V_2 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+X_of_ns_M_real_V_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: X_of_ns_M_real_V_2_reg_773[21:0] lv
+
+local X_of_ns_M_imag_V_2 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+X_of_ns_M_imag_V_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: X_of_ns_M_imag_V_2_reg_779[21:0] lv
+
+local X_of_ns_M_real_V_3 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+X_of_ns_M_real_V_3 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: X_of_ns_M_real_V_3_reg_785[21:0] lv
+
+local X_of_ns_M_imag_V_3 <partselect_145> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145>
+X_of_ns_M_imag_V_3 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:145
+reg: X_of_ns_M_imag_V_3_reg_791[21:0] lv
+
+local trunc_ln151 <trunc_151> <integer> <> 'trunc' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:151>
+trunc_ln151 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:151
+reg: trunc_ln151_reg_797[3:0] lv
+
+local k <add_151> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:151>
+k /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:151
+reg: k_reg_802[31:0] lv
+
+local icmp_ln151 <icmp_151> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:151>
+icmp_ln151 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:151
+reg: icmp_ln151_reg_807[0:0] lv
+
+# ST_3
+local bflyOutData_M_real_V_0 <add_174> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174>
+bflyOutData._M_real.V[0] /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174
+reg: bflyOutData_M_real_V_0_reg_811[23:0] lv
+
+local bflyOutData_M_imag_V_0 <add_174> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174>
+bflyOutData._M_imag.V[0] /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174
+reg: bflyOutData_M_imag_V_0_reg_816[23:0] lv
+
+local bflyOutData_M_real_V_1 <add_174> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174>
+bflyOutData._M_real.V[1] /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174
+reg: bflyOutData_M_real_V_1_reg_821[23:0] lv
+
+local bflyOutData_M_imag_V_1 <add_174> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174>
+bflyOutData._M_imag.V[1] /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174
+reg: bflyOutData_M_imag_V_1_reg_826[23:0] lv
+
+local bflyOutData_M_real_V_2 <add_174> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174>
+bflyOutData._M_real.V[2] /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174
+reg: bflyOutData_M_real_V_2_reg_831[23:0] lv
+
+local bflyOutData_M_imag_V_2 <add_174> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174>
+bflyOutData._M_imag.V[2] /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174
+reg: bflyOutData_M_imag_V_2_reg_836[23:0] lv
+
+local bflyOutData_M_real_V_3 <add_174> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174>
+bflyOutData._M_real.V[3] /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174
+reg: bflyOutData_M_real_V_3_reg_841[23:0] lv
+
+local bflyOutData_M_imag_V_3 <add_174> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174>
+bflyOutData._M_imag.V[3] /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:174
+reg: bflyOutData_M_imag_V_3_reg_846[23:0] lv
+
+
+End Function 'fftStageKernelS2S<16, 4, 0, 0, 0, 2, complex<ap_fixed<25, 11, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<22, 8, 5, 3, 0> >, complex<ap_fixed<25, 11, 5, 3, 0> > >'
+

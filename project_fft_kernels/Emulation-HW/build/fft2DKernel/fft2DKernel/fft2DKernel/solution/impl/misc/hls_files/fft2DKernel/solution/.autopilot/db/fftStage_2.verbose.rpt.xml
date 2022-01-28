@@ -1,0 +1,158 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'fftStage_2'" level="0">
+<item name = "Date">Thu Jan 27 12:47:38 2022
+</item>
+<item name = "Version">2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)</item>
+<item name = "Project">fft2DKernel</item>
+<item name = "Solution">solution (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu9p-flgb2104-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">4.00 ns, 2.983 ns, 1.08 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="fftStageKernelS2S_16_4_0_0_0_2_complex_ap_fixed_30_16_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_27_13_5_3_0_complex_ap_fixed_30_16_5_3_0_U0">fftStageKernelS2S_16_4_0_0_0_2_complex_ap_fixed_30_16_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_27_13_5_3_0_complex_ap_fixed_30_16_5_3_0_s, ?, ?, ?, ?, 0, 0, loop rewind stp(delay=0 clock cycles(s))</column>
+<column name="streamingDataCommutor_complex_ap_fixed_30_16_5_3_0_1_U0">streamingDataCommutor_complex_ap_fixed_30_16_5_3_0_1, 11, 12, 44.000 ns, 48.000 ns, 10, 10, loop rewind stp(delay=0 clock cycles(s))</column>
+<column name="fftStage_3_U0">fftStage_3, ?, ?, ?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 18, -</column>
+<column name="FIFO">-, -, 1562, 850, -</column>
+<column name="Instance">0, 28, 9038, 9164, 0</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, -, -</column>
+<column name="Register">-, -, 2, -, -</column>
+<specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, 1, 1, 2, 0</specialColumn>
+<specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
+<specialColumn name="Utilization (%)">0, ~0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="fftStageKernelS2S_16_4_0_0_0_2_complex_ap_fixed_30_16_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_27_13_5_3_0_complex_ap_fixed_30_16_5_3_0_U0">fftStageKernelS2S_16_4_0_0_0_2_complex_ap_fixed_30_16_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_27_13_5_3_0_complex_ap_fixed_30_16_5_3_0_s, 0, 28, 4167, 3428, 0</column>
+<column name="fftStage_3_U0">fftStage_3, 0, 0, 3787, 4921, 0</column>
+<column name="streamingDataCommutor_complex_ap_fixed_30_16_5_3_0_1_U0">streamingDataCommutor_complex_ap_fixed_30_16_5_3_0_1, 0, 0, 1084, 815, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+<column name="fftOutData_local2_U">0, 781, 0, -, 8, 256, 2048</column>
+<column name="fftOutData_local_U">0, 781, 0, -, 8, 256, 2048</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_ext_blocking_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_ext_blocking_sub_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_idle">and, 0, 0, 2, 1, 1</column>
+<column name="ap_int_blocking_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_int_blocking_sub_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_str_blocking_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_str_blocking_sub_n">and, 0, 0, 2, 1, 1</column>
+<column name="fftStage_3_U0_ap_start">or, 0, 0, 2, 1, 1</column>
+<column name="streamingDataCommutor_complex_ap_fixed_30_16_5_3_0_1_U0_ap_start">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_sync_reg_fftStage_3_U0_ap_start">1, 0, 1, 0</column>
+<column name="ap_sync_reg_streamingDataCommutor_complex_ap_fixed_30_16_5_3_0_1_U0_ap_start">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="p_fftInData_reOrdered_dout">in, 256, ap_fifo, p_fftInData_reOrdered, pointer</column>
+<column name="p_fftInData_reOrdered_empty_n">in, 1, ap_fifo, p_fftInData_reOrdered, pointer</column>
+<column name="p_fftInData_reOrdered_read">out, 1, ap_fifo, p_fftInData_reOrdered, pointer</column>
+<column name="p_fftOutData_0_0_0_0_0_din">out, 32, ap_fifo, p_fftOutData_0_0_0_0_0, pointer</column>
+<column name="p_fftOutData_0_0_0_0_0_full_n">in, 1, ap_fifo, p_fftOutData_0_0_0_0_0, pointer</column>
+<column name="p_fftOutData_0_0_0_0_0_write">out, 1, ap_fifo, p_fftOutData_0_0_0_0_0, pointer</column>
+<column name="p_fftOutData_0_0_0_0_01_din">out, 32, ap_fifo, p_fftOutData_0_0_0_0_01, pointer</column>
+<column name="p_fftOutData_0_0_0_0_01_full_n">in, 1, ap_fifo, p_fftOutData_0_0_0_0_01, pointer</column>
+<column name="p_fftOutData_0_0_0_0_01_write">out, 1, ap_fifo, p_fftOutData_0_0_0_0_01, pointer</column>
+<column name="p_fftOutData_0_0_0_0_02_din">out, 32, ap_fifo, p_fftOutData_0_0_0_0_02, pointer</column>
+<column name="p_fftOutData_0_0_0_0_02_full_n">in, 1, ap_fifo, p_fftOutData_0_0_0_0_02, pointer</column>
+<column name="p_fftOutData_0_0_0_0_02_write">out, 1, ap_fifo, p_fftOutData_0_0_0_0_02, pointer</column>
+<column name="p_fftOutData_0_0_0_0_03_din">out, 32, ap_fifo, p_fftOutData_0_0_0_0_03, pointer</column>
+<column name="p_fftOutData_0_0_0_0_03_full_n">in, 1, ap_fifo, p_fftOutData_0_0_0_0_03, pointer</column>
+<column name="p_fftOutData_0_0_0_0_03_write">out, 1, ap_fifo, p_fftOutData_0_0_0_0_03, pointer</column>
+<column name="p_fftOutData_0_1_0_0_0_din">out, 32, ap_fifo, p_fftOutData_0_1_0_0_0, pointer</column>
+<column name="p_fftOutData_0_1_0_0_0_full_n">in, 1, ap_fifo, p_fftOutData_0_1_0_0_0, pointer</column>
+<column name="p_fftOutData_0_1_0_0_0_write">out, 1, ap_fifo, p_fftOutData_0_1_0_0_0, pointer</column>
+<column name="p_fftOutData_0_1_0_0_04_din">out, 32, ap_fifo, p_fftOutData_0_1_0_0_04, pointer</column>
+<column name="p_fftOutData_0_1_0_0_04_full_n">in, 1, ap_fifo, p_fftOutData_0_1_0_0_04, pointer</column>
+<column name="p_fftOutData_0_1_0_0_04_write">out, 1, ap_fifo, p_fftOutData_0_1_0_0_04, pointer</column>
+<column name="p_fftOutData_0_1_0_0_05_din">out, 32, ap_fifo, p_fftOutData_0_1_0_0_05, pointer</column>
+<column name="p_fftOutData_0_1_0_0_05_full_n">in, 1, ap_fifo, p_fftOutData_0_1_0_0_05, pointer</column>
+<column name="p_fftOutData_0_1_0_0_05_write">out, 1, ap_fifo, p_fftOutData_0_1_0_0_05, pointer</column>
+<column name="p_fftOutData_0_1_0_0_06_din">out, 32, ap_fifo, p_fftOutData_0_1_0_0_06, pointer</column>
+<column name="p_fftOutData_0_1_0_0_06_full_n">in, 1, ap_fifo, p_fftOutData_0_1_0_0_06, pointer</column>
+<column name="p_fftOutData_0_1_0_0_06_write">out, 1, ap_fifo, p_fftOutData_0_1_0_0_06, pointer</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, fftStage.2, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, fftStage.2, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, fftStage.2, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, fftStage.2, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, fftStage.2, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, fftStage.2, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, fftStage.2, return value</column>
+<column name="ap_ext_blocking_n">out, 1, ap_ctrl_hs, fftStage.2, return value</column>
+<column name="ap_str_blocking_n">out, 1, ap_ctrl_hs, fftStage.2, return value</column>
+<column name="ap_int_blocking_n">out, 1, ap_ctrl_hs, fftStage.2, return value</column>
+</table>
+</item>
+</section>
+</profile>
