@@ -1,0 +1,10 @@
+Begin Function 'digitReversedDataReOrder<16, 4, ap_fixed<27, 13, 5, 3, 0>, ap_fixed<27, 13, 5, 3, 0> >79'
+
+RTL state condition: (1'b1 == ap_CS_fsm_state2)
+# ST_2
+
+RTL state condition: (1'b1 == ap_CS_fsm_state4)
+# ST_4
+
+End Function 'digitReversedDataReOrder<16, 4, ap_fixed<27, 13, 5, 3, 0>, ap_fixed<27, 13, 5, 3, 0> >79'
+

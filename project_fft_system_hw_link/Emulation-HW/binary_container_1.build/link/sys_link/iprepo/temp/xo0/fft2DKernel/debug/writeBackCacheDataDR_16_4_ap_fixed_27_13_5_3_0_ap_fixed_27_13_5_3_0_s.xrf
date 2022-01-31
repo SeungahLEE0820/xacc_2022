@@ -1,0 +1,71 @@
+Begin Function 'writeBackCacheDataDR<16, 4, ap_fixed<27, 13, 5, 3, 0>, ap_fixed<27, 13, 5, 3, 0> >'
+
+RTL state condition: (1'b1 == 1'b1)
+# ST_4
+local temp_M_real_V_3_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_real_V_3_4_reg_656[26:0] lv
+
+local temp_M_real_V_2_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_real_V_2_4_reg_675[26:0] lv
+
+local temp_M_real_V_1_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_real_V_1_4_reg_694[26:0] lv
+
+local temp_M_real_V_0_4_92 <> <integer> <Phi> 'phi' <>
+reg: temp_M_real_V_0_4_92_reg_713[26:0] lv
+
+local temp_M_imag_V_3_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_imag_V_3_4_reg_732[26:0] lv
+
+local temp_M_imag_V_2_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_imag_V_2_4_reg_751[26:0] lv
+
+local temp_M_imag_V_1_4 <> <integer> <Phi> 'phi' <>
+reg: temp_M_imag_V_1_4_reg_770[26:0] lv
+
+local temp_M_imag_V_0_4_93 <> <integer> <Phi> 'phi' <>
+reg: temp_M_imag_V_0_4_93_reg_789[26:0] lv
+
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_2
+local r53 <> <integer> <Phi> 'phi' <>
+r /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319
+reg: r53_reg_265[1:0] lv
+
+local sub_ln344 <sub_344> <integer> <Arithmetic> 'sub' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344>
+sub_ln344 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344
+reg: sub_ln344_reg_1006[1:0] lv
+
+local r <add_319> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319>
+r /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319
+reg: r_reg_1020[1:0] lv
+
+local icmp_ln319 <icmp_319> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319>
+icmp_ln319 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:319
+reg: icmp_ln319_reg_1025[0:0] lv
+
+# ST_3
+local temp_M_real_V_0 <load_344> <integer> <ArrayAccess><ArrayLoad><MultiCycle> 'load' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344>
+temp._M_real.V[0] /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344
+reg: temp_M_real_V_0_reg_1029[26:0] lv
+
+local temp_M_imag_V_0 <load_344> <integer> <ArrayAccess><ArrayLoad><MultiCycle> 'load' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344>
+temp._M_imag.V[0] /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344
+reg: temp_M_imag_V_0_reg_1037[26:0] lv
+
+local sub_ln344_3 <sub_344> <integer> <Arithmetic> 'sub' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344>
+sub_ln344_3 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344
+reg: sub_ln344_3_reg_1045[1:0] lv
+
+local sub_ln344_4 <sub_344> <integer> <Arithmetic> 'sub' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344>
+sub_ln344_4 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_data_reorder.hpp:344
+reg: sub_ln344_4_reg_1059[1:0] lv
+
+local xor_ln150 <xor_150> <integer> <Logic> 'xor' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_utilities.hpp:150>
+xor_ln150 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_utilities.hpp:150
+reg: xor_ln150_reg_1073[1:0] lv
+
+
+End Function 'writeBackCacheDataDR<16, 4, ap_fixed<27, 13, 5, 3, 0>, ap_fixed<27, 13, 5, 3, 0> >'
+

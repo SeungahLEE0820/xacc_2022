@@ -1,0 +1,15 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_project_fft_system_1,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_project_fft_system
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_project_fft_system/activeLaunchMode=systemrun
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_project_fft_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_project_fft_system_1/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_project_fft_system_2/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_threshold_system/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_threshold_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_vadd_system/activeLaunchMode=systemrun
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_vadd_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_vadd_system_1/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_vadd_system_3/activeLaunchMode=run

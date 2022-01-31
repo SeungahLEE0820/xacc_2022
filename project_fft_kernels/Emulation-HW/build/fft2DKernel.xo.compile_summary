@@ -1,0 +1,240 @@
+<ENTRY>
+{
+ "thisFile": "/home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Jan 27 12:40:48 2022",
+ "timestampMillis": "1643287248851",
+ "buildStep": {
+  "cmdId": "45bcca0c-e420-4c8c-91d2-5d8c61c6a0e8",
+  "name": "v++",
+  "logFile": "/home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2021.1/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --target hw_emu --compile -I../src --config fft2DKernel-compile.cfg -I/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed -I/home/centos/Vitis_Libraries/dsp/L2/include/hw/vitis_2dfft/fixed -obuild/fft2DKernel.xo ../src/top_module.cpp ",
+  "args": [
+   "--target",
+   "hw_emu",
+   "--compile",
+   "-I../src",
+   "--config",
+   "fft2DKernel-compile.cfg",
+   "-I/home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed",
+   "-I/home/centos/Vitis_Libraries/dsp/L2/include/hw/vitis_2dfft/fixed",
+   "-obuild/fft2DKernel.xo",
+   "../src/top_module.cpp"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/centos/workspace/project_fft_kernels/Emulation-HW/fft2DKernel-compile.cfg",
+    "content": "platform=/home/centos/aws-fpga/Vitis/aws_platform/xilinx_aws-vu9p-f1_shell-v04261818_201920_2/xilinx_aws-vu9p-f1_shell-v04261818_201920_2.xpfm\nsave-temps=1\nkernel=fft2DKernel\ndebug=1\nmessageDb=build/fft2DKernel.mdb\ntemp_dir=build\nreport_dir=build/reports\nlog_dir=build/logs\n\n[advanced]\nmisc=solution_name=fft2DKernel"
+   }
+  ],
+  "cwd": "/home/centos/workspace/project_fft_kernels/Emulation-HW"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jan 27 12:40:48 2022",
+ "timestampMillis": "1643287248852",
+ "status": {
+  "cmdId": "45bcca0c-e420-4c8c-91d2-5d8c61c6a0e8",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu Jan 27 12:40:54 2022",
+ "timestampMillis": "1643287254842",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_aws-vu9p-f1_shell-v04261818_201920_2.xpfm",
+  "hardwareDsa": "xilinx_aws-vu9p-f1_shell-v04261818_201920_2.xsa",
+  "platformDirectory": "/home/centos/aws-fpga/Vitis/aws_platform/xilinx_aws-vu9p-f1_shell-v04261818_201920_2",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW_EMU",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "fft2DKernel",
+     "file": "/home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/centos/workspace/project_fft_kernels/src/top_module.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2021.1. SW Build 3246112 on 2021-06-09-14:19:56"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Jan 27 12:40:54 2022",
+ "timestampMillis": "1643287254846",
+ "buildStep": {
+  "cmdId": "7e086d07-5a8b-44d5-95e1-70dcae2e3674",
+  "name": "vitis_hls",
+  "logFile": "/home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel/vitis_hls.log",
+  "commandLine": "vitis_hls -f /home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel/fft2DKernel.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel/fft2DKernel.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/centos/workspace/project_fft_kernels/Emulation-HW"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jan 27 12:40:54 2022",
+ "timestampMillis": "1643287254846",
+ "status": {
+  "cmdId": "7e086d07-5a8b-44d5-95e1-70dcae2e3674",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jan 27 12:53:05 2022",
+ "timestampMillis": "1643287985762",
+ "status": {
+  "cmdId": "7e086d07-5a8b-44d5-95e1-70dcae2e3674",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jan 27 12:53:05 2022",
+ "timestampMillis": "1643287985836",
+ "report": {
+  "path": "/home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel/fft2DKernel/solution/.autopilot/db/fft2DKernel.design.xml",
+  "name": "fft2DKernel",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_REPORT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jan 27 12:53:05 2022",
+ "timestampMillis": "1643287985837",
+ "report": {
+  "path": "/home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel/fft2DKernel/solution/.autopilot/db/.message_syn.xml",
+  "name": "fft2DKernel",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_DRC_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jan 27 12:53:05 2022",
+ "timestampMillis": "1643287985838",
+ "report": {
+  "path": "/home/centos/workspace/project_fft_kernels/Emulation-HW/build/reports/fft2DKernel/hls_reports/fft2DKernel_csynth.rpt",
+  "name": "fft2DKernel",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_HLS_CSYNTH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jan 27 12:53:05 2022",
+ "timestampMillis": "1643287985839",
+ "report": {
+  "path": "/home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel/fft2DKernel/solution/syn/report/fft2DKernel_csynth.xml",
+  "name": "fft2DKernel",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_CSYNTH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jan 27 12:53:05 2022",
+ "timestampMillis": "1643287985929",
+ "report": {
+  "path": "/home/centos/workspace/project_fft_kernels/Emulation-HW/build/reports/fft2DKernel/system_estimate_fft2DKernel.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jan 27 12:53:06 2022",
+ "timestampMillis": "1643287986523",
+ "report": {
+  "path": "/home/centos/workspace/project_fft_kernels/Emulation-HW/guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jan 27 12:53:06 2022",
+ "timestampMillis": "1643287986524",
+ "report": {
+  "path": "/home/centos/workspace/project_fft_kernels/Emulation-HW/guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jan 27 12:53:06 2022",
+ "timestampMillis": "1643287986525",
+ "status": {
+  "cmdId": "45bcca0c-e420-4c8c-91d2-5d8c61c6a0e8",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

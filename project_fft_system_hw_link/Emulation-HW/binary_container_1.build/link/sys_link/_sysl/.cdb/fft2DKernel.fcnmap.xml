@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xd:repository xmlns:xd="http://www.xilinx.com/xd">
+    <xd:fcnMap xd:fcnName="fft2DKernel" xd:type="hls_opencl" xd:clockId="0" xd:flow="explicit" xd:componentRef="fft2DKernel">
+        <xd:interrupt xd:busInterfaceRef="interrupt"/>
+        <xd:ctrlReg xd:busInterface="s_axi_control" xd:portInterfaceType="axilite" xd:name="control" xd:type="ap_ctrl_chain" xd:offset="0x0"/>
+        <xd:arg xd:name="p_fftInData" xd:swRootName="p_fftInData" xd:dataWidth="64" xd:offset="0x10" xd:portInterfaceType="axilite" xd:direction="in" xd:id="0" xd:busInterfaceRef="s_axi_control" xd:aximmMasterRef="m_axi_gmem" xd:aximmMasterDirection="inout" xd:aximmMasterDataWidth="512"/>
+        <xd:arg xd:name="p_fftOutData" xd:swRootName="p_fftOutData" xd:dataWidth="64" xd:offset="0x1C" xd:portInterfaceType="axilite" xd:direction="in" xd:id="1" xd:busInterfaceRef="s_axi_control" xd:aximmMasterRef="m_axi_gmem" xd:aximmMasterDirection="inout" xd:aximmMasterDataWidth="512"/>
+        <xd:arg xd:name="n_images" xd:swRootName="n_images" xd:dataWidth="32" xd:offset="0x28" xd:portInterfaceType="axilite" xd:direction="in" xd:id="2" xd:busInterfaceRef="s_axi_control"/>
+    </xd:fcnMap>
+</xd:repository>

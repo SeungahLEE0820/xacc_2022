@@ -1,0 +1,85 @@
+Begin Function 'transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<22, 8, 5, 3, 0> > >'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp1_stage0)
+# ST_5
+local add_ln89202 <phi_89> <integer> <Phi> 'phi' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89>
+add_ln89 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89
+reg: add_ln89202_reg_582[1:0] lv
+
+local icmp_ln90201 <phi_90> <integer> <Phi> 'phi' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:90>
+icmp_ln90 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:90
+reg: icmp_ln90201_reg_593[0:0] lv
+
+local r_16200 <> <integer> <Phi> 'phi' <>
+r_17 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:90
+reg: r_16200_reg_604[1:0] lv
+
+local c199 <> <integer> <Phi> 'phi' <>
+c_2 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89
+reg: c199_reg_615[1:0] lv
+
+local indvar_flatten7198 <phi_89> <integer> <Phi> 'phi' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89>
+add_ln89_2 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89
+reg: indvar_flatten7198_reg_626[1:0] lv
+
+local c_2 <select_89> <integer> <> 'select' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89>
+c_2 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89
+reg: c_2_reg_1079[1:0] lv
+
+local r_17 <add_90> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:90>
+r_17 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:90
+reg: r_17_reg_1164[1:0] lv
+
+local add_ln89_2 <add_89> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89>
+add_ln89_2 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89
+reg: add_ln89_2_reg_1169[1:0] lv
+
+local icmp_ln90 <icmp_90> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:90>
+icmp_ln90 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:90
+reg: icmp_ln90_reg_1174[0:0] lv
+
+local add_ln89 <add_89> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89>
+add_ln89 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89
+reg: add_ln89_reg_1179[1:0] lv
+
+local icmp_ln89 <icmp_89> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89>
+icmp_ln89 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:89
+reg: icmp_ln89_reg_1184[0:0] lv
+
+
+RTL state condition: (1'b1 == ap_CS_fsm_state2)
+# ST_2
+local blk208 <> <integer> <Phi> 'phi' <>
+blk /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:71
+reg: blk208_reg_515[2:0] lv
+
+local blk <add_71> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:71>
+blk /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:71
+reg: blk_reg_1046[2:0] lv
+
+
+RTL state condition: (1'b1 == ap_CS_fsm_state3)
+# ST_3
+local add_ln76207 <phi_76> <integer> <Phi> 'phi' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:76>
+add_ln76 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:76
+reg: add_ln76207_reg_527[1:0] lv
+
+local icmp_ln77206 <phi_77> <integer> <Phi> 'phi' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:77>
+icmp_ln77 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:77
+reg: icmp_ln77206_reg_538[0:0] lv
+
+local c_2205 <> <integer> <Phi> 'phi' <>
+c /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:77
+reg: c_2205_reg_549[1:0] lv
+
+local r204 <> <integer> <Phi> 'phi' <>
+r /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:76
+reg: r204_reg_560[1:0] lv
+
+local indvar_flatten203 <phi_76> <integer> <Phi> 'phi' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:76>
+add_ln76_2 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_matrix_commutors.hpp:76
+reg: indvar_flatten203_reg_571[1:0] lv
+
+
+End Function 'transpWideBlksInMatrix<16u, 16u, 2u, 8u, complex<ap_fixed<22, 8, 5, 3, 0> > >'
+

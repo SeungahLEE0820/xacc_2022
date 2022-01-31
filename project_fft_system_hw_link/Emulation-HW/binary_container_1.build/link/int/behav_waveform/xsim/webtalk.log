@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Jan 27 12:59:16 2022
+# Process ID: 15927
+# Current directory: /home/centos/workspace/project_fft_system_hw_link/Emulation-HW/binary_container_1.build/link/vivado/vpl/prj/prj.sim/sim_1/behav_waveform/xsim
+# Command line: wbtcv -mode batch -source /home/centos/workspace/project_fft_system_hw_link/Emulation-HW/binary_container_1.build/link/vivado/vpl/prj/prj.sim/sim_1/behav_waveform/xsim/xsim.dir/emu_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/centos/workspace/project_fft_system_hw_link/Emulation-HW/binary_container_1.build/link/vivado/vpl/prj/prj.sim/sim_1/behav_waveform/xsim/webtalk.log
+# Journal file: /home/centos/workspace/project_fft_system_hw_link/Emulation-HW/binary_container_1.build/link/vivado/vpl/prj/prj.sim/sim_1/behav_waveform/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/centos/workspace/project_fft_system_hw_link/Emulation-HW/binary_container_1.build/link/vivado/vpl/prj/prj.sim/sim_1/behav_waveform/xsim/xsim.dir/emu_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Jan 27 12:59:16 2022...

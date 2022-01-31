@@ -1,0 +1,2819 @@
+<stg><name>streamingDataCommutor<complex<ap_fixed<30, 16, 5, 3, 0> > >.1</name>
+
+
+<trans_list>
+
+<trans id="115" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="125" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="126" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="127" from="4" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+codeRepl:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %fftOutData_local2, void @empty_8, i32 0, i32 0, void @empty_13, i32 0, i32 0, void @empty_13, void @empty_13, void @empty_13, i32 0, i32 0, i32 0, i32 0, void @empty_13, void @empty_13
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+codeRepl:1 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %fftOutData_local, void @empty_8, i32 0, i32 0, void @empty_13, i32 0, i32 0, void @empty_13, void @empty_13, void @empty_13, i32 0, i32 0, i32 0, i32 0, void @empty_13, void @empty_13
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="0" op_0_bw="0">
+<![CDATA[
+codeRepl:2 %br_ln231 = br void %rewind_header
+
+]]></Node>
+<StgValue><ssdm name="br_ln231"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="8" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0" op_4_bw="1" op_5_bw="0">
+<![CDATA[
+rewind_header:0 %do_init = phi i1 1, void %codeRepl, i1 0, void %._crit_edge5, i1 1, void
+
+]]></Node>
+<StgValue><ssdm name="do_init"/></StgValue>
+</operation>
+
+<operation id="9" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="4" op_0_bw="4" op_1_bw="0" op_2_bw="4" op_3_bw="0" op_4_bw="4" op_5_bw="0">
+<![CDATA[
+rewind_header:1 %t59 = phi i4 0, void %codeRepl, i4 %t, void %._crit_edge5, i4 0, void
+
+]]></Node>
+<StgValue><ssdm name="t59"/></StgValue>
+</operation>
+
+<operation id="10" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+rewind_header:2 %br_ln0 = br i1 %do_init, void %.split, void %rewind_init
+
+]]></Node>
+<StgValue><ssdm name="br_ln0"/></StgValue>
+</operation>
+
+<operation id="11" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="do_init" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+rewind_init:0 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i256 %fftOutData_local2, i64 666, i64 9, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="12" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="do_init" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+rewind_init:1 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i256 %fftOutData_local, i64 666, i64 9, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="13" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="do_init" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="0" op_0_bw="0">
+<![CDATA[
+rewind_init:2 %br_ln231 = br void %.split
+
+]]></Node>
+<StgValue><ssdm name="br_ln231"/></StgValue>
+</operation>
+
+<operation id="14" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="19" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
+<![CDATA[
+.split:0 %empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 10, i64 10, i64 10
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+
+<operation id="15" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
+<![CDATA[
+.split:1 %specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_13
+
+]]></Node>
+<StgValue><ssdm name="specpipeline_ln0"/></StgValue>
+</operation>
+
+<operation id="16" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="0" op_0_bw="0" op_1_bw="0">
+<![CDATA[
+.split:2 %specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @empty_26
+
+]]></Node>
+<StgValue><ssdm name="specloopname_ln0"/></StgValue>
+</operation>
+
+<operation id="17" st_id="2" stage="1" lat="1">
+<core>FIFO_LUTRAM</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="1" op_0_bw="1" op_1_bw="256" op_2_bw="32">
+<![CDATA[
+.split:3 %fifo_has_next_sample = nbreadreq i1 @_ssdm_op_NbReadReq.ap_fifo.i256P0A, i256 %fftOutData_local, i32 1
+
+]]></Node>
+<StgValue><ssdm name="fifo_has_next_sample"/></StgValue>
+</operation>
+
+<operation id="18" st_id="2" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="4" op_0_bw="4" op_1_bw="4">
+<![CDATA[
+.split:4 %t = add i4 %t59, i4 1
+
+]]></Node>
+<StgValue><ssdm name="t"/></StgValue>
+</operation>
+
+<operation id="19" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+.split:5 %br_ln237 = br i1 %fifo_has_next_sample, void, void %.critedge254
+
+]]></Node>
+<StgValue><ssdm name="br_ln237"/></StgValue>
+</operation>
+
+<operation id="20" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="1" op_0_bw="1">
+<![CDATA[
+:0 %delay_line_stall_4_load = load i1 %delay_line_stall_4
+
+]]></Node>
+<StgValue><ssdm name="delay_line_stall_4_load"/></StgValue>
+</operation>
+
+<operation id="21" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="27" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:1 %br_ln281 = br i1 %delay_line_stall_4_load, void %._crit_edge6, void %._crit_edge5
+
+]]></Node>
+<StgValue><ssdm name="br_ln281"/></StgValue>
+</operation>
+
+<operation id="22" st_id="2" stage="1" lat="1">
+<core>FIFO_LUTRAM</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="29" bw="256" op_0_bw="256" op_1_bw="256" op_2_bw="0">
+<![CDATA[
+.critedge254:0 %fftOutData_local_read = read i256 @_ssdm_op_Read.ap_fifo.volatile.i256P0A, i256 %fftOutData_local
+
+]]></Node>
+<StgValue><ssdm name="fftOutData_local_read"/></StgValue>
+</operation>
+
+<operation id="23" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="30" bw="30" op_0_bw="256">
+<![CDATA[
+.critedge254:1 %temp_tagged_input_triangle_delay_input_sample_M_real_V_0 = trunc i256 %fftOutData_local_read
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_real_V_0"/></StgValue>
+</operation>
+
+<operation id="24" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="31" bw="30" op_0_bw="30" op_1_bw="256" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+.critedge254:2 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_0 = partselect i30 @_ssdm_op_PartSelect.i30.i256.i32.i32, i256 %fftOutData_local_read, i32 32, i32 61
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_imag_V_0"/></StgValue>
+</operation>
+
+<operation id="25" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="32" bw="30" op_0_bw="30" op_1_bw="256" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+.critedge254:3 %temp_tagged_input_triangle_delay_input_sample_M_real_V_1 = partselect i30 @_ssdm_op_PartSelect.i30.i256.i32.i32, i256 %fftOutData_local_read, i32 64, i32 93
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_real_V_1"/></StgValue>
+</operation>
+
+<operation id="26" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="33" bw="30" op_0_bw="30" op_1_bw="256" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+.critedge254:4 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_1 = partselect i30 @_ssdm_op_PartSelect.i30.i256.i32.i32, i256 %fftOutData_local_read, i32 96, i32 125
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1"/></StgValue>
+</operation>
+
+<operation id="27" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="34" bw="30" op_0_bw="30" op_1_bw="256" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+.critedge254:5 %temp_tagged_input_triangle_delay_input_sample_M_real_V_2 = partselect i30 @_ssdm_op_PartSelect.i30.i256.i32.i32, i256 %fftOutData_local_read, i32 128, i32 157
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_real_V_2"/></StgValue>
+</operation>
+
+<operation id="28" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="35" bw="30" op_0_bw="30" op_1_bw="256" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+.critedge254:6 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_2 = partselect i30 @_ssdm_op_PartSelect.i30.i256.i32.i32, i256 %fftOutData_local_read, i32 160, i32 189
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2"/></StgValue>
+</operation>
+
+<operation id="29" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="36" bw="30" op_0_bw="30" op_1_bw="256" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+.critedge254:7 %temp_tagged_input_triangle_delay_input_sample_M_real_V_3 = partselect i30 @_ssdm_op_PartSelect.i30.i256.i32.i32, i256 %fftOutData_local_read, i32 192, i32 221
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_real_V_3"/></StgValue>
+</operation>
+
+<operation id="30" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="37" bw="30" op_0_bw="30" op_1_bw="256" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+.critedge254:8 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_3 = partselect i30 @_ssdm_op_PartSelect.i30.i256.i32.i32, i256 %fftOutData_local_read, i32 224, i32 253
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3"/></StgValue>
+</operation>
+
+<operation id="31" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="38" bw="2" op_0_bw="2">
+<![CDATA[
+.critedge254:9 %control_count_V_4_load = load i2 %control_count_V_4
+
+]]></Node>
+<StgValue><ssdm name="control_count_V_4_load"/></StgValue>
+</operation>
+
+<operation id="32" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="39" bw="0" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+.critedge254:10 %store_ln241 = store i2 %control_count_V_4_load, i2 %control_bits_V_4
+
+]]></Node>
+<StgValue><ssdm name="store_ln241"/></StgValue>
+</operation>
+
+<operation id="33" st_id="2" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="40" bw="2" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+.critedge254:11 %add_ln870 = add i2 %control_count_V_4_load, i2 1
+
+]]></Node>
+<StgValue><ssdm name="add_ln870"/></StgValue>
+</operation>
+
+<operation id="34" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="41" bw="0" op_0_bw="2" op_1_bw="2" op_2_bw="0">
+<![CDATA[
+.critedge254:12 %store_ln252 = store i2 %add_ln870, i2 %control_count_V_4
+
+]]></Node>
+<StgValue><ssdm name="store_ln252"/></StgValue>
+</operation>
+
+<operation id="35" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="42" bw="2" op_0_bw="2">
+<![CDATA[
+.critedge254:13 %sample_in_read_count_V_4_load = load i2 %sample_in_read_count_V_4
+
+]]></Node>
+<StgValue><ssdm name="sample_in_read_count_V_4_load"/></StgValue>
+</operation>
+
+<operation id="36" st_id="2" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="43" bw="2" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+.critedge254:14 %add_ln870_1 = add i2 %sample_in_read_count_V_4_load, i2 1
+
+]]></Node>
+<StgValue><ssdm name="add_ln870_1"/></StgValue>
+</operation>
+
+<operation id="37" st_id="2" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="44" bw="1" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+.critedge254:15 %icmp_ln256 = icmp_ne  i2 %sample_in_read_count_V_4_load, i2 3
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln256"/></StgValue>
+</operation>
+
+<operation id="38" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="45" bw="0" op_0_bw="2" op_1_bw="2" op_2_bw="0">
+<![CDATA[
+.critedge254:16 %store_ln870 = store i2 %add_ln870_1, i2 %sample_in_read_count_V_4
+
+]]></Node>
+<StgValue><ssdm name="store_ln870"/></StgValue>
+</operation>
+
+<operation id="39" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="46" bw="0" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+.critedge254:17 %store_ln258 = store i1 %icmp_ln256, i1 %delay_line_stall_4
+
+]]></Node>
+<StgValue><ssdm name="store_ln258"/></StgValue>
+</operation>
+
+<operation id="40" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="47" bw="0" op_0_bw="0">
+<![CDATA[
+.critedge254:18 %br_ln281 = br void %._crit_edge6
+
+]]></Node>
+<StgValue><ssdm name="br_ln281"/></StgValue>
+</operation>
+
+<operation id="41" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="120" bw="0" op_0_bw="0">
+<![CDATA[
+.critedge260:0 %br_ln310 = br void %._crit_edge5
+
+]]></Node>
+<StgValue><ssdm name="br_ln310"/></StgValue>
+</operation>
+
+<operation id="42" st_id="2" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="122" bw="1" op_0_bw="4" op_1_bw="4">
+<![CDATA[
+._crit_edge5:0 %icmp_ln231 = icmp_eq  i4 %t59, i4 9
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln231"/></StgValue>
+</operation>
+
+<operation id="43" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="123" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+._crit_edge5:1 %br_ln231 = br i1 %icmp_ln231, void %rewind_header, void
+
+]]></Node>
+<StgValue><ssdm name="br_ln231"/></StgValue>
+</operation>
+
+<operation id="44" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln231" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="126" bw="0" op_0_bw="0">
+<![CDATA[
+:1 %br_ln316 = br void %rewind_header
+
+]]></Node>
+<StgValue><ssdm name="br_ln316"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="45" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="49" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0">
+<![CDATA[
+._crit_edge6:0 %temp_tagged_mux_chain_input_valid_0 = phi i1 1, void %.critedge254, i1 0, void
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_valid_0"/></StgValue>
+</operation>
+
+<operation id="46" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="50" bw="30" op_0_bw="30" op_1_bw="0" op_2_bw="30" op_3_bw="0">
+<![CDATA[
+._crit_edge6:1 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_3_0 = phi i30 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_3, void %.critedge254, i30 0, void
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3_0"/></StgValue>
+</operation>
+
+<operation id="47" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="51" bw="30" op_0_bw="30" op_1_bw="0" op_2_bw="30" op_3_bw="0">
+<![CDATA[
+._crit_edge6:2 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_2_0 = phi i30 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_2, void %.critedge254, i30 0, void
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2_0"/></StgValue>
+</operation>
+
+<operation id="48" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="52" bw="30" op_0_bw="30" op_1_bw="0" op_2_bw="30" op_3_bw="0">
+<![CDATA[
+._crit_edge6:3 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_1_0 = phi i30 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_1, void %.critedge254, i30 0, void
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1_0"/></StgValue>
+</operation>
+
+<operation id="49" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="53" bw="30" op_0_bw="30" op_1_bw="0" op_2_bw="30" op_3_bw="0">
+<![CDATA[
+._crit_edge6:4 %temp_tagged_mux_chain_input_sample_M_imag_V_0 = phi i30 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_0, void %.critedge254, i30 0, void
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_sample_M_imag_V_0"/></StgValue>
+</operation>
+
+<operation id="50" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="54" bw="30" op_0_bw="30" op_1_bw="0" op_2_bw="30" op_3_bw="0">
+<![CDATA[
+._crit_edge6:5 %temp_tagged_input_triangle_delay_input_sample_M_real_V_3_0 = phi i30 %temp_tagged_input_triangle_delay_input_sample_M_real_V_3, void %.critedge254, i30 0, void
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_real_V_3_0"/></StgValue>
+</operation>
+
+<operation id="51" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="55" bw="30" op_0_bw="30" op_1_bw="0" op_2_bw="30" op_3_bw="0">
+<![CDATA[
+._crit_edge6:6 %temp_tagged_input_triangle_delay_input_sample_M_real_V_2_0 = phi i30 %temp_tagged_input_triangle_delay_input_sample_M_real_V_2, void %.critedge254, i30 0, void
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_real_V_2_0"/></StgValue>
+</operation>
+
+<operation id="52" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="56" bw="30" op_0_bw="30" op_1_bw="0" op_2_bw="30" op_3_bw="0">
+<![CDATA[
+._crit_edge6:7 %temp_tagged_input_triangle_delay_input_sample_M_real_V_1_0 = phi i30 %temp_tagged_input_triangle_delay_input_sample_M_real_V_1, void %.critedge254, i30 0, void
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_input_triangle_delay_input_sample_M_real_V_1_0"/></StgValue>
+</operation>
+
+<operation id="53" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="57" bw="30" op_0_bw="30" op_1_bw="0" op_2_bw="30" op_3_bw="0">
+<![CDATA[
+._crit_edge6:8 %temp_tagged_mux_chain_input_sample_M_real_V_0 = phi i30 %temp_tagged_input_triangle_delay_input_sample_M_real_V_0, void %.critedge254, i30 0, void
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_sample_M_real_V_0"/></StgValue>
+</operation>
+
+<operation id="54" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="58" bw="61" op_0_bw="61" op_1_bw="1" op_2_bw="30" op_3_bw="30">
+<![CDATA[
+._crit_edge6:9 %p_03_i = bitconcatenate i61 @_ssdm_op_BitConcatenate.i61.i1.i30.i30, i1 %temp_tagged_mux_chain_input_valid_0, i30 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_3_0, i30 %temp_tagged_input_triangle_delay_input_sample_M_real_V_3_0
+
+]]></Node>
+<StgValue><ssdm name="p_03_i"/></StgValue>
+</operation>
+
+<operation id="55" st_id="3" stage="1" lat="1">
+<core>ShiftReg</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="59" bw="61" op_0_bw="61" op_1_bw="61" op_2_bw="61" op_3_bw="1">
+<![CDATA[
+._crit_edge6:10 %p_06_i = memshiftread i61 @_ssdm_op_MemShiftRead.[3 x i61]P0A, i61 2, i61 %p_03_i, i1 1
+
+]]></Node>
+<StgValue><ssdm name="p_06_i"/></StgValue>
+</operation>
+
+<operation id="56" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="60" bw="30" op_0_bw="61">
+<![CDATA[
+._crit_edge6:11 %temp_tagged_mux_chain_input_sample_M_real_V_3 = trunc i61 %p_06_i
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_sample_M_real_V_3"/></StgValue>
+</operation>
+
+<operation id="57" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="61" bw="30" op_0_bw="30" op_1_bw="61" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+._crit_edge6:12 %temp_tagged_mux_chain_input_sample_M_imag_V_3 = partselect i30 @_ssdm_op_PartSelect.i30.i61.i32.i32, i61 %p_06_i, i32 30, i32 59
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_sample_M_imag_V_3"/></StgValue>
+</operation>
+
+<operation id="58" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="62" bw="1" op_0_bw="1" op_1_bw="61" op_2_bw="32">
+<![CDATA[
+._crit_edge6:13 %temp_tagged_mux_chain_input_valid_3 = bitselect i1 @_ssdm_op_BitSelect.i1.i61.i32, i61 %p_06_i, i32 60
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_valid_3"/></StgValue>
+</operation>
+
+<operation id="59" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="63" bw="61" op_0_bw="61" op_1_bw="1" op_2_bw="30" op_3_bw="30">
+<![CDATA[
+._crit_edge6:14 %p_04_i = bitconcatenate i61 @_ssdm_op_BitConcatenate.i61.i1.i30.i30, i1 %temp_tagged_mux_chain_input_valid_0, i30 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_2_0, i30 %temp_tagged_input_triangle_delay_input_sample_M_real_V_2_0
+
+]]></Node>
+<StgValue><ssdm name="p_04_i"/></StgValue>
+</operation>
+
+<operation id="60" st_id="3" stage="1" lat="1">
+<core>ShiftReg</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="64" bw="61" op_0_bw="61" op_1_bw="61" op_2_bw="61" op_3_bw="1">
+<![CDATA[
+._crit_edge6:15 %p_07_i = memshiftread i61 @_ssdm_op_MemShiftRead.[2 x i61]P0A, i61 1, i61 %p_04_i, i1 1
+
+]]></Node>
+<StgValue><ssdm name="p_07_i"/></StgValue>
+</operation>
+
+<operation id="61" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="65" bw="30" op_0_bw="61">
+<![CDATA[
+._crit_edge6:16 %temp_tagged_mux_chain_input_sample_M_real_V_2 = trunc i61 %p_07_i
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_sample_M_real_V_2"/></StgValue>
+</operation>
+
+<operation id="62" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="66" bw="30" op_0_bw="30" op_1_bw="61" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+._crit_edge6:17 %temp_tagged_mux_chain_input_sample_M_imag_V_2 = partselect i30 @_ssdm_op_PartSelect.i30.i61.i32.i32, i61 %p_07_i, i32 30, i32 59
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_sample_M_imag_V_2"/></StgValue>
+</operation>
+
+<operation id="63" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="67" bw="1" op_0_bw="1" op_1_bw="61" op_2_bw="32">
+<![CDATA[
+._crit_edge6:18 %temp_tagged_mux_chain_input_valid_2 = bitselect i1 @_ssdm_op_BitSelect.i1.i61.i32, i61 %p_07_i, i32 60
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_valid_2"/></StgValue>
+</operation>
+
+<operation id="64" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="68" bw="61" op_0_bw="61" op_1_bw="1" op_2_bw="30" op_3_bw="30">
+<![CDATA[
+._crit_edge6:19 %p_05_i = bitconcatenate i61 @_ssdm_op_BitConcatenate.i61.i1.i30.i30, i1 %temp_tagged_mux_chain_input_valid_0, i30 %temp_tagged_input_triangle_delay_input_sample_M_imag_V_1_0, i30 %temp_tagged_input_triangle_delay_input_sample_M_real_V_1_0
+
+]]></Node>
+<StgValue><ssdm name="p_05_i"/></StgValue>
+</operation>
+
+<operation id="65" st_id="3" stage="1" lat="1">
+<core>ShiftReg</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="69" bw="61" op_0_bw="61" op_1_bw="61" op_2_bw="61" op_3_bw="1">
+<![CDATA[
+._crit_edge6:20 %p_0_i = memshiftread i61 @_ssdm_op_MemShiftRead.[1 x i61]P0A, i61 0, i61 %p_05_i, i1 1
+
+]]></Node>
+<StgValue><ssdm name="p_0_i"/></StgValue>
+</operation>
+
+<operation id="66" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="70" bw="30" op_0_bw="61">
+<![CDATA[
+._crit_edge6:21 %temp_tagged_mux_chain_input_sample_M_real_V_1 = trunc i61 %p_0_i
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_sample_M_real_V_1"/></StgValue>
+</operation>
+
+<operation id="67" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="71" bw="30" op_0_bw="30" op_1_bw="61" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+._crit_edge6:22 %temp_tagged_mux_chain_input_sample_M_imag_V_1 = partselect i30 @_ssdm_op_PartSelect.i30.i61.i32.i32, i61 %p_0_i, i32 30, i32 59
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_sample_M_imag_V_1"/></StgValue>
+</operation>
+
+<operation id="68" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="72" bw="1" op_0_bw="1" op_1_bw="61" op_2_bw="32">
+<![CDATA[
+._crit_edge6:23 %temp_tagged_mux_chain_input_valid_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i61.i32, i61 %p_0_i, i32 60
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_mux_chain_input_valid_1"/></StgValue>
+</operation>
+
+<operation id="69" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="73" bw="2" op_0_bw="2" op_1_bw="0">
+<![CDATA[
+._crit_edge6:24 %control_bits_V_4_load = load i2 %control_bits_V_4
+
+]]></Node>
+<StgValue><ssdm name="control_bits_V_4_load"/></StgValue>
+</operation>
+
+<operation id="70" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="74" bw="32" op_0_bw="2">
+<![CDATA[
+._crit_edge6:25 %zext_ln66 = zext i2 %control_bits_V_4_load
+
+]]></Node>
+<StgValue><ssdm name="zext_ln66"/></StgValue>
+</operation>
+
+<operation id="71" st_id="3" stage="1" lat="1">
+<core>ShiftReg</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="75" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="32" op_3_bw="1">
+<![CDATA[
+._crit_edge6:26 %DataOut = memshiftread i32 @_ssdm_op_MemShiftRead.[1 x i32]P0A, i32 0, i32 %zext_ln66, i1 1
+
+]]></Node>
+<StgValue><ssdm name="DataOut"/></StgValue>
+</operation>
+
+<operation id="72" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="76" bw="30" op_0_bw="30" op_1_bw="30" op_2_bw="30" op_3_bw="30" op_4_bw="30" op_5_bw="2">
+<![CDATA[
+._crit_edge6:27 %temp_tagged_output_triangle_input_sample_M_real_V_0 = mux i30 @_ssdm_op_Mux.ap_auto.4i30.i2, i30 %temp_tagged_mux_chain_input_sample_M_real_V_0, i30 %temp_tagged_mux_chain_input_sample_M_real_V_1, i30 %temp_tagged_mux_chain_input_sample_M_real_V_2, i30 %temp_tagged_mux_chain_input_sample_M_real_V_3, i2 %control_bits_V_4_load
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_sample_M_real_V_0"/></StgValue>
+</operation>
+
+<operation id="73" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="77" bw="30" op_0_bw="30" op_1_bw="30" op_2_bw="30" op_3_bw="30" op_4_bw="30" op_5_bw="2">
+<![CDATA[
+._crit_edge6:28 %temp_tagged_output_triangle_input_sample_M_imag_V_0 = mux i30 @_ssdm_op_Mux.ap_auto.4i30.i2, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_0, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_1, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_2, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_3, i2 %control_bits_V_4_load
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_sample_M_imag_V_0"/></StgValue>
+</operation>
+
+<operation id="74" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="78" bw="1" op_0_bw="1" op_1_bw="1" op_2_bw="1" op_3_bw="1" op_4_bw="1" op_5_bw="2">
+<![CDATA[
+._crit_edge6:29 %temp_tagged_output_triangle_input_valid_0 = mux i1 @_ssdm_op_Mux.ap_auto.4i1.i2, i1 %temp_tagged_mux_chain_input_valid_0, i1 %temp_tagged_mux_chain_input_valid_1, i1 %temp_tagged_mux_chain_input_valid_2, i1 %temp_tagged_mux_chain_input_valid_3, i2 %control_bits_V_4_load
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_valid_0"/></StgValue>
+</operation>
+
+<operation id="75" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="79" bw="2" op_0_bw="32">
+<![CDATA[
+._crit_edge6:30 %trunc_ln316 = trunc i32 %DataOut
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln316"/></StgValue>
+</operation>
+
+<operation id="76" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="80" bw="32" op_0_bw="2">
+<![CDATA[
+._crit_edge6:31 %zext_ln66_1 = zext i2 %trunc_ln316
+
+]]></Node>
+<StgValue><ssdm name="zext_ln66_1"/></StgValue>
+</operation>
+
+<operation id="77" st_id="3" stage="1" lat="1">
+<core>ShiftReg</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="81" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="32" op_3_bw="1">
+<![CDATA[
+._crit_edge6:32 %DataOut_1 = memshiftread i32 @_ssdm_op_MemShiftRead.[1 x i32]P0A, i32 0, i32 %zext_ln66_1, i1 1
+
+]]></Node>
+<StgValue><ssdm name="DataOut_1"/></StgValue>
+</operation>
+
+<operation id="78" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="82" bw="30" op_0_bw="30" op_1_bw="30" op_2_bw="30" op_3_bw="30" op_4_bw="30" op_5_bw="2">
+<![CDATA[
+._crit_edge6:33 %temp_tagged_output_triangle_input_sample_M_real_V_1 = mux i30 @_ssdm_op_Mux.ap_auto.4i30.i2, i30 %temp_tagged_mux_chain_input_sample_M_real_V_0, i30 %temp_tagged_mux_chain_input_sample_M_real_V_1, i30 %temp_tagged_mux_chain_input_sample_M_real_V_2, i30 %temp_tagged_mux_chain_input_sample_M_real_V_3, i2 %trunc_ln316
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_sample_M_real_V_1"/></StgValue>
+</operation>
+
+<operation id="79" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="83" bw="30" op_0_bw="30" op_1_bw="30" op_2_bw="30" op_3_bw="30" op_4_bw="30" op_5_bw="2">
+<![CDATA[
+._crit_edge6:34 %temp_tagged_output_triangle_input_sample_M_imag_V_1 = mux i30 @_ssdm_op_Mux.ap_auto.4i30.i2, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_0, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_1, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_2, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_3, i2 %trunc_ln316
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_sample_M_imag_V_1"/></StgValue>
+</operation>
+
+<operation id="80" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="84" bw="1" op_0_bw="1" op_1_bw="1" op_2_bw="1" op_3_bw="1" op_4_bw="1" op_5_bw="2">
+<![CDATA[
+._crit_edge6:35 %temp_tagged_output_triangle_input_valid_1 = mux i1 @_ssdm_op_Mux.ap_auto.4i1.i2, i1 %temp_tagged_mux_chain_input_valid_0, i1 %temp_tagged_mux_chain_input_valid_1, i1 %temp_tagged_mux_chain_input_valid_2, i1 %temp_tagged_mux_chain_input_valid_3, i2 %trunc_ln316
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_valid_1"/></StgValue>
+</operation>
+
+<operation id="81" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="85" bw="2" op_0_bw="32">
+<![CDATA[
+._crit_edge6:36 %trunc_ln316_1 = trunc i32 %DataOut_1
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln316_1"/></StgValue>
+</operation>
+
+<operation id="82" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="86" bw="32" op_0_bw="2">
+<![CDATA[
+._crit_edge6:37 %zext_ln66_2 = zext i2 %trunc_ln316_1
+
+]]></Node>
+<StgValue><ssdm name="zext_ln66_2"/></StgValue>
+</operation>
+
+<operation id="83" st_id="3" stage="1" lat="1">
+<core>ShiftReg</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="87" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="32" op_3_bw="1">
+<![CDATA[
+._crit_edge6:38 %DataOut_2 = memshiftread i32 @_ssdm_op_MemShiftRead.[1 x i32]P0A, i32 0, i32 %zext_ln66_2, i1 1
+
+]]></Node>
+<StgValue><ssdm name="DataOut_2"/></StgValue>
+</operation>
+
+<operation id="84" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="88" bw="30" op_0_bw="30" op_1_bw="30" op_2_bw="30" op_3_bw="30" op_4_bw="30" op_5_bw="2">
+<![CDATA[
+._crit_edge6:39 %temp_tagged_output_triangle_input_sample_M_real_V_2 = mux i30 @_ssdm_op_Mux.ap_auto.4i30.i2, i30 %temp_tagged_mux_chain_input_sample_M_real_V_0, i30 %temp_tagged_mux_chain_input_sample_M_real_V_1, i30 %temp_tagged_mux_chain_input_sample_M_real_V_2, i30 %temp_tagged_mux_chain_input_sample_M_real_V_3, i2 %trunc_ln316_1
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_sample_M_real_V_2"/></StgValue>
+</operation>
+
+<operation id="85" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="89" bw="30" op_0_bw="30" op_1_bw="30" op_2_bw="30" op_3_bw="30" op_4_bw="30" op_5_bw="2">
+<![CDATA[
+._crit_edge6:40 %temp_tagged_output_triangle_input_sample_M_imag_V_2 = mux i30 @_ssdm_op_Mux.ap_auto.4i30.i2, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_0, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_1, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_2, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_3, i2 %trunc_ln316_1
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_sample_M_imag_V_2"/></StgValue>
+</operation>
+
+<operation id="86" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="90" bw="1" op_0_bw="1" op_1_bw="1" op_2_bw="1" op_3_bw="1" op_4_bw="1" op_5_bw="2">
+<![CDATA[
+._crit_edge6:41 %temp_tagged_output_triangle_input_valid_2 = mux i1 @_ssdm_op_Mux.ap_auto.4i1.i2, i1 %temp_tagged_mux_chain_input_valid_0, i1 %temp_tagged_mux_chain_input_valid_1, i1 %temp_tagged_mux_chain_input_valid_2, i1 %temp_tagged_mux_chain_input_valid_3, i2 %trunc_ln316_1
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_valid_2"/></StgValue>
+</operation>
+
+<operation id="87" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="91" bw="2" op_0_bw="32">
+<![CDATA[
+._crit_edge6:42 %trunc_ln79 = trunc i32 %DataOut_2
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln79"/></StgValue>
+</operation>
+
+<operation id="88" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="92" bw="30" op_0_bw="30" op_1_bw="30" op_2_bw="30" op_3_bw="30" op_4_bw="30" op_5_bw="2">
+<![CDATA[
+._crit_edge6:43 %temp_tagged_output_triangle_input_sample_M_real_V_3 = mux i30 @_ssdm_op_Mux.ap_auto.4i30.i2, i30 %temp_tagged_mux_chain_input_sample_M_real_V_0, i30 %temp_tagged_mux_chain_input_sample_M_real_V_1, i30 %temp_tagged_mux_chain_input_sample_M_real_V_2, i30 %temp_tagged_mux_chain_input_sample_M_real_V_3, i2 %trunc_ln79
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_sample_M_real_V_3"/></StgValue>
+</operation>
+
+<operation id="89" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="93" bw="30" op_0_bw="30" op_1_bw="30" op_2_bw="30" op_3_bw="30" op_4_bw="30" op_5_bw="2">
+<![CDATA[
+._crit_edge6:44 %temp_tagged_output_triangle_input_sample_M_imag_V_3 = mux i30 @_ssdm_op_Mux.ap_auto.4i30.i2, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_0, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_1, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_2, i30 %temp_tagged_mux_chain_input_sample_M_imag_V_3, i2 %trunc_ln79
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_sample_M_imag_V_3"/></StgValue>
+</operation>
+
+<operation id="90" st_id="3" stage="1" lat="1">
+<core>Multiplexer</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="94" bw="1" op_0_bw="1" op_1_bw="1" op_2_bw="1" op_3_bw="1" op_4_bw="1" op_5_bw="2">
+<![CDATA[
+._crit_edge6:45 %temp_tagged_output_triangle_input_valid_3 = mux i1 @_ssdm_op_Mux.ap_auto.4i1.i2, i1 %temp_tagged_mux_chain_input_valid_0, i1 %temp_tagged_mux_chain_input_valid_1, i1 %temp_tagged_mux_chain_input_valid_2, i1 %temp_tagged_mux_chain_input_valid_3, i2 %trunc_ln79
+
+]]></Node>
+<StgValue><ssdm name="temp_tagged_output_triangle_input_valid_3"/></StgValue>
+</operation>
+
+<operation id="91" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="95" bw="61" op_0_bw="61" op_1_bw="1" op_2_bw="30" op_3_bw="30">
+<![CDATA[
+._crit_edge6:46 %p_i = bitconcatenate i61 @_ssdm_op_BitConcatenate.i61.i1.i30.i30, i1 %temp_tagged_output_triangle_input_valid_0, i30 %temp_tagged_output_triangle_input_sample_M_imag_V_0, i30 %temp_tagged_output_triangle_input_sample_M_real_V_0
+
+]]></Node>
+<StgValue><ssdm name="p_i"/></StgValue>
+</operation>
+
+<operation id="92" st_id="3" stage="1" lat="1">
+<core>ShiftReg</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="96" bw="61" op_0_bw="61" op_1_bw="61" op_2_bw="61" op_3_bw="1">
+<![CDATA[
+._crit_edge6:47 %p_10_i = memshiftread i61 @_ssdm_op_MemShiftRead.[3 x i61]P0A, i61 2, i61 %p_i, i1 1
+
+]]></Node>
+<StgValue><ssdm name="p_10_i"/></StgValue>
+</operation>
+
+<operation id="93" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="97" bw="30" op_0_bw="61">
+<![CDATA[
+._crit_edge6:48 %commuted_output_sample_M_real_V_0 = trunc i61 %p_10_i
+
+]]></Node>
+<StgValue><ssdm name="commuted_output_sample_M_real_V_0"/></StgValue>
+</operation>
+
+<operation id="94" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="98" bw="30" op_0_bw="30" op_1_bw="61" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+._crit_edge6:49 %commuted_output_sample_M_imag_V_0 = partselect i30 @_ssdm_op_PartSelect.i30.i61.i32.i32, i61 %p_10_i, i32 30, i32 59
+
+]]></Node>
+<StgValue><ssdm name="commuted_output_sample_M_imag_V_0"/></StgValue>
+</operation>
+
+<operation id="95" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="99" bw="1" op_0_bw="1" op_1_bw="61" op_2_bw="32">
+<![CDATA[
+._crit_edge6:50 %commuted_output_valid_0 = bitselect i1 @_ssdm_op_BitSelect.i1.i61.i32, i61 %p_10_i, i32 60
+
+]]></Node>
+<StgValue><ssdm name="commuted_output_valid_0"/></StgValue>
+</operation>
+
+<operation id="96" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="100" bw="61" op_0_bw="61" op_1_bw="1" op_2_bw="30" op_3_bw="30">
+<![CDATA[
+._crit_edge6:51 %p_11_i = bitconcatenate i61 @_ssdm_op_BitConcatenate.i61.i1.i30.i30, i1 %temp_tagged_output_triangle_input_valid_1, i30 %temp_tagged_output_triangle_input_sample_M_imag_V_1, i30 %temp_tagged_output_triangle_input_sample_M_real_V_1
+
+]]></Node>
+<StgValue><ssdm name="p_11_i"/></StgValue>
+</operation>
+
+<operation id="97" st_id="3" stage="1" lat="1">
+<core>ShiftReg</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="101" bw="61" op_0_bw="61" op_1_bw="61" op_2_bw="61" op_3_bw="1">
+<![CDATA[
+._crit_edge6:52 %p_12_i = memshiftread i61 @_ssdm_op_MemShiftRead.[2 x i61]P0A, i61 1, i61 %p_11_i, i1 1
+
+]]></Node>
+<StgValue><ssdm name="p_12_i"/></StgValue>
+</operation>
+
+<operation id="98" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="102" bw="30" op_0_bw="61">
+<![CDATA[
+._crit_edge6:53 %commuted_output_sample_M_real_V_1 = trunc i61 %p_12_i
+
+]]></Node>
+<StgValue><ssdm name="commuted_output_sample_M_real_V_1"/></StgValue>
+</operation>
+
+<operation id="99" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="103" bw="30" op_0_bw="30" op_1_bw="61" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+._crit_edge6:54 %commuted_output_sample_M_imag_V_1 = partselect i30 @_ssdm_op_PartSelect.i30.i61.i32.i32, i61 %p_12_i, i32 30, i32 59
+
+]]></Node>
+<StgValue><ssdm name="commuted_output_sample_M_imag_V_1"/></StgValue>
+</operation>
+
+<operation id="100" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="104" bw="1" op_0_bw="1" op_1_bw="61" op_2_bw="32">
+<![CDATA[
+._crit_edge6:55 %commuted_output_valid_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i61.i32, i61 %p_12_i, i32 60
+
+]]></Node>
+<StgValue><ssdm name="commuted_output_valid_1"/></StgValue>
+</operation>
+
+<operation id="101" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="105" bw="61" op_0_bw="61" op_1_bw="1" op_2_bw="30" op_3_bw="30">
+<![CDATA[
+._crit_edge6:56 %p_13_i = bitconcatenate i61 @_ssdm_op_BitConcatenate.i61.i1.i30.i30, i1 %temp_tagged_output_triangle_input_valid_2, i30 %temp_tagged_output_triangle_input_sample_M_imag_V_2, i30 %temp_tagged_output_triangle_input_sample_M_real_V_2
+
+]]></Node>
+<StgValue><ssdm name="p_13_i"/></StgValue>
+</operation>
+
+<operation id="102" st_id="3" stage="1" lat="1">
+<core>ShiftReg</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="106" bw="61" op_0_bw="61" op_1_bw="61" op_2_bw="61" op_3_bw="1">
+<![CDATA[
+._crit_edge6:57 %p_0_i3 = memshiftread i61 @_ssdm_op_MemShiftRead.[1 x i61]P0A, i61 0, i61 %p_13_i, i1 1
+
+]]></Node>
+<StgValue><ssdm name="p_0_i3"/></StgValue>
+</operation>
+
+<operation id="103" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="107" bw="30" op_0_bw="61">
+<![CDATA[
+._crit_edge6:58 %commuted_output_sample_M_real_V_2 = trunc i61 %p_0_i3
+
+]]></Node>
+<StgValue><ssdm name="commuted_output_sample_M_real_V_2"/></StgValue>
+</operation>
+
+<operation id="104" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="108" bw="30" op_0_bw="30" op_1_bw="61" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+._crit_edge6:59 %commuted_output_sample_M_imag_V_2 = partselect i30 @_ssdm_op_PartSelect.i30.i61.i32.i32, i61 %p_0_i3, i32 30, i32 59
+
+]]></Node>
+<StgValue><ssdm name="commuted_output_sample_M_imag_V_2"/></StgValue>
+</operation>
+
+<operation id="105" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="1" op_0_bw="1" op_1_bw="61" op_2_bw="32">
+<![CDATA[
+._crit_edge6:60 %commuted_output_valid_2 = bitselect i1 @_ssdm_op_BitSelect.i1.i61.i32, i61 %p_0_i3, i32 60
+
+]]></Node>
+<StgValue><ssdm name="commuted_output_valid_2"/></StgValue>
+</operation>
+
+<operation id="106" st_id="3" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="110" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+._crit_edge6:61 %and_ln297 = and i1 %commuted_output_valid_0, i1 %commuted_output_valid_1
+
+]]></Node>
+<StgValue><ssdm name="and_ln297"/></StgValue>
+</operation>
+
+<operation id="107" st_id="3" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="111" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+._crit_edge6:62 %and_ln297_1 = and i1 %commuted_output_valid_2, i1 %temp_tagged_output_triangle_input_valid_3
+
+]]></Node>
+<StgValue><ssdm name="and_ln297_1"/></StgValue>
+</operation>
+
+<operation id="108" st_id="3" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="112" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+._crit_edge6:63 %and_ln297_2 = and i1 %and_ln297_1, i1 %and_ln297
+
+]]></Node>
+<StgValue><ssdm name="and_ln297_2"/></StgValue>
+</operation>
+
+<operation id="109" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="113" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+._crit_edge6:64 %br_ln297 = br i1 %and_ln297_2, void %.critedge260, void
+
+]]></Node>
+<StgValue><ssdm name="br_ln297"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="110" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+<literal name="and_ln297_2" val="1"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+<literal name="and_ln297_2" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="115" bw="254" op_0_bw="254" op_1_bw="30" op_2_bw="2" op_3_bw="30" op_4_bw="2" op_5_bw="30" op_6_bw="2" op_7_bw="30" op_8_bw="2" op_9_bw="30" op_10_bw="2" op_11_bw="30" op_12_bw="2" op_13_bw="30" op_14_bw="2" op_15_bw="30">
+<![CDATA[
+:0 %tmp = bitconcatenate i254 @_ssdm_op_BitConcatenate.i254.i30.i2.i30.i2.i30.i2.i30.i2.i30.i2.i30.i2.i30.i2.i30, i30 %temp_tagged_output_triangle_input_sample_M_imag_V_3, i2 0, i30 %temp_tagged_output_triangle_input_sample_M_real_V_3, i2 0, i30 %commuted_output_sample_M_imag_V_2, i2 0, i30 %commuted_output_sample_M_real_V_2, i2 0, i30 %commuted_output_sample_M_imag_V_1, i2 0, i30 %commuted_output_sample_M_real_V_1, i2 0, i30 %commuted_output_sample_M_imag_V_0, i2 0, i30 %commuted_output_sample_M_real_V_0
+
+]]></Node>
+<StgValue><ssdm name="tmp"/></StgValue>
+</operation>
+
+<operation id="111" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+<literal name="and_ln297_2" val="1"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+<literal name="and_ln297_2" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="116" bw="256" op_0_bw="254">
+<![CDATA[
+:1 %zext_ln174 = zext i254 %tmp
+
+]]></Node>
+<StgValue><ssdm name="zext_ln174"/></StgValue>
+</operation>
+
+<operation id="112" st_id="4" stage="1" lat="1">
+<core>FIFO_LUTRAM</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+<literal name="and_ln297_2" val="1"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+<literal name="and_ln297_2" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="117" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="256">
+<![CDATA[
+:2 %write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i256P0A, i256 %fftOutData_local2, i256 %zext_ln174
+
+]]></Node>
+<StgValue><ssdm name="write_ln174"/></StgValue>
+</operation>
+
+<operation id="113" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="delay_line_stall_4_load" val="0"/>
+<literal name="and_ln297_2" val="1"/>
+</and_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+<literal name="and_ln297_2" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="118" bw="0" op_0_bw="0">
+<![CDATA[
+:3 %br_ln309 = br void %.critedge260
+
+]]></Node>
+<StgValue><ssdm name="br_ln309"/></StgValue>
+</operation>
+
+<operation id="114" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln231" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="125" bw="0" op_0_bw="0">
+<![CDATA[
+:0 %return_ln316 = return void @_ssdm_op_Return
+
+]]></Node>
+<StgValue><ssdm name="return_ln316"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="128" name="fftOutData_local" dir="0" iftype="3">
+<core>FIFO_LUTRAM</core><StgValue><ssdm name="fftOutData_local"/></StgValue>
+</port>
+<port id="129" name="fftOutData_local2" dir="1" iftype="3">
+<core>FIFO_LUTRAM</core><StgValue><ssdm name="fftOutData_local2"/></StgValue>
+</port>
+<port id="130" name="control_count_V_4" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="control_count_V_4"/></StgValue>
+</port>
+<port id="131" name="control_bits_V_4" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="control_bits_V_4"/></StgValue>
+</port>
+<port id="132" name="sample_in_read_count_V_4" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="sample_in_read_count_V_4"/></StgValue>
+</port>
+<port id="133" name="delay_line_stall_4" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="delay_line_stall_4"/></StgValue>
+</port>
+<port id="134" name="delayline_Array_41" dir="3" iftype="1">
+<core>ShiftReg</core><StgValue><ssdm name="delayline_Array_41"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="135" name="delayline_Array_43" dir="3" iftype="1">
+<core>ShiftReg</core><StgValue><ssdm name="delayline_Array_43"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="136" name="delayline_Array_13" dir="3" iftype="1">
+<core>ShiftReg</core><StgValue><ssdm name="delayline_Array_13"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="137" name="control_delayline_Array_8" dir="3" iftype="1">
+<core>ShiftReg</core><StgValue><ssdm name="control_delayline_Array_8"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="138" name="control_delayline_Array_9" dir="3" iftype="1">
+<core>ShiftReg</core><StgValue><ssdm name="control_delayline_Array_9"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="139" name="control_delayline_Array_10" dir="3" iftype="1">
+<core>ShiftReg</core><StgValue><ssdm name="control_delayline_Array_10"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="140" name="delayline_Array_30" dir="3" iftype="1">
+<core>ShiftReg</core><StgValue><ssdm name="delayline_Array_30"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="141" name="delayline_Array_42" dir="3" iftype="1">
+<core>ShiftReg</core><StgValue><ssdm name="delayline_Array_42"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="142" name="delayline_Array_44" dir="3" iftype="1">
+<core>ShiftReg</core><StgValue><ssdm name="delayline_Array_44"/><MemPortTyVec>2 </MemPortTyVec>
+</StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="144" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="143" toId="5">
+</dataflow>
+<dataflow id="145" from="fftOutData_local2" to="specinterface_ln0" fromId="129" toId="5">
+</dataflow>
+<dataflow id="147" from="empty_8" to="specinterface_ln0" fromId="146" toId="5">
+</dataflow>
+<dataflow id="149" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="5">
+</dataflow>
+<dataflow id="150" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="5">
+</dataflow>
+<dataflow id="152" from="empty_13" to="specinterface_ln0" fromId="151" toId="5">
+</dataflow>
+<dataflow id="153" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="5">
+</dataflow>
+<dataflow id="154" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="5">
+</dataflow>
+<dataflow id="155" from="empty_13" to="specinterface_ln0" fromId="151" toId="5">
+</dataflow>
+<dataflow id="156" from="empty_13" to="specinterface_ln0" fromId="151" toId="5">
+</dataflow>
+<dataflow id="157" from="empty_13" to="specinterface_ln0" fromId="151" toId="5">
+</dataflow>
+<dataflow id="158" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="5">
+</dataflow>
+<dataflow id="159" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="5">
+</dataflow>
+<dataflow id="160" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="5">
+</dataflow>
+<dataflow id="161" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="5">
+</dataflow>
+<dataflow id="162" from="empty_13" to="specinterface_ln0" fromId="151" toId="5">
+</dataflow>
+<dataflow id="163" from="empty_13" to="specinterface_ln0" fromId="151" toId="5">
+</dataflow>
+<dataflow id="164" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="143" toId="6">
+</dataflow>
+<dataflow id="165" from="fftOutData_local" to="specinterface_ln0" fromId="128" toId="6">
+</dataflow>
+<dataflow id="166" from="empty_8" to="specinterface_ln0" fromId="146" toId="6">
+</dataflow>
+<dataflow id="167" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="6">
+</dataflow>
+<dataflow id="168" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="6">
+</dataflow>
+<dataflow id="169" from="empty_13" to="specinterface_ln0" fromId="151" toId="6">
+</dataflow>
+<dataflow id="170" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="6">
+</dataflow>
+<dataflow id="171" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="6">
+</dataflow>
+<dataflow id="172" from="empty_13" to="specinterface_ln0" fromId="151" toId="6">
+</dataflow>
+<dataflow id="173" from="empty_13" to="specinterface_ln0" fromId="151" toId="6">
+</dataflow>
+<dataflow id="174" from="empty_13" to="specinterface_ln0" fromId="151" toId="6">
+</dataflow>
+<dataflow id="175" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="6">
+</dataflow>
+<dataflow id="176" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="6">
+</dataflow>
+<dataflow id="177" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="6">
+</dataflow>
+<dataflow id="178" from="StgValue_148" to="specinterface_ln0" fromId="148" toId="6">
+</dataflow>
+<dataflow id="179" from="empty_13" to="specinterface_ln0" fromId="151" toId="6">
+</dataflow>
+<dataflow id="180" from="empty_13" to="specinterface_ln0" fromId="151" toId="6">
+</dataflow>
+<dataflow id="182" from="StgValue_181" to="do_init" fromId="181" toId="8">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="183" from="br_ln231" to="do_init" fromId="7" toId="8">
+</dataflow>
+<dataflow id="185" from="StgValue_184" to="do_init" fromId="184" toId="8">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln231" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="186" from="br_ln231" to="do_init" fromId="43" toId="8">
+<BackEdge/>
+</dataflow>
+<dataflow id="187" from="StgValue_181" to="do_init" fromId="181" toId="8">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln231" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="188" from="br_ln316" to="do_init" fromId="44" toId="8">
+<BackEdge/>
+</dataflow>
+<dataflow id="190" from="StgValue_189" to="t59" fromId="189" toId="9">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="191" from="br_ln231" to="t59" fromId="7" toId="9">
+</dataflow>
+<dataflow id="192" from="t" to="t59" fromId="18" toId="9">
+<BackEdge/>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln231" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="193" from="br_ln231" to="t59" fromId="43" toId="9">
+<BackEdge/>
+</dataflow>
+<dataflow id="194" from="StgValue_189" to="t59" fromId="189" toId="9">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln231" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="195" from="br_ln316" to="t59" fromId="44" toId="9">
+<BackEdge/>
+</dataflow>
+<dataflow id="196" from="do_init" to="br_ln0" fromId="8" toId="10">
+</dataflow>
+<dataflow id="198" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="197" toId="11">
+</dataflow>
+<dataflow id="199" from="fftOutData_local2" to="specmemcore_ln0" fromId="129" toId="11">
+</dataflow>
+<dataflow id="201" from="StgValue_200" to="specmemcore_ln0" fromId="200" toId="11">
+</dataflow>
+<dataflow id="203" from="StgValue_202" to="specmemcore_ln0" fromId="202" toId="11">
+</dataflow>
+<dataflow id="205" from="StgValue_204" to="specmemcore_ln0" fromId="204" toId="11">
+</dataflow>
+<dataflow id="206" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="197" toId="12">
+</dataflow>
+<dataflow id="207" from="fftOutData_local" to="specmemcore_ln0" fromId="128" toId="12">
+</dataflow>
+<dataflow id="208" from="StgValue_200" to="specmemcore_ln0" fromId="200" toId="12">
+</dataflow>
+<dataflow id="209" from="StgValue_202" to="specmemcore_ln0" fromId="202" toId="12">
+</dataflow>
+<dataflow id="210" from="StgValue_204" to="specmemcore_ln0" fromId="204" toId="12">
+</dataflow>
+<dataflow id="212" from="_ssdm_op_SpecLoopTripCount" to="empty" fromId="211" toId="14">
+</dataflow>
+<dataflow id="214" from="StgValue_213" to="empty" fromId="213" toId="14">
+</dataflow>
+<dataflow id="215" from="StgValue_213" to="empty" fromId="213" toId="14">
+</dataflow>
+<dataflow id="216" from="StgValue_213" to="empty" fromId="213" toId="14">
+</dataflow>
+<dataflow id="218" from="_ssdm_op_SpecPipeline" to="specpipeline_ln0" fromId="217" toId="15">
+</dataflow>
+<dataflow id="220" from="StgValue_219" to="specpipeline_ln0" fromId="219" toId="15">
+</dataflow>
+<dataflow id="221" from="StgValue_148" to="specpipeline_ln0" fromId="148" toId="15">
+</dataflow>
+<dataflow id="222" from="StgValue_148" to="specpipeline_ln0" fromId="148" toId="15">
+</dataflow>
+<dataflow id="223" from="StgValue_148" to="specpipeline_ln0" fromId="148" toId="15">
+</dataflow>
+<dataflow id="224" from="empty_13" to="specpipeline_ln0" fromId="151" toId="15">
+</dataflow>
+<dataflow id="226" from="_ssdm_op_SpecLoopName" to="specloopname_ln0" fromId="225" toId="16">
+</dataflow>
+<dataflow id="228" from="empty_26" to="specloopname_ln0" fromId="227" toId="16">
+</dataflow>
+<dataflow id="230" from="_ssdm_op_NbReadReq.ap_fifo.i256P0A" to="fifo_has_next_sample" fromId="229" toId="17">
+</dataflow>
+<dataflow id="231" from="fftOutData_local" to="fifo_has_next_sample" fromId="128" toId="17">
+</dataflow>
+<dataflow id="232" from="StgValue_219" to="fifo_has_next_sample" fromId="219" toId="17">
+</dataflow>
+<dataflow id="233" from="t59" to="t" fromId="9" toId="18">
+</dataflow>
+<dataflow id="235" from="StgValue_234" to="t" fromId="234" toId="18">
+</dataflow>
+<dataflow id="236" from="fifo_has_next_sample" to="br_ln237" fromId="17" toId="19">
+</dataflow>
+<dataflow id="237" from="delay_line_stall_4" to="delay_line_stall_4_load" fromId="133" toId="20">
+</dataflow>
+<dataflow id="238" from="delay_line_stall_4_load" to="br_ln281" fromId="20" toId="21">
+</dataflow>
+<dataflow id="240" from="_ssdm_op_Read.ap_fifo.volatile.i256P0A" to="fftOutData_local_read" fromId="239" toId="22">
+</dataflow>
+<dataflow id="241" from="fftOutData_local" to="fftOutData_local_read" fromId="128" toId="22">
+</dataflow>
+<dataflow id="242" from="fftOutData_local_read" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_0" fromId="22" toId="23">
+</dataflow>
+<dataflow id="244" from="_ssdm_op_PartSelect.i30.i256.i32.i32" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_0" fromId="243" toId="24">
+</dataflow>
+<dataflow id="245" from="fftOutData_local_read" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_0" fromId="22" toId="24">
+</dataflow>
+<dataflow id="247" from="StgValue_246" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_0" fromId="246" toId="24">
+</dataflow>
+<dataflow id="249" from="StgValue_248" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_0" fromId="248" toId="24">
+</dataflow>
+<dataflow id="250" from="_ssdm_op_PartSelect.i30.i256.i32.i32" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_1" fromId="243" toId="25">
+</dataflow>
+<dataflow id="251" from="fftOutData_local_read" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_1" fromId="22" toId="25">
+</dataflow>
+<dataflow id="253" from="StgValue_252" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_1" fromId="252" toId="25">
+</dataflow>
+<dataflow id="255" from="StgValue_254" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_1" fromId="254" toId="25">
+</dataflow>
+<dataflow id="256" from="_ssdm_op_PartSelect.i30.i256.i32.i32" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1" fromId="243" toId="26">
+</dataflow>
+<dataflow id="257" from="fftOutData_local_read" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1" fromId="22" toId="26">
+</dataflow>
+<dataflow id="259" from="StgValue_258" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1" fromId="258" toId="26">
+</dataflow>
+<dataflow id="261" from="StgValue_260" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1" fromId="260" toId="26">
+</dataflow>
+<dataflow id="262" from="_ssdm_op_PartSelect.i30.i256.i32.i32" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_2" fromId="243" toId="27">
+</dataflow>
+<dataflow id="263" from="fftOutData_local_read" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_2" fromId="22" toId="27">
+</dataflow>
+<dataflow id="265" from="StgValue_264" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_2" fromId="264" toId="27">
+</dataflow>
+<dataflow id="267" from="StgValue_266" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_2" fromId="266" toId="27">
+</dataflow>
+<dataflow id="268" from="_ssdm_op_PartSelect.i30.i256.i32.i32" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2" fromId="243" toId="28">
+</dataflow>
+<dataflow id="269" from="fftOutData_local_read" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2" fromId="22" toId="28">
+</dataflow>
+<dataflow id="271" from="StgValue_270" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2" fromId="270" toId="28">
+</dataflow>
+<dataflow id="273" from="StgValue_272" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2" fromId="272" toId="28">
+</dataflow>
+<dataflow id="274" from="_ssdm_op_PartSelect.i30.i256.i32.i32" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_3" fromId="243" toId="29">
+</dataflow>
+<dataflow id="275" from="fftOutData_local_read" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_3" fromId="22" toId="29">
+</dataflow>
+<dataflow id="277" from="StgValue_276" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_3" fromId="276" toId="29">
+</dataflow>
+<dataflow id="279" from="StgValue_278" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_3" fromId="278" toId="29">
+</dataflow>
+<dataflow id="280" from="_ssdm_op_PartSelect.i30.i256.i32.i32" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3" fromId="243" toId="30">
+</dataflow>
+<dataflow id="281" from="fftOutData_local_read" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3" fromId="22" toId="30">
+</dataflow>
+<dataflow id="283" from="StgValue_282" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3" fromId="282" toId="30">
+</dataflow>
+<dataflow id="285" from="StgValue_284" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3" fromId="284" toId="30">
+</dataflow>
+<dataflow id="286" from="control_count_V_4" to="control_count_V_4_load" fromId="130" toId="31">
+</dataflow>
+<dataflow id="287" from="control_count_V_4_load" to="store_ln241" fromId="31" toId="32">
+</dataflow>
+<dataflow id="288" from="control_bits_V_4" to="store_ln241" fromId="131" toId="32">
+</dataflow>
+<dataflow id="289" from="control_count_V_4_load" to="add_ln870" fromId="31" toId="33">
+</dataflow>
+<dataflow id="291" from="StgValue_290" to="add_ln870" fromId="290" toId="33">
+</dataflow>
+<dataflow id="292" from="add_ln870" to="store_ln252" fromId="33" toId="34">
+</dataflow>
+<dataflow id="293" from="control_count_V_4" to="store_ln252" fromId="130" toId="34">
+</dataflow>
+<dataflow id="294" from="sample_in_read_count_V_4" to="sample_in_read_count_V_4_load" fromId="132" toId="35">
+</dataflow>
+<dataflow id="295" from="sample_in_read_count_V_4_load" to="add_ln870_1" fromId="35" toId="36">
+</dataflow>
+<dataflow id="296" from="StgValue_290" to="add_ln870_1" fromId="290" toId="36">
+</dataflow>
+<dataflow id="297" from="sample_in_read_count_V_4_load" to="icmp_ln256" fromId="35" toId="37">
+</dataflow>
+<dataflow id="299" from="StgValue_298" to="icmp_ln256" fromId="298" toId="37">
+</dataflow>
+<dataflow id="300" from="add_ln870_1" to="store_ln870" fromId="36" toId="38">
+</dataflow>
+<dataflow id="301" from="sample_in_read_count_V_4" to="store_ln870" fromId="132" toId="38">
+</dataflow>
+<dataflow id="302" from="icmp_ln256" to="store_ln258" fromId="37" toId="39">
+</dataflow>
+<dataflow id="303" from="delay_line_stall_4" to="store_ln258" fromId="133" toId="39">
+</dataflow>
+<dataflow id="304" from="t59" to="icmp_ln231" fromId="9" toId="42">
+</dataflow>
+<dataflow id="306" from="StgValue_305" to="icmp_ln231" fromId="305" toId="42">
+</dataflow>
+<dataflow id="307" from="icmp_ln231" to="br_ln231" fromId="42" toId="43">
+</dataflow>
+<dataflow id="308" from="StgValue_181" to="temp_tagged_mux_chain_input_valid_0" fromId="181" toId="45">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="309" from="br_ln281" to="temp_tagged_mux_chain_input_valid_0" fromId="40" toId="45">
+</dataflow>
+<dataflow id="310" from="StgValue_184" to="temp_tagged_mux_chain_input_valid_0" fromId="184" toId="45">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+<literal name="delay_line_stall_4_load" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="311" from="br_ln281" to="temp_tagged_mux_chain_input_valid_0" fromId="21" toId="45">
+</dataflow>
+<dataflow id="312" from="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3_0" fromId="30" toId="46">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="313" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3_0" fromId="40" toId="46">
+</dataflow>
+<dataflow id="315" from="StgValue_314" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3_0" fromId="314" toId="46">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+<literal name="delay_line_stall_4_load" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="316" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3_0" fromId="21" toId="46">
+</dataflow>
+<dataflow id="317" from="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2_0" fromId="28" toId="47">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="318" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2_0" fromId="40" toId="47">
+</dataflow>
+<dataflow id="319" from="StgValue_314" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2_0" fromId="314" toId="47">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+<literal name="delay_line_stall_4_load" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="320" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2_0" fromId="21" toId="47">
+</dataflow>
+<dataflow id="321" from="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1_0" fromId="26" toId="48">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="322" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1_0" fromId="40" toId="48">
+</dataflow>
+<dataflow id="323" from="StgValue_314" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1_0" fromId="314" toId="48">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+<literal name="delay_line_stall_4_load" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="324" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1_0" fromId="21" toId="48">
+</dataflow>
+<dataflow id="325" from="temp_tagged_input_triangle_delay_input_sample_M_imag_V_0" to="temp_tagged_mux_chain_input_sample_M_imag_V_0" fromId="24" toId="49">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="326" from="br_ln281" to="temp_tagged_mux_chain_input_sample_M_imag_V_0" fromId="40" toId="49">
+</dataflow>
+<dataflow id="327" from="StgValue_314" to="temp_tagged_mux_chain_input_sample_M_imag_V_0" fromId="314" toId="49">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+<literal name="delay_line_stall_4_load" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="328" from="br_ln281" to="temp_tagged_mux_chain_input_sample_M_imag_V_0" fromId="21" toId="49">
+</dataflow>
+<dataflow id="329" from="temp_tagged_input_triangle_delay_input_sample_M_real_V_3" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_3_0" fromId="29" toId="50">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="330" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_3_0" fromId="40" toId="50">
+</dataflow>
+<dataflow id="331" from="StgValue_314" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_3_0" fromId="314" toId="50">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+<literal name="delay_line_stall_4_load" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="332" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_3_0" fromId="21" toId="50">
+</dataflow>
+<dataflow id="333" from="temp_tagged_input_triangle_delay_input_sample_M_real_V_2" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_2_0" fromId="27" toId="51">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="334" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_2_0" fromId="40" toId="51">
+</dataflow>
+<dataflow id="335" from="StgValue_314" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_2_0" fromId="314" toId="51">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+<literal name="delay_line_stall_4_load" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="336" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_2_0" fromId="21" toId="51">
+</dataflow>
+<dataflow id="337" from="temp_tagged_input_triangle_delay_input_sample_M_real_V_1" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_1_0" fromId="25" toId="52">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="338" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_1_0" fromId="40" toId="52">
+</dataflow>
+<dataflow id="339" from="StgValue_314" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_1_0" fromId="314" toId="52">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+<literal name="delay_line_stall_4_load" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="340" from="br_ln281" to="temp_tagged_input_triangle_delay_input_sample_M_real_V_1_0" fromId="21" toId="52">
+</dataflow>
+<dataflow id="341" from="temp_tagged_input_triangle_delay_input_sample_M_real_V_0" to="temp_tagged_mux_chain_input_sample_M_real_V_0" fromId="23" toId="53">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="342" from="br_ln281" to="temp_tagged_mux_chain_input_sample_M_real_V_0" fromId="40" toId="53">
+</dataflow>
+<dataflow id="343" from="StgValue_314" to="temp_tagged_mux_chain_input_sample_M_real_V_0" fromId="314" toId="53">
+<condition id="-1">
+<or_exp><and_exp><literal name="fifo_has_next_sample" val="0"/>
+<literal name="delay_line_stall_4_load" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="344" from="br_ln281" to="temp_tagged_mux_chain_input_sample_M_real_V_0" fromId="21" toId="53">
+</dataflow>
+<dataflow id="346" from="_ssdm_op_BitConcatenate.i61.i1.i30.i30" to="p_03_i" fromId="345" toId="54">
+</dataflow>
+<dataflow id="347" from="temp_tagged_mux_chain_input_valid_0" to="p_03_i" fromId="45" toId="54">
+</dataflow>
+<dataflow id="348" from="temp_tagged_input_triangle_delay_input_sample_M_imag_V_3_0" to="p_03_i" fromId="46" toId="54">
+</dataflow>
+<dataflow id="349" from="temp_tagged_input_triangle_delay_input_sample_M_real_V_3_0" to="p_03_i" fromId="50" toId="54">
+</dataflow>
+<dataflow id="351" from="_ssdm_op_MemShiftRead.[3 x i61]P0A" to="p_06_i" fromId="350" toId="55">
+</dataflow>
+<dataflow id="353" from="StgValue_352" to="p_06_i" fromId="352" toId="55">
+</dataflow>
+<dataflow id="354" from="p_03_i" to="p_06_i" fromId="54" toId="55">
+</dataflow>
+<dataflow id="355" from="StgValue_181" to="p_06_i" fromId="181" toId="55">
+</dataflow>
+<dataflow id="356" from="p_06_i" to="temp_tagged_mux_chain_input_sample_M_real_V_3" fromId="55" toId="56">
+</dataflow>
+<dataflow id="358" from="_ssdm_op_PartSelect.i30.i61.i32.i32" to="temp_tagged_mux_chain_input_sample_M_imag_V_3" fromId="357" toId="57">
+</dataflow>
+<dataflow id="359" from="p_06_i" to="temp_tagged_mux_chain_input_sample_M_imag_V_3" fromId="55" toId="57">
+</dataflow>
+<dataflow id="361" from="StgValue_360" to="temp_tagged_mux_chain_input_sample_M_imag_V_3" fromId="360" toId="57">
+</dataflow>
+<dataflow id="363" from="StgValue_362" to="temp_tagged_mux_chain_input_sample_M_imag_V_3" fromId="362" toId="57">
+</dataflow>
+<dataflow id="365" from="_ssdm_op_BitSelect.i1.i61.i32" to="temp_tagged_mux_chain_input_valid_3" fromId="364" toId="58">
+</dataflow>
+<dataflow id="366" from="p_06_i" to="temp_tagged_mux_chain_input_valid_3" fromId="55" toId="58">
+</dataflow>
+<dataflow id="368" from="StgValue_367" to="temp_tagged_mux_chain_input_valid_3" fromId="367" toId="58">
+</dataflow>
+<dataflow id="369" from="_ssdm_op_BitConcatenate.i61.i1.i30.i30" to="p_04_i" fromId="345" toId="59">
+</dataflow>
+<dataflow id="370" from="temp_tagged_mux_chain_input_valid_0" to="p_04_i" fromId="45" toId="59">
+</dataflow>
+<dataflow id="371" from="temp_tagged_input_triangle_delay_input_sample_M_imag_V_2_0" to="p_04_i" fromId="47" toId="59">
+</dataflow>
+<dataflow id="372" from="temp_tagged_input_triangle_delay_input_sample_M_real_V_2_0" to="p_04_i" fromId="51" toId="59">
+</dataflow>
+<dataflow id="374" from="_ssdm_op_MemShiftRead.[2 x i61]P0A" to="p_07_i" fromId="373" toId="60">
+</dataflow>
+<dataflow id="376" from="StgValue_375" to="p_07_i" fromId="375" toId="60">
+</dataflow>
+<dataflow id="377" from="p_04_i" to="p_07_i" fromId="59" toId="60">
+</dataflow>
+<dataflow id="378" from="StgValue_181" to="p_07_i" fromId="181" toId="60">
+</dataflow>
+<dataflow id="379" from="p_07_i" to="temp_tagged_mux_chain_input_sample_M_real_V_2" fromId="60" toId="61">
+</dataflow>
+<dataflow id="380" from="_ssdm_op_PartSelect.i30.i61.i32.i32" to="temp_tagged_mux_chain_input_sample_M_imag_V_2" fromId="357" toId="62">
+</dataflow>
+<dataflow id="381" from="p_07_i" to="temp_tagged_mux_chain_input_sample_M_imag_V_2" fromId="60" toId="62">
+</dataflow>
+<dataflow id="382" from="StgValue_360" to="temp_tagged_mux_chain_input_sample_M_imag_V_2" fromId="360" toId="62">
+</dataflow>
+<dataflow id="383" from="StgValue_362" to="temp_tagged_mux_chain_input_sample_M_imag_V_2" fromId="362" toId="62">
+</dataflow>
+<dataflow id="384" from="_ssdm_op_BitSelect.i1.i61.i32" to="temp_tagged_mux_chain_input_valid_2" fromId="364" toId="63">
+</dataflow>
+<dataflow id="385" from="p_07_i" to="temp_tagged_mux_chain_input_valid_2" fromId="60" toId="63">
+</dataflow>
+<dataflow id="386" from="StgValue_367" to="temp_tagged_mux_chain_input_valid_2" fromId="367" toId="63">
+</dataflow>
+<dataflow id="387" from="_ssdm_op_BitConcatenate.i61.i1.i30.i30" to="p_05_i" fromId="345" toId="64">
+</dataflow>
+<dataflow id="388" from="temp_tagged_mux_chain_input_valid_0" to="p_05_i" fromId="45" toId="64">
+</dataflow>
+<dataflow id="389" from="temp_tagged_input_triangle_delay_input_sample_M_imag_V_1_0" to="p_05_i" fromId="48" toId="64">
+</dataflow>
+<dataflow id="390" from="temp_tagged_input_triangle_delay_input_sample_M_real_V_1_0" to="p_05_i" fromId="52" toId="64">
+</dataflow>
+<dataflow id="392" from="_ssdm_op_MemShiftRead.[1 x i61]P0A" to="p_0_i" fromId="391" toId="65">
+</dataflow>
+<dataflow id="394" from="StgValue_393" to="p_0_i" fromId="393" toId="65">
+</dataflow>
+<dataflow id="395" from="p_05_i" to="p_0_i" fromId="64" toId="65">
+</dataflow>
+<dataflow id="396" from="StgValue_181" to="p_0_i" fromId="181" toId="65">
+</dataflow>
+<dataflow id="397" from="p_0_i" to="temp_tagged_mux_chain_input_sample_M_real_V_1" fromId="65" toId="66">
+</dataflow>
+<dataflow id="398" from="_ssdm_op_PartSelect.i30.i61.i32.i32" to="temp_tagged_mux_chain_input_sample_M_imag_V_1" fromId="357" toId="67">
+</dataflow>
+<dataflow id="399" from="p_0_i" to="temp_tagged_mux_chain_input_sample_M_imag_V_1" fromId="65" toId="67">
+</dataflow>
+<dataflow id="400" from="StgValue_360" to="temp_tagged_mux_chain_input_sample_M_imag_V_1" fromId="360" toId="67">
+</dataflow>
+<dataflow id="401" from="StgValue_362" to="temp_tagged_mux_chain_input_sample_M_imag_V_1" fromId="362" toId="67">
+</dataflow>
+<dataflow id="402" from="_ssdm_op_BitSelect.i1.i61.i32" to="temp_tagged_mux_chain_input_valid_1" fromId="364" toId="68">
+</dataflow>
+<dataflow id="403" from="p_0_i" to="temp_tagged_mux_chain_input_valid_1" fromId="65" toId="68">
+</dataflow>
+<dataflow id="404" from="StgValue_367" to="temp_tagged_mux_chain_input_valid_1" fromId="367" toId="68">
+</dataflow>
+<dataflow id="405" from="control_bits_V_4" to="control_bits_V_4_load" fromId="131" toId="69">
+</dataflow>
+<dataflow id="406" from="control_bits_V_4_load" to="zext_ln66" fromId="69" toId="70">
+</dataflow>
+<dataflow id="408" from="_ssdm_op_MemShiftRead.[1 x i32]P0A" to="DataOut" fromId="407" toId="71">
+</dataflow>
+<dataflow id="410" from="StgValue_409" to="DataOut" fromId="409" toId="71">
+</dataflow>
+<dataflow id="411" from="zext_ln66" to="DataOut" fromId="70" toId="71">
+</dataflow>
+<dataflow id="412" from="StgValue_181" to="DataOut" fromId="181" toId="71">
+</dataflow>
+<dataflow id="414" from="_ssdm_op_Mux.ap_auto.4i30.i2" to="temp_tagged_output_triangle_input_sample_M_real_V_0" fromId="413" toId="72">
+</dataflow>
+<dataflow id="415" from="temp_tagged_mux_chain_input_sample_M_real_V_0" to="temp_tagged_output_triangle_input_sample_M_real_V_0" fromId="53" toId="72">
+</dataflow>
+<dataflow id="416" from="temp_tagged_mux_chain_input_sample_M_real_V_1" to="temp_tagged_output_triangle_input_sample_M_real_V_0" fromId="66" toId="72">
+</dataflow>
+<dataflow id="417" from="temp_tagged_mux_chain_input_sample_M_real_V_2" to="temp_tagged_output_triangle_input_sample_M_real_V_0" fromId="61" toId="72">
+</dataflow>
+<dataflow id="418" from="temp_tagged_mux_chain_input_sample_M_real_V_3" to="temp_tagged_output_triangle_input_sample_M_real_V_0" fromId="56" toId="72">
+</dataflow>
+<dataflow id="419" from="control_bits_V_4_load" to="temp_tagged_output_triangle_input_sample_M_real_V_0" fromId="69" toId="72">
+</dataflow>
+<dataflow id="420" from="_ssdm_op_Mux.ap_auto.4i30.i2" to="temp_tagged_output_triangle_input_sample_M_imag_V_0" fromId="413" toId="73">
+</dataflow>
+<dataflow id="421" from="temp_tagged_mux_chain_input_sample_M_imag_V_0" to="temp_tagged_output_triangle_input_sample_M_imag_V_0" fromId="49" toId="73">
+</dataflow>
+<dataflow id="422" from="temp_tagged_mux_chain_input_sample_M_imag_V_1" to="temp_tagged_output_triangle_input_sample_M_imag_V_0" fromId="67" toId="73">
+</dataflow>
+<dataflow id="423" from="temp_tagged_mux_chain_input_sample_M_imag_V_2" to="temp_tagged_output_triangle_input_sample_M_imag_V_0" fromId="62" toId="73">
+</dataflow>
+<dataflow id="424" from="temp_tagged_mux_chain_input_sample_M_imag_V_3" to="temp_tagged_output_triangle_input_sample_M_imag_V_0" fromId="57" toId="73">
+</dataflow>
+<dataflow id="425" from="control_bits_V_4_load" to="temp_tagged_output_triangle_input_sample_M_imag_V_0" fromId="69" toId="73">
+</dataflow>
+<dataflow id="427" from="_ssdm_op_Mux.ap_auto.4i1.i2" to="temp_tagged_output_triangle_input_valid_0" fromId="426" toId="74">
+</dataflow>
+<dataflow id="428" from="temp_tagged_mux_chain_input_valid_0" to="temp_tagged_output_triangle_input_valid_0" fromId="45" toId="74">
+</dataflow>
+<dataflow id="429" from="temp_tagged_mux_chain_input_valid_1" to="temp_tagged_output_triangle_input_valid_0" fromId="68" toId="74">
+</dataflow>
+<dataflow id="430" from="temp_tagged_mux_chain_input_valid_2" to="temp_tagged_output_triangle_input_valid_0" fromId="63" toId="74">
+</dataflow>
+<dataflow id="431" from="temp_tagged_mux_chain_input_valid_3" to="temp_tagged_output_triangle_input_valid_0" fromId="58" toId="74">
+</dataflow>
+<dataflow id="432" from="control_bits_V_4_load" to="temp_tagged_output_triangle_input_valid_0" fromId="69" toId="74">
+</dataflow>
+<dataflow id="433" from="DataOut" to="trunc_ln316" fromId="71" toId="75">
+</dataflow>
+<dataflow id="434" from="trunc_ln316" to="zext_ln66_1" fromId="75" toId="76">
+</dataflow>
+<dataflow id="435" from="_ssdm_op_MemShiftRead.[1 x i32]P0A" to="DataOut_1" fromId="407" toId="77">
+</dataflow>
+<dataflow id="437" from="StgValue_436" to="DataOut_1" fromId="436" toId="77">
+</dataflow>
+<dataflow id="438" from="zext_ln66_1" to="DataOut_1" fromId="76" toId="77">
+</dataflow>
+<dataflow id="439" from="StgValue_181" to="DataOut_1" fromId="181" toId="77">
+</dataflow>
+<dataflow id="440" from="_ssdm_op_Mux.ap_auto.4i30.i2" to="temp_tagged_output_triangle_input_sample_M_real_V_1" fromId="413" toId="78">
+</dataflow>
+<dataflow id="441" from="temp_tagged_mux_chain_input_sample_M_real_V_0" to="temp_tagged_output_triangle_input_sample_M_real_V_1" fromId="53" toId="78">
+</dataflow>
+<dataflow id="442" from="temp_tagged_mux_chain_input_sample_M_real_V_1" to="temp_tagged_output_triangle_input_sample_M_real_V_1" fromId="66" toId="78">
+</dataflow>
+<dataflow id="443" from="temp_tagged_mux_chain_input_sample_M_real_V_2" to="temp_tagged_output_triangle_input_sample_M_real_V_1" fromId="61" toId="78">
+</dataflow>
+<dataflow id="444" from="temp_tagged_mux_chain_input_sample_M_real_V_3" to="temp_tagged_output_triangle_input_sample_M_real_V_1" fromId="56" toId="78">
+</dataflow>
+<dataflow id="445" from="trunc_ln316" to="temp_tagged_output_triangle_input_sample_M_real_V_1" fromId="75" toId="78">
+</dataflow>
+<dataflow id="446" from="_ssdm_op_Mux.ap_auto.4i30.i2" to="temp_tagged_output_triangle_input_sample_M_imag_V_1" fromId="413" toId="79">
+</dataflow>
+<dataflow id="447" from="temp_tagged_mux_chain_input_sample_M_imag_V_0" to="temp_tagged_output_triangle_input_sample_M_imag_V_1" fromId="49" toId="79">
+</dataflow>
+<dataflow id="448" from="temp_tagged_mux_chain_input_sample_M_imag_V_1" to="temp_tagged_output_triangle_input_sample_M_imag_V_1" fromId="67" toId="79">
+</dataflow>
+<dataflow id="449" from="temp_tagged_mux_chain_input_sample_M_imag_V_2" to="temp_tagged_output_triangle_input_sample_M_imag_V_1" fromId="62" toId="79">
+</dataflow>
+<dataflow id="450" from="temp_tagged_mux_chain_input_sample_M_imag_V_3" to="temp_tagged_output_triangle_input_sample_M_imag_V_1" fromId="57" toId="79">
+</dataflow>
+<dataflow id="451" from="trunc_ln316" to="temp_tagged_output_triangle_input_sample_M_imag_V_1" fromId="75" toId="79">
+</dataflow>
+<dataflow id="452" from="_ssdm_op_Mux.ap_auto.4i1.i2" to="temp_tagged_output_triangle_input_valid_1" fromId="426" toId="80">
+</dataflow>
+<dataflow id="453" from="temp_tagged_mux_chain_input_valid_0" to="temp_tagged_output_triangle_input_valid_1" fromId="45" toId="80">
+</dataflow>
+<dataflow id="454" from="temp_tagged_mux_chain_input_valid_1" to="temp_tagged_output_triangle_input_valid_1" fromId="68" toId="80">
+</dataflow>
+<dataflow id="455" from="temp_tagged_mux_chain_input_valid_2" to="temp_tagged_output_triangle_input_valid_1" fromId="63" toId="80">
+</dataflow>
+<dataflow id="456" from="temp_tagged_mux_chain_input_valid_3" to="temp_tagged_output_triangle_input_valid_1" fromId="58" toId="80">
+</dataflow>
+<dataflow id="457" from="trunc_ln316" to="temp_tagged_output_triangle_input_valid_1" fromId="75" toId="80">
+</dataflow>
+<dataflow id="458" from="DataOut_1" to="trunc_ln316_1" fromId="77" toId="81">
+</dataflow>
+<dataflow id="459" from="trunc_ln316_1" to="zext_ln66_2" fromId="81" toId="82">
+</dataflow>
+<dataflow id="460" from="_ssdm_op_MemShiftRead.[1 x i32]P0A" to="DataOut_2" fromId="407" toId="83">
+</dataflow>
+<dataflow id="462" from="StgValue_461" to="DataOut_2" fromId="461" toId="83">
+</dataflow>
+<dataflow id="463" from="zext_ln66_2" to="DataOut_2" fromId="82" toId="83">
+</dataflow>
+<dataflow id="464" from="StgValue_181" to="DataOut_2" fromId="181" toId="83">
+</dataflow>
+<dataflow id="465" from="_ssdm_op_Mux.ap_auto.4i30.i2" to="temp_tagged_output_triangle_input_sample_M_real_V_2" fromId="413" toId="84">
+</dataflow>
+<dataflow id="466" from="temp_tagged_mux_chain_input_sample_M_real_V_0" to="temp_tagged_output_triangle_input_sample_M_real_V_2" fromId="53" toId="84">
+</dataflow>
+<dataflow id="467" from="temp_tagged_mux_chain_input_sample_M_real_V_1" to="temp_tagged_output_triangle_input_sample_M_real_V_2" fromId="66" toId="84">
+</dataflow>
+<dataflow id="468" from="temp_tagged_mux_chain_input_sample_M_real_V_2" to="temp_tagged_output_triangle_input_sample_M_real_V_2" fromId="61" toId="84">
+</dataflow>
+<dataflow id="469" from="temp_tagged_mux_chain_input_sample_M_real_V_3" to="temp_tagged_output_triangle_input_sample_M_real_V_2" fromId="56" toId="84">
+</dataflow>
+<dataflow id="470" from="trunc_ln316_1" to="temp_tagged_output_triangle_input_sample_M_real_V_2" fromId="81" toId="84">
+</dataflow>
+<dataflow id="471" from="_ssdm_op_Mux.ap_auto.4i30.i2" to="temp_tagged_output_triangle_input_sample_M_imag_V_2" fromId="413" toId="85">
+</dataflow>
+<dataflow id="472" from="temp_tagged_mux_chain_input_sample_M_imag_V_0" to="temp_tagged_output_triangle_input_sample_M_imag_V_2" fromId="49" toId="85">
+</dataflow>
+<dataflow id="473" from="temp_tagged_mux_chain_input_sample_M_imag_V_1" to="temp_tagged_output_triangle_input_sample_M_imag_V_2" fromId="67" toId="85">
+</dataflow>
+<dataflow id="474" from="temp_tagged_mux_chain_input_sample_M_imag_V_2" to="temp_tagged_output_triangle_input_sample_M_imag_V_2" fromId="62" toId="85">
+</dataflow>
+<dataflow id="475" from="temp_tagged_mux_chain_input_sample_M_imag_V_3" to="temp_tagged_output_triangle_input_sample_M_imag_V_2" fromId="57" toId="85">
+</dataflow>
+<dataflow id="476" from="trunc_ln316_1" to="temp_tagged_output_triangle_input_sample_M_imag_V_2" fromId="81" toId="85">
+</dataflow>
+<dataflow id="477" from="_ssdm_op_Mux.ap_auto.4i1.i2" to="temp_tagged_output_triangle_input_valid_2" fromId="426" toId="86">
+</dataflow>
+<dataflow id="478" from="temp_tagged_mux_chain_input_valid_0" to="temp_tagged_output_triangle_input_valid_2" fromId="45" toId="86">
+</dataflow>
+<dataflow id="479" from="temp_tagged_mux_chain_input_valid_1" to="temp_tagged_output_triangle_input_valid_2" fromId="68" toId="86">
+</dataflow>
+<dataflow id="480" from="temp_tagged_mux_chain_input_valid_2" to="temp_tagged_output_triangle_input_valid_2" fromId="63" toId="86">
+</dataflow>
+<dataflow id="481" from="temp_tagged_mux_chain_input_valid_3" to="temp_tagged_output_triangle_input_valid_2" fromId="58" toId="86">
+</dataflow>
+<dataflow id="482" from="trunc_ln316_1" to="temp_tagged_output_triangle_input_valid_2" fromId="81" toId="86">
+</dataflow>
+<dataflow id="483" from="DataOut_2" to="trunc_ln79" fromId="83" toId="87">
+</dataflow>
+<dataflow id="484" from="_ssdm_op_Mux.ap_auto.4i30.i2" to="temp_tagged_output_triangle_input_sample_M_real_V_3" fromId="413" toId="88">
+</dataflow>
+<dataflow id="485" from="temp_tagged_mux_chain_input_sample_M_real_V_0" to="temp_tagged_output_triangle_input_sample_M_real_V_3" fromId="53" toId="88">
+</dataflow>
+<dataflow id="486" from="temp_tagged_mux_chain_input_sample_M_real_V_1" to="temp_tagged_output_triangle_input_sample_M_real_V_3" fromId="66" toId="88">
+</dataflow>
+<dataflow id="487" from="temp_tagged_mux_chain_input_sample_M_real_V_2" to="temp_tagged_output_triangle_input_sample_M_real_V_3" fromId="61" toId="88">
+</dataflow>
+<dataflow id="488" from="temp_tagged_mux_chain_input_sample_M_real_V_3" to="temp_tagged_output_triangle_input_sample_M_real_V_3" fromId="56" toId="88">
+</dataflow>
+<dataflow id="489" from="trunc_ln79" to="temp_tagged_output_triangle_input_sample_M_real_V_3" fromId="87" toId="88">
+</dataflow>
+<dataflow id="490" from="_ssdm_op_Mux.ap_auto.4i30.i2" to="temp_tagged_output_triangle_input_sample_M_imag_V_3" fromId="413" toId="89">
+</dataflow>
+<dataflow id="491" from="temp_tagged_mux_chain_input_sample_M_imag_V_0" to="temp_tagged_output_triangle_input_sample_M_imag_V_3" fromId="49" toId="89">
+</dataflow>
+<dataflow id="492" from="temp_tagged_mux_chain_input_sample_M_imag_V_1" to="temp_tagged_output_triangle_input_sample_M_imag_V_3" fromId="67" toId="89">
+</dataflow>
+<dataflow id="493" from="temp_tagged_mux_chain_input_sample_M_imag_V_2" to="temp_tagged_output_triangle_input_sample_M_imag_V_3" fromId="62" toId="89">
+</dataflow>
+<dataflow id="494" from="temp_tagged_mux_chain_input_sample_M_imag_V_3" to="temp_tagged_output_triangle_input_sample_M_imag_V_3" fromId="57" toId="89">
+</dataflow>
+<dataflow id="495" from="trunc_ln79" to="temp_tagged_output_triangle_input_sample_M_imag_V_3" fromId="87" toId="89">
+</dataflow>
+<dataflow id="496" from="_ssdm_op_Mux.ap_auto.4i1.i2" to="temp_tagged_output_triangle_input_valid_3" fromId="426" toId="90">
+</dataflow>
+<dataflow id="497" from="temp_tagged_mux_chain_input_valid_0" to="temp_tagged_output_triangle_input_valid_3" fromId="45" toId="90">
+</dataflow>
+<dataflow id="498" from="temp_tagged_mux_chain_input_valid_1" to="temp_tagged_output_triangle_input_valid_3" fromId="68" toId="90">
+</dataflow>
+<dataflow id="499" from="temp_tagged_mux_chain_input_valid_2" to="temp_tagged_output_triangle_input_valid_3" fromId="63" toId="90">
+</dataflow>
+<dataflow id="500" from="temp_tagged_mux_chain_input_valid_3" to="temp_tagged_output_triangle_input_valid_3" fromId="58" toId="90">
+</dataflow>
+<dataflow id="501" from="trunc_ln79" to="temp_tagged_output_triangle_input_valid_3" fromId="87" toId="90">
+</dataflow>
+<dataflow id="502" from="_ssdm_op_BitConcatenate.i61.i1.i30.i30" to="p_i" fromId="345" toId="91">
+</dataflow>
+<dataflow id="503" from="temp_tagged_output_triangle_input_valid_0" to="p_i" fromId="74" toId="91">
+</dataflow>
+<dataflow id="504" from="temp_tagged_output_triangle_input_sample_M_imag_V_0" to="p_i" fromId="73" toId="91">
+</dataflow>
+<dataflow id="505" from="temp_tagged_output_triangle_input_sample_M_real_V_0" to="p_i" fromId="72" toId="91">
+</dataflow>
+<dataflow id="506" from="_ssdm_op_MemShiftRead.[3 x i61]P0A" to="p_10_i" fromId="350" toId="92">
+</dataflow>
+<dataflow id="508" from="StgValue_507" to="p_10_i" fromId="507" toId="92">
+</dataflow>
+<dataflow id="509" from="p_i" to="p_10_i" fromId="91" toId="92">
+</dataflow>
+<dataflow id="510" from="StgValue_181" to="p_10_i" fromId="181" toId="92">
+</dataflow>
+<dataflow id="511" from="p_10_i" to="commuted_output_sample_M_real_V_0" fromId="92" toId="93">
+</dataflow>
+<dataflow id="512" from="_ssdm_op_PartSelect.i30.i61.i32.i32" to="commuted_output_sample_M_imag_V_0" fromId="357" toId="94">
+</dataflow>
+<dataflow id="513" from="p_10_i" to="commuted_output_sample_M_imag_V_0" fromId="92" toId="94">
+</dataflow>
+<dataflow id="514" from="StgValue_360" to="commuted_output_sample_M_imag_V_0" fromId="360" toId="94">
+</dataflow>
+<dataflow id="515" from="StgValue_362" to="commuted_output_sample_M_imag_V_0" fromId="362" toId="94">
+</dataflow>
+<dataflow id="516" from="_ssdm_op_BitSelect.i1.i61.i32" to="commuted_output_valid_0" fromId="364" toId="95">
+</dataflow>
+<dataflow id="517" from="p_10_i" to="commuted_output_valid_0" fromId="92" toId="95">
+</dataflow>
+<dataflow id="518" from="StgValue_367" to="commuted_output_valid_0" fromId="367" toId="95">
+</dataflow>
+<dataflow id="519" from="_ssdm_op_BitConcatenate.i61.i1.i30.i30" to="p_11_i" fromId="345" toId="96">
+</dataflow>
+<dataflow id="520" from="temp_tagged_output_triangle_input_valid_1" to="p_11_i" fromId="80" toId="96">
+</dataflow>
+<dataflow id="521" from="temp_tagged_output_triangle_input_sample_M_imag_V_1" to="p_11_i" fromId="79" toId="96">
+</dataflow>
+<dataflow id="522" from="temp_tagged_output_triangle_input_sample_M_real_V_1" to="p_11_i" fromId="78" toId="96">
+</dataflow>
+<dataflow id="523" from="_ssdm_op_MemShiftRead.[2 x i61]P0A" to="p_12_i" fromId="373" toId="97">
+</dataflow>
+<dataflow id="525" from="StgValue_524" to="p_12_i" fromId="524" toId="97">
+</dataflow>
+<dataflow id="526" from="p_11_i" to="p_12_i" fromId="96" toId="97">
+</dataflow>
+<dataflow id="527" from="StgValue_181" to="p_12_i" fromId="181" toId="97">
+</dataflow>
+<dataflow id="528" from="p_12_i" to="commuted_output_sample_M_real_V_1" fromId="97" toId="98">
+</dataflow>
+<dataflow id="529" from="_ssdm_op_PartSelect.i30.i61.i32.i32" to="commuted_output_sample_M_imag_V_1" fromId="357" toId="99">
+</dataflow>
+<dataflow id="530" from="p_12_i" to="commuted_output_sample_M_imag_V_1" fromId="97" toId="99">
+</dataflow>
+<dataflow id="531" from="StgValue_360" to="commuted_output_sample_M_imag_V_1" fromId="360" toId="99">
+</dataflow>
+<dataflow id="532" from="StgValue_362" to="commuted_output_sample_M_imag_V_1" fromId="362" toId="99">
+</dataflow>
+<dataflow id="533" from="_ssdm_op_BitSelect.i1.i61.i32" to="commuted_output_valid_1" fromId="364" toId="100">
+</dataflow>
+<dataflow id="534" from="p_12_i" to="commuted_output_valid_1" fromId="97" toId="100">
+</dataflow>
+<dataflow id="535" from="StgValue_367" to="commuted_output_valid_1" fromId="367" toId="100">
+</dataflow>
+<dataflow id="536" from="_ssdm_op_BitConcatenate.i61.i1.i30.i30" to="p_13_i" fromId="345" toId="101">
+</dataflow>
+<dataflow id="537" from="temp_tagged_output_triangle_input_valid_2" to="p_13_i" fromId="86" toId="101">
+</dataflow>
+<dataflow id="538" from="temp_tagged_output_triangle_input_sample_M_imag_V_2" to="p_13_i" fromId="85" toId="101">
+</dataflow>
+<dataflow id="539" from="temp_tagged_output_triangle_input_sample_M_real_V_2" to="p_13_i" fromId="84" toId="101">
+</dataflow>
+<dataflow id="540" from="_ssdm_op_MemShiftRead.[1 x i61]P0A" to="p_0_i3" fromId="391" toId="102">
+</dataflow>
+<dataflow id="542" from="StgValue_541" to="p_0_i3" fromId="541" toId="102">
+</dataflow>
+<dataflow id="543" from="p_13_i" to="p_0_i3" fromId="101" toId="102">
+</dataflow>
+<dataflow id="544" from="StgValue_181" to="p_0_i3" fromId="181" toId="102">
+</dataflow>
+<dataflow id="545" from="p_0_i3" to="commuted_output_sample_M_real_V_2" fromId="102" toId="103">
+</dataflow>
+<dataflow id="546" from="_ssdm_op_PartSelect.i30.i61.i32.i32" to="commuted_output_sample_M_imag_V_2" fromId="357" toId="104">
+</dataflow>
+<dataflow id="547" from="p_0_i3" to="commuted_output_sample_M_imag_V_2" fromId="102" toId="104">
+</dataflow>
+<dataflow id="548" from="StgValue_360" to="commuted_output_sample_M_imag_V_2" fromId="360" toId="104">
+</dataflow>
+<dataflow id="549" from="StgValue_362" to="commuted_output_sample_M_imag_V_2" fromId="362" toId="104">
+</dataflow>
+<dataflow id="550" from="_ssdm_op_BitSelect.i1.i61.i32" to="commuted_output_valid_2" fromId="364" toId="105">
+</dataflow>
+<dataflow id="551" from="p_0_i3" to="commuted_output_valid_2" fromId="102" toId="105">
+</dataflow>
+<dataflow id="552" from="StgValue_367" to="commuted_output_valid_2" fromId="367" toId="105">
+</dataflow>
+<dataflow id="553" from="commuted_output_valid_0" to="and_ln297" fromId="95" toId="106">
+</dataflow>
+<dataflow id="554" from="commuted_output_valid_1" to="and_ln297" fromId="100" toId="106">
+</dataflow>
+<dataflow id="555" from="commuted_output_valid_2" to="and_ln297_1" fromId="105" toId="107">
+</dataflow>
+<dataflow id="556" from="temp_tagged_output_triangle_input_valid_3" to="and_ln297_1" fromId="90" toId="107">
+</dataflow>
+<dataflow id="557" from="and_ln297_1" to="and_ln297_2" fromId="107" toId="108">
+</dataflow>
+<dataflow id="558" from="and_ln297" to="and_ln297_2" fromId="106" toId="108">
+</dataflow>
+<dataflow id="559" from="and_ln297_2" to="br_ln297" fromId="108" toId="109">
+</dataflow>
+<dataflow id="561" from="_ssdm_op_BitConcatenate.i254.i30.i2.i30.i2.i30.i2.i30.i2.i30.i2.i30.i2.i30.i2.i30" to="tmp" fromId="560" toId="110">
+</dataflow>
+<dataflow id="562" from="temp_tagged_output_triangle_input_sample_M_imag_V_3" to="tmp" fromId="89" toId="110">
+</dataflow>
+<dataflow id="564" from="StgValue_563" to="tmp" fromId="563" toId="110">
+</dataflow>
+<dataflow id="565" from="temp_tagged_output_triangle_input_sample_M_real_V_3" to="tmp" fromId="88" toId="110">
+</dataflow>
+<dataflow id="566" from="StgValue_563" to="tmp" fromId="563" toId="110">
+</dataflow>
+<dataflow id="567" from="commuted_output_sample_M_imag_V_2" to="tmp" fromId="104" toId="110">
+</dataflow>
+<dataflow id="568" from="StgValue_563" to="tmp" fromId="563" toId="110">
+</dataflow>
+<dataflow id="569" from="commuted_output_sample_M_real_V_2" to="tmp" fromId="103" toId="110">
+</dataflow>
+<dataflow id="570" from="StgValue_563" to="tmp" fromId="563" toId="110">
+</dataflow>
+<dataflow id="571" from="commuted_output_sample_M_imag_V_1" to="tmp" fromId="99" toId="110">
+</dataflow>
+<dataflow id="572" from="StgValue_563" to="tmp" fromId="563" toId="110">
+</dataflow>
+<dataflow id="573" from="commuted_output_sample_M_real_V_1" to="tmp" fromId="98" toId="110">
+</dataflow>
+<dataflow id="574" from="StgValue_563" to="tmp" fromId="563" toId="110">
+</dataflow>
+<dataflow id="575" from="commuted_output_sample_M_imag_V_0" to="tmp" fromId="94" toId="110">
+</dataflow>
+<dataflow id="576" from="StgValue_563" to="tmp" fromId="563" toId="110">
+</dataflow>
+<dataflow id="577" from="commuted_output_sample_M_real_V_0" to="tmp" fromId="93" toId="110">
+</dataflow>
+<dataflow id="578" from="tmp" to="zext_ln174" fromId="110" toId="111">
+</dataflow>
+<dataflow id="580" from="_ssdm_op_Write.ap_fifo.volatile.i256P0A" to="write_ln174" fromId="579" toId="112">
+</dataflow>
+<dataflow id="581" from="fftOutData_local2" to="write_ln174" fromId="129" toId="112">
+</dataflow>
+<dataflow id="582" from="zext_ln174" to="write_ln174" fromId="111" toId="112">
+</dataflow>
+<dataflow id="583" from="do_init" to="StgValue_2" fromId="8" toId="2">
+</dataflow>
+<dataflow id="584" from="fifo_has_next_sample" to="StgValue_2" fromId="17" toId="2">
+</dataflow>
+<dataflow id="585" from="delay_line_stall_4_load" to="StgValue_2" fromId="20" toId="2">
+</dataflow>
+<dataflow id="586" from="icmp_ln231" to="StgValue_2" fromId="42" toId="2">
+</dataflow>
+<dataflow id="587" from="fifo_has_next_sample" to="StgValue_3" fromId="17" toId="3">
+</dataflow>
+<dataflow id="588" from="delay_line_stall_4_load" to="StgValue_3" fromId="20" toId="3">
+</dataflow>
+<dataflow id="589" from="fifo_has_next_sample" to="StgValue_4" fromId="17" toId="4">
+</dataflow>
+<dataflow id="590" from="delay_line_stall_4_load" to="StgValue_4" fromId="20" toId="4">
+</dataflow>
+<dataflow id="591" from="and_ln297_2" to="StgValue_4" fromId="108" toId="4">
+</dataflow>
+<dataflow id="592" from="icmp_ln231" to="StgValue_4" fromId="42" toId="4">
+</dataflow>
+<dataflow id="593" from="icmp_ln231" to="StgValue_3" fromId="42" toId="3">
+</dataflow>
+</dataflows>
+
+
+</stg>

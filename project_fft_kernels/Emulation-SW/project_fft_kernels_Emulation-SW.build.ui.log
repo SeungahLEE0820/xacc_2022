@@ -1,0 +1,6 @@
+2022-01-27T14:13:41.99906100255-14:13:42 **** Incremental Build of configuration Emulation-SW for project project_fft_kernels ****
+000-make -j8 all 
+000-make: Nothing to be done for `all'.
+00255-
+14:13:42 Build Finished (took 81ms)
+

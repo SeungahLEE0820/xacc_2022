@@ -1,0 +1,39 @@
+15:59:42 **** Incremental Build of configuration Emulation-HW for project wide_vadd_kernels ****
+make -j8 all 
+/opt/Xilinx/Vitis/2021.1/bin/v++ --target hw_emu --compile -I"../src" --config krnl_vadd-compile.cfg -o"build/krnl_vadd.xo" "../src/krnl_vadd.cpp"
+Option Map File Used: '/opt/Xilinx/Vitis/2021.1/data/vitis/vpp/optMap.xml'
+
+****** v++ v2021.1 (64-bit)
+  **** SW Build 3246112 on 2021-06-09-14:19:56
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/centos/workspace/wide_vadd_kernels/Emulation-HW/build/reports/krnl_vadd
+	Log files: /home/centos/workspace/wide_vadd_kernels/Emulation-HW/build/logs/krnl_vadd
+Running Dispatch Server on port: 39969
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/centos/workspace/wide_vadd_kernels/Emulation-HW/build/krnl_vadd.xo.compile_summary, at Mon Jan 24 15:59:56 2022
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Mon Jan 24 15:59:56 2022
+INFO: [v++ 60-895]   Target platform: /home/centos/aws-fpga/Vitis/aws_platform/xilinx_aws-vu9p-f1_shell-v04261818_201920_2/xilinx_aws-vu9p-f1_shell-v04261818_201920_2.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/home/centos/aws-fpga/Vitis/aws_platform/xilinx_aws-vu9p-f1_shell-v04261818_201920_2/hw/xilinx_aws-vu9p-f1_shell-v04261818_201920_2.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2021.1
+INFO: [v++ 60-1302] Platform 'xilinx_aws-vu9p-f1_shell-v04261818_201920_2.xpfm' has been explicitly enabled for this release.
+INFO: [v++ 60-585] Compiling for hardware emulation target
+INFO: [v++ 60-423]   Target device: xilinx_aws-vu9p-f1_shell-v04261818_201920_2
+INFO: [v++ 60-242] Creating kernel: 'krnl_vadd'
+
+===>The following messages were generated while  performing high-level synthesis for kernel: krnl_vadd Log file: /home/centos/workspace/wide_vadd_kernels/Emulation-HW/build/krnl_vadd/krnl_vadd/vitis_hls.log :
+INFO: [v++ 204-61] Pipelining loop 'vadd1'.
+INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 5, loop 'vadd1'
+INFO: [v++ 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [v++ 200-789] **** Estimated Fmax: 342.47 MHz
+INFO: [v++ 60-594] Finished kernel compilation
+INFO: [v++ 60-244] Generating system estimate report...
+INFO: [v++ 60-1092] Generated system estimate report: /home/centos/workspace/wide_vadd_kernels/Emulation-HW/build/reports/krnl_vadd/system_estimate_krnl_vadd.xtxt
+INFO: [v++ 60-586] Created build/krnl_vadd.xo
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/centos/workspace/wide_vadd_kernels/Emulation-HW/build/krnl_vadd.xo.compile_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 46s
+INFO: [v++ 60-1653] Closing dispatch client.
+
+16:00:31 Build Finished (took 48s.941ms)
+

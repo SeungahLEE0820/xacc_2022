@@ -1,0 +1,36 @@
+{
+ "session": {
+  "name": "Emulation-HW",
+  "uuid": "535afd05-dcf8-4bfa-8cc8-5481863e9e94",
+  "description": "Vitis IDE session Emulation-HW",
+  "timestamp": "0",
+  "report_file": {
+   "scheme": "FILE",
+   "host": "",
+   "port": 0,
+   "path": "/home/centos/workspace/project_fft_kernels/Emulation-HW/guidance.html",
+   "query": "",
+   "fragment": "",
+   "media_type": "",
+   "encoding": "",
+   "data": ""
+  },
+  "proto_file": {
+   "scheme": "FILE",
+   "host": "",
+   "port": 0,
+   "path": "/home/centos/workspace/project_fft_kernels/Emulation-HW/guidance.pb",
+   "query": "",
+   "fragment": "",
+   "media_type": "",
+   "encoding": "",
+   "data": ""
+  },
+  "build_target": "",
+  "config_files": []
+ },
+ "violation_count": 0,
+ "waived_count": 0,
+ "affirmation_count": 0
+}
+

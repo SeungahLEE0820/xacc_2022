@@ -1,0 +1,79 @@
+Begin Function 'fftStageKernelLastStageS2S<16, 4, 0, 0, 0, 1, complex<ap_fixed<27, 13, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<25, 11, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >77'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_2
+local iter1 <> <integer> <Phi> 'phi' <>
+iter /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:215
+reg: iter1_reg_136[31:0] lv
+
+local tmp <nbreadreq_136> <integer> <> 'nbreadreq' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:136>
+tmp /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:136
+reg: tmp_reg_812[0:0] lv
+
+local trunc_ln717 <trunc_235> <integer> <> 'trunc' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+trunc_ln717 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: trunc_ln717_reg_816[24:0] lv
+
+local tmp_s <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+tmp_s /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: tmp_s_reg_821[24:0] lv
+
+local tmp_90 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+tmp_90 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: tmp_90_reg_826[24:0] lv
+
+local tmp_91 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+tmp_91 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: tmp_91_reg_831[24:0] lv
+
+local tmp_92 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+tmp_92 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: tmp_92_reg_836[24:0] lv
+
+local tmp_93 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+tmp_93 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: tmp_93_reg_841[24:0] lv
+
+local tmp_94 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+tmp_94 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: tmp_94_reg_846[24:0] lv
+
+local tmp_95 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+tmp_95 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: tmp_95_reg_851[24:0] lv
+
+local p_val_V_88 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+p_val_V_88 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: p_val_V_88_reg_856[25:0] lv
+
+local p_val_V_89 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+p_val_V_89 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: p_val_V_89_reg_862[25:0] lv
+
+local p_val_V_90 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+p_val_V_90 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: p_val_V_90_reg_868[25:0] lv
+
+local p_val_V_91 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+p_val_V_91 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: p_val_V_91_reg_874[25:0] lv
+
+local p_val_V_92 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+p_val_V_92 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: p_val_V_92_reg_880[25:0] lv
+
+local p_val_V_93 <partselect_235> <integer> <> 'partselect' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235>
+p_val_V_93 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:235
+reg: p_val_V_93_reg_886[25:0] lv
+
+local iter <add_215> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:215>
+iter /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:215
+reg: iter_reg_892[31:0] lv
+
+local icmp_ln215 <icmp_215> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:215>
+icmp_ln215 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft.hpp:215
+reg: icmp_ln215_reg_897[0:0] lv
+
+
+End Function 'fftStageKernelLastStageS2S<16, 4, 0, 0, 0, 1, complex<ap_fixed<27, 13, 5, 3, 0> >, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<25, 11, 5, 3, 0> >, complex<ap_fixed<27, 13, 5, 3, 0> > >77'
+

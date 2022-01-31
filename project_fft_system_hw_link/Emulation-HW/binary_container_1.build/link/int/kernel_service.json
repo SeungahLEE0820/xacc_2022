@@ -1,0 +1,17 @@
+{
+ "kernels": [],
+ "computeUnits": [
+  {
+   "id": "",
+   "kernelName": "fft2DKernel",
+   "cuName": "fft2DKernel_1",
+   "baseAddress": "",
+   "instancePath": "/emu_wrapper/emu_i/dynamic_region/fft2DKernel_1",
+   "slr": [],
+   "simInstanceName": "inst",
+   "locNames": [],
+   "tileNames": []
+  }
+ ]
+}
+

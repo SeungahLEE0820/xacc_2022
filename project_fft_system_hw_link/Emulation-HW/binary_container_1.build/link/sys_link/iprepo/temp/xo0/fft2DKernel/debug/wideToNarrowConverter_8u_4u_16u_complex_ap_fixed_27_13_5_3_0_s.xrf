@@ -1,0 +1,39 @@
+Begin Function 'wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<27, 13, 5, 3, 0> > >'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_2
+local wideReadIndex18 <> <integer> <Phi> 'phi' <>
+wideReadIndex /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:81
+reg: wideReadIndex18_reg_222[2:0] lv
+
+local i17 <> <integer> <Phi> 'phi' <>
+i /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:69
+reg: i17_reg_237[4:0] lv
+
+local i <add_69> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:69>
+i /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:69
+reg: i_reg_957[4:0] lv
+
+local icmp_ln78_6 <icmp_78> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:78>
+icmp_ln78_6 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:78
+reg: icmp_ln78_6_reg_962[0:0] lv
+
+local icmp_ln78_7 <icmp_78> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:78>
+icmp_ln78_7 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:78
+reg: icmp_ln78_7_reg_972[0:0] lv
+
+local icmp_ln78_8 <icmp_78> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:78>
+icmp_ln78_8 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:78
+reg: icmp_ln78_8_reg_980[0:0] lv
+
+local wideReadIndex <xor_81> <integer> <Logic> 'xor' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:81>
+wideReadIndex /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:81
+reg: wideReadIndex_reg_990[2:0] lv
+
+local icmp_ln69 <icmp_69> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:69>
+icmp_ln69 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_wide_type_utilities.hpp:69
+reg: icmp_ln69_reg_995[0:0] lv
+
+
+End Function 'wideToNarrowConverter<8u, 4u, 16u, complex<ap_fixed<27, 13, 5, 3, 0> > >'
+

@@ -1,0 +1,7 @@
+Begin Function 'fftStreamingKernel'
+
+RTL state condition: (1'b1 == ap_CS_fsm_state3)
+# ST_3
+
+End Function 'fftStreamingKernel'
+

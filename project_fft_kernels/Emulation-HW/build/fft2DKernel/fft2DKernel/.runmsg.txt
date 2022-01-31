@@ -1,0 +1,2 @@
+performing high-level synthesis for kernel: fft2DKernel
+Log file: /home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel/vitis_hls.log

@@ -1,0 +1,7 @@
+Begin Function 'fft2DKernel'
+
+RTL state condition: (1'b1 == ap_CS_fsm_state2)
+# ST_2
+
+End Function 'fft2DKernel'
+

@@ -1,0 +1,91 @@
+Begin Function 'demuxWideStreaming<2u, 16u, 16u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_2
+local outStreamPtr2 <> <integer> <Phi> 'phi' <>
+outStreamPtr /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_demux.hpp:63
+reg: outStreamPtr2_reg_303[0:0] lv
+
+local iter1 <> <integer> <Phi> 'phi' <>
+iter /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_demux.hpp:52
+reg: iter1_reg_318[4:0] lv
+
+local trunc_ln174 <trunc_174> <integer> <> 'trunc' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_reg_506[26:0] lv
+
+local trunc_ln174_2 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_2_reg_512[26:0] lv
+
+local trunc_ln174_3 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_3 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_3_reg_518[26:0] lv
+
+local trunc_ln174_4 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_4_reg_524[26:0] lv
+
+local trunc_ln174_5 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_5 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_5_reg_530[26:0] lv
+
+local trunc_ln174_6 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_6 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_6_reg_536[26:0] lv
+
+local trunc_ln174_7 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_7 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_7_reg_542[26:0] lv
+
+local trunc_ln174_8 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_8 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_8_reg_548[26:0] lv
+
+local trunc_ln174_9 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_9 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_9_reg_554[26:0] lv
+
+local trunc_ln174_s <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_s /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_s_reg_560[26:0] lv
+
+local trunc_ln174_1 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_1 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_1_reg_566[26:0] lv
+
+local trunc_ln174_10 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_10 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_10_reg_572[26:0] lv
+
+local trunc_ln174_11 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_11 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_11_reg_578[26:0] lv
+
+local trunc_ln174_12 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_12 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_12_reg_584[26:0] lv
+
+local trunc_ln174_13 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_13 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_13_reg_590[26:0] lv
+
+local trunc_ln174_14 <partselect_174> <integer> <> 'partselect' </opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174>
+trunc_ln174_14 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/hls_stream_39.h:174
+reg: trunc_ln174_14_reg_596[26:0] lv
+
+local iter <add_52> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_demux.hpp:52>
+iter /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_demux.hpp:52
+reg: iter_reg_602[4:0] lv
+
+local outStreamPtr <xor_63> <integer> <Logic> 'xor' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_demux.hpp:63>
+outStreamPtr /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_demux.hpp:63
+reg: outStreamPtr_reg_607[0:0] lv
+
+local icmp_ln52 <icmp_52> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_demux.hpp:52>
+icmp_ln52 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_demux.hpp:52
+reg: icmp_ln52_reg_612[0:0] lv
+
+
+End Function 'demuxWideStreaming<2u, 16u, 16u, 8u, complex<ap_fixed<27, 13, 5, 3, 0> > >'
+

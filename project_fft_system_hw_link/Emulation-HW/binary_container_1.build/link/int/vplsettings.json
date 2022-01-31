@@ -1,0 +1,22 @@
+{
+    "kernelContainerValues": [
+        "fft2DKernel:xo"
+    ],
+    "profileDataTransferValues": [
+        "fft2DKernel:fft2DKernel_1:p_fftInData:all",
+        "fft2DKernel:fft2DKernel_1:p_fftOutData:all"
+    ],
+    "compile": "false",
+    "debug": "false",
+    "exportScript": "false",
+    "gccHostCompile": "false",
+    "generateEstimateRpt": "false",
+    "keepSolution": "false",
+    "link": "false",
+    "logDir": "\/home\/centos\/workspace\/project_fft_system_hw_link\/Emulation-HW\/binary_container_1.build\/logs\/link",
+    "package": "false",
+    "reportDir": "\/home\/centos\/workspace\/project_fft_system_hw_link\/Emulation-HW\/binary_container_1.build\/reports\/link",
+    "saveTemps": "false",
+    "verbose": "false",
+    "vplNoIpCache": "false"
+}

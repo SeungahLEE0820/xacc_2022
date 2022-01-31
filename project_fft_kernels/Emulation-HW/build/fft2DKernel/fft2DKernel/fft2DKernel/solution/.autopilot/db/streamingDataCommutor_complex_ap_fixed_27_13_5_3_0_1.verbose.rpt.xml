@@ -1,0 +1,212 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'streamingDataCommutor_complex_ap_fixed_27_13_5_3_0_1'" level="0">
+<item name = "Date">Thu Jan 27 12:47:31 2022
+</item>
+<item name = "Version">2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)</item>
+<item name = "Project">fft2DKernel</item>
+<item name = "Solution">solution (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu9p-flgb2104-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">4.00 ns, 2.408 ns, 1.08 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">11, 12, 44.000 ns, 48.000 ns, 10, 10, loop rewind stp(delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_231_1">11, 11, 3, 1, 1, 10, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 79, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, 0, 240, -</column>
+<column name="Memory">-, -, 576, 288, -</column>
+<column name="Multiplexer">-, -, -, 208, -</column>
+<column name="Register">-, -, 460, -, -</column>
+<specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, 0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="mux_42_1_1_1_U1340">mux_42_1_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_1_1_1_U1343">mux_42_1_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_1_1_1_U1346">mux_42_1_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_1_1_1_U1349">mux_42_1_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_27_1_1_U1338">mux_42_27_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_27_1_1_U1339">mux_42_27_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_27_1_1_U1341">mux_42_27_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_27_1_1_U1342">mux_42_27_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_27_1_1_U1344">mux_42_27_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_27_1_1_U1345">mux_42_27_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_27_1_1_U1347">mux_42_27_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_42_27_1_1_U1348">mux_42_27_1_1, 0, 0, 0, 20, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="control_delayline_Array_13_U">streamingDataCommutor_complex_ap_fixed_22_8_5_3_0_s_control_delayline_Array_17, 0, 64, 32, 0, 1, 32, 1, 32</column>
+<column name="control_delayline_Array_11_U">streamingDataCommutor_complex_ap_fixed_22_8_5_3_0_s_control_delayline_Array_17, 0, 64, 32, 0, 1, 32, 1, 32</column>
+<column name="control_delayline_Array_12_U">streamingDataCommutor_complex_ap_fixed_22_8_5_3_0_s_control_delayline_Array_17, 0, 64, 32, 0, 1, 32, 1, 32</column>
+<column name="delayline_Array_2_U">streamingDataCommutor_complex_ap_fixed_27_13_5_3_0_s_delayline_Array_18, 0, 64, 32, 0, 1, 55, 1, 55</column>
+<column name="delayline_Array_5_U">streamingDataCommutor_complex_ap_fixed_27_13_5_3_0_s_delayline_Array_18, 0, 64, 32, 0, 1, 55, 1, 55</column>
+<column name="delayline_Array_35_U">streamingDataCommutor_complex_ap_fixed_27_13_5_3_0_s_delayline_Array_38, 0, 64, 32, 0, 3, 55, 1, 165</column>
+<column name="delayline_Array_24_U">streamingDataCommutor_complex_ap_fixed_27_13_5_3_0_s_delayline_Array_38, 0, 64, 32, 0, 3, 55, 1, 165</column>
+<column name="delayline_Array_47_U">streamingDataCommutor_complex_ap_fixed_27_13_5_3_0_s_delayline_Array_40, 0, 64, 32, 0, 2, 55, 1, 110</column>
+<column name="delayline_Array_46_U">streamingDataCommutor_complex_ap_fixed_27_13_5_3_0_s_delayline_Array_40, 0, 64, 32, 0, 2, 55, 1, 110</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln870_2_fu_417_p2">+, 0, 0, 9, 2, 1</column>
+<column name="add_ln870_fu_401_p2">+, 0, 0, 9, 2, 1</column>
+<column name="t_fu_307_p2">+, 0, 0, 12, 4, 1</column>
+<column name="and_ln297_3_fu_931_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln297_4_fu_937_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln297_fu_925_p2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state2_pp0_stage0_iter0">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state4_pp0_stage0_iter2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_259">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_77">and, 0, 0, 2, 1, 1</column>
+<column name="ap_ext_blocking_n">and, 0, 0, 2, 2, 2</column>
+<column name="ap_int_blocking_cur_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_int_blocking_n">and, 0, 0, 2, 1, 2</column>
+<column name="ap_str_blocking_n">and, 0, 0, 2, 2, 2</column>
+<column name="fifo_has_next_sample_nbreadreq_fu_156_p3">and, 0, 0, 2, 1, 0</column>
+<column name="icmp_ln231_fu_441_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="icmp_ln256_fu_423_p2">icmp, 0, 0, 8, 2, 2</column>
+<column name="ap_block_pp0_stage0_01001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op112_write_state4">or, 0, 0, 2, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">14, 3, 1, 3</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter2">9, 2, 1, 2</column>
+<column name="ap_phi_mux_t59_phi_fu_196_p6">14, 3, 4, 12</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_imag_V_1_0_reg_241">14, 3, 27, 81</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_imag_V_2_0_reg_230">14, 3, 27, 81</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_imag_V_3_0_reg_219">14, 3, 27, 81</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_real_V_1_0_reg_285">14, 3, 27, 81</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_real_V_2_0_reg_274">14, 3, 27, 81</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_real_V_3_0_reg_263">14, 3, 27, 81</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_mux_chain_input_sample_M_imag_V_0_reg_252">14, 3, 27, 81</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_mux_chain_input_sample_M_real_V_0_reg_296">14, 3, 27, 81</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_mux_chain_input_valid_0_reg_206">14, 3, 1, 3</column>
+<column name="casted_output_blk_n">9, 2, 1, 2</column>
+<column name="p_fftInData_reOrdered_blk_n">9, 2, 1, 2</column>
+<column name="t59_reg_192">9, 2, 4, 8</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="and_ln297_4_reg_1073">1, 0, 1, 0</column>
+<column name="ap_CS_fsm">2, 0, 2, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_imag_V_1_0_reg_241">27, 0, 27, 0</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_imag_V_2_0_reg_230">27, 0, 27, 0</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_imag_V_3_0_reg_219">27, 0, 27, 0</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_real_V_1_0_reg_285">27, 0, 27, 0</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_real_V_2_0_reg_274">27, 0, 27, 0</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_input_triangle_delay_input_sample_M_real_V_3_0_reg_263">27, 0, 27, 0</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_mux_chain_input_sample_M_imag_V_0_reg_252">27, 0, 27, 0</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_mux_chain_input_sample_M_real_V_0_reg_296">27, 0, 27, 0</column>
+<column name="ap_phi_reg_pp0_iter1_temp_tagged_mux_chain_input_valid_0_reg_206">1, 0, 1, 0</column>
+<column name="commuted_output_sample_M_imag_V_0_reg_1048">27, 0, 27, 0</column>
+<column name="commuted_output_sample_M_imag_V_1_reg_1058">27, 0, 27, 0</column>
+<column name="commuted_output_sample_M_imag_V_2_reg_1068">27, 0, 27, 0</column>
+<column name="commuted_output_sample_M_real_V_0_reg_1043">27, 0, 27, 0</column>
+<column name="commuted_output_sample_M_real_V_1_reg_1053">27, 0, 27, 0</column>
+<column name="commuted_output_sample_M_real_V_2_reg_1063">27, 0, 27, 0</column>
+<column name="control_bits_V_5">2, 0, 2, 0</column>
+<column name="control_count_V_5">2, 0, 2, 0</column>
+<column name="delay_line_stall_5">1, 0, 1, 0</column>
+<column name="delay_line_stall_5_load_reg_985">1, 0, 1, 0</column>
+<column name="delay_line_stall_5_load_reg_985_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="fifo_has_next_sample_reg_976">1, 0, 1, 0</column>
+<column name="fifo_has_next_sample_reg_976_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="icmp_ln231_reg_1029">1, 0, 1, 0</column>
+<column name="icmp_ln231_reg_1029_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="sample_in_read_count_V_5">2, 0, 2, 0</column>
+<column name="t59_reg_192">4, 0, 4, 0</column>
+<column name="t_reg_980">4, 0, 4, 0</column>
+<column name="temp_tagged_output_triangle_input_sample_M_imag_V_3_reg_1038">27, 0, 27, 0</column>
+<column name="temp_tagged_output_triangle_input_sample_M_real_V_3_reg_1033">27, 0, 27, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, streamingDataCommutor&lt;complex&lt;ap_fixed&lt;27, 13, 5, 3, 0&gt; &gt; &gt;.1, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, streamingDataCommutor&lt;complex&lt;ap_fixed&lt;27, 13, 5, 3, 0&gt; &gt; &gt;.1, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, streamingDataCommutor&lt;complex&lt;ap_fixed&lt;27, 13, 5, 3, 0&gt; &gt; &gt;.1, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, streamingDataCommutor&lt;complex&lt;ap_fixed&lt;27, 13, 5, 3, 0&gt; &gt; &gt;.1, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, streamingDataCommutor&lt;complex&lt;ap_fixed&lt;27, 13, 5, 3, 0&gt; &gt; &gt;.1, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, streamingDataCommutor&lt;complex&lt;ap_fixed&lt;27, 13, 5, 3, 0&gt; &gt; &gt;.1, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, streamingDataCommutor&lt;complex&lt;ap_fixed&lt;27, 13, 5, 3, 0&gt; &gt; &gt;.1, return value</column>
+<column name="ap_ext_blocking_n">out, 1, ap_ctrl_hs, streamingDataCommutor&lt;complex&lt;ap_fixed&lt;27, 13, 5, 3, 0&gt; &gt; &gt;.1, return value</column>
+<column name="ap_str_blocking_n">out, 1, ap_ctrl_hs, streamingDataCommutor&lt;complex&lt;ap_fixed&lt;27, 13, 5, 3, 0&gt; &gt; &gt;.1, return value</column>
+<column name="ap_int_blocking_n">out, 1, ap_ctrl_hs, streamingDataCommutor&lt;complex&lt;ap_fixed&lt;27, 13, 5, 3, 0&gt; &gt; &gt;.1, return value</column>
+<column name="casted_output_dout">in, 256, ap_fifo, casted_output, pointer</column>
+<column name="casted_output_empty_n">in, 1, ap_fifo, casted_output, pointer</column>
+<column name="casted_output_read">out, 1, ap_fifo, casted_output, pointer</column>
+<column name="p_fftInData_reOrdered_din">out, 256, ap_fifo, p_fftInData_reOrdered, pointer</column>
+<column name="p_fftInData_reOrdered_full_n">in, 1, ap_fifo, p_fftInData_reOrdered, pointer</column>
+<column name="p_fftInData_reOrdered_write">out, 1, ap_fifo, p_fftInData_reOrdered, pointer</column>
+</table>
+</item>
+</section>
+</profile>

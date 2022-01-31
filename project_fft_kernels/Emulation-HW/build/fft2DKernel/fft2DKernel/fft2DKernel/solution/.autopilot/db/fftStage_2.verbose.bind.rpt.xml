@@ -1,0 +1,48 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'fftStage_2'" level="0">
+<item name = "Date">Thu Jan 27 12:44:44 2022
+</item>
+<item name = "Version">2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)</item>
+<item name = "Project">fft2DKernel</item>
+<item name = "Solution">solution (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu9p-flgb2104-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">4.00 ns, 2.983 ns, 1.08 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_fftStageKernelS2S_16_4_0_0_0_2_complex_ap_fixed_30_16_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_27_13_5_3_0_complex_ap_fixed_30_16_5_3_0_s_fu_100">fftStageKernelS2S_16_4_0_0_0_2_complex_ap_fixed_30_16_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_18_2_5_3_0_complex_ap_fixed_27_13_5_3_0_complex_ap_fixed_30_16_5_3_0_s, ?, ?, ?, ?, 0, 0, loop rewind stp(delay=0 clock cycles(s))</column>
+<column name="grp_streamingDataCommutor_complex_ap_fixed_30_16_5_3_0_1_fu_109">streamingDataCommutor_complex_ap_fixed_30_16_5_3_0_1, 11, 12, 44.000 ns, 48.000 ns, 10, 10, loop rewind stp(delay=0 clock cycles(s))</column>
+<column name="grp_fftStage_3_fu_141">fftStage_3, ?, ?, ?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

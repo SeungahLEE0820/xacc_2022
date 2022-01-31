@@ -1,0 +1,20 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/centos/workspace/project_fft_kernels/Emulation-HW/build/reports/fft2DKernel
+	Log files: /home/centos/workspace/project_fft_kernels/Emulation-HW/build/logs/fft2DKernel
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel.xo.compile_summary, at Thu Jan 27 12:23:24 2022
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Thu Jan 27 12:23:24 2022
+INFO: [v++ 60-895]   Target platform: /home/centos/aws-fpga/Vitis/aws_platform/xilinx_aws-vu9p-f1_shell-v04261818_201920_2/xilinx_aws-vu9p-f1_shell-v04261818_201920_2.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/home/centos/aws-fpga/Vitis/aws_platform/xilinx_aws-vu9p-f1_shell-v04261818_201920_2/hw/xilinx_aws-vu9p-f1_shell-v04261818_201920_2.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2021.1
+INFO: [v++ 60-1302] Platform 'xilinx_aws-vu9p-f1_shell-v04261818_201920_2.xpfm' has been explicitly enabled for this release.
+INFO: [v++ 60-585] Compiling for hardware emulation target
+INFO: [v++ 60-423]   Target device: xilinx_aws-vu9p-f1_shell-v04261818_201920_2
+INFO: [v++ 60-242] Creating kernel: 'fft2DKernel'
+
+===>The following messages were generated while  performing high-level synthesis for kernel: fft2DKernel Log file: /home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel/vitis_hls.log :
+ERROR: [v++ 207-812] 'vt_fft.hpp' file not found: /home/centos/workspace/project_fft_kernels/src/data_path.hpp:22:10
+ERROR: [v++ 60-300] Failed to build kernel(ip) fft2DKernel, see log for details: /home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel/vitis_hls.log
+ERROR: [v++ 60-773] In '/home/centos/workspace/project_fft_kernels/Emulation-HW/build/fft2DKernel/fft2DKernel/vitis_hls.log', caught Tcl error: ERROR: [HLS 207-812] 'vt_fft.hpp' file not found: /home/centos/workspace/project_fft_kernels/src/data_path.hpp:22:10
+ERROR: [v++ 60-599] Kernel compilation failed to complete
+ERROR: [v++ 60-592] Failed to finish compilation
+INFO: [v++ 60-1653] Closing dispatch client.

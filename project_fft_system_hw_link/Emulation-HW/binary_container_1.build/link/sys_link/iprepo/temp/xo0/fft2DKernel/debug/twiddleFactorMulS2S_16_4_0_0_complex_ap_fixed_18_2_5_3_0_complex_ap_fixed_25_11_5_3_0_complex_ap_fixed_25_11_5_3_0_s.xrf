@@ -1,0 +1,107 @@
+Begin Function 'twiddleFactorMulS2S<16, 4, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<25, 11, 5, 3, 0> >, complex<ap_fixed<25, 11, 5, 3, 0> > >'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_1
+local p_k_read <> <integer> <> 'read' <>
+reg: p_k_read_reg_1351[3:0] lv
+
+local p_read_10 <> <integer> <> 'read' <>
+reg: p_read_10_reg_1359[23:0] lv
+
+local p_read_11 <> <integer> <> 'read' <>
+reg: p_read_11_reg_1364[23:0] lv
+
+local p_read_12 <> <integer> <> 'read' <>
+reg: p_read_12_reg_1369[23:0] lv
+
+local p_read_13 <> <integer> <> 'read' <>
+reg: p_read_13_reg_1374[23:0] lv
+
+local p_read_14 <> <integer> <> 'read' <>
+reg: p_read_14_reg_1380[23:0] lv
+
+local p_read_15 <> <integer> <> 'read' <>
+reg: p_read_15_reg_1385[23:0] lv
+
+local p_read_16 <> <integer> <> 'read' <>
+reg: p_read_16_reg_1390[23:0] lv
+
+local p_read39 <> <integer> <> 'read' <>
+reg: p_read39_reg_1395[23:0] lv
+
+local index_cos_V <> <integer> <Arithmetic> 'add' <>
+index_cos_V /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int.h:223
+reg: index_cos_V_reg_1401[3:0] lv
+
+local index_invert_control_imag_4 <> <integer> <> 'bitselect' <>
+index_invert_control_imag_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: index_invert_control_imag_4_reg_1407[0:0] lv
+
+local index_cos_V_3 <> <integer> <Arithmetic> 'add' <>
+index_cos_V_3 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int.h:223
+reg: index_cos_V_3_reg_1422[3:0] lv
+
+local icmp_ln1049_15 <> <integer> <Comparator> 'icmp' <>
+icmp_ln1049_15 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_base.h:1049
+reg: icmp_ln1049_15_reg_1428[0:0] lv
+
+local icmp_ln1049_16 <> <integer> <Comparator> 'icmp' <>
+icmp_ln1049_16 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_base.h:1049
+reg: icmp_ln1049_16_reg_1433[0:0] lv
+
+local icmp_ln1049_18 <> <integer> <Comparator> 'icmp' <>
+icmp_ln1049_18 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_base.h:1049
+reg: icmp_ln1049_18_reg_1443[0:0] lv
+
+local index_V_2 <> <integer> <Arithmetic> 'sub' <>
+index_V_2 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int.h:315
+reg: index_V_2_reg_1453[3:0] lv
+
+local index_cos_V_4 <> <integer> <Arithmetic> 'add' <>
+index_cos_V_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int.h:223
+reg: index_cos_V_4_reg_1460[3:0] lv
+
+local icmp_ln1049_22 <> <integer> <Comparator> 'icmp' <>
+icmp_ln1049_22 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_base.h:1049
+reg: icmp_ln1049_22_reg_1471[0:0] lv
+
+# ST_2
+local imagSinVal <> <integer> <> 'select' <>
+imagSinVal /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: imagSinVal_reg_1486[17:0] lv
+
+local sext_ln1171_17 <> <integer> <> 'sext' <>
+sext_ln1171_17 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1171
+reg: sext_ln1171_17_reg_1491[40:0] lv
+
+local sext_ln1171_19 <> <integer> <> 'sext' <>
+sext_ln1171_19 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1171
+reg: sext_ln1171_19_reg_1503[40:0] lv
+
+local imagSinVal_3 <> <integer> <> 'select' <>
+imagSinVal_3 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: imagSinVal_3_reg_1509[17:0] lv
+
+local sext_ln1171_21 <> <integer> <> 'sext' <>
+sext_ln1171_21 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1171
+reg: sext_ln1171_21_reg_1514[40:0] lv
+
+local sext_ln1171_23 <> <integer> <> 'sext' <>
+sext_ln1171_23 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1171
+reg: sext_ln1171_23_reg_1526[40:0] lv
+
+local imagSinVal_4 <> <integer> <> 'select' <>
+imagSinVal_4 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_ref.h:674
+reg: imagSinVal_4_reg_1532[17:0] lv
+
+local sext_ln1171_25 <> <integer> <> 'sext' <>
+sext_ln1171_25 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1171
+reg: sext_ln1171_25_reg_1537[40:0] lv
+
+local sext_ln1171_27 <> <integer> <> 'sext' <>
+sext_ln1171_27 /opt/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_fixed_base.h:1171
+reg: sext_ln1171_27_reg_1549[40:0] lv
+
+
+End Function 'twiddleFactorMulS2S<16, 4, 0, 0, complex<ap_fixed<18, 2, 5, 3, 0> >, complex<ap_fixed<25, 11, 5, 3, 0> >, complex<ap_fixed<25, 11, 5, 3, 0> > >'
+

@@ -1,0 +1,27 @@
+Begin Function 'muxWideStreaming<2u, 16u, 16u, 8u, complex<ap_fixed<32, 18, 5, 3, 0> > >'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_2
+local outStreamPtr2 <> <integer> <Phi> 'phi' <>
+outStreamPtr /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux.hpp:63
+reg: outStreamPtr2_reg_212[0:0] lv
+
+local iter1 <> <integer> <Phi> 'phi' <>
+iter /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux.hpp:54
+reg: iter1_reg_227[4:0] lv
+
+local iter <add_54> <integer> <Arithmetic> 'add' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux.hpp:54>
+iter /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux.hpp:54
+reg: iter_reg_602[4:0] lv
+
+local outStreamPtr <xor_63> <integer> <Logic> 'xor' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux.hpp:63>
+outStreamPtr /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux.hpp:63
+reg: outStreamPtr_reg_607[0:0] lv
+
+local icmp_ln54 <icmp_54> <integer> <Comparator> 'icmp' </home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux.hpp:54>
+icmp_ln54 /home/centos/Vitis_Libraries/dsp/L1/include/hw/vitis_2dfft/fixed/vitis_fft/hls_ssr_fft_mux.hpp:54
+reg: icmp_ln54_reg_612[0:0] lv
+
+
+End Function 'muxWideStreaming<2u, 16u, 16u, 8u, complex<ap_fixed<32, 18, 5, 3, 0> > >'
+

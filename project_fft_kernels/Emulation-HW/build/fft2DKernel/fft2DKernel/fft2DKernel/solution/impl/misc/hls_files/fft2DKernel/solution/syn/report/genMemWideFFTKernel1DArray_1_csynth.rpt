@@ -1,0 +1,366 @@
+
+
+================================================================
+== Vitis HLS Report for 'genMemWideFFTKernel1DArray_1'
+================================================================
+* Date:           Thu Jan 27 12:46:50 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        fft2DKernel
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  3.086 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------------------------------------+------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+        |                                                                     |                                                                  |  Latency (cycles) |  Latency (absolute) |  Interval |                 Pipeline                 |
+        |                               Instance                              |                              Module                              |   min   |   max   |    min   |    max   | min | max |                   Type                   |
+        +---------------------------------------------------------------------+------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+        |wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0   |wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182   |       32|       33|  0.128 us|  0.132 us|   32|   32|  loop rewind stp(delay=0 clock cycles(s))|
+        |genMemWideFFTKernel1DArray_3_U0                                      |genMemWideFFTKernel1DArray_3                                      |        ?|        ?|         ?|         ?|    ?|    ?|                                  dataflow|
+        |fftStreamingKernel_2_U0                                              |fftStreamingKernel_2                                              |        ?|        ?|         ?|         ?|    ?|    ?|                                        no|
+        |narrowToWideConverter_4u_8u_16u_complex_ap_fixed_27_13_5_3_0_183_U0  |narrowToWideConverter_4u_8u_16u_complex_ap_fixed_27_13_5_3_0_183  |       33|       34|  0.132 us|  0.136 us|   32|   32|  loop rewind stp(delay=0 clock cycles(s))|
+        +---------------------------------------------------------------------+------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       28|    -|
+|FIFO                 |        -|     -|     1550|      840|    -|
+|Instance             |        0|    28|    25630|    34560|    0|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|       27|    -|
+|Register             |        -|     -|        3|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|    28|    27183|    35455|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     1|        3|        8|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|    ~0|        1|        2|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------------------------------------+------------------------------------------------------------------+---------+----+-------+-------+-----+
+    |                               Instance                              |                              Module                              | BRAM_18K| DSP|   FF  |  LUT  | URAM|
+    +---------------------------------------------------------------------+------------------------------------------------------------------+---------+----+-------+-------+-----+
+    |fftStreamingKernel_2_U0                                              |fftStreamingKernel_2                                              |        0|  14|  10554|  12548|    0|
+    |genMemWideFFTKernel1DArray_3_U0                                      |genMemWideFFTKernel1DArray_3                                      |        0|  14|  13590|  17707|    0|
+    |narrowToWideConverter_4u_8u_16u_complex_ap_fixed_27_13_5_3_0_183_U0  |narrowToWideConverter_4u_8u_16u_complex_ap_fixed_27_13_5_3_0_183  |        0|   0|   1109|   3209|    0|
+    |wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0   |wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182   |        0|   0|    377|   1096|    0|
+    +---------------------------------------------------------------------+------------------------------------------------------------------+---------+----+-------+-------+-----+
+    |Total                                                                |                                                                  |        0|  28|  25630|  34560|    0|
+    +---------------------------------------------------------------------+------------------------------------------------------------------+---------+----+-------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +---------------------------+---------+-----+----+-----+------+-----+---------+
+    |            Name           | BRAM_18K|  FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +---------------------------+---------+-----+----+-----+------+-----+---------+
+    |ssrWideStream4kernelIn_U   |        0|  775|   0|    -|     2|  256|      512|
+    |ssrWideStream4kernelOut_U  |        0|  775|   0|    -|     2|  256|      512|
+    +---------------------------+---------+-----+----+-----+------+-----+---------+
+    |Total                      |        0| 1550|   0|    0|     4|  512|     1024|
+    +---------------------------+---------+-----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +-------------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                                    Variable Name                                    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |ap_ext_blocking_n                                                                    |       and|   0|  0|   2|           1|           1|
+    |ap_ext_blocking_sub_n                                                                |       and|   0|  0|   2|           1|           1|
+    |ap_idle                                                                              |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_n                                                                    |       and|   0|  0|   2|           1|           1|
+    |ap_int_blocking_sub_n                                                                |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_n                                                                    |       and|   0|  0|   2|           1|           1|
+    |ap_str_blocking_sub_n                                                                |       and|   0|  0|   2|           1|           1|
+    |ap_sync_continue                                                                     |       and|   0|  0|   2|           1|           1|
+    |ap_sync_done                                                                         |       and|   0|  0|   2|           1|           1|
+    |ap_sync_ready                                                                        |       and|   0|  0|   2|           1|           1|
+    |genMemWideFFTKernel1DArray_3_U0_ap_start                                             |       and|   0|  0|   2|           1|           1|
+    |wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0_ap_start          |       and|   0|  0|   2|           1|           1|
+    |ap_sync_genMemWideFFTKernel1DArray_3_U0_ap_ready                                     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0_ap_ready  |        or|   0|  0|   2|           1|           1|
+    +-------------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                                                |          |   0|  0|  28|          14|          14|
+    +-------------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |                                           Name                                          | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_genMemWideFFTKernel1DArray_3_U0_ap_ready                                     |   9|          2|    1|          2|
+    |ap_sync_reg_wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0_ap_ready  |   9|          2|    1|          2|
+    |real_start                                                                               |   9|          2|    1|          2|
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                                                    |  27|          6|    3|          6|
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |                                           Name                                          | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_genMemWideFFTKernel1DArray_3_U0_ap_ready                                     |  1|   0|    1|          0|
+    |ap_sync_reg_wideToNarrowConverter_8u_4u_16u_complex_ap_fixed_22_8_5_3_0_182_U0_ap_ready  |  1|   0|    1|          0|
+    |start_once_reg                                                                           |  1|   0|    1|          0|
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                                                    |  3|   0|    3|          0|
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------------------+-----+-----+------------+----------------------------------------+--------------+
+|                   RTL Ports                   | Dir | Bits|  Protocol  |              Source Object             |    C Type    |
++-----------------------------------------------+-----+-----+------------+----------------------------------------+--------------+
+|ap_start                                       |   in|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|start_full_n                                   |   in|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|start_out                                      |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|start_write                                    |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_clk                                         |   in|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_rst                                         |   in|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_done                                        |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_ready                                       |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_idle                                        |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_continue                                    |   in|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_ext_blocking_n                              |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_str_blocking_n                              |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|ap_int_blocking_n                              |  out|    1|  ap_ctrl_hs|            genMemWideFFTKernel1DArray.1|  return value|
+|p_inMemWideStreamArray_0_0_0_0_0_0_dout        |   in|   22|     ap_fifo|      p_inMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0_empty_n     |   in|    1|     ap_fifo|      p_inMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0_read        |  out|    1|     ap_fifo|      p_inMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_01_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_01|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_01_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_01|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_01_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_01|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_02_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_02_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_02_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_03_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_03_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_03_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_04_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_04|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_04_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_04|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_04_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_04|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_05_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_05|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_05_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_05|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_05_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_05|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_06_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_06|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_06_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_06|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_06_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_06|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_07_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_07|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_07_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_07|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_07_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_0_0_0_07|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_018_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_018_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_018_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_019_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_019_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_019_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_0_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0110_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0110|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0110_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0110|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0110_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0110|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0111_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0111|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0111_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0111|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0111_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0111|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0112_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0112|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0112_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0112|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0112_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0112|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0113_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0113|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0113_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0113|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0113_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0113|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0114_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0114|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0114_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0114|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0114_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0114|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0115_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0115|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0115_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0115|       pointer|
+|p_inMemWideStreamArray_0_0_0_0_0_0115_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_0_0_0_0115|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0_dout        |   in|   22|     ap_fifo|      p_inMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0_empty_n     |   in|    1|     ap_fifo|      p_inMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0_read        |  out|    1|     ap_fifo|      p_inMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_016_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_016|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_016_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_016|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_016_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_016|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_017_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_017|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_017_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_017|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_017_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_017|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_018_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_018_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_018_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_018|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_019_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_019_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_019_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_019|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_020_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_020|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_020_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_020|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_020_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_020|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_021_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_021|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_021_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_021|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_021_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_021|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_022_dout      |   in|   22|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_022|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_022_empty_n   |   in|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_022|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_022_read      |  out|    1|     ap_fifo|    p_inMemWideStreamArray_0_0_1_0_0_022|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_02_dout       |   in|   22|     ap_fifo|     p_inMemWideStreamArray_0_0_1_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_02_empty_n    |   in|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_1_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_02_read       |  out|    1|     ap_fifo|     p_inMemWideStreamArray_0_0_1_0_0_02|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0223_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0223|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0223_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0223|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0223_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0223|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0224_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0224|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0224_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0224|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0224_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0224|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0225_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0225|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0225_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0225|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0225_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0225|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0226_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0226|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0226_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0226|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0226_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0226|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0227_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0227|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0227_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0227|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0227_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0227|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0228_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0228|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0228_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0228|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0228_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0228|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0229_dout     |   in|   22|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0229|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0229_empty_n  |   in|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0229|       pointer|
+|p_inMemWideStreamArray_0_0_1_0_0_0229_read     |  out|    1|     ap_fifo|   p_inMemWideStreamArray_0_0_1_0_0_0229|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0_din        |  out|   27|     ap_fifo|     p_outMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0_full_n     |   in|    1|     ap_fifo|     p_outMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0_write      |  out|    1|     ap_fifo|     p_outMemWideStreamArray_0_0_0_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_030_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_030|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_030_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_030|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_030_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_030|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_031_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_031|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_031_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_031|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_031_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_031|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_032_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_032|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_032_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_032|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_032_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_032|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_033_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_033|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_033_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_033|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_033_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_033|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_034_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_034|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_034_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_034|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_034_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_034|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_035_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_035|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_035_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_035|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_035_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_035|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_036_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_036|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_036_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_036|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_036_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_0_0_0_036|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_03_din       |  out|   27|     ap_fifo|    p_outMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_03_full_n    |   in|    1|     ap_fifo|    p_outMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_03_write     |  out|    1|     ap_fifo|    p_outMemWideStreamArray_0_0_0_0_0_03|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0337_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0337|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0337_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0337|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0337_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0337|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0338_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0338|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0338_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0338|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0338_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0338|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0339_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0339|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0339_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0339|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0339_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0339|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0340_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0340|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0340_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0340|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0340_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0340|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0341_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0341|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0341_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0341|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0341_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0341|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0342_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0342|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0342_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0342|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0342_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0342|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0343_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0343|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0343_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0343|       pointer|
+|p_outMemWideStreamArray_0_0_0_0_0_0343_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_0_0_0_0343|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0_din        |  out|   27|     ap_fifo|     p_outMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0_full_n     |   in|    1|     ap_fifo|     p_outMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0_write      |  out|    1|     ap_fifo|     p_outMemWideStreamArray_0_0_1_0_0_0|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_044_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_044|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_044_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_044|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_044_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_044|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_045_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_045|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_045_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_045|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_045_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_045|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_046_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_046|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_046_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_046|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_046_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_046|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_047_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_047|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_047_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_047|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_047_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_047|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_048_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_048|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_048_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_048|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_048_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_048|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_049_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_049|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_049_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_049|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_049_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_049|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_050_din      |  out|   27|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_050|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_050_full_n   |   in|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_050|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_050_write    |  out|    1|     ap_fifo|   p_outMemWideStreamArray_0_0_1_0_0_050|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_04_din       |  out|   27|     ap_fifo|    p_outMemWideStreamArray_0_0_1_0_0_04|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_04_full_n    |   in|    1|     ap_fifo|    p_outMemWideStreamArray_0_0_1_0_0_04|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_04_write     |  out|    1|     ap_fifo|    p_outMemWideStreamArray_0_0_1_0_0_04|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0451_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0451|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0451_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0451|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0451_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0451|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0452_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0452|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0452_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0452|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0452_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0452|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0453_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0453|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0453_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0453|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0453_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0453|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0454_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0454|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0454_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0454|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0454_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0454|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0455_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0455|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0455_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0455|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0455_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0455|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0456_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0456|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0456_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0456|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0456_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0456|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0457_din     |  out|   27|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0457|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0457_full_n  |   in|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0457|       pointer|
+|p_outMemWideStreamArray_0_0_1_0_0_0457_write   |  out|    1|     ap_fifo|  p_outMemWideStreamArray_0_0_1_0_0_0457|       pointer|
++-----------------------------------------------+-----+-----+------------+----------------------------------------+--------------+
+
